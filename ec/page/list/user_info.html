@@ -1,0 +1,93 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">ユーザー管理 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+    <div class="ec-help-content">
+        <div class="paragraph">
+            <p>登録できるユーザーは10名までです。</p>
+        </div>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    <div class="ec-section">
+        <h3 class="page-title-sub">ユーザーリスト</h3>
+        <div class="table-info-group">
+            <strong>[全体 : 8 件]</strong>
+            <select>
+                <option value="value1">20 件</option>
+                <option value="value2">50 件</option>
+                <option value="value3">100 件</option>
+            </select>
+            <div class="btn-group">
+                <a href="#" class="ui-btn btn-blue">追加</a>
+                <a href="/ec/page/list/user_login_list.html" class="ui-btn">ログイン履歴を見る</a>
+            </div>
+        </div>
+        <table class="data-table">
+            <caption>ユーザーリスト</caption>
+            <colgroup>                
+                <col style="width:6%"/>                
+                <col style="width:13%"/>
+                <col style="width:16%"/>
+                <col style="width:16%"/>
+                <col style="width:13%"/>
+                <col style="width:12%"/>
+                <col style="width:auto"/>
+                <col style="width:6%"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">編集</th>
+                    <th scope="col">利用状況</th>
+                    <th scope="col">ユーザーID</th>
+                    <th scope="col">ユーザー名</th>
+                    <th scope="col">権限</th>
+                    <th scope="col">権限範囲</th>
+                    <th scope="col">最後ログイン日時</th>
+                    <th scope="col">削除</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                    <td>利用可能</td>
+                    <td>123test</td>
+                    <td>555test</td>
+                    <td>スタッフ</td>
+                    <td>全機能</td>
+                    <td>2018-06-12 17:28:37</td>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-red">編集</a></td>
+                </tr>
+                <tr>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                    <td>利用可能</td>
+                    <td>ccc333</td>
+                    <td>ccc12356</td>
+                    <td>スタッフ</td>
+                    <td>全機能</td>
+                    <td>2018-03-26 10:59:12</td>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-red">編集</a></td>
+                </tr>
+                <tr>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                    <td>利用可能</td>
+                    <td>mgr_test002</td>
+                    <td>管理者２-1</td>
+                    <td>管理者（マスタ）</td>
+                    <td>商品管理のみ</td>
+                    <td>2018-06-19 18:31:52</td>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-red">編集</a></td>
+                </tr>
+                <tr>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                    <td>利用可能</td>
+                    <td>mgr_test003</td>
+                    <td>管理者３-112</td>
+                    <td>管理者（マスタ）</td>
+                    <td>注文管理のみ</td>
+                    <td>2018-06-19 17:04:17</td>
+                    <td class="t-center"><a href="#" class="ui-btn btn-s btn-red">編集</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>

@@ -145,19 +145,19 @@
                                 <col span="8" style="width:9%" />
                             </colgroup>
                             <thead>
-                            <tr>
-                                <th scope="col">title_1</th>
-                                <th scope="col">title_2</th>
-                                <th scope="col">title_3</th>
-                                <th scope="col">title_4</th>
-                                <th scope="col">title_5</th>
-                                <th scope="col">title_6</th>
-                                <th scope="col">title_7</th>
-                                <th scope="col">title_8</th>
-                                <th scope="col">title_9</th>
-                                <th scope="col">title_10</th>
-                            </tr>
-                        </thead>
+                                <tr>
+                                    <th scope="col">title_1</th>
+                                    <th scope="col">title_2</th>
+                                    <th scope="col">title_3</th>
+                                    <th scope="col">title_4</th>
+                                    <th scope="col">title_5</th>
+                                    <th scope="col">title_6</th>
+                                    <th scope="col">title_7</th>
+                                    <th scope="col">title_8</th>
+                                    <th scope="col">title_9</th>
+                                    <th scope="col">title_10</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
                                     <th scope="row">content_1</th>
@@ -189,6 +189,81 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table>
+                                <caption>기본 테이블</caption>
+                                <colgroup>
+                                    <col style="width:7%" />
+                                    <col style="width:auto" />
+                                    <col span="8" style="width:9%" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">title_1</th>
+                                        <th scope="col">...생략</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">content_1</th>
+                                        <td>...생략</td>
+                                    </tr>
+                                </tbody>
+                            </table>                        
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">tr hover</h2>
+                        <table class="data-table">
+                            <caption>기본 테이블 col+row</caption>
+                            <colgroup>
+                                <col style="width:7%" />
+                                <col style="width:auto" />
+                                <col span="8" style="width:9%" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">title_1</th>
+                                    <th scope="col">title_2</th>
+                                    <th scope="col">title_3</th>
+                                    <th scope="col">title_4</th>
+                                    <th scope="col">title_5</th>
+                                    <th scope="col">title_6</th>
+                                    <th scope="col">title_7</th>
+                                    <th scope="col">title_8</th>
+                                    <th scope="col">title_9</th>
+                                    <th scope="col">title_10</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">content_1</th>
+                                    <td>content_2</td>
+                                    <td>content_3</td>
+                                    <td>content_4</td>
+                                    <td>content_5</td>
+                                    <td>content_6</td>
+                                    <td>content_7</td>
+                                    <td>content_8</td>
+                                    <td>content_9</td>
+                                    <td>content_10</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">content_1</th>
+                                    <td>content_2</td>
+                                    <td>content_3</td>
+                                    <td>content_4</td>
+                                    <td>content_5</td>
+                                    <td>content_6</td>
+                                    <td>content_7</td>
+                                    <td>content_8</td>
+                                    <td>content_9</td>
+                                    <td>content_10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <table class="data-table">
                                 <caption>기본 테이블</caption>
                                 <colgroup>
                                     <col style="width:7%" />

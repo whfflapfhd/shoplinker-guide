@@ -1,7 +1,7 @@
 $(function(){
     /* Menu Event*/
     $(".ec-menu").leftMenu();
-    
+
     /* event : toggle Menu Wrap */
     $(".toggle-lnb").on("click",toggleWrap);
 
@@ -36,14 +36,14 @@ $(function(){
     }).on("click","table tbody tr",function(event){
         var p = $(this).closest('tbody'),
             inputObj = p.find('.ui-check'),
-            idx = p.find("tr:not('.toggle-content')").index(this),
+            idx = p.find("> tr:not('.toggle-content')").index(this),
             el = inputObj.eq(idx).find('input');
         el.click();
         event.stopPropagation();
     }).on("click","table td a",function(event){
         event.stopPropagation();
     }).on("click",".check-all",function(){
-        var el = $(this).closest('table').find('input:checkbox');            
+        var el = $(this).closest('table').find('input:checkbox');
         ($(this).hasClass('all')) ? el.prop('checked',false) : el.prop('checked',true);
         $(this).toggleClass('all');
         return false

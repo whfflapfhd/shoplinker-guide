@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>EC점장 Layout</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="/ec/resource/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/ec/resource/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/ec/resource/css/ui-template.css" />
+    <link rel="stylesheet" type="text/css" href="/ec/resource/css/media.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/ec/resource/js/jquery.hotkey.js" type="text/javascript"></script>
+    <script src="/ec/resource/js/ui-template.js" type="text/javascript"></script>
+    <script src="/ec/resource/js/common.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="ec-wrap">
+    <!-- Header -->
+    <div class="ec-header">
+        <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo.png" alt="EC店長" /></a></h1>
+        <div class="ec-header-box">
+            <a href="#" target="_blank" class="ec-service-free">越境ECサービス申込（無料）</a>
+            <div class="ec-header-right">
+                <a href="#">操作マニュアル</a>
+                <a href="#">お問合せ</a>
+                <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
+            </div>
+        </div>
+    </div>
+    <!-- //Header -->
+
+    <!-- Left Menu -->
+    <div class="ec-lnb-wrap">
+        <div class="ec-lnb-content">
+            <div class="ec-profile">
+                <span>mgr_test001</span>
+                <a href="#" class="ui-btn btn-s">編集</a>
+                <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
+            </div>
+            <ul class="ec-menu">
+                <li>
+                    <a href="#">申込管理</a>
+                    <ul class="ec-menu-2depth">
+                        <li><a href="/ec/page/list/customer_info.html">基本情報</a></li>
+                        <li><a href="/ec/page/list/contract_info.html">契約情報</a></li>
+                        <li><a href="/ec/page/list/account_info.html">店舗管理</a></li>
+                        <li><a href="/ec/page/list/user_info.html">ユーザー管理</a></li>
+                        <li><a href="#">カテゴリ管理</a></li>
+                        <li><a href="#">注文データ保存延長申込</a></li>
+                        <li><a href="#">口座振替申込</a></li>
+                        <li><a href="#">顧客社ログイン</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">商品管理</a>
+                    <ul class="ec-menu-2depth">
+                        <li><a href="#">商品管理</a></li>
+                        <li><a href="#">在庫管理</a></li>
+                        <li><a href="#">商品編集履歴</a></li>
+                        <li><a href="#">商品削除履歴</a></li>
+                        <li><a href="#">在庫送信履歴</a></li>
+                        <li><a href="#">在庫更新履歴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">注文管理</a>
+                    <ul class="ec-menu-2depth">
+                        <li><a href="#">注文管理</a></li>
+                        <li><a href="#">オークション管理</a></li>
+                        <li><a href="#">注文削除履歴</a></li>
+                        <li><a href="#">過去注文検索</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">設定管理</a>
+                    <ul class="ec-menu-2depth">
+                        <li><a href="#">基本設定管理</a></li>
+                        <li><a href="#">商品複製時紐付</a></li>
+                        <li><a href="#">商品テンプレート</a></li>
+                        <li><a href="#">CSVテンプレート</a></li>
+                        <li><a href="#">メールテンプレート(旧)</a></li>
+                        <li><a href="#">メールテンプレート(新)</a></li>
+                        <li><a href="#">受注ステータス</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">付加サービス</a>
+                    <ul class="ec-menu-2depth">
+                        <li><a href="#">掲示板管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">売上げ</a>
+                    <ul class="ec-menu-2depth">
+                        <li><a href="#">期間の売上げリスト</a></li>
+                        <li><a href="#">商品の売上げリスト</a></li>
+                    </ul>
+                </li>
+                <li class="single"><a href="#">クラウドK</a></li>
+            </ul>
+        </div>
+        <button type="button" class="toggle-lnb" title="Ctrl + ;"><i class="ir">Show Menu</i></button>
+    </div>
+    <!-- Left Menu -->

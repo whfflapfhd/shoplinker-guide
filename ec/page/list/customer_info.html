@@ -1,0 +1,214 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">基本情報 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+    <div class="ec-help-content">
+        <div class="paragraph">
+            <p>登録情報の画面です。</p>
+            <p>ＩＤ、パスワードは申し込み時の任意の情報です。</p>
+        </div>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    <div class="ec-section">
+        <h3 class="page-title-sub">必須入力</h3>
+        <div class="ui-info">
+            <ul class="list non-style">
+                <li>グレーアウトしている項目は変更できません。 変更の際はカスタマーサポートへお知らせください。</li>
+            </ul>
+            <a href="#" class="btn-close"><span class="ir">close</span></a>
+        </div>
+        <table>
+            <caption>必須入力</caption>
+            <colgroup>
+                <col style="width:200px"/>
+                <col style="width:auto"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">ログインID</th>
+                    <td>
+                        <div class="form-group-half"><input type="text" value="test00" disabled="disabled" /></div>
+                        <div class="error-message">使用できないIDです。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">パスワード</th>
+                    <td>
+                        <div class="form-group-half form-with-btn clear">
+                            <span><input type="password" value="nemobratest01" disabled="disabled" /></span>
+                            <span><a href="#" class="ui-btn btn-black">パスワード変更</a></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">代表カテゴリ</th>
+                    <td>
+                        <div class="form-group-half form-with-btn clear">
+                            <span>
+                                <select>
+                                    <option value="">代表カテゴリ</option>
+                                    <option value="001">CD・DVD・楽器</option>
+                                    <option value="002" selected="">おもちゃ・ホビー・ゲーム</option>
+                                    <option value="003">インテリア・寝具・収納</option>
+                                    <option value="004">インナー・下着・ナイトウエア</option>
+                                    <option value="005">キッズ・ベビー・マタニティ</option>
+                                    <option value="006">キッチン・日用品雑貨・文具</option>
+                                    <option value="007">ジュエリー・腕時計</option>
+                                    <option value="008">スイーツ</option>
+                                    <option value="009">スポーツ・アウトドア</option>
+                                    <option value="010">ダイエット・健康</option>
+                                    <option value="011">デジタルコンテンツ</option>
+                                    <option value="012">バッグ・小物・ブランド雑貨</option>
+                                </select>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">受注取込メール</th>
+                    <td>
+                        <div class="form-group-half">
+                            <input type="text" value="ordertest@ec-tencho.jp" disabled="disabled" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">宅配業者</th>
+                    <td>
+                        <div class="form-group-half form-with-btn clear">
+                            <span>
+                                <select>
+                                    <option value="">宅配業者選択</option>
+                                    <option value="028">Aramex</option>
+                                    <option value="019">DHL</option>
+                                    <option value="018">EMS</option>
+                                </select>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">顧客社名</th>
+                    <td>
+                        <div class="form-group-half">
+                            <input type="text" value="㈱ネモコマース（テスト）" disabled="disabled" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"> 代表者名</th>
+                    <td>
+                        <div class="form-group-half">
+                            <div class="form-with-btn clear">
+                                <span><input type="text" value="代表者（哲吉）" disabled="disabled" /></span>
+                                <span><em>(漢字)</em></span>
+                            </div>
+                            <div class="form-with-btn clear">
+                                <span><input type="text" value="ダイヒョウテツキチ" disabled="disabled" /></span>
+                                <span><em>(カナ)</em></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">会社住所</th>
+                    <td>
+                        <div class="form-address">
+                            <div class="addr-num clear">
+                                <div>
+                                    <span><input type="text" value="160" disabled="disabled" /></span>
+                                    <span><input type="text" value="0023" disabled="disabled" /></span>
+                                </div>
+                                <div><button type="button" class="ui-btn btn-green">郵便番号の適用</button></div>
+                                <div><a href="http://www.post.japanpost.jp/zipcode/index.html" class="ui-btn" target="_blank">郵便番号検索</a></div>
+                            </div>
+                            <div class="auto-addr clear">
+                                <span><input type="text" value="東京都" disabled="disabled" /></span>
+                                <span><input type="text" value="新宿区" disabled="disabled" /></span>
+                                <span><input type="text" value="西新宿（次のビルを除く）" disabled="disabled" /></span>
+                            </div>
+                            <div><input type="text" value="7-18-12-50１" disabled="disabled" /></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">代表電話</th>
+                    <td>
+                        <div class="form-tel clear">
+                            <span><input type="text" value="03" disabled="disabled" /></span>
+                            <span><input type="text" value="5937" disabled="disabled" /></span>
+                            <span><input type="text" value="5636" disabled="disabled" /></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">担当者 E-mail</th>
+                    <td><div class="form-group-half"><input type="text" value="web@brangista.com" disabled="disabled" /></div></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="page-title-sub">追加入力</h3>
+        <table>
+            <caption>追加入力</caption>
+            <colgroup>
+                <col style="width:200px"/>
+                <col style="width:auto"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">FAX番号</th>
+                    <td>
+                        <div class="form-tel clear">
+                            <span><input type="text" value="03" disabled="disabled" /></span>
+                            <span><input type="text" value="5937" disabled="disabled" /></span>
+                            <span><input type="text" value="5636" disabled="disabled" /></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">ホ―ムペ―ジ URL</th>
+                    <td><div class="form-group-half"><input type="text" value="" disabled="disabled" /></div></td>
+                </tr>
+                <tr>
+                    <th scope="row">担当者名</th>
+                    <td>
+                        <div class="form-group-half">
+                            <div class="form-with-btn clear">
+                                <span><input type="text" value="代表者（哲吉）" disabled="disabled" /></span>
+                                <span><em>(漢字)</em></span>
+                            </div>
+                            <div class="form-with-btn clear">
+                                <span><input type="text" value="ダイヒョウテツキチ" disabled="disabled" /></span>
+                                <span><em>(カナ)</em></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">担当者 連絡先</th>
+                    <td>
+                        <div class="form-tel clear">
+                            <span><input type="text" value="03" disabled="disabled" /></span>
+                            <span><input type="text" value="5937" disabled="disabled" /></span>
+                            <span><input type="text" value="5636" disabled="disabled" /></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">担当者 携帯番号</th>
+                    <td>
+                        <div class="form-tel clear">
+                            <span><input type="text" value="080" disabled="disabled" /></span>
+                            <span><input type="text" value="0123" disabled="disabled" /></span>
+                            <span><input type="text" value="0000" disabled="disabled" /></span>
+                        </div>
+                    </td>
+                </tr>                
+            </tbody>
+        </table>
+        <div class="btn-wrap">
+            <a href="#" class="ui-btn btn-xl btn-blue">保存</a>
+            <a href="#" class="ui-btn btn-xl">キャンセル</a>
+        </div>
+    </div>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>

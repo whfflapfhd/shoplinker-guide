@@ -1,0 +1,105 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">ログイン履歴 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+    <div class="ec-help-content">
+        <div class="paragraph">
+            <p>登録できるユーザーは10名までです。</p>
+        </div>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    <div class="ec-section">
+        
+        <div class="search-wrap">
+            <h3 class="ir">検索</h3>
+            <table>
+                <caption>検索</caption>
+                <colgroup>
+                    <col style="width:15%" />
+                    <col style="width:auto" />
+                    <col style="width:15%" />
+                    <col style="width:35%" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">検索条件</th>
+                        <td>
+                            <div class="check-group">
+                                <label class="ui-radio"><input type="radio" name="radio_1" checked="checked"><i></i> ユーザーID</label>
+                                <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザー名</label>
+                                <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザーIP</label>
+                            </div>
+                        </td>
+                        <th scope="row">検索</th>
+                        <td><input type="text"  /></td>
+                </tbody>
+            </table>
+            <div class="btn-wrap"><button type="button" class="ui-btn btn-l btn-green">検索</button></div>
+        </div>
+        <h3 class="page-title-sub">接続者ログイン状況</h3>
+        <div class="table-info-group">
+            <strong>[全体 : 143 件]</strong>
+            <select>
+                <option value="value1">20 件</option>
+                <option value="value2">50 件</option>
+                <option value="value3">100 件</option>
+            </select>
+        </div>
+        <table class="data-table">
+            <caption>接続者ログイン状況</caption>
+            <colgroup>                
+                <col style="width:6%"/>                
+                <col style="width:23%"/>
+                <col style="width:26%"/>
+                <col style="width:23%"/>                
+                <col style="width:auto"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">ユーザーID</th>
+                    <th scope="col">ユーザー名</th>
+                    <th scope="col">ログイン日時</th>
+                    <th scope="col">ユーザーIP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="t-center">1</td>
+                    <td>test00</td>
+                    <td>NEMOSOFTテスト</td>
+                    <td>2020-02-10 16:31:01</td>
+                    <td>10.11.0.47</td>
+                </tr>
+                <tr>
+                    <td class="t-center">2</td>
+                    <td>test00</td>
+                    <td>NEMOSOFTテスト</td>
+                    <td>2020-02-10 16:31:01</td>
+                    <td>10.11.0.47</td>
+                </tr>
+                <tr>
+                    <td class="t-center">3</td>
+                    <td>test00</td>
+                    <td>NEMOSOFTテスト</td>
+                    <td>2020-02-10 16:31:01</td>
+                    <td>210.121.151.96</td>
+                </tr>
+                <tr>
+                    <td class="t-center">4</td>
+                    <td>test00</td>
+                    <td>NEMOSOFTテスト</td>
+                    <td>2020-02-10 16:31:01</td>
+                    <td>10.11.0.47</td>
+                </tr>
+                <tr>
+                    <td class="t-center">5</td>
+                    <td>test00</td>
+                    <td>NEMOSOFTテスト</td>
+                    <td>2020-02-10 16:31:01</td>
+                    <td>10.11.0.47</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>
