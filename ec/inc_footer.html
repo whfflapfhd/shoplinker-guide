@@ -1,0 +1,63 @@
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        var
+        guide  = {
+            codeObj : $(".guide-code code"),
+            navigation : $(".page-header"),
+            hcode : null,
+            replaceCode : function(i,k){
+                var recode = this.hcode.replace(/\</g,'&lt;').replace(/\>/g,'&gt;');
+                this.codeObj.eq(i).html(recode);
+                hljs.highlightBlock(k);
+            },
+            loopChange : function(){
+                var _this = this;
+                this.codeObj.each(function(idx, block){
+                    _this.hcode = $(this).html();
+                    return _this.replaceCode(idx,block);
+                });
+            },
+            setNav : function(e){
+                var tg = this.navigation,
+                tit = "EC점장 - " + tg.text(),
+                nav = tg.data("page");
+                $("title").html(tit);
+                $(".nav").find("a[data-page="+nav+"]").parent().addClass("active")
+            }
+        };
+        guide.setNav();
+        if($(".guide-code").length) guide.loopChange();
+        if($(".btn-close").length) $(".btn-close").closeBox();
+        $(document.body).on("click",".ec-toggle-help",function(){
+            $(".ec-help-content").toggle();
+            return false
+        }).on("click",".ui-btn-toggle",function(){
+            var idx = $(".ui-btn-toggle").index(this);
+            $(this).toggleClass("active");
+            $(".toggle-content").eq(idx).toggleClass("active");
+            return false;
+        }).on("change",".select-only-one .ui-check input",function(){
+            var parentObj = $(this).parents("table");
+            parentObj.find(".ui-check input").not(this).prop("checked",false);
+        }).on("click","table tbody tr",function(){
+            var p = $(this).closest('tbody'),
+                inputObj = p.find('.ui-check'),
+                idx = p.find("tr").index(this);
+            inputObj.eq(idx).find('input').click();  
+        }).on("click","table td a",function(e){
+            e.stopPropagation();
+        }).on("click",".check-all",function(){
+            var el = $(this).closest('table').find('input:checkbox');            
+            ($(this).hasClass('all')) ? el.prop('checked',false) : el.prop('checked',true);
+            $(this).toggleClass('all');
+            return false
+        }).on("click",".ui-scroll-table-header span",function(e){
+            sortTable(e.target);
+        });
+        function sortTable(e){
+            $(e).closest('ul').find('span').not(e).removeAttr('class');
+            $(e).addClass('srot-on').toggleClass('sort-type1');
+        }
+    </script>
+</body>
+</html>

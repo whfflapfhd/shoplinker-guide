@@ -1,0 +1,183 @@
+<?php require_once '../inc_header.html'; ?>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main">
+                <h1 class="page-header" data-page="layout">Layout</h1>
+                <a href="/ec/module/temp_layout.html" class="btn btn-success btn-lg btn-block" target="_blank">View Sample</a>
+                <div class="guide-box">
+                    <div class="guide-row">
+                        <h2 class="sub-header">Default Layout</h2>
+                        <ul class="list">
+                            <li>
+                                body
+                                <ul>
+                                    <li>
+                                        .ec-wrap
+                                        <ul>
+                                            <li>.ec-header</li>
+                                            <li>.ec-lnb-wrap</li>
+                                            <li>h2.page-title</li>
+                                            <li>
+                                                .ec-section
+                                                <ul>
+                                                    <li>h3.page-title-sub</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="ec-wrap">
+                                <div class="ec-header">Header</div>
+                                <div class="ec-lnb-wrap">Left Menu Bar</div>
+                                <h2 class="page-title">Page Title</h2>
+                                <div class="ec-section">
+                                    <h3 class="page-title-sub">Page Sub Title</h3>
+                                </div>
+                            </div>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Header</h2>
+                        <div class="ec-header">
+                            <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo.png" alt="EC店長" /></a></h1>
+                            <div class="ec-header-box">
+                                <a href="#" target="_blank" class="ec-service-free">越境ECサービス申込（無料）</a>
+                                <div class="ec-header-right">
+                                    <a href="#">操作マニュアル</a>
+                                    <a href="#">お問合せ</a>
+                                    <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="ec-header">
+                                <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo.png" alt="EC店長" /></a></h1>
+                                <div class="ec-header-box">
+                                    <a href="#" target="_blank" class="ec-service-free">越境ECサービス申込（無料）</a>
+                                    <div class="ec-header-right">
+                                        <a href="#">操作マニュアル</a>
+                                        <a href="#">お問合せ</a>
+                                        <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
+                                    </div>
+                                </div>
+                            </div>                 
+                        </code></pre>
+                    </div> 
+                    <div class="guide-row">
+                        <h2 class="sub-header">LNB</h2>
+                        <div class="col-md-3 com-sm-5">
+                            <div class="ec-lnb-wrap">
+                                <div class="ec-lnb-content">
+                                    <div class="ec-profile">
+                                        <span>mgr_test001</span>
+                                        <a href="#" class="ui-btn btn-s">編集</a>
+                                        <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
+                                    </div>
+                                    <ul class="ec-menu">
+                                        <li>
+                                            <a href="#">申込管理</a>
+                                            <ul class="ec-menu-2depth">
+                                                <li><a href="#">基本情報</a></li>
+                                                <li><a href="#">契約情報</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">商品管理</a>
+                                            <ul class="ec-menu-2depth">
+                                                <li><a href="#">商品管理</a></li>
+                                                <li><a href="#">在庫管理</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="single"><a href="#">クラウドK</a></li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="toggle-lnb" title="Ctrl + ;"><i class="ir">Show Menu</i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-9 com-sm-7">
+                            <div class="guide-code">
+                                <pre><code class="html">
+                                    <div class="ec-lnb-wrap">
+                                        <div class="ec-lnb-content">
+                                            <div class="ec-profile">
+                                                <span>User ID</span>
+                                                <a href="#" class="ui-btn btn-s">編集</a>
+                                                <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
+                                            </div>
+                                            <ul class="ec-menu">
+                                                <li>
+                                                    <a href="#">menu 01</a>
+                                                    <ul class="ec-menu-2depth">
+                                                        <li><a href="#">sub menu 01</a></li>                                                
+                                                    </ul>
+                                                </li>
+                                                <li class="single"><a href="#">menu 02</a></li>
+                                            </ul>
+                                        </div>
+                                        <button type="button" class="toggle-lnb" title="Ctrl + ;"><i class="ir">Show Menu</i></button>
+                                    </div>               
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-row">
+                        <div class="col-md-6 com-sm-6">
+                            <h2 class="sub-header">Section Box</h2>
+                            <div class="ec-section">
+                                Section Contents<br><br>
+                                <ul class="list">
+                                    <li>margin-top: 0</li>
+                                    <li>margin-bottom: 0</li>
+                                    <li>margin-left: 25px</li>
+                                    <li>margin-right: 25px</li>
+                                    <li>padding : 25px 25px</li>
+                                </ul>
+                            </div>
+                            <div class="guide-code">
+                                <pre><code class="html">
+                                    <div class="ec-section">
+                                        Section Contents
+                                    </div>              
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="col-md-6 com-sm-6">
+                            <h2 class="sub-header">Row Box</h2>
+                            <div class="ec-row">
+                                Row Contents<br><br>
+                                <ul class="list">
+                                    <li>margin-top: 0</li>
+                                    <li>margin-bottom: 0</li>
+                                    <li>margin-left: 25px</li>
+                                    <li>margin-right: 25px</li>
+                                </ul>
+                            </div>
+                            <div class="guide-code">
+                                <pre><code class="html">
+                                    <div class="ec-row">
+                                        Row Contents
+                                    </div>              
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        $(".ec-menu").leftMenu();
+    //]]>
+    </script>
+
+<?php require_once '../inc_footer.html'; ?>

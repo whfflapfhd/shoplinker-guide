@@ -1,0 +1,586 @@
+<?php require_once '../inc_header.html'; ?>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main">
+                <h1 class="page-header" data-page="component">Component</h1>
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">Table</a></li>
+                        <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">Form</a></li>
+                        <li role="presentation"><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab">Box</a></li>
+                        <li role="presentation"><a href="#tab4" aria-controls="settings" role="tab" data-toggle="tab">Pagination</a></li>
+                        <li role="presentation"><a href="#tab5" aria-controls="settings" role="tab" data-toggle="tab">Etc.</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="tab1">
+                            <div class="guide-box">
+                                <div class="guide-row">
+                                    <h2 class="sub-header">테이블 상단 그룹</h2>
+                                    <p>테이블 상단 버튼그룹 및 전체 데이터 건 수 노출 영역입니다.</p>
+                                    <div class="table-info-group">
+                                        <strong>[全体 : 33 件]</strong>
+                                        <select>
+                                            <option>페이지 노출 개 수</option>
+                                            <option>20 件</option>
+                                            <option>50 件</option>
+                                        </select>
+                                        <div class="btn-group">
+                                            <a href="#" class="ui-btn">일반버튼</a>
+                                            <a href="#" class="ui-btn">일반버튼</a>
+                                            <a href="#" class="ui-btn btn-gray">수정버튼</a>
+                                            <a href="#" class="ui-btn btn-blue">추가버튼</a>
+                                            <a href="#" class="ui-btn btn-red">삭제버튼</a>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <caption>테이블</caption>
+                                        <colgroup>
+                                            <col span="4" style="width:25%"/>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">항목 1</th>
+                                                <th scope="col">항목 2</th>
+                                                <th scope="col">항목 3</th>
+                                                <th scope="col">항목 4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>데이터 1</td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <div class="table-info-group">
+                                            <strong>[전체 : 33 건]</strong>
+                                            <select>
+                                                <option>페이지 노출 개 수</option>
+                                                <option>20</option>
+                                                <option>50</option>
+                                            </select>
+                                            <div class="btn-group">
+                                                <a href="#" class="ui-btn">일반버튼</a>
+                                                <a href="#" class="ui-btn">일반버튼</a>
+                                                <a href="#" class="ui-btn btn-gray">수정버튼</a>
+                                                <a href="#" class="ui-btn btn-blue">추가버튼</a>
+                                                <a href="#" class="ui-btn btn-red">삭제버튼</a>
+                                            </div>
+                                        </div>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">숨겨진 행 펼쳐보기</h2>
+                                    <p>
+                                        테이블 내에서 추가정보가 담긴 행을 숨기거나 보이게 하는 기능입니다.<br>
+                                        숨겨놓을 행의 td 요소는 반드시 항목 개 수 만큼 colspan 적용해주세요.
+                                    </p>
+                                    <table>
+                                        <caption>테이블</caption>
+                                        <colgroup>
+                                            <col class="col-toggle"/>
+                                            <col style="width:auto"/>
+                                            <col span="2" style="width:25%"/>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">항목 2</th>
+                                                <th scope="col">항목 3</th>
+                                                <th scope="col">항목 4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr class="toggle-content">
+                                                <td colspan="4">숨겨진 추가정보</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr class="toggle-content">
+                                                <td colspan="4">숨겨진 추가정보</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;table&gt;
+                                            &lt;thead&gt;
+                                                &lt;tr&gt;
+                                                    &lt;th scope="col"&gt;#&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 2&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 3&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 4&lt;/th&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/thead&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td&gt;&lt;a href="#" class="ui-btn-toggle"&gt;&lt;i class="ir"&gt;view&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                                                    &lt;td&gt;데이터 2&lt;/td&gt;
+                                                    &lt;td&gt;데이터 3&lt;/td&gt;
+                                                    &lt;td&gt;데이터 4&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr class="toggle-content"&gt;
+                                                    &lt;td colspan="4"&gt;숨겨진 추가정보&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">체크박스 사용 시 전체 행 선택하기</h2>
+                                    <p>전체 체크박스 선택기능입니다. 항목에 &lt;a href="#" class="ui-btn btn-s btn-black check-all"&gt;選択&lt;/a&gt;를 추가해주세요</p>
+                                    <table class="t-center">
+                                        <caption>테이블</caption>
+                                        <colgroup>
+                                            <col style="width:50px"/>
+                                            <col style="width:auto"/>
+                                            <col span="2" style="width:25%"/>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"><a href="#" class="ui-btn btn-s btn-black check-all">選択</a></th>
+                                                <th scope="col">항목 2</th>
+                                                <th scope="col">항목 3</th>
+                                                <th scope="col">항목 4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td><a href="http://www.daum.net" target="_blank">데이터 2</a></td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;table&gt;
+                                            &lt;caption&gt;테이블&lt;/caption&gt;                                            
+                                            &lt;thead&gt;
+                                                &lt;tr&gt;
+                                                    &lt;th scope="col"&gt;&lt;a href="#" class="ui-btn btn-s btn-black check-all"&gt;選択&lt;/a&gt;&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 2&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 3&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 4&lt;/th&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/thead&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                                    &lt;td&gt;&lt;a href="http://www.daum.net" target="_blank"&gt;데이터 2&lt;/a&gt;&lt;/td&gt;
+                                                    &lt;td&gt;데이터 3&lt;/td&gt;
+                                                    &lt;td&gt;데이터 4&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                                    &lt;td&gt;데이터 2&lt;/td&gt;
+                                                    &lt;td&gt;데이터 3&lt;/td&gt;
+                                                    &lt;td&gt;데이터 4&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">체크박스 사용 시 하나의 행만 선택하기</h2>
+                                    <p>테이블 데이터 중 수정/삭제를 위해 체크박스를 사용하여 행을 선택할 때 다중선택이 아닌 하나의 행만 선택하는 기능입니다.<br>table에 select-only-one 클래스를 추가해주세요.</p>
+                                    <table class="select-only-one t-center">
+                                        <caption>테이블</caption>
+                                        <colgroup>
+                                            <col style="width:50px"/>
+                                            <col style="width:auto"/>
+                                            <col span="2" style="width:25%"/>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">체크</th>
+                                                <th scope="col">항목 2</th>
+                                                <th scope="col">항목 3</th>
+                                                <th scope="col">항목 4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td><a href="http://www.daum.net" target="_blank">데이터 2</a></td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                                <td>데이터 2</td>
+                                                <td>데이터 3</td>
+                                                <td>데이터 4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;table class="select-only-one"&gt;
+                                            &lt;caption&gt;테이블&lt;/caption&gt;                                            
+                                            &lt;thead&gt;
+                                                &lt;tr&gt;
+                                                    &lt;th scope="col"&gt;체크&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 2&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 3&lt;/th&gt;
+                                                    &lt;th scope="col"&gt;항목 4&lt;/th&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/thead&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                                    &lt;td&gt;&lt;a href="http://www.daum.net" target="_blank"&gt;데이터 2&lt;/a&gt;&lt;/td&gt;
+                                                    &lt;td&gt;데이터 3&lt;/td&gt;
+                                                    &lt;td&gt;데이터 4&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                                &lt;tr&gt;
+                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                                    &lt;td&gt;데이터 2&lt;/td&gt;
+                                                    &lt;td&gt;데이터 3&lt;/td&gt;
+                                                    &lt;td&gt;데이터 4&lt;/td&gt;
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                        &lt;/table&gt;
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab2">...</div>
+                        <div role="tabpanel" class="tab-pane" id="tab3">
+                            <div class="guide-box">
+                                <div class="guide-row">
+                                    <h2 class="sub-header">도움말 박스</h2>
+                                    <p>페이지 타이틀안에 버튼 삽입 후 사용. 각 페이지에 한번만 사용합니다.</p>
+                                    <div class="page-title">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></div>
+                                    <div class="ec-help-content">
+                                        도움말
+                                        <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                    </div>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <h2 class="page-title">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+                                        <div class="ec-help-content">
+                                            도움말
+                                            <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                        </div>             
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">페이지 안내 박스</h2>
+                                    <p>페이지 서브 타이틀 다음에 노출할 안내 컨텐츠 박스입니다. 범례, 주의사항 등에 사용합니다.</p>
+                                    <div class="page-title-sub">페이지 서브 타이틀</div>
+                                    <div class="ui-info">
+                                        <strong>범례</strong>
+                                        <ul class="list non-style">
+                                            <li><span class="ico-status done"><i class="ir">接続チェック必要</i></span> : 범례1</li>
+                                            <li><span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 범례2</li>
+                                            <li><span class="ico-status error"><i class="ir">有効期間切れ</i></span> : 범례3</li>
+                                        </ul>
+                                        <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                    </div>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <h3 class="page-title-sub">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h3>
+                                        <div class="ui-info">
+                                            <strong>범례</strong>
+                                            <ul class="list non-style">
+                                                <li><span class="ico-status done"><i class="ir">接続チェック必要</i></span> : 범례1</li>
+                                                <li><span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 범례2</li>
+                                                <li><span class="ico-status error"><i class="ir">有効期間切れ</i></span> : 범례3</li>
+                                            </ul>
+                                            <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                        </div>           
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab4">
+                            <div class="guide-box">
+                                <div class="guide-row">
+                                    <h2 class="sub-header">페이지네이션 - 기본</h2>
+                                    <p>기본 페이지네이션 입니다.</p>
+                                    <ul class="pagination">
+                                        <li><a href="#"><span>«</span></a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#"><span>»</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <div class="pagination-wrap">
+                                            <ul class="pagination">
+                                                <li><a href="#"><span>«</span></a></li>
+                                                <li><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#"><span>»</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">페이지네이션 - 활성화 / 비활성화</h2>
+                                    <div class="sub-des">
+                                        <ul class="list">
+                                            <li>활성화 : &lt;li&gt; 요소에 'active' 클래스를 추가합니다.</li>
+                                            <li>비활성화 : &lt;li&gt; 요소에 'disabled' 클래스를 추가합니다</li>
+                                        </ul>
+                                    </div>
+                                    <ul class="pagination">
+                                        <li class="disabled"><a href="#"><span>«</span></a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#"><span>»</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <div class="pagination-wrap">
+                                            <ul class="pagination">
+                                                <li class="disabled"><a href="#"><span>«</span></a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#"><span>»</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab5">
+                            <div class="guide-box">
+                                <div class="guide-row">
+                                    <h2 class="sub-header">테이블 Colgroup List</h2>
+                                    <p>스크롤 테이블 등을 사용 시 정의된 colgroup 리스트입니다.</p>
+                                    <table>
+                                        <colgroup>
+                                            <col span="4"/>
+                                        </colgroup>
+                                         <thead>
+                                             <tr>
+                                                 <th scope="col">항목</th>
+                                                 <th scope="col">class</th>
+                                                 <th scope="col">width</th>
+                                                 <th scope="col">code</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                                 <th scope="row">체크박스</th>
+                                                 <td>col-check</td>
+                                                 <td>50px</td>
+                                                 <td>&lt;col class="col-check" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">아코디언 토글버튼</th>
+                                                 <td>col-toggle</td>
+                                                 <td>40px</td>
+                                                 <td>&lt;col class="col-toggle" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">쇼핑몰 로고</th>
+                                                 <td>col-logo</td>
+                                                 <td>126px</td>
+                                                 <td>&lt;col class="col-logo" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">상점 이름</th>
+                                                 <td>col-name</td>
+                                                 <td>150px</td>
+                                                 <td>&lt;col class="col-name" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">ID 노출영역</th>
+                                                 <td>col-id</td>
+                                                 <td>120px</td>
+                                                 <td>&lt;col class="col-id" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">상태값 노출영역</th>
+                                                 <td>col-status</td>
+                                                 <td>60px</td>
+                                                 <td>&lt;col class="col-status" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">쇼핑몰 기능</th>
+                                                 <td>col-fnc</td>
+                                                 <td>92px</td>
+                                                 <td>&lt;col class="col-fnc" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">쇼핑몰 로그인버튼</th>
+                                                 <td>col-login</td>
+                                                 <td>90px</td>
+                                                 <td>&lt;col class="col-login" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">연결 체크버튼</th>
+                                                 <td>col-join</td>
+                                                 <td>110px</td>
+                                                 <td>&lt;col class="col-join" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">인증 유효기간</th>
+                                                 <td>col-etc</td>
+                                                 <td>160px</td>
+                                                 <td>&lt;col class="col-etc" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">수정 버튼</th>
+                                                 <td>col-edit</td>
+                                                 <td>56px</td>
+                                                 <td>&lt;col class="col-edit" /&gt;</td>
+                                             </tr>
+                                             <tr>
+                                                 <th scope="row">삭제버튼</th>
+                                                 <td>col-del</td>
+                                                 <td>56px</td>
+                                                 <td>&lt;col class="col-del" /&gt;</td>
+                                             </tr>
+                                         </tbody>
+                                    </table>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;colgroup&gt;
+                                            &lt;col class="col-className"/&gt;
+                                            .
+                                            .
+                                        &lt;/colgroup&gt;
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">쇼핑몰 로고 List</h2>
+                                    <p>쇼핑몰 로고 리스트입니다. 사이즈는 100 x 30 입니다.</p>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_01.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_02.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_03.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_04.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_05.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_06.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_07.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_08.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_09.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_10.png" alt="" /></div>
+                                    <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_11.png" alt="" /></div>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <img src="/ec/resource/images/mall/mall_logo_01.png" alt="楽天" />
+                                        <img src="/ec/resource/images/mall/mall_logo_02.png" alt="Amazon" />
+                                        <img src="/ec/resource/images/mall/mall_logo_03.png" alt="Yahoo!ストア" />
+                                        <img src="/ec/resource/images/mall/mall_logo_04.png" alt="futureshop" />
+                                        <img src="/ec/resource/images/mall/mall_logo_05.png" alt="Qoo10" />
+                                        <img src="/ec/resource/images/mall/mall_logo_06.png" alt="Yahoo!オク" />
+                                        <img src="/ec/resource/images/mall/mall_logo_07.png" alt="ポンパレ" />
+                                        <img src="/ec/resource/images/mall/mall_logo_08.png" alt="SHOPLIST" />
+                                        <img src="/ec/resource/images/mall/mall_logo_09.png" alt="Wowma" />
+                                        <img src="/ec/resource/images/mall/mall_logo_10.png" alt="Cafe24" />
+                                        <img src="/ec/resource/images/mall/mall_logo_11.png" alt="海外販売" />
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Label</h2>
+                                    <span class="ui-label label-ftp">FTP</span>
+                                    <span class="ui-label label-api">API</span>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="ui-label label-ftp">FTP</span>
+                                        <span class="ui-label label-api">API</span>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">상태 값</h2>
+                                    <span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
+                                    <span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
+                                    <span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
+                                        <span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
+                                        <span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span>
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        
+    //]]>
+    </script>
+
+<?php require_once '../inc_footer.html'; ?>

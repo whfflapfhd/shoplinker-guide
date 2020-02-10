@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+body,h2.sub-header { font-family: Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック" , "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;}
+.len-jp {font-family:'MS PGothic','HiraKakuProN-W3',sans-serif}
+.len-jp h1,.len-jp h2,.len-jp h3,.len-jp h4,.len-jp h5,.len-jp h6 {font-weight:700}
+.page-header {font-size:32px;border-width:4px;font-size:32px;border-color:#f8b36e}
+.ec-nav {padding:0 40px}
+.sub-header {position:relative;padding-left:14px;margin-bottom:20px;font-size:22px;font-weight:100 !important}
+.sub-headerㅊ:first-letter {font-weight:500}
+.sub-header:before {content:'';position:absolute;left:0;top:0;width:4px;height:100%;background-color:#f68b20}
+.sub-header + p,.sub-header + .sub-des {padding:0 0 10px 20px;margin-bottom:20px;border-bottom:2px dotted #ccc}
+
+.navbar-brand {width:260px;padding:0 15px;line-height:50px;background:transparent url('../images/logo_manual.png') no-repeat 15px 50%;background-size:90% auto}
+.main {padding: 40px 20px}
+/* Sidebar navigation */
+.nav-sidebar {margin-right: -21px; /* 20px padding + 1px border */margin-bottom: 20px;margin-left: -20px}
+.nav-sidebar > li > a {padding-right: 20px;padding-left: 20px}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {color: #fff;background-color: #428bca}
+
+.guide-box {margin-top:30px;padding-bottom:30px}
+.guide-row {margin:25px 0}
+.guide-row:after {content:'';display:table;clear:both}
+.guide-row .ui-btn {margin:2px 0}
+.guide-code pre {background-color:#e9e9e9;box-shadow:inset 3px 3px 10px 0px rgba(0,0,0,.12)}
+.guide-code code {margin-top:-15px;white-space:pre-line;background-color:transparent}
+.guide-box .ec-header,.guide-box .ec-lnb-wrap {position:relative}
+.guide-box .ec-header .ec-logo {margin:0}
+.guide-box [class^=col-md],.guide-box [class^=col-sm] {padding:10px 0}
+@media (min-width: 768px) {
+  .main {padding-right: 40px;padding-left: 40px}
+  .guide-code code {margin-left:-180px;white-space:inherit}
+}

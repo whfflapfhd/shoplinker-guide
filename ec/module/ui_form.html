@@ -1,0 +1,107 @@
+<?php require_once '../inc_header.html'; ?>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main">
+                <h1 class="page-header" data-page="forms">Forms</h1>
+                <div class="guide-box">
+                    <div class="guide-row">
+                        <h2 class="sub-header">Text, Password</h2>
+                        <table>
+                            <colgroup><col width="20%"/><col width="auto"/></colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Text</th>
+                                    <td><input type="text" value="Input Text" title="text" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Password</th>
+                                    <td><input type="password" value="Input Password" title="password" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <input type="text" title="text" />
+                            <input type="password" title="password" />
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Textarea</h2>
+                        <textarea cols="10" rows="5">텍스트</textarea>
+                    </div>
+                     <div class="guide-code">
+                        <pre><code class="html">
+                            <textarea cols="10" rows="5" title="textarea"></textarea>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Check Box</h2>
+                        <div class="check-group">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                        </div>
+                        <div class="check-group-inline">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                        </div>
+                        <div class="check-group-inline">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Radio Box</h2>
+                        <div class="check-group">
+                            <label class="ui-radio"><input type="radio" name="radio_1" checked="checked" /><i></i> radio 01</label>
+                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
+                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
+                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
+                        </div>
+                        <div class="check-group-inline">
+                            <label class="ui-radio"><input type="radio" name="radio_2" /><i></i> radio 01</label>
+                            <label class="ui-radio"><input type="radio" name="radio_2" /><i></i> radio 02</label>
+                            <label class="ui-radio"><input type="radio" name="radio_2" /><i></i> radio 03</label>
+                        </div>
+                        <div class="check-group-inline">
+                            <label class="ui-radio"><input type="radio" name="radio_3" /><i></i> radio 01</label>
+                            <label class="ui-radio"><input type="radio" name="radio_3" /><i></i> radio 02</label>
+                            <label class="ui-radio"><input type="radio" name="radio_3" /><i></i> radio 03</label>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 01</label>
+                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
+                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 03</label>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Select Box</h2>
+                        <select style="width:100px">
+                            <option value="value1">value1</option>
+                            <option value="value2">value2</option>
+                            <option value="value3">value3</option>
+                        </select>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <select>
+                                <option value="value1">value1</option>
+                                <option value="value2">value2</option>
+                                <option value="value3">value3</option>
+                            </select>
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php require_once '../inc_footer.html'; ?>
