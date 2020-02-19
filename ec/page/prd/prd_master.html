@@ -1,0 +1,458 @@
+<h3 class="page-title-sub">マスター商品</h3>
+<div class="search-wrap">
+    <h3 class="ir">検索</h3>
+    <table>
+        <caption>検索</caption>
+        <colgroup>
+            <col style="width:15%" />
+            <col style="width:auto" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><div>日付</div></th>
+                <td>
+                    <div class="grid">
+                        <div class="col-w-2">
+                            <select>
+                                <option value="product.rg_dt">登録日</option>
+                                <option value="product.up_dt">更新日</option>
+                            </select>
+                        </div>
+                        <div class="col-w-8">
+                            <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                            ~
+                            <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                            <div class="btn-group-inline">
+                                <button type="button" class="ui-btn">今日</button>
+                                <button type="button" class="ui-btn">昨日</button>
+                                <button type="button" class="ui-btn">一週間</button>
+                                <button type="button" class="ui-btn">今月</button>
+                                <button type="button" class="ui-btn">3ヶ月</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><div>店舗</div></th>
+                <td>
+                     <div class="grid">
+                        <div class="col-w-2">
+                            <select>
+                                <option value="cn">含む(部分一致)</option>
+                                <option value="nc">含まない(部分一致)</option>
+                            </select>
+                        </div>
+                        <div class="col-w-8">
+                            <select>
+                                <option>[Ra]楽天店長</option>
+                                <option>[Ys]Yahoo!店長</option>
+                                <option>[Qo]Brangista Qoo10</option>
+                                <option>[Ya]Brangsita ヤフオク</option>
+                                <option>[Fs]brangista 本店</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><div>検索項目</div></th>
+                <td>
+                     <div class="grid">
+                        <div class="col-w-2">
+                            <select>
+                                <option value="product.out_product_id">顧客社商品コード</option>
+                                <option value="product.mng_product_id">商品管理番号(商品URL)</option>
+                                <option value="product.product_id">マスタ商品コード</option>
+                                <option value="product.product_name">商品名</option>
+                                <option value="product.catch_copy">キャッチコピー(PC)</option>
+                                <option value="product.m_catch_copy">キャッチコピー(モバイル)</option>
+                                <option value="product.delivery_product_name">商品名(送り状出力用)</option>
+                                <option value="product.sku_product_id">個別商品コード</option>
+                            </select>
+                        </div>
+                        <div class="col-w-6">
+                            <input type="text" />
+                        </div>
+                        <div class="col-w-2">
+                            <select>
+                                <option value="cn">含む(部分一致)</option>
+                                <option value="nc">含まない(部分一致)</option>
+                                <option value="eq">含む(完全一致)</option>
+                                <option value="ne">含まない(完全一致)</option>
+                                <option value="in">含む（複数検索）</option>
+                                <option value="ni">含まない（複数検索）</option>
+                                <option value="bw">で始まる</option>
+                                <option value="bn">で始まらない</option>
+                                <option value="ew">で終わる</option>
+                                <option value="en">で終わらない</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn-wrap">
+        <button type="button" class="ui-btn btn-l btn-blue">検索</button>
+        <button type="button" class="ui-btn btn-l btn-black">初期化</button>
+    </div>
+</div>
+<div class="table-info-group">
+    <div class="btn-group-r">
+        <a href="#" class="ui-btn btn-red">選択削除</a>
+    </div>
+</div>
+<div class="ui-scroll-table">
+    <div class="ui-scroll-table-header">
+        <ul>
+            <li class="col-check"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></li>
+            <li class="col-add">コピー</li>
+            <li class="col-edit">編集</li>
+            <li class="col-code"><span>顧客社商品コード</span></li>
+            <li class="col-code"><span>マスタ商品コード</span></li>
+            <li class="col-prd"><span>商品名</span></li>
+            <li class="col-name">[Ra]楽天店長</li>
+            <li class="col-name">[Ra] test</li>
+            <li class="col-name">[Ra] rakuten_test</li>
+            <li class="col-name">[Ra]楽天店長2</li>
+            <li class="col-name">[Ys]Yahoo!店長</li>
+            <li class="col-name">[Qo]Brangista Qoo10</li>
+            <li class="col-name">[Ra]楽天店長</li>
+            <li class="col-name">[Ra] test</li>
+            <li class="col-name">[Ra] rakuten_test</li>
+            <li class="col-name">[Ra]楽天店長2</li>
+            <li class="col-name">[Ys]Yahoo!店長</li>
+            <li class="col-name">[Qo]Brangista Qoo10</li>
+        </ul>
+    </div>
+    <div class="ui-scroll-table-body">
+        <div class="ui-scroll-content">
+            <table class="data-table t-center">
+                <caption>マスター商品リスト</caption>
+                <colgroup>
+                    <col class="col-check"/>
+                    <col class="col-add"/>
+                    <col class="col-edit"/>
+                    <col class="col-code"/>
+                    <col class="col-code"/>
+                    <col class="col-prd"/>
+                    <col class="col-name"/>
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                    <col class="col-name" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">選択</th>
+                        <th scope="col">顧客社商品コード</th>
+                        <th scope="col">マスタ商品コード</th>
+                        <th scope="col">商品名</th>
+                        <th scope="col">[Ra]楽天店長</th>
+                        <th scope="col">[Ra] test</th>
+                        <th scope="col">[Ra] rakuten_test</th>
+                        <th scope="col">[Ra]楽天店長2</th>
+                        <th scope="col">[Ys]Yahoo!店長</th>
+                        <th scope="col">[Qo]Brangista Qoo10</th>
+                        <th scope="col">[Ra]楽天店長</th>
+                        <th scope="col">[Ra] test</th>
+                        <th scope="col">[Ra] rakuten_test</th>
+                        <th scope="col">[Ra]楽天店長2</th>
+                        <th scope="col">[Ys]Yahoo!店長</th>
+                        <th scope="col">[Qo]Brangista Qoo10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td class="t-left">um0216</td>
+                        <td>P000017327</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="pagination-wrap">
+    <div class="page-total">
+        <strong>[全体 : 17,292 件]</strong>
+    </div>
+    <div class="ui-pagenation">
+        <ul class="pagination">
+            <li class="disabled"><a href="#"><span>«</span></a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#"><span>»</span></a></li>
+        </ul>
+        <select>
+            <option value="value1">20 件</option>
+            <option value="value2">50 件</option>
+            <option value="value3">100 件</option>
+        </select>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    $(function(){
+        $(".ui-scroll-table").fixedTable({scrollY : 460});
+        $('.ui-scroll-table-header li').resizable({
+            handles: 'e',
+            helper: "ui-resizable-helper",
+            stop: function( event, ui ) {
+                var
+                idx = $('.ui-scroll-table-header li').index(ui.element),
+                also = $(".ui-scroll-content col").eq(idx);
+                also.width(ui.size.width-2);
+                $('.ui-scroll-table').tableResize()
+            }
+        });
+        $('.tooltip a').tooltip({track:true})
+    });
+//]]>
+</script>

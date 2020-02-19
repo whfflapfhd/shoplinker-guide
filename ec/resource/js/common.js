@@ -1,25 +1,9 @@
+var EcUi = EcUi || {};
 $(function(){
-    /* Menu Event*/
+    // Menu Event
     $(".ec-menu").leftMenu();
 
-    /* event : toggle Menu Wrap */
-    $(".toggle-lnb").on("click",toggleWrap);
-
-    /* Add Hot Key*/
-    $(document.body).addKey("186",toggleWrap,{ctrl:true}).hotkeyOn();
-
-    /* function : toggle Menu Wrap*/
-    function toggleWrap(){
-        $(".toggle-lnb").toggleClass("active");
-        $(".ec-lnb-wrap").toggleClass("hidden");
-        $(".ec-wrap").toggleClass("expend");
-        $(".ui-scroll-table-header ul").removeAttr("style");
-        setTimeout(function(){
-            $('.ui-scroll-table').tableResize()
-        },250);
-    }
-
-    /* close btn event */
+    // close btn event
     if($(".btn-close").length) $(".btn-close").closeBox();
 
     $(document.body).on("click",".ec-toggle-help",function(){
@@ -33,7 +17,7 @@ $(function(){
         var parentObj = $(this).parents("table");
         parentObj.find(".ui-check input").not(this).prop("checked",false);
         event.stopPropagation();
-    }).on("click","table tbody tr",function(event){
+    }).on("click",".data-table tbody tr",function(event){
         var p = $(this).closest('tbody'),
             inputObj = p.find('.ui-check'),
             idx = p.find("> tr:not('.toggle-content')").index(this),
@@ -43,17 +27,82 @@ $(function(){
     }).on("click","table td a",function(event){
         event.stopPropagation();
     }).on("click",".check-all",function(){
-        var el = $(this).closest('table').find('input:checkbox');
+        var group  = $(this).data('checkGroup');
+        var el = $('input:checkbox[data-check-name='+group+']');            
         ($(this).hasClass('all')) ? el.prop('checked',false) : el.prop('checked',true);
         $(this).toggleClass('all');
         return false
+        return false
     }).on("click",".ui-scroll-table-header span",function(e){
-        sortTable(e.target);
-    });
+        EcUi.sortTable(e.target);
+    }).on("click",".toggle-lnb",function(){
+        /* event : toggle Menu Wrap */
+        EcUi.toggleWrap();
+        return false
+    }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
 
-    function sortTable(e){
+    // 테이블 th sort 버튼 액션
+    EcUi.sortTable =function(e){
         $(e).closest('ul').find('span').not(e).removeAttr('class');
         $(e).addClass('srot-on').toggleClass('sort-type1');
-    }
+    };
+
+    /* function : toggle Menu Wrap*/
+    EcUi.toggleWrap = function(){
+        $(".toggle-lnb").toggleClass("active");
+        $(".ec-lnb-wrap").toggleClass("hidden");
+        $(".ec-wrap").toggleClass("expend");
+        $(".ui-scroll-table-header ul").removeAttr("style");
+        setTimeout(function(){
+            $('.ui-scroll-table').tableResize()
+        },250);
+    };
+
+    /*datepicker*/
+    if($(".datepicker").size()) $(".datepicker").datepicker();
+
+    
+    
 });
 
+// jQuery UI Datepicker 설정변경
+    var dateOptions = $.extend({},$.datepicker.regional["ja"],{
+        clearText: 'クリア', clearStatus: '日付をクリアします',
+        closeText: '閉じる', closeStatus: '変更せずに閉じます',
+        prevText: '前月', prevStatus: '前月を表示します',
+        prevBigText: '&#x3c;&#x3c;', prevBigStatus: '前年を表示します',
+        nextText: '次月', nextStatus: '翌月を表示します',
+        nextBigText: '&#x3e;&#x3e;', nextBigStatus: '翌年を表示します',
+        currentText: '今月', currentStatus: '今月を表示します',
+        monthNames: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+        monthNamesShort: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+        monthStatus: '表示する月を変更します', yearStatus: '表示する年を変更します',
+        weekHeader: '週', weekStatus: '暦週で第何週目かを表します',
+        dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
+        dayNamesShort: ['日','月','火','水','木','金','土'],
+        dayNamesMin: ['日','月','火','水','木','金','土'],
+        dayStatus: '週の始まりをDDにします', dateStatus: 'Md日(D)',
+        dateFormat: 'yy-mm-dd', firstDay: 0,
+        initStatus: '日付を選択します', isRTL: false,showButtonPanel :true,showOn:'button',buttonImageOnly:true,changeMonth: true,changeYear: true,
+        buttonImage:'/ec/resource/images/calendar.png',buttonText:'calendar',showMonthAfterYear: true, yearSuffix: '年'
+    });
+    $.datepicker.setDefaults(dateOptions);
+
+    var tabsOption = {
+        beforeLoad: function( event, ui ) {
+            ui.ajaxSettings.async = false; // 동기/비동기 설정
+            $(".loader").show(); //로딩이미지 노출
+            var $panel = $(ui.panel);
+            if (!$panel.is(":empty")) { //탭 패널에 내용이 있으면 로딩이미지 숨김
+                $(".loader").hide();
+            }
+            ui.jqXHR.fail(function() { // 로드 실패 시 노출할 텍스트 설정
+                $(".loader").hide();
+                ui.panel.html("Load error...");
+            });
+        },
+        load : function( event, ui ) {
+            $(".loader").hide();
+            if($(".datepicker").size()) $(".datepicker").datepicker();
+        }
+    }

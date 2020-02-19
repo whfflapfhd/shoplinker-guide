@@ -5,8 +5,8 @@
             var defaults = {
                 scrollY : null,
                 minWidth : null,
-                scrollBody : ".ui-scroll-content",
-                fixHead : ".ui-scroll-table-header"
+                scrollBody : ">.ui-scroll-table-body>.ui-scroll-content",
+                fixHead : ">.ui-scroll-table-header"
 			},options = $.extend(defaults, options);
 
             return this.each(function(){
@@ -17,8 +17,14 @@
                 c = b.find("ul"),
                 preScroll = 0;
                 if(options.scrollY){
-                    _this.height(options.scrollY);
-                    c.addClass("over");
+                    //_this.height(options.scrollY);
+                    _this.css('max-height',options.scrollY);
+                    var ht = _this.height();
+                    if(a.parent().height() >= options.scrollY) {
+                        a.parent().innerHeight(ht);                    
+                        c.addClass("over");
+                    }
+                    
                     $(document).on("ready",function(){
                         _this.tableResize();
                     });
@@ -47,7 +53,6 @@
            return this.each(function(){
                 var a = $(this).find(".ui-scroll-content"),
                 b = $(this).find(".ui-scroll-table-header ul");
-                console.log(a.find("table").width(),a.find("table").outerWidth());
                 b.width(a.find("table").width());
            });
         },

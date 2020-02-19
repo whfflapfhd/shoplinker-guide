@@ -12,7 +12,7 @@
 .ui-scroll-table-body {height:100%;padding-top:40px;background-color:#f5f5f5}
 .ui-scroll-content {overflow:auto;height:100%;background-color:#fff}
 .ui-scroll-content table {border-collapse:separate}
-.ui-scroll-content thead {position:absolute;top:-9999px;left:-99999px}
+.ui-scroll-content > table > thead {position:absolute;top:-9999px;left:-99999px}
 .ui-scroll-table-header ul,.ui-scroll-content table {min-width:1200px}
 .ui-scroll-content td {border-bottom:0 none;border-top:1px solid #dedede}
 .ui-scroll-content td table tbody th {border-bottom:0 none}

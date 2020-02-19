@@ -39,7 +39,7 @@
         }).on("change",".select-only-one .ui-check input",function(){
             var parentObj = $(this).parents("table");
             parentObj.find(".ui-check input").not(this).prop("checked",false);
-        }).on("click","table tbody tr",function(){
+        }).on("click",".data-table tbody tr",function(){
             var p = $(this).closest('tbody'),
                 inputObj = p.find('.ui-check'),
                 idx = p.find("tr").index(this);
@@ -47,7 +47,8 @@
         }).on("click","table td a",function(e){
             e.stopPropagation();
         }).on("click",".check-all",function(){
-            var el = $(this).closest('table').find('input:checkbox');            
+            var group  = $(this).data('checkGroup');
+            var el = $('input:checkbox[data-check-name='+group+']');            
             ($(this).hasClass('all')) ? el.prop('checked',false) : el.prop('checked',true);
             $(this).toggleClass('all');
             return false

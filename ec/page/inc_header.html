@@ -5,11 +5,13 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="/ec/resource/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/ec/resource/css/lib/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="/ec/resource/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/ec/resource/css/ui-template.css" />
     <link rel="stylesheet" type="text/css" href="/ec/resource/css/media.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/ec/resource/js/jquery.hotkey.js" type="text/javascript"></script>
+    <script src="/ec/resource/js/lib/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="/ec/resource/js/lib/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/ec/resource/js/lib/jquery.hotkey.js" type="text/javascript"></script>
     <script src="/ec/resource/js/ui-template.js" type="text/javascript"></script>
     <script src="/ec/resource/js/common.js" type="text/javascript"></script>
 </head>
@@ -17,8 +19,9 @@
 <div class="ec-wrap">
     <!-- Header -->
     <div class="ec-header">
-        <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo.png" alt="EC店長" /></a></h1>
+        <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo_w.png" alt="EC店長" /></a></h1>
         <div class="ec-header-box">
+            <button type="button" class="toggle-lnb" title="Ctrl + ;"><span>Toggle Menu</span></button>
             <a href="#" target="_blank" class="ec-service-free">越境ECサービス申込（無料）</a>
             <div class="ec-header-right">
                 <a href="#">操作マニュアル</a>
@@ -54,7 +57,7 @@
                 <li>
                     <a href="#">商品管理</a>
                     <ul class="ec-menu-2depth">
-                        <li><a href="#">商品管理</a></li>
+                        <li><a href="/ec/page/list/product_info.html">商品管理</a></li>
                         <li><a href="#">在庫管理</a></li>
                         <li><a href="#">商品編集履歴</a></li>
                         <li><a href="#">商品削除履歴</a></li>
@@ -98,7 +101,7 @@
                 </li>
                 <li class="single"><a href="#">クラウドK</a></li>
             </ul>
+            <div class="ec-banner"></div>
         </div>
-        <button type="button" class="toggle-lnb" title="Ctrl + ;"><i class="ir">Show Menu</i></button>
     </div>
     <!-- Left Menu -->

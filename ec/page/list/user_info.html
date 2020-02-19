@@ -10,15 +10,11 @@
     <div class="ec-section">
         <h3 class="page-title-sub">ユーザーリスト</h3>
         <div class="table-info-group">
-            <strong>[全体 : 8 件]</strong>
-            <select>
-                <option value="value1">20 件</option>
-                <option value="value2">50 件</option>
-                <option value="value3">100 件</option>
-            </select>
-            <div class="btn-group">
-                <a href="#" class="ui-btn btn-blue">追加</a>
+            <div class="btn-group-l">
                 <a href="/ec/page/list/user_login_list.html" class="ui-btn">ログイン履歴を見る</a>
+            </div>
+            <div class="btn-group-r">
+                <a href="#" class="ui-btn btn-blue">追加</a>
             </div>
         </div>
         <table class="data-table">
@@ -88,6 +84,18 @@
                 </tr>
             </tbody>
         </table>
+        <div class="pagination-wrap">
+            <div class="page-total">
+                <strong>[全体 : 8 件]</strong>
+            </div>
+            <div class="ui-pagenation">
+                <select>
+                    <option value="value1">20 件</option>
+                    <option value="value2">50 件</option>
+                    <option value="value3">100 件</option>
+                </select>
+            </div>
+        </div>
     </div>
     <!-- //Content -->
 <?php require_once '../inc_footer.html'; ?>

@@ -1,14 +1,7 @@
 <?php require_once '../inc_header.html'; ?>
 	<!-- Content -->
-    <h2 class="page-title">ログイン履歴 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
-    <div class="ec-help-content">
-        <div class="paragraph">
-            <p>登録できるユーザーは10名までです。</p>
-        </div>
-        <a href="#" class="btn-close"><span class="ir">close</span></a>
-    </div>
+    <h2 class="page-title">ログイン履歴</h2>
     <div class="ec-section">
-        
         <div class="search-wrap">
             <h3 class="ir">検索</h3>
             <table>
@@ -21,7 +14,7 @@
                 </colgroup>
                 <tbody>
                     <tr>
-                        <th scope="row">検索条件</th>
+                        <th scope="row"><div>検索条件</div></th>
                         <td>
                             <div class="check-group">
                                 <label class="ui-radio"><input type="radio" name="radio_1" checked="checked"><i></i> ユーザーID</label>
@@ -29,21 +22,13 @@
                                 <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザーIP</label>
                             </div>
                         </td>
-                        <th scope="row">検索</th>
+                        <th scope="row"><div>検索</div></th>
                         <td><input type="text"  /></td>
                 </tbody>
             </table>
-            <div class="btn-wrap"><button type="button" class="ui-btn btn-l btn-green">検索</button></div>
+            <div class="btn-wrap"><button type="button" class="ui-btn btn-l btn-blue">検索</button></div>
         </div>
         <h3 class="page-title-sub">接続者ログイン状況</h3>
-        <div class="table-info-group">
-            <strong>[全体 : 143 件]</strong>
-            <select>
-                <option value="value1">20 件</option>
-                <option value="value2">50 件</option>
-                <option value="value3">100 件</option>
-            </select>
-        </div>
         <table class="data-table">
             <caption>接続者ログイン状況</caption>
             <colgroup>                
@@ -100,6 +85,18 @@
                 </tr>
             </tbody>
         </table>
+        <div class="pagination-wrap">
+            <div class="page-total">
+                <strong>[全体 : 143 件]</strong>
+            </div>
+            <div class="ui-pagenation">
+                <select>
+                    <option value="value1">20 件</option>
+                    <option value="value2">50 件</option>
+                    <option value="value3">100 件</option>
+                </select>
+            </div>
+        </div>
     </div>
     <!-- //Content -->
 <?php require_once '../inc_footer.html'; ?>

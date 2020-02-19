@@ -3,7 +3,7 @@ select::-ms-expand {
 }
 @media screen and (max-width: 1280px){
 /* layout */
-    .ec-section {padding:25px 20px}
+    .ec-section {padding:25px 0}
 }
 @media screen and (-webkit-min-device-pixel-ratio:0){
 }

@@ -1,0 +1,553 @@
+<h3 class="page-title-sub">amazon商品</h3>
+<div class="search-wrap">
+    <h3 class="ir">検索</h3>
+    <table>
+        <caption>検索</caption>
+        <colgroup>
+            <col style="width:15%" />
+            <col style="width:auto" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row"><div>日付</div></th>
+                <td>
+                    <div class="grid">
+                        <div class="col-w-2">
+                            <select>
+                                <option value="pd_0002.sale_start_dt">販売開始日時</option>
+                                <option value="pd_0002.sale_end_dt">販売終了日時</option>
+                                <option value="pd_0002.rg_dt">登録日</option>
+                                <option value="pd_0002.up_dt">更新日</option>
+                            </select>
+                        </div>
+                        <div class="col-w-8">
+                            <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                            ~
+                            <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                            <div class="btn-group-inline">
+                                <button type="button" class="ui-btn">今日</button>
+                                <button type="button" class="ui-btn">昨日</button>
+                                <button type="button" class="ui-btn">一週間</button>
+                                <button type="button" class="ui-btn">今月</button>
+                                <button type="button" class="ui-btn">3ヶ月</button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><div>店舗</div></th>
+                <td>
+                     <div class="check-group">
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 全て</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> Yahoo!店長</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> TEST</label>
+                     </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><div>検索項目</div></th>
+                <td>
+                     <div class="grid">
+                        <div class="col-w-2">
+                            <select>
+                                <option value="pd_0002.product_id">マスタ商品コード </option>
+                                <option value="pd_0002.isbn">ISBNコード</option>
+                                <option value="pd_0002.jancode">JANコード</option>
+                                <option value="pd_0002.shop_id">店舗ID</option>
+                                <option value="pd_0002.out_product_id">顧客社商品コード</option>
+                                <option value="pd_0002.product_name_head">商品名(前)</option>
+                                <option value="pd_0002.product_name">商品名</option>
+                                <option value="pd_0002.product_name_tail">商品名(後)</option>
+                                <option value="pd_0002.cate_path">パス</option>
+                            </select>
+                        </div>
+                        <div class="col-w-6">
+                            <input type="text" />
+                        </div>
+                        <div class="col-w-2">
+                            <select>
+                                <option value="cn">含む(部分一致)</option>
+                                <option value="nc">含まない(部分一致)</option>
+                                <option value="eq">含む(完全一致)</option>
+                                <option value="ne">含まない(完全一致)</option>
+                                <option value="in">含む(複数検索)</option>
+                                <option value="ni">含まない(複数検索)</option>
+                                <option value="bw" selected="selected">で始まる</option>
+                                <option value="bn">で始まらない</option>
+                                <option value="ew">で終わる</option>
+                                <option value="en">で終わらない</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn-wrap">
+        <button type="button" class="ui-btn btn-l btn-blue">検索</button>
+        <button type="button" class="ui-btn btn-l btn-black">初期化</button>
+    </div>
+</div>
+<div class="table-info-group">
+    <div class="btn-group-l">
+        <a href="#" class="ui-btn">CSVダウンロード</a>
+        <a href="#" class="ui-btn">一括商品編集</a>
+        <a href="#" class="ui-btn">一括商品複製</a>
+        <a href="#" class="ui-btn">CSVアップロード</a>
+        <a href="#" class="ui-btn">テンプレート一括編集</a>
+        <a href="#" class="ui-btn">転送状態編集</a>
+        <a href="#" class="ui-btn">一括項目反映</a>
+        <a href="#" class="ui-btn">ページ設定</a>
+    </div>
+    <div class="btn-group-r">
+        <a href="#" class="ui-btn btn-red">選択削除</a>
+        <a href="#" class="ui-btn btn-orange">モール転送</a>
+    </div>
+</div>
+<div class="ui-scroll-table">
+    <div class="ui-scroll-table-header">
+        <ul>
+            <li class="col-check"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></li>
+            <li class="col-toggle">&nbsp;</li>
+            <li class="col-status"><span>状態</span></li>            
+            <li class="col-add">コピー</li>
+            <li class="col-edit"><span>編集</span></li>
+            <li class="col-logo"><span>モール</span></li>
+            <li class="col-name"><span>店舗</span></li>
+            <li class="col-code"><span>マスタ商品コード</span></li>
+            <li class="col-code"><span>顧客社商品コード</span></li>
+            <li class="col-prd"><span>商品名</span></li>
+            <li class="col-stock"><span>在庫タイプ</span></li>
+            <li class="col-sale"><span>販売状態</span></li>
+            <li class="col-cate1"><span>表示先カテゴリ1</span></li>
+            <li class="col-code"><span>送料選択</span></li>
+        </ul>
+    </div>
+    <div class="ui-scroll-table-body">
+        <div class="ui-scroll-content">
+            <table class="data-table t-center">
+                <caption>マスター商品リスト</caption>
+                <colgroup>
+                    <col class="col-check"/>
+                    <col class="col-toggle"/>
+                    <col class="col-status"/>
+                    <col class="col-add"/>
+                    <col class="col-edit"/>
+                    <col class="col-logo"/>
+                    <col class="col-name"/>
+                    <col class="col-code"/>
+                    <col class="col-code"/>
+                    <col class="col-prd"/>
+                    <col class="col-stock"/>
+                    <col class="col-sale"/>
+                    <col class="col-cate1"/>
+                    <col class="col-code"/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">選択</th>
+                        <th scope="col">状態</th>
+                        <th scope="col">編集</th>
+                        <th scope="col">モール</th>                        
+                        <th scope="col">店舗</th>                        
+                        <th scope="col">マスタ商品コード</th>                        
+                        <th scope="col">顧客社商品コード</th>                        
+                        <th scope="col">商品名</th>                        
+                        <th scope="col">在庫タイプ</th>                        
+                        <th scope="col">出品状態</th>                        
+                        <th scope="col">販売状態</th>                        
+                        <th scope="col">モール 販売価格</th>                        
+                        <th scope="col">表示先カテゴリ1</th>                        
+                        <th scope="col">消費税</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">
+                            <table class="in-table">
+                                <caption>amazon商品</caption>
+                                <colgroup>
+                                    <col class="col-check">
+                                    <col class="col-status">
+                                    <col class="col-logo">
+                                    <col class="col-name">
+                                    <col class="col-code">
+                                    <col class="col-sku">
+                                    <col class="col-prd">
+                                    <col class="col-sale">
+                                    <col class="col-price">
+                                    <col class="col-code">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">管理</th>
+                                        <th scope="col">モール</th>
+                                        <th scope="col">店舗</th>
+                                        <th scope="col">マスタ商品コード</th>
+                                        <th scope="col">出品者SKU</th>
+                                        <th scope="col">商品名</th>
+                                        <th scope="col">カタログ</th>
+                                        <th scope="col">総在庫数</th>
+                                        <th scope="col">出品状態</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                                        <td>Amazon店長</td>
+                                        <td>P000017321</td>
+                                        <td>whoop304844br-color-40</td>
+                                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                                        <td>しない</td>
+                                        <td>1</td>
+                                        <td>未転送</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                                        <td>Amazon店長</td>
+                                        <td>P000017321</td>
+                                        <td>whoop304844br-color-40</td>
+                                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                                        <td>しない</td>
+                                        <td>1</td>
+                                        <td>未転送</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
+                                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                                        <td>Amazon店長</td>
+                                        <td>P000017321</td>
+                                        <td>whoop304844br-color-40</td>
+                                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                                        <td>しない</td>
+                                        <td>1</td>
+                                        <td>未転送</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                                        <td>Amazon店長</td>
+                                        <td>P000017321</td>
+                                        <td>whoop304844br-color-40</td>
+                                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                                        <td>しない</td>
+                                        <td>1</td>
+                                        <td>未転送</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                                        <td>Amazon店長</td>
+                                        <td>P000017321</td>
+                                        <td>whoop304844br-color-40</td>
+                                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                                        <td>しない</td>
+                                        <td>1</td>
+                                        <td>未転送</td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                        <td><a href="#" class="ui-btn btn-s btn-blue">コピー</a></td>
+                        <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                        <td class="t-left">rakuten_test2</td>
+                        <td>P000013798</td>
+                        <td>223-259</td>
+                        <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                        <td>項目選択肢別在庫設定</td>
+                        <td>モール転送済</td>
+                        <td class="t-left">お弁当箱・水筒\携帯用 マグ・ボトル</td>
+                        <td>送料別</td>
+                    </tr>
+                    <tr class="toggle-content">
+                        <td colspan="14">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="pagination-wrap">
+    <div class="page-total">
+        <strong>[全体 : 12,704 件]</strong>
+    </div>
+    <div class="ui-pagenation">
+        <ul class="pagination">
+            <li class="disabled"><a href="#"><span>«</span></a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#"><span>»</span></a></li>
+        </ul>
+        <select>
+            <option value="value1">20 件</option>
+            <option value="value2">50 件</option>
+            <option value="value3">100 件</option>
+        </select>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    $(function(){
+        $(".ui-scroll-table").fixedTable({scrollY : 460});
+        $('.ui-scroll-table-header li').resizable({
+            handles: 'e',
+            helper: "ui-resizable-helper",
+            stop: function( event, ui ) {
+                var
+                idx = $('.ui-scroll-table-header li').index(ui.element),
+                also = $(".ui-scroll-content col").eq(idx);
+                also.width(ui.size.width-2);
+                $('.ui-scroll-table').tableResize()
+            }
+        });
+        $('.tooltip a').tooltip({track:true})
+    });
+//]]>
+</script>
