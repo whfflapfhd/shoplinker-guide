@@ -2,7 +2,8 @@ var EcUi = EcUi || {};
 $(function(){
     // Menu Event
     $(".ec-menu").leftMenu();
-
+    // Tool Tip
+    $('.tooltip a').tooltip({track:true});
     // close btn event
     if($(".btn-close").length) $(".btn-close").closeBox();
 
@@ -60,8 +61,6 @@ $(function(){
 
     /*datepicker*/
     if($(".datepicker").size()) $(".datepicker").datepicker();
-
-    
     
 });
 

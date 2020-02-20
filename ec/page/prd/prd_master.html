@@ -441,18 +441,6 @@
 //<![CDATA[
     $(function(){
         $(".ui-scroll-table").fixedTable({scrollY : 460});
-        $('.ui-scroll-table-header li').resizable({
-            handles: 'e',
-            helper: "ui-resizable-helper",
-            stop: function( event, ui ) {
-                var
-                idx = $('.ui-scroll-table-header li').index(ui.element),
-                also = $(".ui-scroll-content col").eq(idx);
-                also.width(ui.size.width-2);
-                $('.ui-scroll-table').tableResize()
-            }
-        });
-        $('.tooltip a').tooltip({track:true})
     });
 //]]>
 </script>

@@ -41,11 +41,23 @@
                         return false
                     }
                 });
+                b.find("li").resizable({
+                    handles: 'e',
+                    helper: "ui-resizable-helper",
+                    stop: function( event, ui ) {
+                        var
+                        idx = b.find("li").index(ui.element),
+                        also = a.find("col").eq(idx),
+                        wt = (idx == 0) ? ui.size.width-1 : ui.size.width-2;
+                        also.width(wt);
+                        _this.tableResize();
+                    }
+                });
                 $(window).on("resize",function(){
                     _this.tableResize();
                 });
                 $(document).on("ready",function(){
-                    //_this.tableResize();
+                    _this.tableResize();
                 });
             })
         },
@@ -82,3 +94,15 @@
         }
     });
 })(jQuery)
+
+$('.ui-scroll-table-header li').resizable({
+            handles: 'e',
+            helper: "ui-resizable-helper",
+            stop: function( event, ui ) {
+                var
+                idx = $('.ui-scroll-table-header li').index(ui.element),
+                also = $(".ui-scroll-content col").eq(idx);
+                also.width(ui.size.width-2);
+                $('.ui-scroll-table').tableResize()
+            }
+        });  
