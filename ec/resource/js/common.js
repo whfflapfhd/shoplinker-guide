@@ -6,13 +6,16 @@ $(function(){
     $('.tooltip a').tooltip({track:true});
     // close btn event
     if($(".btn-close").length) $(".btn-close").closeBox();
-
+    
     $(document.body).on("click",".ec-toggle-help",function(){
-        $(".ec-help-content").toggle()
+        $(".ec-help-content").toggle();
+        $('.ui-scroll-table').tableResize();
+        return false;
     }).on("click",".ui-btn-toggle",function(){
         var idx = $(".ui-btn-toggle").index(this);
         $(this).toggleClass("active");
         $(".toggle-content").eq(idx).toggleClass("active");
+        $('.ui-scroll-table').tableResize();
         return false;
     }).on("click",".select-only-one .ui-check input",function(event){
         var parentObj = $(this).parents("table");
@@ -51,8 +54,7 @@ $(function(){
     /* function : toggle Menu Wrap*/
     EcUi.toggleWrap = function(){
         $(".toggle-lnb").toggleClass("active");
-        $(".ec-lnb-wrap").toggleClass("hidden");
-        $(".ec-wrap").toggleClass("expend");
+        $(".ec-wrap").toggleClass("wrap-expend");
         $(".ui-scroll-table-header ul").removeAttr("style");
         setTimeout(function(){
             $('.ui-scroll-table').tableResize()
@@ -87,6 +89,7 @@ $(function(){
     });
     $.datepicker.setDefaults(dateOptions);
 
+// jQuery UI Tabs 설정변경
     var tabsOption = {
         beforeLoad: function( event, ui ) {
             ui.ajaxSettings.async = false; // 동기/비동기 설정

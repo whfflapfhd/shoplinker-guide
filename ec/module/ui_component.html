@@ -363,6 +363,52 @@
                         <div role="tabpanel" class="tab-pane" id="tab3">
                             <div class="guide-box">
                                 <div class="guide-row">
+                                    <h2 class="sub-header">Dialog - Default</h2>
+                                    <p>해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/dialog" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
+                                    <div class="dialog-wrap">
+                                        <div id="dialog" title="Basic dialog">
+                                          <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;div id="dialog" title="Basic dialog"&gt;
+                                          &lt;p&gt;Some Text...&lt;/p&gt;
+                                        &lt;/div&gt;
+                                        &lt;script&gt;
+                                            $( "#dialog" ).dialog();
+                                        &lt;/script&gt;
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Dialog - with Buttons</h2>
+                                    <div class="dialog-wrap1">
+                                        <div id="dialog2" title="Dialog with Buttons">
+                                          <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;div id="dialog" title="Basic dialog"&gt;
+                                          &lt;p&gt;Some Text...&lt;/p&gt;
+                                        &lt;/div&gt;
+                                        &lt;script&gt;
+                                            $( "#dialog" ).dialog({
+                                                buttons : {
+                                                    "Delete" : function(){
+                                                        $(this).dialog("close");
+                                                    },
+                                                    Cancel : function(){
+                                                        $(this).dialog("close");
+                                                    }
+                                                }
+                                            });
+                                        &lt;/script&gt;
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
                                     <h2 class="sub-header">Datepicker - Default</h2>
                                     <p>해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/datepicker" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
                                     <p>
@@ -890,6 +936,31 @@
         $(function(){
             var showTab = sessionStorage.component || null;
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                if(e.target.hash != "#tab3"){
+                     $( "#dialog" ).dialog( "close" );
+                     $( "#dialog2" ).dialog( "close" );
+                }else{
+                    $( "#dialog" ).dialog({
+                        appendTo : ".dialog-wrap",
+                        classes: {
+                            "ui-dialog": "pos-re"
+                        }
+                    });
+                    $( "#dialog2" ).dialog({
+                        appendTo : ".dialog-wrap1",
+                        classes: {
+                            "ui-dialog": "pos-re"
+                        },
+                        buttons : {
+                            "Delete" : function(){
+                                $(this).dialog("close");
+                            },
+                            Cancel : function(){
+                                $(this).dialog("close");
+                            }
+                        }
+                    });
+                }
                 sessionStorage.setItem('component',e.target.hash)
             });
             if(showTab){

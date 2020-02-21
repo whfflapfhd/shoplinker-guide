@@ -63,9 +63,11 @@
         },
         tableResize : function(){
            return this.each(function(){
-                var a = $(this).find(".ui-scroll-content"),
-                b = $(this).find(".ui-scroll-table-header ul");
-                b.width(a.find("table").width());
+                var
+                a = $(this).find(".ui-scroll-content"),
+                b = a.find("table"),
+                c = $(this).find(".ui-scroll-table-header ul");
+                c.width(b.width());                    
            });
         },
         leftMenu : function(){
@@ -89,20 +91,17 @@
             var parentObj = this.parent();
             this.click(function(){
                 parentObj.hide();
+                $('.ui-scroll-table').tableResize();
                 return false
             });
         }
     });
-})(jQuery)
 
-$('.ui-scroll-table-header li').resizable({
-            handles: 'e',
-            helper: "ui-resizable-helper",
-            stop: function( event, ui ) {
-                var
-                idx = $('.ui-scroll-table-header li').index(ui.element),
-                also = $(".ui-scroll-content col").eq(idx);
-                also.width(ui.size.width-2);
-                $('.ui-scroll-table').tableResize()
-            }
-        });  
+    // jQuery UI D 설정변경
+    $.extend($.ui.dialog.prototype.options, {
+        create : function(event,ui){
+            var btns = $(event.target).parent().find(".ui-dialog-buttonset button") || null;
+            if(btns) btns.eq(0).addClass("btn-blue");
+        }
+    });
+})(jQuery)

@@ -25,7 +25,7 @@
                 $(".nav").find("a[data-page="+nav+"]").parent().addClass("active")
             }
         };
-        guide.setNav();
+        guide.setNav();        
         if($(".guide-code").length) guide.loopChange();
         if($(".btn-close").length) $(".btn-close").closeBox();
         $(document.body).on("click",".ec-toggle-help",function(){

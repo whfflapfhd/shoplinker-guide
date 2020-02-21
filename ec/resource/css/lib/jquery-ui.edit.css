@@ -1,0 +1,56 @@
+/* Datepicker */
+    .ui-date {width:120px}
+    .ui-date input {width:100px;margin-right:3px;text-align:center;vertical-align:middle}
+
+    /* jquery UI overwrite */
+    .ui-datepicker {width:250px;margin-top:5px;padding:0;font-size:12px;border:1px solid #cacaca;background:#fff}
+    .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {width:65px;margin:0 5px}
+    .ui-datepicker .ui-datepicker-header {padding:10px}
+    .ui-datepicker .ui-datepicker-header:after {display:none}
+    .ui-datepicker .ui-datepicker-title {line-height:normal}
+    .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {width:24px;height:24px;top:0;bottom:0;margin:auto}
+    .ui-datepicker .ui-datepicker-prev {left:8px !important}
+    .ui-datepicker .ui-datepicker-next {right:8px !important}
+    .ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover {border:0 none;background-color:inherit}
+    .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {position:static;margin:0;width:100%;height:100%;background-image:url('/ec/resource/images/sp_ico.png');}
+    .ui-datepicker .ui-datepicker-prev span {background-position:0 -110px}
+    .ui-datepicker .ui-datepicker-next span {background-position:-24px -110px}
+    .ui-datepicker table {width:96%;margin:0 auto .4em;font-size:12px;}
+    .ui-datepicker table th {background:#bee4ff}
+    .ui-datepicker td {height:35px;padding:2px}
+    .ui-datepicker tbody tr:first-child td {padding-top:10px}
+    .ui-datepicker td a {display:block;height:100%;line-height:23px;text-align:center}
+    .ui-datepicker .ui-datepicker-buttonpane {overflow:hidden;border-top:1px solid #cacaca;background-color:#f5f5f5}
+    .ui-datepicker .ui-datepicker-buttonpane > button {background-color:#fff}
+    
+/* Dialog */
+    .ui-dialog {position:fixed;padding:2px;background:#fff}
+    .pos-re {position:relative;left:0 !important;top:0 !important}
+    .ui-dialog .ui-dialog-titlebar {background:#3769be}
+    .ui-dialog .ui-dialog-titlebar:after {height:0}
+    .ui-dialog .ui-dialog-title {color:#fff}
+    .ui-dialog .ui-dialog-titlebar-close {top:0;bottom:0;margin:auto 0;width:15px;height:15px;border:0;outline:none;background-position: -42px 0}
+    .ui-dialog .ui-dialog-content {width:100% !important;margin:15px 0;padding:0 15px}
+    .ui-dialog .ui-dialog-buttonpane {margin-top:0;padding:10px 5px;border-top:1px solid #d9d9d9;/* background:#fff */}
+    .ui-dialog .ui-dialog-buttonpane button {
+        display:inline-block;height:30px;margin:0 2px;padding:5px 10px;font-size:12px;font-weight:400;line-height:1.5;color:#333;
+        text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;border:1px solid #ccc;
+        background:#fff none;outline:0
+    }    
+    .ui-dialog .ui-dialog-buttonpane button.btn-blue {border-color:#1e50ad;background-color:#2c62c8}
+    .ui-dialog .ui-dialog-buttonpane button.btn-blue:hover {border-color:#0d2b64;background-color:#17469d}
+
+/* resizable */
+    .ui-resizable-helper {border-right:1px dashed #888}
+
+/* tooltips */
+    .tooltip {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+    .ui-tooltip {font-size:12px;white-space:nowrap;background:#fff}
+
+
+/* Tabs */
+    .ui-tab-wrap {margin-top:25px;padding:0}
+    .ui-tab-wrap > ul {overflow:auto;font-size:0;white-space:nowrap}
+    .ui-tab-wrap > ul > li {float:none !important;display:inline-block;margin:1px 3px -1px 0 !important;border:1px solid #c5c5c5;white-space: nowrap;background:#f6f6f6}
+    .ui-tab-wrap > ul > li > a {display:block;padding:7px 14px;font-size:12px;color:#333;text-decoration:none}
+    .ui-tabs .ui-tabs-panel .search-wrap {margin-top:0}

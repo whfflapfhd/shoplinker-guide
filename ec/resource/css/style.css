@@ -59,7 +59,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .error-message {margin-top:10px;color:#fd4e4e}
 
 /* ico background */
-    .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.ui-btn-toggle,.ui-scroll-table-header ul li > span:after,.search-wrap:after
+    .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.ui-btn-toggle,.ui-scroll-table-header ul li > span:after,.search-wrap:after,.ui-dialog .ui-dialog-titlebar-close
     {background-color:transparent;background-image:url('/ec/resource/images/sp_ico.png');background-repeat:no-repeat}
 
 /* Header */
@@ -79,13 +79,9 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .ec-header-right > a:first-child:before {display:none}
 
 /* LNB */
-    .ec-lnb-wrap {position:fixed;left:0;top:0;z-index:9;width:193px;height:100%;padding-top:36px;font-size:14px;background-color:#fff/* #414958 */;transition:all .2s}
-    .ec-lnb-wrap.hidden {left:-193px}
+    .ec-lnb-wrap {position:fixed;left:0;top:0;z-index:9;width:193px;height:100%;padding-top:36px;font-size:14px;background-color:#fff/* #414958 */;transition:all .2s}    
     .ec-lnb-wrap:after {content:'';position:absolute;right:0;top:0;z-index:-1;height:100%;width:1px;background-color:#ccc}
     .ec-lnb-content {height:100%;overflow-x:hidden;overflow-y:auto}
-    /* .toggle-lnb {position:absolute;right:-25px;top:36px;width:25px;height:60px;border:1px solid #ccc;border-left:0 none;background-color:#fff;cursor:pointer;outline:0 none}
-    .toggle-lnb:after {content:'';position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;width:9px;height:18px;background-position: 0 -16px}
-    .toggle-lnb.active:after {background-position:-9px -16px} */
     .toggle-lnb {overflow:hidden;display:inline-block;margin-right:25px;padding:3px 0;vertical-align:middle;cursor:pointer;border:0 none;outline:0 none;background:transparent}
     .toggle-lnb span {display:block;width:25px;height:3px;text-indent:-99999px;line-height:0;font-size:0;background:#fff}
     .toggle-lnb:before,.toggle-lnb:after {content:'';display:block;width:25px;height:3px;background:#fff}
@@ -109,9 +105,10 @@ img {max-width:100%;vertical-align:middle;border:0 none}
 
 /* layout */
     .ec-wrap {min-width:1070px;min-height:100%;padding:36px 0 30px;margin-left:193px;/* background-color:#e1e1e1; */transition:all .2s}
-    .ec-wrap.expend {margin-left:0}
+    .wrap-expend {margin-left:0}
+    .wrap-expend .ec-lnb-wrap {left:-193px}
     .ec-row,.ec-help-content {margin:0 25px}
-    .ec-section {margin:0 25px;background-color:#fff}
+    .ec-section {margin:0 25px;background-color:#fff}    
 
     .grid {margin:0 -3px}
     .grid:after {content:'';display:block;clear:both}
@@ -131,12 +128,12 @@ img {max-width:100%;vertical-align:middle;border:0 none}
 
 /* Typo */
     h1 {font-size:24px}
-    h2,.page-title {font-size:20px}
+    h2,.page-title {font-size:22px}
     h3,.page-title-sub {font-size:16px}
     h4 {font-size:13px}
     h5,h6 {font-size:12px}
     h1 small,h2 small,h3 small{margin-left:10px;font-size:75%;font-weight:100}
-    .page-title {height:60px;padding-left:25px;line-height:3.1;font-weight:300;border-bottom:1px solid #ccc;background-color:#fff}
+    .page-title {padding-left:25px;line-height:2;font-weight:300;border-bottom:1px solid #ccc;background-color:#fff}
     .paragraph p {font-size:12px;line-height:1.5;margin-bottom:10px}
     .page-title-sub {padding-left:10px;margin:25px 0;font-weight:300;border-left:4px solid #6e96e2}    
     .t-danger {color:#fd4e4e}
@@ -380,70 +377,32 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     @keyframes spin-reverse {50% {transform:rotate(-360deg)}
     }
 
-/* Tabs */
-    .ui-tab-wrap {margin-top:25px;padding:0}
-    .ui-tab-wrap > ul {overflow:auto;font-size:0;white-space:nowrap}
-    .ui-tab-wrap > ul > li {float:none !important;display:inline-block;margin:1px 3px -1px 0 !important;border:1px solid #c5c5c5;white-space: nowrap;background:#f6f6f6}
-    .ui-tab-wrap > ul > li > a {display:block;padding:7px 14px;font-size:12px;color:#333;text-decoration:none}
-    .ui-tabs .ui-tabs-panel .search-wrap {margin-top:0}
-
-/* Datepicker */
-    .ui-date {width:120px}
-    .ui-date input {width:100px;margin-right:3px;text-align:center;vertical-align:middle}
-
-    /* jquery UI overwrite */
-    .ui-datepicker {
-        width:250px;margin-top:5px;padding:0;font-size:12px;border:1px solid #cacaca;background:#fff;
+/* shadow */
+    .shadow,.ui-datepicker,.ui-dialog {
         -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
-    .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {width:65px;margin:0 5px}
-    .ui-datepicker .ui-datepicker-header {padding:10px}
-    .ui-datepicker .ui-datepicker-header:after {display:none}
-    .ui-datepicker .ui-datepicker-title {line-height:normal}
-    .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {width:24px;height:24px;top:0;bottom:0;margin:auto}
-    .ui-datepicker .ui-datepicker-prev {left:8px !important}
-    .ui-datepicker .ui-datepicker-next {right:8px !important}
-    .ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover {border:0 none;background-color:inherit}
-    .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {position:static;margin:0;width:100%;height:100%;background-image:url('/ec/resource/images/sp_ico.png');}
-    .ui-datepicker .ui-datepicker-prev span {background-position:0 -110px}
-    .ui-datepicker .ui-datepicker-next span {background-position:-24px -110px}
-    .ui-datepicker table {width:96%;margin:0 auto .4em;font-size:12px;}
-    .ui-datepicker table th {background:#bee4ff}
-    .ui-datepicker td {height:35px;padding:2px}
-    .ui-datepicker tbody tr:first-child td {padding-top:10px}
-    .ui-datepicker td a {display:block;height:100%;line-height:23px;text-align:center}
-    .ui-datepicker .ui-datepicker-buttonpane {overflow:hidden;border-top:1px solid #cacaca;background-color:#f5f5f5}
-    .ui-datepicker .ui-datepicker-buttonpane > button {background-color:#fff}
-    
 
-/* resizable */
-    .ui-resizable-helper {border-right:1px dashed #888}
+/* scroll bar */
+    .ui-scroll-content::-webkit-scrollbar {width: 17px;height: 17px;}
+    /* Track */
+    .ui-scroll-content::-webkit-scrollbar-track {
+      /* background-color: rgba(0, 0, 0, 0.2); */
+      background:#e5e5e5;
+    }
 
-/* tooltips */
-    .tooltip {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-    .ui-tooltip {font-size:12px;white-space:nowrap;background:#fff}
-
-
-.ui-scroll-content::-webkit-scrollbar {width: 17px;height: 17px;}
-/* Track */
-.ui-scroll-content::-webkit-scrollbar-track {
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  background:#e5e5e5;
-}
-
-/* Handle */
-.ui-scroll-content::-webkit-scrollbar-thumb {
-  background: rgba(48, 67, 104, 0.7);
-  border:5px solid #e5e5e5;
-  border-radius: 10px;
-}
-.ui-scroll-content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(48, 67, 104, 1);
-}
-.ui-scroll-content::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(left, #22ADD4, #1E98BA);
-}
+    /* Handle */
+    .ui-scroll-content::-webkit-scrollbar-thumb {
+      background: rgba(48, 67, 104, 0.7);
+      border:5px solid #e5e5e5;
+      border-radius: 10px;
+    }
+    .ui-scroll-content::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(48, 67, 104, 1);
+    }
+    .ui-scroll-content::-webkit-scrollbar-thumb:active {
+      background: linear-gradient(left, #22ADD4, #1E98BA);
+    }
