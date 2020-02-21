@@ -61,6 +61,21 @@ $(function(){
         },250);
     };
 
+    /* Dialog - create element*/
+    var dialogElement = "<div id='ecDialogPop'></div>";
+    EcUi.msgPop = function(title,msg){
+        var attrId = "#ecDialogPop";
+        dialogElement = $(dialogElement).attr('title',title).html(msg);
+        $("body").append(dialogElement);
+        $(attrId).dialog({
+            buttons : {
+                "close" : function(){
+                    $(this).dialog("close");
+                }
+            }
+        })
+    };
+
     /*datepicker*/
     if($(".datepicker").size()) $(".datepicker").datepicker();
     

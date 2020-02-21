@@ -33,7 +33,7 @@
         <div class="table-info-group">
             <div class="btn-group-r">
                 <a href="#" class="ui-btn btn-blue">追加</a>
-                <a href="#" class="ui-btn btn-red">選択削除</a>
+                <a href="#" class="ui-btn btn-red delete-mall">選択削除</a>
             </div>
         </div>
         <div class="ui-scroll-table">
@@ -523,4 +523,13 @@
         </div>
     </div>
     <!-- //Content -->
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){
+            $(".delete-mall").on("click",function(){
+                EcUi.msgPop("test","tsetstsetset")
+            });
+        })
+    //]]>
+    </script>
 <?php require_once '../inc_footer.html'; ?>
