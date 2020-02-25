@@ -40,6 +40,7 @@
     }    
     .ui-dialog .ui-dialog-buttonpane button.btn-blue {border-color:#1e50ad;background-color:#2c62c8}
     .ui-dialog .ui-dialog-buttonpane button.btn-blue:hover {border-color:#0d2b64;background-color:#17469d}
+    .ui-widget-overlay {background:#222;opacity:.6}
 
 /* resizable */
     .ui-resizable-helper {border-right:1px dashed #888}
@@ -52,6 +53,7 @@
 /* Tabs */
     .ui-tab-wrap {margin-top:25px;padding:0}
     .ui-tab-wrap > ul {overflow:auto;font-size:0;white-space:nowrap}
-    .ui-tab-wrap > ul > li {float:none !important;display:inline-block;margin:1px 3px -1px 0 !important;border:1px solid #c5c5c5;white-space: nowrap;background:#f6f6f6}
+    .ui-tab-wrap > ul > li {float:none !important;display:inline-block;margin:1px 3px -1px 0 !important;border:1px solid #c5c5c5;white-space: nowrap;background:#f6f6f6;border-radius:5px 5px 0 0}
     .ui-tab-wrap > ul > li > a {display:block;padding:7px 14px;font-size:12px;color:#333;text-decoration:none}
     .ui-tabs .ui-tabs-panel .search-wrap {margin-top:0}
+    .ui-tabs .ui-tabs-nav li.ui-tabs-active {padding-bottom:0}

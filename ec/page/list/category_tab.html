@@ -1,0 +1,118 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">カテゴリ管理 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+    <div class="ec-help-content">
+        <div class="paragraph">
+            <p>店舗自体のカテゴリーを設定する画面です。</p>
+        </div>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    
+    <div class="ec-section">        
+        <div class="ui-category">
+            <div class="cate-sch">
+                <input type="text" />
+                <button type="button" class="ui-btn btn-black">検索</button>
+            </div>
+            <ul class="cate-depth">
+                <li>
+                    <strong>Depth 1</strong>
+                    <div>
+                        <ul>
+                            <li><a href="#" title="OUTDOOR(アウトドア)" class="active">OUTDOOR(アウトドア)</a></li>
+                            <li><a href="#" title="PARTIDO LIMITED-別注モデル-">PARTIDO LIMITED-別注モデル-</a></li>
+                            <li><a href="#" title="(Abercrombie＆Fitch)アバクロ">(Abercrombie＆Fitch)アバクロ</a></li>
+                            <li><a href="#" title="merc london[マーク ロンドン メルク]">merc london[マーク ロンドン メルク]</a></li>
+                            <li><a href="#" title="キングジム用互換テープ(カラー)">キングジム用互換テープ(カラー)</a></li>
+                            <li><a href="#" title="キングジム用互換テープ(サイズ)">キングジム用互換テープ(サイズ)</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong>Depth 2</strong>
+                    <div>
+                        <ul>
+                            <li><a href="#" title="CHUMS(チャムス)">CHUMS(チャムス)</a></li>
+                            <li><a href="#" title="PATAGONIA(パタゴニア)" class="active">PATAGONIA(パタゴニア)</a></li>
+                            <li><a href="#" title="アウトドア全般">アウトドア全般</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong>Depth 3</strong>
+                    <div>
+                        <ul>
+                            <li><a href="#" title="2015年秋冬商品">2015年秋冬商品</a></li>
+                            <li><a href="#" title="2015年秋冬製品">2015年秋冬製品</a></li>
+                            <li><a href="#" title="2017年春夏製品">2017年春夏製品</a></li>
+                            <li><a href="#" title="メンズ" class="active">メンズ</a></li>
+                            <li><a href="#" title="パック／トラベルギア">パック／トラベルギア</a></li>
+                            <li><a href="#" title="メンズ/アウター/ブルゾン">メンズ/アウター/ブルゾン</a></li>
+                            <li><a href="#" title="メンズ/トップス/カジュアルシャツ">メンズ/トップス/カジュアルシャツ</a></li>                            
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong>Depth 4</strong>
+                    <div>
+                        <ul>
+                            <li><a href="#" title="シャツ／ポロシャツ">シャツ／ポロシャツ</a></li>
+                            <li><a href="#" title="ジャケット">ジャケット</a></li>
+                            <li><a href="#" title="ソックス">ソックス</a></li>
+                            <li><a href="#" title="トップス" class="active">トップス</a></li>
+                            <li><a href="#" title="パンツ">パンツ</a></li>
+                            <li><a href="#" title="フリース">フリース</a></li>
+                            <li><a href="#" title="ベスト">ベスト</a></li>
+                            <li><a href="#" title="ボクサーパンツ">ボクサーパンツ</a></li>
+                            <li><a href="#" title="ロングパンツ">ロングパンツ</a></li>
+                            <li><a href="#" title="帽子／アクセサリー">帽子／アクセサリー</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong>Depth 5</strong>
+                    <div>
+                        <ul>
+                            <li><a href="#" title="フリース">フリース</a></li>
+                            <li><a href="#" title="ベスト">ベスト</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="search-tabs" class="ui-tab-wrap">
+            <ul>
+                <li><a href="/ec/page/category/cate_mall.html">店舗カテゴリ</a></li>
+                <li><a href="/ec/page/category/cate_group.html">グループカテゴリ</a></li>
+            </ul>
+            <div class="loader">
+                <div class="load">
+                    <div class="gear one">
+                        <svg id="blue" viewBox="0 0 100 100" fill="#8ec9ef">
+                        <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                        </svg>
+                    </div>
+                    <div class="gear two">
+                        <svg id="pink" viewBox="0 0 100 100" fill="#ecbd85">
+                        <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                        </svg>
+                    </div>
+                    <div class="gear three">
+                        <svg id="yellow" viewBox="0 0 100 100" fill="#b5b5b5">
+                        <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">loading</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Content -->
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){            
+            $(".ui-tab-wrap" ).tabs(tabsOption);            
+        });
+    //]]>
+    </script>
+<?php require_once '../inc_footer.html'; ?>

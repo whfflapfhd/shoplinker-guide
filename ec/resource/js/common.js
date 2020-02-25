@@ -26,7 +26,9 @@ $(function(){
             inputObj = p.find('.ui-check'),
             idx = p.find("> tr:not('.toggle-content')").index(this),
             el = inputObj.eq(idx).find('input');
-        el.click();
+        el.trigger("click");
+        event.stopPropagation();
+    }).on("click",".ui-check input",function(event){        
         event.stopPropagation();
     }).on("click","table td a",function(event){
         event.stopPropagation();
@@ -39,7 +41,9 @@ $(function(){
         return false
     }).on("click",".ui-scroll-table-header span",function(e){
         EcUi.sortTable(e.target);
-    }).on("click",".toggle-lnb",function(){
+    }).on("click",".delete-mall",function(){ //삭제버튼 액션
+        EcUi.msgPop("test","tsetstsetset")
+    }).on("click",".toggle-lnb,.show-menu",function(){
         /* event : toggle Menu Wrap */
         EcUi.toggleWrap();
         return false
@@ -80,6 +84,39 @@ $(function(){
     if($(".datepicker").size()) $(".datepicker").datepicker();
     
 });
+
+/* window popup set*/
+    var popArr = [];
+    Array.prototype.check_exist = function(obj){
+        for(var i=0; i<this.length;i++){
+            if(this[i] === obj) return true;
+        }
+        return false;
+    }
+    function PopupCenter(url, title, w, h) {
+        var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+        var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+        var width = window.outerWidth ? window.outerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        var height = window.outerHeight ? window.outerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        if(w =="full") var w = width-80;
+        if(h =="full") var h = height-200;
+        var left = (((width / 2) - (w / 2)) + dualScreenLeft);
+        var top = (((height / 2) - (h / 2)) + dualScreenTop);
+        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        if(!popArr.check_exist(newWindow)) popArr.push(newWindow);
+        // Puts focus on the newWindow
+        if (window.focus) {
+            newWindow.focus();
+        };
+        return newWindow;
+    }
+    function Popupclose(){
+        if(popArr.length > 0){
+           $.each(popArr, function(idx,valu){
+                valu.close();
+            });
+        }
+    }
 
 // jQuery UI Datepicker 설정변경
     var dateOptions = $.extend({},$.datepicker.regional["ja"],{
