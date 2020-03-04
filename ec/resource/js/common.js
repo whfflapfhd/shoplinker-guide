@@ -58,13 +58,15 @@ $(function(){
         if(pannelIdx != idx){
             $(this).parents("tr").toggleClass("tr-selected");
             pannelIdx = idx;
-            EcUi.togglePannel();
+            EcUi.openPannel();
         }else{
             pannelIdx = null;
-            EcUi.toggleWrap();
+            EcUi.closePannel();
             $(".tr-selected").removeAttr("class");
         };
         return false;        
+    }).on("change",".search-type input",function(){
+        $(this).parents('.search-type').toggleClass('active');
     }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
 
     // 테이블 th sort 버튼 액션
@@ -74,20 +76,29 @@ $(function(){
     };
 
     /* function : toggle Menu Wrap*/
-    EcUi.toggleWrap = function(){
-        $(".toggle-lnb").toggleClass("active");
-        $(".ec-wrap").toggleClass("wrap-expend");
-        if($(".ec-wrap").hasClass("wrap-pannel")) $(".ec-wrap").removeClass("wrap-pannel");
+    EcUi.tblResize = function(){
         $(".ui-scroll-table-header ul").removeAttr("style");
         setTimeout(function(){
             $('.ui-scroll-table').tableResize()
         },250);
     };
+    EcUi.toggleWrap = function(){
+        $(".ec-wrap").toggleClass("wrap-expend");
+        if($(".ec-wrap").hasClass("wrap-pannel")) $(".ec-wrap").removeClass("wrap-pannel");        
+        $(".tr-selected").removeAttr("class");
+        pannelIdx = null;
+        EcUi.tblResize();
+    };
 
     /* function : toggle pannel Wrap*/
-    EcUi.togglePannel = function(){
-        EcUi.toggleWrap();
-        $(".ec-wrap").toggleClass("wrap-pannel");
+    EcUi.openPannel = function(){
+        $(".ec-wrap").addClass("wrap-expend wrap-pannel");        
+        EcUi.tblResize();        
+    };
+     /* function : toggle pannel Wrap*/
+    EcUi.closePannel = function(){
+        $(".ec-wrap").removeClass("wrap-expend wrap-pannel");        
+        EcUi.tblResize();        
     };
 
     /* Dialog - create element*/
