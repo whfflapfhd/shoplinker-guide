@@ -1,5 +1,6 @@
 var EcUi = EcUi || {};
 $(function(){
+    var pannelIdx = null; // pannel index check
     // Menu Event
     $(".ec-menu").leftMenu();
     // Tool Tip
@@ -28,7 +29,7 @@ $(function(){
             el = inputObj.eq(idx).find('input');
         el.trigger("click");
         event.stopPropagation();
-    }).on("click",".ui-check input",function(event){        
+    }).on("click",".ui-check input",function(event){
         event.stopPropagation();
     }).on("click","table td a",function(event){
         event.stopPropagation();
@@ -51,6 +52,19 @@ $(function(){
         /* event : toggle Menu Wrap */
         EcUi.toggleWrap();
         return false
+    }).on("click",".view-pannel",function(){
+        var idx = $(".view-pannel").index(this);
+        $(".tr-selected").removeAttr("class");
+        if(pannelIdx != idx){
+            $(this).parents("tr").toggleClass("tr-selected");
+            pannelIdx = idx;
+            EcUi.togglePannel();
+        }else{
+            pannelIdx = null;
+            EcUi.toggleWrap();
+            $(".tr-selected").removeAttr("class");
+        };
+        return false;        
     }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
 
     // 테이블 th sort 버튼 액션

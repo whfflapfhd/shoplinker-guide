@@ -1,5 +1,5 @@
 a {color:#369adb;text-decoration:none}
-a:hover,a:focus {color:#23527c;text-decoration:underline}
+a:hover {color:#23527c;text-decoration:underline}
 ul,ol {list-style:none}
 img {max-width:100%;vertical-align:middle;border:0 none}
 .clear:after {content:'';display:block;clear:both}
@@ -24,6 +24,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .data-table select {padding-top:1px;padding-bottom:1px;}
     /* .data-table tbody tr.toggle-content:hover {background:#f5f5f5} */
     .data-table > tbody > tr:not(.toggle-content):hover {background-color:#f6f6f6}
+    .data-table > tbody > .tr-selected {background-color:#ddf4ff !important}
 	.data-table td table {background: #fff}
 	.data-table td table th {font-weight:normal;color:#fff;background: #555}
     .data-table td table th,.data-table td table td {height:32px}
@@ -85,7 +86,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .ec-logo {float:left;font-size:inherit}
     .ec-header-box {margin-left:153px}
     .ec-service-free {position:relati1ve;padding-left:15px;font-size:14px;line-height:1.714286;font-weight:700;color:#cacaca}
-    .ec-service-free:focus,.ec-service-free:hover {color:#5693cd}
+    .ec-service-free:hover {color:#5693cd}
     .ec-service-free:before,.ec-service-free:after {content:'';position:absolute;top:0;bottom:0;margin:auto;width:1px;height:14px}
     .ec-service-free:before {left:0;background-color:#000}
     .ec-service-free:after {left:1px;background-color:#3f3f3f}
@@ -165,10 +166,10 @@ img {max-width:100%;vertical-align:middle;border:0 none}
 /* Buttons */
     .ui-btn {
         display:inline-block;height:30px;padding:5px 10px;font-size:12px;font-weight:400;line-height:1.5;color:#333 !important;
-        text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;border:1px solid #ccc;
+        text-decoration:none !important;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;border:1px solid #ccc;
         background:#fff none;
     }
-    .ui-btn:focus,.ui-btn:hover {text-decoration:none;border-color:#adadad;background-color:#e5e5e5}
+    .ui-btn:hover {border-color:#adadad;background-color:#e5e5e5}
 
     /* button size */
     .btn-xl {height:42px;padding:8px 16px;font-size:18px;line-height:1.3333333}
@@ -184,31 +185,31 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .btn-sky {border-color:#46b8da;background-color:#5bc0de}
     .btn-orange {border-color:#eea236;background-color:#f0ad4e}
     .btn-red {border-color:#d43f3a;background-color:#d9534f}
-    .btn-gray:focus,.btn-gray:hover {border-color:#a1a7af;background-color:#c2c9d2}
-    .btn-black:focus,.btn-black:hover {border-color:#000;background-color:#111}
-    .btn-blue:focus,.btn-blue:hover {border-color:#0d2b64;background-color:#17469d}
-    .btn-green:focus,.btn-green:hover {border-color:#398439;background-color:#449d44}
-    .btn-sky:focus,.btn-sky:hover {border-color:#269abc;background-color:#31b0d5}
-    .btn-orange:focus,.btn-orange:hover {border-color:#d58512;background-color:#ec971f}
-    .btn-red:focus,.btn-red:hover {border-color:#ac2925;background-color:#c9302c}
+    .btn-gray:hover {border-color:#a1a7af;background-color:#c2c9d2}
+    .btn-black:hover {border-color:#000;background-color:#111}
+    .btn-blue:hover {border-color:#0d2b64;background-color:#17469d}
+    .btn-green:hover {border-color:#398439;background-color:#449d44}
+    .btn-sky:hover {border-color:#269abc;background-color:#31b0d5}
+    .btn-orange:hover {border-color:#d58512;background-color:#ec971f}
+    .btn-red:hover {border-color:#ac2925;background-color:#c9302c}
 
     /* button disabled */
-    .ui-btn.disabled,.ui-btn.disabled:focus,.ui-btn.disabled:hover,
-    .ui-btn[disabled],.ui-btn[disabled]:focus,.ui-btn[disabled]:hover {border-color:#ccc;background-color:#fff;opacity:.6;cursor:not-allowed}
-    .btn-gray.disabled,.btn-gray.disabled:focus,.btn-gray.disabled:hover,
-    .btn-gray[disabled],.btn-gray[disabled]:focus,.btn-gray[disabled]:hover {border-color:#b9b9b9;background-color:#dadee4}
-    .btn-black.disabled,.btn-black.disabled:focus,.btn-black.disabled:hover,
-    .btn-black[disabled],.btn-black[disabled]:focus,.btn-black[disabled]:hover {border-color:#232323;background-color:#444}
-    .btn-blue.disabled,.btn-blue.disabled:focus,.btn-blue.disabled:hover,
-    .btn-blue[disabled],.btn-blue[disabled]:focus,.btn-blue[disabled]:hover {border-color:#1e50ad;background-color:#2c62c8}
-    .btn-green.disabled,.btn-green.disabled:focus,.btn-green.disabled:hover,
-    .btn-green[disabled],.btn-green[disabled]:focus,.btn-green[disabled]:hover {border-color:#4cae4c;background-color:#5cb85c}
-    .btn-sky.disabled,.btn-sky.disabled:focus,.btn-sky.disabled:hover,
-    .btn-sky[disabled],.btn-sky[disabled]:focus,.btn-sky[disabled]:hover {border-color:#46b8da;background-color:#5bc0de}
-    .btn-orange.disabled,.btn-orange.disabled:focus,.btn-orange.disabled:hover,
-    .btn-orange[disabled],.btn-orange[disabled]:focus,.btn-orange[disabled]:hover {border-color:#eea236;background-color:#f0ad4e}
-    .btn-red.disabled,.btn-red.disabled:focus,.btn-red.disabled:hover,
-    .btn-red[disabled],.btn-red[disabled]:focus,.btn-red[disabled]:hover {border-color:#d43f3a;background-color:#d9534f}
+    .ui-btn.disabled,.ui-btn.disabled:hover,
+    .ui-btn[disabled],.ui-btn[disabled]:hover {border-color:#ccc;background-color:#fff;opacity:.6;cursor:not-allowed}
+    .btn-gray.disabled,.btn-gray.disabled:hover,
+    .btn-gray[disabled],.btn-gray[disabled]:hover {border-color:#b9b9b9;background-color:#dadee4}
+    .btn-black.disabled,.btn-black.disabled:hover,
+    .btn-black[disabled],.btn-black[disabled]:hover {border-color:#232323;background-color:#444}
+    .btn-blue.disabled,.btn-blue.disabled:hover,
+    .btn-blue[disabled],.btn-blue[disabled]:hover {border-color:#1e50ad;background-color:#2c62c8}
+    .btn-green.disabled,.btn-green.disabled:hover,
+    .btn-green[disabled],.btn-green[disabled]:hover {border-color:#4cae4c;background-color:#5cb85c}
+    .btn-sky.disabled,.btn-sky.disabled:hover,
+    .btn-sky[disabled],.btn-sky[disabled]:hover {border-color:#46b8da;background-color:#5bc0de}
+    .btn-orange.disabled,.btn-orange.disabled:hover,
+    .btn-orange[disabled],.btn-orange[disabled]:hover {border-color:#eea236;background-color:#f0ad4e}
+    .btn-red.disabled,.btn-red.disabled:hover,
+    .btn-red[disabled],.btn-red[disabled]:hover {border-color:#d43f3a;background-color:#d9534f}
 
     .btn-wrap {margin-top:30px;text-align:center}
     .btn-group-inline {overflow:hidden;display:inline-block;margin-left:3px;vertical-align:middle}
