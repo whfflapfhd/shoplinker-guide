@@ -1,0 +1,91 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">注文管理画面</h2>
+    <div class="ec-section order-wrap">
+        <div class="order-step-wrap">
+            <ul>
+                <li>
+                    <a href="#">新規注文<span class="badge">1663</span></a>
+                </li>
+                <li>
+                    <a href="#">受注処理中<span class="badge">208</span></a>
+                </li>
+                <li>
+                    <a href="#">入金待ち<span class="badge">0</span></a>
+                    <a href="#">発送待ち<span class="badge">0</span></a>
+                </li>
+                <li class="col-pay">
+                    <a href="#">楽天ペイ処理中<span class="badge">0</span></a>
+                    <a href="#">楽天ペイ審査NG<span class="badge">0</span></a>
+                </li>
+                <li class="col-pay">
+                    <a href="#">送状番号登録済<span class="badge">7</span></a>
+                    <a href="#">配送処理中<span class="badge">0</span></a>
+                </li>
+                <li>
+                    <a href="#">完了<span class="badge">163</span></a>
+                    <a href="#">キャンセル<span class="badge">54</span></a>
+                </li>
+                <li>
+                    <a href="#">保留<span class="badge">36</span></a>
+                </li>
+                <li>
+                    <a href="#" class="t-danger">未設定<span class="badge">1</span></a>
+                </li>
+            </ul>
+        </div>
+        <div id="search-tabs" class="ui-tab-wrap">
+            <ul>
+                <li><a href="/ec/page/order/order_list.html">受注確認/処理</a></li>
+                <li><a href="/ec/page/order/order_bundle.html">同梱注文リスト</a></li>
+            </ul>
+            <div class="loader">
+                <div class="load">
+                    <div class="gear one">
+                        <svg id="blue" viewBox="0 0 100 100" fill="#8ec9ef">
+                        <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                        </svg>
+                    </div>
+                    <div class="gear two">
+                        <svg id="pink" viewBox="0 0 100 100" fill="#ecbd85">
+                        <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                        </svg>
+                    </div>
+                    <div class="gear three">
+                        <svg id="yellow" viewBox="0 0 100 100" fill="#b5b5b5">
+                        <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">loading</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order-edit-pannel">
+        <ul class="pannel-tab">
+            <li><a href="/ec/page/order/pannel/pannel_order.html" class="active">注文情報</a></li>
+            <li><a href="#">クレーム受付</a></li>
+            <li><a href="#">履歴情報</a></li>
+            <li><a href="#">注文メール確認</a></li>
+            <li><a href="#">在庫送信履歴</a></li>
+        </ul>
+        <div class="pannel-wrap">
+            <div style="height:3000px">asdf</div>
+        </div>
+        <ul class="pannel-btn">
+            <li><a href="#" class="ui-btn">前へ</a></li>
+            <li><a href="#" class="ui-btn">次の</a></li>
+            <li><a href="#" class="ui-btn btn-black">詳細編集</a></li>
+            <li><a href="#" class="ui-btn btn-green">保存</a></li>
+        </ul>
+        <a href="#" class="close-pannel"><span class="ir">close</span></a>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){
+            $("#search-tabs").tabs(tabsOption);
+        });
+    //]]>
+    </script>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>

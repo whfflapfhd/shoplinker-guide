@@ -3,7 +3,7 @@ $(function(){
     // Menu Event
     $(".ec-menu").leftMenu();
     // Tool Tip
-    $('.tooltip a').tooltip({track:true});
+    $('.tooltip').find("a").tooltip({track:true});
     // close btn event
     if($(".btn-close").length) $(".btn-close").closeBox();
     
@@ -42,7 +42,11 @@ $(function(){
     }).on("click",".ui-scroll-table-header span",function(e){
         EcUi.sortTable(e.target);
     }).on("click",".delete-mall",function(){ //삭제버튼 액션
-        EcUi.msgPop("test","tsetstsetset")
+        EcUi.msgPop("test","tsetstsetset");
+        return false;
+    }).on("click",".close-pannel",function(){ //삭제버튼 액션
+        EcUi.toggleWrap();
+        return false;
     }).on("click",".toggle-lnb,.show-menu",function(){
         /* event : toggle Menu Wrap */
         EcUi.toggleWrap();
@@ -59,10 +63,17 @@ $(function(){
     EcUi.toggleWrap = function(){
         $(".toggle-lnb").toggleClass("active");
         $(".ec-wrap").toggleClass("wrap-expend");
+        if($(".ec-wrap").hasClass("wrap-pannel")) $(".ec-wrap").removeClass("wrap-pannel");
         $(".ui-scroll-table-header ul").removeAttr("style");
         setTimeout(function(){
             $('.ui-scroll-table').tableResize()
         },250);
+    };
+
+    /* function : toggle pannel Wrap*/
+    EcUi.togglePannel = function(){
+        EcUi.toggleWrap();
+        $(".ec-wrap").toggleClass("wrap-pannel");
     };
 
     /* Dialog - create element*/
@@ -144,19 +155,22 @@ $(function(){
 // jQuery UI Tabs 설정변경
     var tabsOption = {
         beforeLoad: function( event, ui ) {
-            ui.ajaxSettings.async = false; // 동기/비동기 설정
-            $(".loader").show(); //로딩이미지 노출
             var $panel = $(ui.panel);
+            var loader = $(this).find(".loader");
+            ui.ajaxSettings.async = false; // 동기/비동기 설정
+            loader.show(); //로딩이미지 노출            
             if (!$panel.is(":empty")) { //탭 패널에 내용이 있으면 로딩이미지 숨김
-                $(".loader").hide();
+                loader.hide();
             }
             ui.jqXHR.fail(function() { // 로드 실패 시 노출할 텍스트 설정
-                $(".loader").hide();
+                loader.hide();
                 ui.panel.html("Load error...");
             });
+            return 'tasdfasddf'
         },
-        load : function( event, ui ) {
-            $(".loader").hide();
+        load : function( event, ui ) {            
+            var loader = $(this).find(".loader");
+            loader.hide();
             if($(".datepicker").size()) $(".datepicker").datepicker();
         }
     }

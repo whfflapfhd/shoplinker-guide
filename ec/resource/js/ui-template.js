@@ -72,6 +72,16 @@
         },
         leftMenu : function(){
             var menu = this.find(">li>a");
+            var pathName = window.location.href.split("/");
+            pathName = pathName[pathName.length-1].split(".")[0];
+            $.each(this.find("ul a"),function(i,e){
+                var idx = $(this).attr('href').indexOf(pathName);
+                if(idx > 0){
+                    $(this).addClass("active");
+                    $(this).parents('ul').prev().addClass("active");
+                    return false
+                }
+            });
             menu.on("click",function(){
                 var parentObj = $(this).closest("ul");
                 /*

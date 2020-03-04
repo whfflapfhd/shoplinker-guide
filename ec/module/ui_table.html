@@ -189,7 +189,7 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table>
-                                <caption>기본 테이블</caption>
+                                <caption>기본 테이블 - col+row</caption>
                                 <colgroup>
                                     <col style="width:7%" />
                                     <col style="width:auto" />
@@ -213,7 +213,7 @@
                     <div class="guide-row">
                         <h2 class="sub-header">tr hover</h2>
                         <table class="data-table">
-                            <caption>기본 테이블 col+row</caption>
+                            <caption>tr hover</caption>
                             <colgroup>
                                 <col style="width:7%" />
                                 <col style="width:auto" />
@@ -264,7 +264,85 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table class="data-table">
-                                <caption>기본 테이블</caption>
+                                <caption>tr hover</caption>
+                                <colgroup>
+                                    <col style="width:7%" />
+                                    <col style="width:auto" />
+                                    <col span="8" style="width:9%" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">title_1</th>
+                                        <th scope="col">...생략</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">content_1</th>
+                                        <td>...생략</td>
+                                    </tr>
+                                </tbody>
+                            </table>                        
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">중첩 테이블</h2>
+                        <table class="data-table">
+                            <caption>중첩 테이블</caption>
+                            <colgroup>
+                                <col style="width:7%" />
+                                <col style="width:9%" />
+                                <col style="width:auto" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">title_1</th>
+                                    <th scope="col">title_2</th>
+                                    <th scope="col">title_3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="colspan">
+                                    <td colspan="3">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:10%">
+                                                <col style="width:auto">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">FTP ID</th>
+                                                    <td class="t-left">_partner_1934</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">メール AUTH ID</th>
+                                                    <td class="t-left">278223</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">APIライセンスキー</th>
+                                                    <td class="t-left">278223_Y3eTe3NbHmHp22Dz</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">content_1</th>
+                                    <td>content_2</td>
+                                    <td>content_3</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">content_1</th>
+                                    <td>content_2</td>
+                                    <td>content_3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <table class="data-table">
+                                <caption>tr hover</caption>
                                 <colgroup>
                                     <col style="width:7%" />
                                     <col style="width:auto" />
@@ -287,30 +365,51 @@
                     </div>
                     <div class="guide-row">
                         <h2 class="sub-header">스크롤 테이블</h2>
+                        <p>
+                            스크롤 테이블 사용 시 셀의 resize가 가능합니다.<br>
+                            항목에 sort 기능을 나타내는 UI를 추가하려면 항목명을 'span'태그로 감싸주세요.
+                        </p>
                         <div class="ui-scroll-table">
                             <div class="ui-scroll-table-header">
                                 <ul>
-                                    <li><span>1</span></li>
-                                    <li><span>2</span></li>
-                                    <li><span>3</span></li>
-                                    <li><span>4</span></li>
-                                    <li><span>5</span></li>
-                                    <li><span>6</span></li>
-                                    <li><span>7</span></li>
-                                    <li><span>8</span></li>
-                                    <li><span>9</span></li>
-                                    <li><span>10</span></li>
-                                    <li><span>11</span></li>
-                                    <li><span>12</span></li>
-                                    <li><span>13</span></li>
-                                    <li><span>14</span></li>
-                                    <li><span>15</span></li>
+                                    <li class="col-code"><span>1</span></li>
+                                    <li class="col-code"><span>2</span></li>
+                                    <li class="col-code"><span>3</span></li>
+                                    <li class="col-code"><span>4</span></li>
+                                    <li class="col-code"><span>5</span></li>
+                                    <li class="col-code"><span>6</span></li>
+                                    <li class="col-code"><span>7</span></li>
+                                    <li class="col-code"><span>8</span></li>
+                                    <li class="col-code"><span>9</span></li>
+                                    <li class="col-code"><span>10</span></li>
+                                    <li class="col-code"><span>11</span></li>
+                                    <li class="col-code"><span>12</span></li>
+                                    <li class="col-code"><span>13</span></li>
+                                    <li class="col-code"><span>14</span></li>
+                                    <li class="col-code"><span>15</span></li>
                                 </ul>
                             </div>
                             <div class="ui-scroll-table-body">
                                 <div class="ui-scroll-content">
                                     <table>
                                         <caption>test table layout</caption>
+                                        <colgroup>
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                             <col class="col-code" />
+                                        </colgroup>
                                         <thead>
                                             <tr>
                                                 <th>1</th>
@@ -546,13 +645,17 @@
                             <div class="ui-scroll-table">
                                 <div class="ui-scroll-table-header">
                                     <ul>
-                                        <li>요소의 개수는 테이블의 th항목 개수와 동일하게..</li>
+                                        <li class="col-항목">요소의 개수는 테이블의 th항목 개수와 동일하게..</li>
+                                        <li class="col-항목"><span>sort UI 추가 시</span></li>
                                     </ul>
                                 </div>
                                 <div class="ui-scroll-table-body">
                                     <div class="ui-scroll-content">
                                         <table>
                                             <caption>스크롤 테이블</caption>
+                                            <colgroup>
+                                                 <col class="col-항목" />
+                                            </colgroup>
                                             <thead>
                                                 <tr>
                                                     <th>.....</th>

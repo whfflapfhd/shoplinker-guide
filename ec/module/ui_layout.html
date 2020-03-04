@@ -45,9 +45,9 @@
                     <div class="guide-row">
                         <h2 class="sub-header">Header</h2>
                         <div class="ec-header">
-                            <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo.png" alt="EC店長" /></a></h1>
+                            <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo_w.png" alt="EC店長" /></a></h1>
                             <div class="ec-header-box">
-                                <a href="#" target="_blank" class="ec-service-free">越境ECサービス申込（無料）</a>
+                                <button type="button" class="toggle-lnb" title="Toggle Menu(ctrl+;)"><span>Toggle Menu</span></button>
                                 <div class="ec-header-right">
                                     <a href="#">操作マニュアル</a>
                                     <a href="#">お問合せ</a>
@@ -59,16 +59,16 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <div class="ec-header">
-                                <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo.png" alt="EC店長" /></a></h1>
+                                <h1 class="ec-logo"><a href="#"><img src="/ec/resource/images/ec_logo_w.png" alt="EC店長" /></a></h1>
                                 <div class="ec-header-box">
-                                    <a href="#" target="_blank" class="ec-service-free">越境ECサービス申込（無料）</a>
+                                    <button type="button" class="toggle-lnb" title="Toggle Menu(ctrl+;)"><span>Toggle Menu</span></button>
                                     <div class="ec-header-right">
                                         <a href="#">操作マニュアル</a>
                                         <a href="#">お問合せ</a>
                                         <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
                                     </div>
                                 </div>
-                            </div>                 
+                            </div>               
                         </code></pre>
                     </div> 
                     <div class="guide-row">
@@ -83,23 +83,24 @@
                                     </div>
                                     <ul class="ec-menu">
                                         <li>
-                                            <a href="#">申込管理</a>
+                                            <a href="#">Menu 01</a>
                                             <ul class="ec-menu-2depth">
-                                                <li><a href="#">基本情報</a></li>
-                                                <li><a href="#">契約情報</a></li>
+                                                <li><a href="#">Sub Menu 01</a></li>
+                                                <li><a href="#">Sub Menu 02</a></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="#">商品管理</a>
+                                            <a href="#">Menu 02</a>
                                             <ul class="ec-menu-2depth">
-                                                <li><a href="#">商品管理</a></li>
-                                                <li><a href="#">在庫管理</a></li>
+                                                <li><a href="#">Sub Menu 01</a></li>
+                                                <li><a href="#">Sub Menu 02</a></li>
                                             </ul>
                                         </li>
-                                        <li class="single"><a href="#">クラウドK</a></li>
+                                        <li class="single"><a href="#">Menu 03</a></li>
                                     </ul>
+                                    <div class="ec-banner"><a href="#" target="_blank"><img src="/ec/resource/images/banner_01.jpg" alt="越境ECサービス申込(無料)" /></a></div>
                                 </div>
-                                <button type="button" class="toggle-lnb" title="Ctrl + ;"><i class="ir">Show Menu</i></button>
+                                <a href="#" class="show-menu"><i class="ir">show menu</i></a>
                             </div>
                         </div>
                         <div class="col-md-9 com-sm-7">
@@ -108,66 +109,56 @@
                                     <div class="ec-lnb-wrap">
                                         <div class="ec-lnb-content">
                                             <div class="ec-profile">
-                                                <span>User ID</span>
+                                                <span>mgr_test001</span>
                                                 <a href="#" class="ui-btn btn-s">編集</a>
                                                 <a href="#" class="ui-btn btn-s btn-orange">ログアウト</a>
                                             </div>
                                             <ul class="ec-menu">
                                                 <li>
-                                                    <a href="#">menu 01</a>
+                                                    <a href="#">Menu 01</a>
                                                     <ul class="ec-menu-2depth">
-                                                        <li><a href="#">sub menu 01</a></li>                                                
+                                                        <li><a href="#">Sub Menu 01</a></li>
+                                                        <li><a href="#">Sub Menu 02</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="single"><a href="#">menu 02</a></li>
+                                                <li class="single"><a href="#">Menu 03</a></li>
                                             </ul>
+                                            <div class="ec-banner"><a href="#" target="_blank"><img src="/ec/resource/images/banner_01.jpg" alt="越境ECサービス申込(無料)" /></a></div>
                                         </div>
-                                        <button type="button" class="toggle-lnb" title="Ctrl + ;"><i class="ir">Show Menu</i></button>
-                                    </div>               
+                                        <a href="#" class="show-menu"><i class="ir">show menu</i></a>
+                                    </div>              
                                 </code></pre>
                             </div>
                         </div>
                     </div>
                     <div class="guide-row">
-                        <div class="col-md-6 com-sm-6">
-                            <h2 class="sub-header">Section Box</h2>
+                        <h2 class="sub-header">Grid</h2>
+                        <p>'col-w-n' 클래스는 숫자 1~10까지 정의되어 있으며 10% 단위로 증가합니다.(ex 'col-w-1', 'col-w-2', 'col-w-3' ....)</p>
+                        <div class="grid">
+                            <div class="col-w-2"><div style="background:pink">20% box</div></div>
+                            <div class="col-w-8"><div style="background:lightskyblue">80% box</div></div>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="grid">
+                                <div class="col-w-2"><div style="background:pink">20% box</div></div>
+                                <div class="col-w-8"><div style="background:lightskyblue">80% box</div></div>
+                            </div>              
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Section Box</h2>
+                        <div class="ec-section">
+                            Section Contents<br><br>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
                             <div class="ec-section">
-                                Section Contents<br><br>
-                                <ul class="list">
-                                    <li>margin-top: 0</li>
-                                    <li>margin-bottom: 0</li>
-                                    <li>margin-left: 25px</li>
-                                    <li>margin-right: 25px</li>
-                                    <li>padding : 25px 25px</li>
-                                </ul>
-                            </div>
-                            <div class="guide-code">
-                                <pre><code class="html">
-                                    <div class="ec-section">
-                                        Section Contents
-                                    </div>              
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div class="col-md-6 com-sm-6">
-                            <h2 class="sub-header">Row Box</h2>
-                            <div class="ec-row">
-                                Row Contents<br><br>
-                                <ul class="list">
-                                    <li>margin-top: 0</li>
-                                    <li>margin-bottom: 0</li>
-                                    <li>margin-left: 25px</li>
-                                    <li>margin-right: 25px</li>
-                                </ul>
-                            </div>
-                            <div class="guide-code">
-                                <pre><code class="html">
-                                    <div class="ec-row">
-                                        Row Contents
-                                    </div>              
-                                </code></pre>
-                            </div>
-                        </div>
+                                Section Contents
+                            </div>               
+                        </code></pre>
                     </div>
                 </div>
             </div>

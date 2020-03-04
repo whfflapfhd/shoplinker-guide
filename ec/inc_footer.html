@@ -27,38 +27,12 @@
         };
         guide.setNav();        
         if($(".guide-code").length) guide.loopChange();
-        if($(".btn-close").length) $(".btn-close").closeBox();
-        $(document.body).on("click",".ec-toggle-help",function(){
-            $(".ec-help-content").toggle();
-            return false
-        }).on("click",".ui-btn-toggle",function(){
-            var idx = $(".ui-btn-toggle").index(this);
-            $(this).toggleClass("active");
-            $(".toggle-content").eq(idx).toggleClass("active");
+        $(".sub-header").append('<a href="#" class="ui-btn btn-sky toggle-source">view source</a>');
+        $(".toggle-source").on("click",function(){
+            var idx = $(".toggle-source").index(this);
+            $(".guide-code").eq(idx).toggle();
             return false;
-        }).on("change",".select-only-one .ui-check input",function(){
-            var parentObj = $(this).parents("table");
-            parentObj.find(".ui-check input").not(this).prop("checked",false);
-        }).on("click",".data-table tbody tr",function(){
-            var p = $(this).closest('tbody'),
-                inputObj = p.find('.ui-check'),
-                idx = p.find("tr").index(this);
-            inputObj.eq(idx).find('input').click();  
-        }).on("click","table td a",function(e){
-            e.stopPropagation();
-        }).on("click",".check-all",function(){
-            var group  = $(this).data('checkGroup');
-            var el = $('input:checkbox[data-check-name='+group+']');            
-            ($(this).hasClass('all')) ? el.prop('checked',false) : el.prop('checked',true);
-            $(this).toggleClass('all');
-            return false
-        }).on("click",".ui-scroll-table-header span",function(e){
-            sortTable(e.target);
         });
-        function sortTable(e){
-            $(e).closest('ul').find('span').not(e).removeAttr('class');
-            $(e).addClass('srot-on').toggleClass('sort-type1');
-        }
     </script>
 </body>
 </html>

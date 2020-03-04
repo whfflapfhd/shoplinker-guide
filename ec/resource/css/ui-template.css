@@ -1,5 +1,6 @@
 /* Scroll Table */
-    .ui-scroll-table {position:relative;overflow:hidden;border-top:1px solid #dedede;border-bottom:1px solid #dedede}
+    .ui-scroll-table {position:relative;overflow:hidden;margin-top:25px;border-top:1px solid #dedede;border-bottom:1px solid #dedede}
+    .table-info-group + .ui-scroll-table {margin-top:0}
     .ui-scroll-table-header {overflow:hidden;position:absolute;left:0;top:0;width:100%}
     .ui-scroll-table-header ul {display:table;width:100%;table-layout: fixed}
     .ui-scroll-table-header ul.over {padding-right:17px}
@@ -13,7 +14,7 @@
     .ui-scroll-content {overflow:auto;height:100%;background-color:#fff}
     .ui-scroll-content table {border-collapse:separate}
     .ui-scroll-content > table > thead {position:absolute;top:-9999px;left:-99999px}
-    .ui-scroll-table-header ul,.ui-scroll-content table {min-width:1200px}
+    .ui-scroll-table-header ul,.ui-scroll-content > table {min-width:1200px}
     .ui-scroll-content td {border-bottom:0 none;border-top:1px solid #dedede}
     .ui-scroll-content td table tbody th {border-bottom:0 none}
     .ui-scroll-content tbody tr:first-child td {border-top:0 none}
@@ -45,22 +46,22 @@
     }
 
 /* scroll bar */
-    .ui-scroll-content::-webkit-scrollbar {width: 17px;height: 17px;}
+    .ui-scroll-content::-webkit-scrollbar,.pannel-wrap::-webkit-scrollbar {width: 17px;height: 17px;}
     /* Track */
-    .ui-scroll-content::-webkit-scrollbar-track {
+    .ui-scroll-content::-webkit-scrollbar-track,.pannel-wrap::-webkit-scrollbar-track {
       /* background-color: rgba(0, 0, 0, 0.2); */
       background:#e5e5e5;
     }
 
     /* Handle */
-    .ui-scroll-content::-webkit-scrollbar-thumb {
+    .ui-scroll-content::-webkit-scrollbar-thumb,.pannel-wrap::-webkit-scrollbar-thumb {
       background: rgba(48, 67, 104, 0.7);
       border:5px solid #e5e5e5;
       border-radius: 10px;
     }
-    .ui-scroll-content::-webkit-scrollbar-thumb:hover {
+    .ui-scroll-content::-webkit-scrollbar-thumb:hover,.pannel-wrap::-webkit-scrollbar-thumb:hover {
       background-color: rgba(48, 67, 104, 1);
     }
-    .ui-scroll-content::-webkit-scrollbar-thumb:active {
+    .ui-scroll-content::-webkit-scrollbar-thumb:active,.pannel-wrap::-webkit-scrollbar-thumb:active {
       background: linear-gradient(left, #22ADD4, #1E98BA);
     }

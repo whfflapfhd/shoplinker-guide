@@ -1,0 +1,136 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">商品削除履歴<a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+    <div class="ec-help-content">
+        <strong>取込区分</strong>
+        <ul class="list">
+            <li>自動取込：注文が入り、在庫自動連携によって転送された場合です。</li>
+            <li>直接転送：在庫管理にてモール転送を行った場合です</li>
+            <li>直接転送(予約)：FTPにて転送予約されていた情報が転送された場合です。</li>
+        </ul>
+        <strong>転送確認</strong>
+        <div class="paragraph">
+            <p>モールや転送タイプによって表示されない場合があります。</p>
+        </div>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    <div class="ec-section">
+        <div class="ui-scroll-table">
+            <div class="ui-scroll-table-header">
+                <ul>
+                    <li class="col-logo"><span>モール</span></li>
+                    <li class="col-name"><span>店舗</span></li>
+                    <li class="col-code2"><span>モール商品コード</span></li>
+                    <li class="col-code"><span>マスタ商品コード</span></li>
+                    <li class="col-division"><span>転送区分</span></li>
+                    <li class="col-stocktype"><span>転送タイプ</span></li>
+                    <li class="col-division"><span>取込区分</span></li>
+                    <li class="col-id"><span>転送者</span></li>
+                    <li class="col-etc"><span>転送時間</span></li>
+                    <li class="col-division"><span>転送確認</span></li>
+                </ul>
+            </div>
+            <div class="ui-scroll-table-body">
+                <div class="ui-scroll-content">
+                    <table class="data-table t-center">
+                        <caption>マスター商品リスト</caption>
+                        <colgroup>
+                            <col class="col-logo" />
+                            <col class="col-name" />
+                            <col class="col-code2" />
+                            <col class="col-code" />
+                            <col class="col-division" />
+                            <col class="col-stocktype" />
+                            <col class="col-division" />
+                            <col class="col-id" />
+                            <col class="col-etc" />
+                            <col class="col-division" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">モール</th>
+                                <th scope="col">店舗</th>
+                                <th scope="col">モール商品コード</th>
+                                <th scope="col">マスタ商品コード</th>
+                                <th scope="col">転送区分</th>
+                                <th scope="col">転送タイプ</th>
+                                <th scope="col">取込区分</th>
+                                <th scope="col">転送者</th>
+                                <th scope="col">転送時間</th>
+                                <th scope="col">転送確認</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                               <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
+                               <td>Amazon店長</td>
+                               <td>h-smcase080-mate20-pro-3set-A-4</td>
+                               <td>P000013541</td>
+                               <td>在庫情報</td>
+                               <td>API</td>
+                               <td>直接転送</td>
+                               <td>SYSTEM</td>
+                               <td>2020-01-17 16:20:21</td>
+                               <td><a href="#" class="ui-btn">送信確認</a></td>
+                            </tr>
+                            <tr>
+                               <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
+                               <td>Brangista Qoo10</td>
+                               <td>h-smcase080-mate20-pro-3set-A-4</td>
+                               <td>P000013541</td>
+                               <td>在庫情報</td>
+                               <td>API</td>
+                               <td>直接転送</td>
+                               <td>test00</td>
+                               <td>2020-01-17 16:20:21</td>
+                               <td><a href="#" class="ui-btn">送信確認</a></td>
+                            </tr>
+                            <tr>
+                               <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
+                               <td>Amazon店長</td>
+                               <td>h-smcase080-mate20-pro-3set-A-4</td>
+                               <td>P000013541</td>
+                               <td>在庫情報</td>
+                               <td>API</td>
+                               <td>直接転送</td>
+                               <td>SYSTEM</td>
+                               <td>2020-01-17 16:20:21</td>
+                               <td><a href="#" class="ui-btn">送信確認</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-wrap">
+            <div class="page-total">
+                <strong>[全体 : 12,704 件]</strong>
+            </div>
+            <div class="ui-pagenation">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#"><span>«</span></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#"><span>»</span></a></li>
+                </ul>
+                <select>
+                    <option value="value1">20 件</option>
+                    <option value="value2">50 件</option>
+                    <option value="value3">100 件</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){
+            $(".tooltip span").tooltip({track:true});
+            $(".ui-scroll-table").fixedTable({scrollY : 600});
+        });
+    //]]>
+    </script>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>

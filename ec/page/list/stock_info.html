@@ -1,0 +1,283 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">店舗管理</h2>
+    <div class="ec-section">
+        <div class="search-wrap">
+            <h3 class="ir">検索</h3>
+            <table>
+                <caption>検索</caption>
+                <colgroup>
+                    <col style="width:15%" />
+                    <col style="width:auto" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row"><div>日付</div></th>
+                        <td>
+                            <div class="grid">
+                                <div class="col-w-2">
+                                    <select>
+                                        <option value="pd_0001.sale_start_dt">販売開始日時</option>
+                                        <option value="pd_0001.sale_end_dt">販売終了日時</option>
+                                        <option value="pd_0001.point_start_dt">POINT変更適用期間 開始日時</option>
+                                        <option value="pd_0001.point_end_dt">POINT変更適用期間 終了日時</option>
+                                        <option value="pd_0001.up_dt">更新日</option>
+                                        <option value="pd_0001.rg_dt">登録日</option>
+                                    </select>
+                                </div>
+                                <div class="col-w-8">
+                                    <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                                    ~
+                                    <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                                    <div class="btn-group-inline">
+                                        <button type="button" class="ui-btn">今日</button>
+                                        <button type="button" class="ui-btn">昨日</button>
+                                        <button type="button" class="ui-btn">一週間</button>
+                                        <button type="button" class="ui-btn">今月</button>
+                                        <button type="button" class="ui-btn">3ヶ月</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><div>検索項目</div></th>
+                        <td>
+                             <div class="grid">
+                                <div class="col-w-2">
+                                    <select>
+                                        <option value="pd_0001.product_id">マスタ商品コード</option>
+                                        <option value="pd_0001.shop_id">店舗ID</option>
+                                        <option value="pd_0001.mng_product_id">商品管理番号(商品URL)</option>
+                                        <option value="pd_0001.out_product_id">商品番号</option>
+                                        <option value="pd_0001.product_name">商品名</option>
+                                        <option value="pd_0001.product_name_head">商品名(前)</option>
+                                        <option value="pd_0001.product_name_tail">商品名(後)</option>
+                                        <option value="pd_0001.catch_copy">キャッチコピー(PC)</option>
+                                        <option value="pd_0001.m_catch_copy">キャッチコピー(モバイル)</option>
+                                        <option value="pd_0001.catalog_id">カダログID</option>
+                                    </select>
+                                </div>
+                                <div class="col-w-2">
+                                    <select>
+                                        <option value="cn">含む(部分一致)</option>
+                                        <option value="nc">含まない(部分一致)</option>
+                                        <option value="eq">含む(完全一致)</option>
+                                        <option value="ne">含まない(完全一致)</option>
+                                        <option value="in">含む（複数検索）</option>
+                                        <option value="ni">含まない（複数検索）</option>
+                                        <option value="bw">で始まる</option>
+                                        <option value="bn">で始まらない</option>
+                                        <option value="ew">で終わる</option>
+                                        <option value="en">で終わらない</option>
+                                    </select>
+                                </div>
+                                <div class="col-w-6">
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-wrap">
+                <button type="button" class="ui-btn btn-l btn-blue">検索</button>
+                <button type="button" class="ui-btn btn-l btn-black">初期化</button>
+            </div>
+        </div>
+        <h3 class="page-title-sub">店舗リスト</h3>
+        <div class="table-info-group">
+            <div class="btn-group-l">
+                <a href="#" class="ui-btn">在庫アップロード</a>
+                <a href="#" class="ui-btn">在庫ダウンロード</a>
+                <a href="#" class="ui-btn">一括在庫編集</a>
+            </div>
+            <div class="btn-group-r">
+                <a href="#" class="ui-btn btn-orange">モール転送</a>
+            </div>
+        </div>
+        <div class="ui-scroll-table">
+            <div class="ui-scroll-table-header">
+                <ul>
+                    <li class="col-check"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></li>
+                    <li class="col-toggle">&nbsp;</li>
+                    <li class="col-edit">編集</li>
+                    <li class="col-code"><span>マスタ商品コード</span></li>
+                    <li class="col-code"><span>顧客社商品コード</span></li>
+                    <li class="col-code1"><span>個別商品コード</span></li>
+                    <li class="col-prd"><span>商品名</span></li>
+                    <li class="col-option"><span>オプション名</span></li>                    
+                    <li class="col-stockcount"><span>在庫数</span></li>
+                    <li class="col-stocktype"><span>在庫タイプ</span></li>
+                    <li class="col-wholesalers"><span>仕入先 純利益率</span></li>
+                    <li class="col-name"><span>楽天店長</span></li>
+                </ul>
+            </div>
+            <div class="ui-scroll-table-body">
+                <div class="ui-scroll-content">
+                    <table class="data-table t-center">
+                        <caption>マスター商品リスト</caption>
+                        <colgroup>
+                            <col class="col-check"/>
+                            <col class="col-toggle"/>
+                            <col class="col-edit"/>
+                            <col class="col-code"/>
+                            <col class="col-code"/>
+                            <col class="col-code1"/>
+                            <col class="col-prd"/>
+                            <col class="col-option"/>                            
+                            <col class="col-stockcount"/>
+                            <col class="col-stocktype"/>
+                            <col class="col-wholesalers"/>
+                            <col class="col-name"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">選択</th>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">編集</th>
+                                <th scope="col">マスタ商品コード</th>
+                                <th scope="col">顧客社商品コード</th>
+                                <th scope="col">個別商品コード</th>
+                                <th scope="col">商品名</th>
+                                <th scope="col">オプション名</th>                                
+                                <th scope="col">在庫数</th>
+                                <th scope="col">在庫タイプ</th>
+                                <th scope="col">仕入先 純利益率</th>
+                                <th scope="col">楽天店長</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                                <td>P000017327</td>
+                                <td>um0216</td>
+                                <td>um0216</td>
+                                <td class="t-left tooltip"><a href="#" title="羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製">羽毛布団(シングル150×210cm)2層キルトでボリューム満点!ダウン85% 日本製</a></td>
+                                <td>&nbsp;</td>
+                                <td><input type="text" value="0" class="t-right" /></td>
+                                <td>普通</td>
+                                <td>&nbsp;</td>
+                                <td>販売中</td>
+                            </tr>  
+                            <tr class="toggle-content">
+                                <td colspan="12">普通在庫です</td>
+                            </tr>
+                            <tr>
+                                <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                                <td>P000017323</td>
+                                <td>ppa-papd-vt1366-3</td>
+                                <td>ppa-papd-vt1366-3-A-01</td>
+                                <td class="t-left tooltip"><a href="#" title="犬服 PUPPIA ハーネス一体型ジャンパー 裏地フリース 中綿入り マウンテニア2 XXLサイズ（中型犬用）【メール便なら送料無料】犬の服 防寒着 ドッグウェア ジャケット パピア 柴犬 コーギー">犬服 PUPPIA ハーネス一体型ジャンパー 裏地フリース 中綿入り マウンテニア2 XXLサイズ（中型犬用）【メール便なら送料無料】犬の服 防寒着 ドッグウェア ジャケット パピア 柴犬 コーギー</a></td>
+                                <td>ＸＸＬ,レッド</td>                                
+                                <td><input type="text" value="9" class="t-right" /></td>
+                                <td>オプション</td>
+                                <td>&nbsp;</td>
+                                <td>販売中</td>
+                            </tr>
+                            <tr class="toggle-content">
+                                <td colspan="12">
+                                    <table>
+                                        <caption>オプション</caption>
+                                        <colgroup>
+                                            <col span="4" style="width:25%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">サイズ</th>
+                                                <th scope="col">カラー</th>
+                                                <th scope="col">販売価格</th>
+                                                <th scope="col">数量</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>XXL</td>
+                                                <td>レッド</td>
+                                                <td>0</td>
+                                                <td>9</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                                <td>P000017321</td>
+                                <td>whoop304844br</td>
+                                <td>whoop304844br-color-40</td>
+                                <td class="t-left tooltip"><a href="#" title="whoop de doo/フープディドゥ 304844 スワローモカクロスステッチヴァンプ  ブラウン 本革ビジネスシューズ ビジネス/ドレス/紐靴/革靴/仕事用/メンズpm">whoop de doo/フープディドゥ 304844 スワローモカクロスステッチヴァンプ  ブラウン 本革ビジネスシューズ ビジネス/ドレス/紐靴/革靴/仕事用/メンズpm</a></td>
+                                <td>Brown,40/25.0-25.5</td>                                
+                                <td><input type="text" value="1" class="t-right" /></td>
+                                <td>オプション</td>
+                                <td>&nbsp;</td>
+                                <td>販売中</td>
+                            </tr>
+                            <tr class="toggle-content">
+                                <td colspan="12">
+                                    <table>
+                                        <caption>オプション</caption>
+                                        <colgroup>
+                                            <col span="4" style="width:25%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">color</th>
+                                                <th scope="col">size</th>
+                                                <th scope="col">販売価格</th>
+                                                <th scope="col">数量</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Brown</td>
+                                                <td>40/25.0-25.5</td>
+                                                <td>0</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-wrap">
+            <div class="page-total">
+                <strong>[全体 : 12,704 件]</strong>
+            </div>
+            <div class="ui-pagenation">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#"><span>«</span></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#"><span>»</span></a></li>
+                </ul>
+                <select>
+                    <option value="value1">20 件</option>
+                    <option value="value2">50 件</option>
+                    <option value="value3">100 件</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){
+            $(".ui-scroll-table").fixedTable({scrollY : 460});
+        });
+    //]]>
+    </script>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>

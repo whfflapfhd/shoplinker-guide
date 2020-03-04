@@ -2,8 +2,9 @@ select::-ms-expand {
     display: none;
 }
 @media screen and (max-width: 1280px){
-/* layout */
-    
+    .order-step-wrap > li {padding:5px}
+    .wrap-pannel .table-info-group .btn-group-l {width:55%}
+    .badge {margin-left:5px}
 }
 @media screen and (-webkit-min-device-pixel-ratio:0){
 }
