@@ -15,7 +15,9 @@
                 a = _this.find(options.scrollBody),
                 b = _this.find(options.fixHead),
                 c = b.find("ul"),
-                d = a.find("table"),
+                d = a.find("> table"),
+                e = c.find("li:eq(0)"),
+                f =  d.find("> tbody > tr:not(.toggle-content) > td:first-child"),
                 preScroll = 0;
                 if(options.scrollY){
                     if(a.parent().height() >= options.scrollY) {
@@ -35,6 +37,8 @@
                 a.on("scroll",function(){
                     if(this.scrollLeft != preScroll){
                          b.scrollLeft(this.scrollLeft);
+                         e.css({"transform":"translateX("+ this.scrollLeft + "px)"});
+                         f.css({"transform":"translateX("+ this.scrollLeft + "px)"});
                          preScroll = this.scrollLeft;
                     }else{
                         return false

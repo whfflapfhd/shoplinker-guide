@@ -22,12 +22,22 @@ $(function(){
         var parentObj = $(this).parents("table");
         parentObj.find(".ui-check input").not(this).prop("checked",false);
         event.stopPropagation();
-    }).on("click",".data-table tbody tr",function(event){
-        var p = $(this).closest('tbody'),
-            inputObj = p.find('.ui-check'),
-            idx = p.find("> tr:not('.toggle-content')").index(this),
-            el = inputObj.eq(idx).find('input');
-        el.trigger("click");
+    }).on("click",".view-pannel > tbody > tr",function(event){
+        if(!$(this).hasClass("toggle-content")){
+            var
+                p = $(this).closest('tbody'),
+                idx = p.find("> tr:not('.toggle-content')").index(this);
+            $(".tr-selected").removeAttr("class");
+            if(pannelIdx != idx){
+                $(this).toggleClass("tr-selected");
+                pannelIdx = idx;
+                EcUi.openPannel();
+            }else{
+                pannelIdx = null;
+                EcUi.closePannel();
+                $(".tr-selected").removeAttr("class");
+            };
+        };
         event.stopPropagation();
     }).on("click",".ui-check input",function(event){
         event.stopPropagation();
@@ -45,7 +55,7 @@ $(function(){
     }).on("click",".delete-mall",function(){ //삭제버튼 액션
         EcUi.msgPop("test","tsetstsetset");
         return false;
-    }).on("click",".close-pannel",function(){ //삭제버튼 액션
+    }).on("click",".close-pannel",function(){ //주문정보 패널 컨트롤
         EcUi.toggleWrap();
         return false;
     }).on("click",".toggle-lnb,.show-menu",function(){

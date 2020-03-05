@@ -15,11 +15,13 @@
     .ui-scroll-content table {border-collapse:separate}
     .ui-scroll-content > table > thead {position:absolute;top:-9999px;left:-99999px}
     .ui-scroll-table-header ul,.ui-scroll-content > table {min-width:1200px}
-    .ui-scroll-content td {border-bottom:0 none;border-top:1px solid #dedede}
+    .ui-scroll-content td {border-bottom:0 none;border-top:1px solid #dedede;background:#fff}
     .ui-scroll-content td table tbody th {border-bottom:0 none}
     .ui-scroll-content tbody tr:first-child td {border-top:0 none}
-    .ui-scroll-table-header ul li,.ui-scroll-content td {border-left:1px solid #dedede;}
-    .ui-scroll-table-header ul li:first-child,.ui-scroll-content tbody tr td:first-child {border-left:0 none}
+    .ui-scroll-table-header ul li,.ui-scroll-content td {border-right:1px solid #dedede;}
+    .ui-scroll-table-header ul li:last-child,.ui-scroll-content tbody tr td:last-child {border-right:0 none}
+
+    .ui-scroll-table-header ul li:first-child,.ui-scroll-content > table > tbody > tr > td:first-child {position:relative;z-index:20}
 
 /* loader */
     .loader {display:none;position:relative;z-index:1;height:180px}
