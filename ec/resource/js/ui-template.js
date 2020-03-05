@@ -113,13 +113,11 @@
 
     // jQuery UI Dialog 설정변경
     $.extend($.ui.dialog.prototype.options, {
+        autoOpen : false,
         modal : true,
         create : function(event,ui){
             var btns = $(event.target).parent().find(".ui-dialog-buttonset button") || null;
             if(btns) btns.eq(0).addClass("btn-blue");
-        },
-        close: function(event, ui ) {
-            $(this).remove()
         }
     });
 })(jQuery)

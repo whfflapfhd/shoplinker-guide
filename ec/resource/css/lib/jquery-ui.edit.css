@@ -31,7 +31,7 @@
     .ui-dialog .ui-dialog-title {color:#fff}
     .ui-dialog .ui-dialog-titlebar-close {top:0;bottom:0;margin:auto 0;width:15px;height:15px;border:0;outline:none;background-position: -42px 0}
     .ui-dialog .ui-dialog-titlebar-close span {display:none}
-    .ui-dialog .ui-dialog-content {width:100% !important;margin:15px 0;padding:0 15px}
+    .ui-dialog .ui-dialog-content {width:100% !important;margin-top:15px;padding:0 15px 15px}
     .ui-dialog .ui-dialog-buttonpane {margin-top:0;padding:10px 5px;border-top:1px solid #d9d9d9;/* background:#fff */}
     .ui-dialog .ui-dialog-buttonpane button {
         display:inline-block;height:30px;margin:0 2px;padding:5px 10px;font-size:12px;font-weight:400;line-height:1.5;color:#333;

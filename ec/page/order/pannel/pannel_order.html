@@ -1,1158 +1,371 @@
-<div class="table-info-group">
-    <div class="btn-group-l">
-        <a href="#" class="ui-btn">CSV取込</a>
-        <a href="#" class="ui-btn">同梱処理</a>
-        <a href="#" class="ui-btn">配送伝票</a>
-        <a href="#" class="ui-btn">帳票出力</a>
-        <a href="#" class="ui-btn">メール送信(新)</a>
-        <a href="#" class="ui-btn">テンプレート設定</a>
-        <a href="#" class="ui-btn">文字変換設定</a>
-        <a href="#" class="ui-btn">注文自動処理</a>
-        <a href="#" class="ui-btn">モール送り状転送</a>
-        <a href="#" class="ui-btn">モール受注ステータス変更</a>
-        <a href="#" class="ui-btn">モール注文キャンセル</a>
-        <a href="#" class="ui-btn">注文ダウンロード</a>
-        <a href="#" class="ui-btn">注文保護設定</a>
-        <a href="#" class="ui-btn">楽天ペイ注文確認</a>
-        <a href="#" class="ui-btn">楽天カード自動決済</a>
-        <a href="#" class="ui-btn">楽天バンク決済</a>
-    </div>
-    <div class="btn-group-r">
-        <a href="#" class="ui-btn btn-gray">選択編集</a>
-        <a href="#" class="ui-btn btn-blue">追加</a>
-        <a href="#" class="ui-btn btn-orange">注文一括編集</a>
-        <a href="#" class="ui-btn btn-red delete-mall">選択削除</a>
-    </div>
+<div class="ec-row">
+    <table>        
+        <colgroup>
+            <col style="width:25%" />
+            <col style="width:auto" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">EC店長注文番号</th>
+                <td>36569335</td>
+            </tr>
+            <tr>
+                <th scope="row">ステータス</th>
+                <td>
+                    <select class="col-w-10">
+						<option value="001" selected="">新規注文</option>
+                        <option value="002">受注処理中</option>
+                        <option value="017">入金待ち</option>
+                        <option value="019">発送待ち</option>
+                        <option value="030">楽天ペイ処理中</option>
+                        <option value="031">楽天ペイ審査NG</option>
+                        <option value="015">送状番号登録済</option>
+                        <option value="003">配送処理中</option>
+                        <option value="999">完了</option>
+                        <option value="011">キャンセル</option>
+                        <option value="020">保留</option>
+                        <option value="">未設定</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">モール/店舗</th>
+                <td>	amazon / amazon2</td>
+            </tr>
+            <tr>
+                <th scope="row">注文日付</th>
+                <td>2020-01-21 16:39:32</td>
+            </tr><tr>
+                <th scope="row">モール注文番号</th>
+                <td>249-9387156-0146248</td>
+            </tr>
+            <tr>
+                <th scope="row">注文者名/カナ</th>
+                <td>
+                    <div class="grid">
+                        <span class="col-w-5"><input type="text" /></span>
+                        <span class="col-w-5"><input type="text" /></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">連絡先/FAX</th>
+                <td>
+                    <div class="grid">
+                        <span class="col-w-5"><input type="text" /></span>
+                        <span class="col-w-5"><input type="text" /></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">メールアドレス</th>
+                <td><input type="text" value="4v214w6lmnmhw01@marketplace.amazon.co.jp" /></td>
+            </tr>
+            <tr>
+                <th scope="row">確認MSG</th>
+                <td>
+                    <textarea cols="10" rows="3" readonly="readonly">※必須情報未登録(注文情報)</textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<div class="ui-scroll-table">
-    <div class="ui-scroll-table-header">
-        <ul>
-            <li class="col-check"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></li>
-            <li class="col-toggle">&nbsp;</li>
-            <li class="col-status"><span>管理</span></li>
-            <li class="col-tax">コピー</li>
-            <li class="col-send"><span>保護</span></li>
-            <li class="col-divsion"><span>CS</span></li>
-            <li class="col-divsion"><span>ステータス</span></li>
-            <li class="col-logo">モール</li>
-            <li class="col-name"><span>店舗</span></li>
-            <li class="col-divsion"><span>プライム注文</span></li>
-            <li class="col-etc"><span>注文日</span></li>
-            <li class="col-order"><span>モール注文番号</span></li>
-            <li class="col-name"><span>注文者名(漢字)</span></li>
-            <li class="col-divsion"><span>受取人郵便番号</span></li>
-            <li class="col-prd"><span>送先住所</span></li>
-            <li class="col-order"><span>配送方法</span></li>
-            <li class="col-order"><span>決済方法</span></li>
-            <li class="col-order"><span>カード状態</span></li>
-            <li class="col-price"><span>請求金額</span></li>
-            <li class="col-price"><span>注文価格</span></li>
-            <li class="col-price"><span>消費税</span></li>
-            <li class="col-price"><span>配送費</span></li>
-            <li class="col-price"><span>ダイビキ</span></li>
-            <li class="col-price"><span>ポイント</span></li>
-            <li class="col-divsion"><span>配送情報</span></li>
-            <li class="col-divsion"><span>帳票出力</span></li>
-            <li class="col-divsion"><span>メール区分</span></li>
-            <li class="col-divsion"><span>送信履歴</span></li>
-            <li class="col-etc"><span>送状登録日</span></li>
-            <li class="col-code2"><span>送状番号</span></li>
-            <li class="col-divsion"><span>配送指定日</span></li>
-            <li class="col-etc"><span>配送希望時間</span></li>
-            <li class="col-etc"><span>発送予定日</span></li>
-            <li class="col-etc"><span>キャンセル日</span></li>
-            <li class="col-etc"><span>受注取込日</span></li>
-            <li class="col-etc"><span>受注更新日</span></li>
-            <li class="col-id"><span>修正者</span></li>
-        </ul>
-    </div>
-    <div class="ui-scroll-table-body">
-        <div class="ui-scroll-content">
-            <table class="data-table t-center">
-                <caption>マスター商品リスト</caption>
-                <colgroup>
-                    <col class="col-check" />
-                    <col class="col-toggle" />
-                    <col class="col-status" />
-                    <col class="col-tax" />
-                    <col class="col-send" />
-                    <col class="col-divsion" />
-                    <col class="col-divsion" />
-                    <col class="col-logo" />
-                    <col class="col-name" />
-                    <col class="col-divsion" />
-                    <col class="col-etc" />
-                    <col class="col-order" />
-                    <col class="col-name" />
-                    <col class="col-divsion" />
-                    <col class="col-prd" />
-                    <col class="col-order" />
-                    <col class="col-order" />
-                    <col class="col-order" />
-                    <col class="col-price" />
-                    <col class="col-price" />
-                    <col class="col-price" />
-                    <col class="col-price" />
-                    <col class="col-price" />
-                    <col class="col-price" />
-                    <col class="col-divsion" />
-                    <col class="col-divsion" />
-                    <col class="col-divsion" />
-                    <col class="col-divsion" />
-                    <col class="col-etc" />
-                    <col class="col-code2" />
-                    <col class="col-divsion" />
-                    <col class="col-etc" />
-                    <col class="col-etc" />
-                    <col class="col-etc" />
-                    <col class="col-etc" />
-                    <col class="col-etc" />
-                    <col class="col-id" />
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th scope="col">選択</th>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">管理</th>
-                        <th scope="col">コピー</th>
-                        <th scope="col">保護</th>
-                        <th scope="col">CS</th>
-                        <th scope="col">ステータス</th>
-                        <th scope="col">モール</th>
-                        <th scope="col">店舗</th>
-                        <th scope="col">プライム注文</th>
-                        <th scope="col">注文日</th>
-                        <th scope="col">モール注文番号</th>
-                        <th scope="col">注文者名（漢字）</th>
-                        <th scope="col">受取人郵便番号</th>
-                        <th scope="col">送先住所</th>
-                        <th scope="col">配送方法</th>
-                        <th scope="col">決済方法</th>
-                        <th scope="col">カード状態</th>
-                        <th scope="col">請求金額</th>
-                        <th scope="col">注文価格</th>
-                        <th scope="col">消費税</th>
-                        <th scope="col">配送費</th>
-                        <th scope="col">ダイビキ</th>
-                        <th scope="col">ポイント</th>
-                        <th scope="col">配送情報</th>
-                        <th scope="col">帳票出力</th>
-                        <th scope="col">メール区分</th>
-                        <th scope="col">送信履歴</th>
-                        <th scope="col">送状登録日</th>
-                        <th scope="col">送状番号</th>
-                        <th scope="col">配送指定日</th>
-                        <th scope="col">配送希望時間</th>
-                        <th scope="col">発送予定日</th>
-                        <th scope="col">キャンセル日</th>
-                        <th scope="col">受注取込日</th>
-                        <th scope="col">受注更新日</th>
-                        <th scope="col">修正者</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>保護</td>
-                        <td>クレームあり</td>
-                        <td>楽天ペイ処理中</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
-                        <td>ilharotch</td>
-                        <td></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">(有)松浦竹田ファーム 田中宏昌</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">エクスプレス(DHL,EMS,Fedexその他)</td>
-                        <td class="t-left">auかんたん決済(auユーザーのみご利用可能です)</td>
-                        <td class="t-left">[Ra]オーソリ取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレ当日便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理待ち</td>
-                        <td>楽天ペイ審査NG</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
-                        <td>Amazon店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/amazon_prime.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">後藤　幸市</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">ヤマト(メール便速達サービス)</td>
-                        <td class="t-left">Yahoo!かんたん決済</td>
-                        <td class="t-left">[Ra]売上請求取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理中</td>
-                        <td>送状番号登録済</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_05.png" alt=""></td>
-                        <td>Q店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/new/rakuten_pay_16.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">野口 吉仁</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">宅急便コンパクト(コレクト)</td>
-                        <td class="t-left">ショッピングクレジット／ローン</td>
-                        <td class="t-left">[Po]期限切れ_実額与信済み</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便(翌々日)</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>保護</td>
-                        <td>クレームあり</td>
-                        <td>楽天ペイ処理中</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
-                        <td>ilharotch</td>
-                        <td></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">(有)松浦竹田ファーム 田中宏昌</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">エクスプレス(DHL,EMS,Fedexその他)</td>
-                        <td class="t-left">auかんたん決済(auユーザーのみご利用可能です)</td>
-                        <td class="t-left">[Ra]オーソリ取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレ当日便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理待ち</td>
-                        <td>楽天ペイ審査NG</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
-                        <td>Amazon店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/amazon_prime.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">後藤　幸市</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">ヤマト(メール便速達サービス)</td>
-                        <td class="t-left">Yahoo!かんたん決済</td>
-                        <td class="t-left">[Ra]売上請求取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理中</td>
-                        <td>送状番号登録済</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_05.png" alt=""></td>
-                        <td>Q店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/new/rakuten_pay_16.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">野口 吉仁</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">宅急便コンパクト(コレクト)</td>
-                        <td class="t-left">ショッピングクレジット／ローン</td>
-                        <td class="t-left">[Po]期限切れ_実額与信済み</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便(翌々日)</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>保護</td>
-                        <td>クレームあり</td>
-                        <td>楽天ペイ処理中</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
-                        <td>ilharotch</td>
-                        <td></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">(有)松浦竹田ファーム 田中宏昌</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">エクスプレス(DHL,EMS,Fedexその他)</td>
-                        <td class="t-left">auかんたん決済(auユーザーのみご利用可能です)</td>
-                        <td class="t-left">[Ra]オーソリ取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレ当日便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理待ち</td>
-                        <td>楽天ペイ審査NG</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
-                        <td>Amazon店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/amazon_prime.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">後藤　幸市</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">ヤマト(メール便速達サービス)</td>
-                        <td class="t-left">Yahoo!かんたん決済</td>
-                        <td class="t-left">[Ra]売上請求取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理中</td>
-                        <td>送状番号登録済</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_05.png" alt=""></td>
-                        <td>Q店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/new/rakuten_pay_16.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">野口 吉仁</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">宅急便コンパクト(コレクト)</td>
-                        <td class="t-left">ショッピングクレジット／ローン</td>
-                        <td class="t-left">[Po]期限切れ_実額与信済み</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便(翌々日)</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>保護</td>
-                        <td>クレームあり</td>
-                        <td>楽天ペイ処理中</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
-                        <td>ilharotch</td>
-                        <td></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">(有)松浦竹田ファーム 田中宏昌</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">エクスプレス(DHL,EMS,Fedexその他)</td>
-                        <td class="t-left">auかんたん決済(auユーザーのみご利用可能です)</td>
-                        <td class="t-left">[Ra]オーソリ取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレ当日便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理待ち</td>
-                        <td>楽天ペイ審査NG</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
-                        <td>Amazon店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/amazon_prime.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">後藤　幸市</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">ヤマト(メール便速達サービス)</td>
-                        <td class="t-left">Yahoo!かんたん決済</td>
-                        <td class="t-left">[Ra]売上請求取消時システムエラー</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
-                        <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                        <td><span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
-                        <td><a href="#" class="ui-btn btn-s btn-gray">コピー</a></td>
-                        <td>設定なし</td>
-                        <td>クレーム処理中</td>
-                        <td>送状番号登録済</td>
-                        <td><img src="/ec/resource/images/mall/mall_logo_05.png" alt=""></td>
-                        <td>Q店長</td>
-                        <td><img src="http://210.121.151.96:1212/images/jp/new/rakuten_pay_16.png" class="mall-icon"></td>
-                        <td>2020-01-21 15:55:00</td>
-                        <td>244920-20191216-00208728</td>
-                        <td class="t-left">野口 吉仁</td>
-                        <td>290-0008</td>
-                        <td class="t-left">福岡県福岡市中央区六本松１丁目１−１０ 日本放送協会　福岡放送局  １階リハーサル室１気付け　松竹衣裳</td>
-                        <td class="t-left">宅急便コンパクト(コレクト)</td>
-                        <td class="t-left">ショッピングクレジット／ローン</td>
-                        <td class="t-left">[Po]期限切れ_実額与信済み</td>
-                        <td class="t-right">1,384</td>
-                        <td class="t-right">1,042</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">342</td>
-                        <td class="t-right">0</td>
-                        <td class="t-right">0</td>
-                        <td>배송메세지</td>
-                        <td>전표</td>
-                        <td>메일타입</td>
-                        <td>전송내역</td>
-                        <td>2020-01-22 12:11:14</td>
-                        <td>628744868813</td>
-                        <td>2019-12-06</td>
-                        <td>マケプレお急ぎ便(翌々日)</td>
-                        <td>2018-07-30</td>
-                        <td>2018-07-30</td>
-                        <td>2020-01-21 16:45:42</td>
-                        <td>2018-07-30 19:43:24</td>
-                        <td>test00</td>
-                    </tr>
-                    <tr class="toggle-content">
-                        <td colspan="37">
-                            <table class="in-table">
-                                <caption>商品</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">商品番号</th>
-                                        <th scope="col">商品名</th>
-                                        <th scope="col">注文オプション</th>
-                                        <th scope="col">数量</th>
-                                        <th scope="col">ポイント</th>
-                                        <th scope="col">販売価格</th>
-                                        <th scope="col">注文総金額</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>FY-BSEN-10C9</td>
-                                        <td>アサヒ　モンスター　アブソリュートリーゼロ　３５５ｍｌ缶　４８本セット(２４本×２)</td>
-                                        <td>カラー:赤</td>
-                                        <td>1</td>
-                                        <td></td>
-                                        <td class="t-right">20</td>
-                                        <td class="t-right">20</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+<div class="ec-row">
+    <table>        
+        <colgroup>
+            <col style="width:25%" />
+            <col style="width:auto" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">配送方法</th>
+                <td>
+                    <select class="col-w-10">
+                        <option value="">配送区分</option>
+                        <option value="001">メール便</option>
+                        <option value="002">宅配便</option>
+                        <option value="003">代引き</option>
+                        <option value="004">ヤマト運輸</option>
+                        <option value="005">佐川急便</option>
+                        <option value="006">ヤマト（発払い）</option>
+                        <option value="007">ヤマト（コレクト）</option>
+                        <option value="008">ヤマト（DM便）</option>
+                        <option value="009">ゆうパック</option>
+                        <option value="010">定形外郵便（代引）</option>
+                        <option value="011">定形外郵便</option>
+                        <option value="012">日通（ペリカン）</option>
+                        <option value="013">福山通運</option>
+                        <option value="014">西濃（カンガルー）</option>
+                        <option value="015">Air Mail</option>
+                        <option value="016">EMS</option>
+                        <option value="017">店頭渡し</option>
+                        <option value="018">楽天国際配送</option>
+                        <option value="019">エクスプレス(DHL,EMS,Fedexその他)</option>
+                        <option value="020">レターパック</option>
+                        <option value="021">ヤマト（タイムサービス）</option>
+                        <option value="022">ヤマト（着払い）</option>
+                        <option value="023">ヤマト（メール便速達サービス）</option>
+                        <option value="024">ゆうパケット</option>
+                        <option value="025">ゆうメール</option>
+                        <option value="026">ポスパケット</option>
+                        <option value="027">ヤマト（ネコポス）</option>
+                        <option value="028">クリックポスト</option>
+                        <option value="029">コンビニ受取</option>
+                        <option value="030">楽天BOX受取</option>
+                        <option value="031">宅急便コンパクト</option>
+                        <option value="032">宅急便コンパクト（コレクト）</option>
+                        <option value="033">コンビニ受取（ヤマト運輸）</option>
+                        <option value="034">コンビニ受取（佐川急便）</option>
+                        <option value="035">コンビニ受取（日本郵便）</option>
+                        <option value="036">小型宅配便</option>
+                        <option value="037">大型宅配便</option>
+                        <option value="038">クール便</option>
+                        <option value="039">国際配送</option>
+                        <option value="040">ロッカー受取</option>
+                        <option value="041">店頭受取</option>
+                        <option value="042">発送を伴わない</option>
+                        <option value="044">郵便局受取</option>
+                        <option value="045">追跡可能メール便</option>
+                        <option value="999" selected="">その他:その他</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">支払方法</th>
+                <td>
+                    <select class="col-w-10">
+                        <option value="">決済タイプ</option>
+                        <option value="001">銀行振込</option>
+                        <option value="002">クレジットカード</option>
+                        <option value="003">コンビニ決済</option>
+                        <option value="004">代金引換</option>
+                        <option value="005">Qoo10決済</option>
+                        <option value="006">電子マネー</option>
+                        <option value="007">楽天バンク決済</option>
+                        <option value="008">銀行振込前払い</option>
+                        <option value="009">銀行振込後払い</option>
+                        <option value="010">郵便振替</option>
+                        <option value="011">現金書留</option>
+                        <option value="012">auかんたん決済(auユーザーのみご利用可能です）</option>
+                        <option value="013">モバイルSuica</option>
+                        <option value="014">ペイジー決済</option>
+                        <option value="015">NP後払い</option>
+                        <option value="016">ローソン前払</option>
+                        <option value="017">セブンイレブン前払</option>
+                        <option value="019">iD決済</option>
+                        <option value="020">Yahoo!かんたん決済</option>
+                        <option value="021">ウェブマネー決済</option>
+                        <option value="022">イーバンク決済</option>
+                        <option value="023">モバイルエディ決済</option>
+                        <option value="024" selected="">Amazonペイメント</option>
+                        <option value="025">ジャパンネット銀行</option>
+                        <option value="026">Paypal</option>
+                        <option value="027">Smash決済</option>
+                        <option value="028">前払決済</option>
+                        <option value="029">ポイント全額支払い</option>
+                        <option value="030">サンプル・貸し出し</option>
+                        <option value="031">掛売</option>
+                        <option value="032">ゆうちょ振替</option>
+                        <option value="033">ドコモケータイ払い</option>
+                        <option value="034">ソフトバンクまとめて支払い</option>
+                        <option value="035">楽天Edy決済</option>
+                        <option value="036">Alipay</option>
+                        <option value="037">UnionPay</option>
+                        <option value="038">後払い決済</option>
+                        <option value="039">Yahoo!マネー/預金払い</option>
+                        <option value="040">後払い.com</option>
+                        <option value="041">Amazon Pay</option>
+                        <option value="042">楽天ペイ</option>
+                        <option value="043">請求書払い</option>
+                        <option value="044">Apple Pay</option>
+                        <option value="045">ショッピングクレジット／ローン</option>
+                        <option value="046">オートローン</option>
+                        <option value="047">リース</option>
+                        <option value="048">ニッセン後払い</option>
+                        <option value="049">後払い</option>
+                        <option value="999">その他:Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">〒送り先</th>
+                <td>
+                    <div class="form-address">
+                        <div class="addr-num clear">
+                            <div>
+                                <span><input type="text" value="160" /></span>
+                                <span><input type="text" value="0023" /></span>
+                            </div>
+                            <div><button type="button" class="ui-btn btn-green">〒検索</button></div>
+                            <div><a href="http://www.post.japanpost.jp/zipcode/index.html" class="ui-btn" target="_blank">日本郵便へ</a></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">送り先住所</th>
+                <td>
+                    <div class="form-address">                            
+                        <div class="auto-addr clear">
+                            <span><input type="text" /></span>
+                            <span><input type="text" /></span>
+                            <span><input type="text" /></span>
+                        </div>
+                        <div><input type="text" /></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">配送指定日</th>
+                <td><span class="ui-date"><input type="text" class="datepicker" title="配送指定日" /></span></td>
+            </tr>
+            <tr>
+                <th scope="row">配送時間帯</th>
+                <td>
+                    <select class="col-w-10">
+                        <option value="" selected="">配送希望時間</option>
+                        <option value="001">午前中</option>
+                        <option value="002">午後中</option>
+                        <option value="003">10時-12時</option>
+                        <option value="004">11時-13時</option>
+                        <option value="005">12時-14時</option>
+                        <option value="006">13時-15時</option>
+                        <option value="007">14時-16時</option>
+                        <option value="008">15時-17時</option>
+                        <option value="009">16時-18時</option>
+                        <option value="010">17時-19時</option>
+                        <option value="011">18時-20時</option>
+                        <option value="012">19時-21時</option>
+                        <option value="013">20時-22時</option>
+                        <option value="014">21時-23時</option>
+                        <option value="015">22時-24時</option>
+                        <option value="016">23時-24時</option>
+                        <option value="017">24時-10時</option>
+                        <option value="018">18時-21時</option>
+                        <option value="019">20時-21時</option>
+                        <option value="020">マケプレ当日便</option>
+                        <option value="021">マケプレお急ぎ便</option>
+                        <option value="022">マケプレお急ぎ便(翌々日)</option>
+                        <option value="999">その他</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">発送予定日</th>
+                <td><span class="ui-date"><input type="text" class="datepicker" title="配送指定日" /></span></td>
+            </tr>
+            <tr>
+                <th scope="row">キャンセル日</th>
+                <td><span class="ui-date"><input type="text" class="datepicker" title="配送指定日" /></span></td>
+            </tr>
+            <tr>
+                <th scope="row">送り状番号</th>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <th scope="row">入金日</th>
+                <td><span class="ui-date"><input type="text" class="datepicker" title="配送指定日" /></span></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<div class="pagination-wrap">
-    <div class="page-total">
-        <strong>[全体 : 12,704 件]</strong>
-    </div>
-    <div class="ui-pagenation">
-        <ul class="pagination">
-            <li class="disabled"><a href="#"><span>«</span></a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#"><span>»</span></a></li>
-        </ul>
-        <select>
-            <option value="value1">20 件</option>
-            <option value="value2">50 件</option>
-            <option value="value3">100 件</option>
-        </select>
-    </div>
+
+<div class="ec-row">
+    <table>        
+        <colgroup>
+            <col style="width:25%" span="4" />
+        </colgroup>
+        <tfoot>
+            <tr>
+                <th scope="row">請求金額</th>   
+                <td colspan="3"><div class="form-price"><input type="text" value="1384" /> 円</div></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th scope="row">注文商品合計</th>
+                <td><div class="form-price"><input type="text" /> 円</div></td>
+                <th scope="row">消費税(＋)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+            </tr> 
+            <tr>
+                <th scope="row">手数料(＋)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+                <th scope="row">配送料(＋)</th>
+                <td><div class="form-price"><input type="text" value="342" /> 円</div></td>
+            </tr>  
+            <tr>
+                <th scope="row">代引き(＋)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+                <th scope="row">ギフト包装料(＋)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+            </tr>  
+            <tr>
+                <th scope="row">ポイント(－)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+                <th scope="row">クーポン(－)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+            </tr> 
+            <tr>
+                <th scope="row">割引金額(－)</th>
+                <td><div class="form-price"><input type="text" value="0" /> 円</div></td>
+                <th scope="row">請求合計(＝)</th>
+                <td><div class="form-price"><input type="text" value="342" /> 円</div></td>
+            </tr> 
+        </tbody>
+    </table>
 </div>
-<div class="order-edit-pannel">
-    <div class="ui-tab-wrap">
-        <ul>
-            <li><a href="#">注文情報</a></li>
-            <li><a href="#">クレーム受付</a></li>
-            <li><a href="#">履歴情報</a></li>
-            <li><a href="#">注文メール確認</a></li>
-            <li><a href="#">在庫送信履歴</a></li>
-        </ul>
-    </div>
+
+<div class="ec-row">
+    <table>        
+        <colgroup>
+            <col style="width:25%" />
+            <col style="width:auto" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">お客様への メッセージ</th>
+                <td>
+                    <textarea cols="10" rows="3" placeholder="※メール本面に挿入可能です。">※必須情報未登録(注文情報)</textarea>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">社内備考</th>
+                <td>
+                    <textarea cols="10" rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">配送MSG</th>
+                <td>
+                    <textarea cols="10" rows="3">中古商品となりますため、通常使用による若干の使用感はありますが、 良好なコンディションです。丁寧な検品を心がけていますが、書籍の場合は書き込みがある場合もあります。◆簡易クリーニング済。◆ゆうメール配送。◆ビニール防水梱包発送。◆ポスト投函。※万が一検品漏れがございましたらご一報ください。</textarea>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">配送オプション</th>
+                <td>
+                    <div class="check-group">
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> のし指定</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> ギフト商品</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 明日配送</label>
+                     </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">注文取込日</th>
+                <td>2020-01-22 12:11:14</td>
+            </tr>
+            <tr>
+                <th scope="row">注文更新日</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
 <script type="text/javascript">
 //<![CDATA[
-    $(function(){
-        //$(".ui-tab-wrap").tabs(tabsOption);
-        $(".ui-scroll-table").fixedTable({scrollY : 520});
-    });
+    $(".datepicker").datepicker();
 //]]>
 </script>

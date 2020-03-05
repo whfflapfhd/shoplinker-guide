@@ -1,0 +1,179 @@
+<div class="ec-row">
+    <div class="table-info-group">
+        <div class="btn-group-r">
+            <a href="#" class="ui-btn btn-green addClaim">新規受付作成</a>
+        </div>
+    </div>
+    <table class="t-center">        
+        <colgroup>
+            <col style="width:10%" />
+            <col style="width:30%" span="3" />            
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">受付区分</th>
+                <th scope="col">受付担当</th>
+                <th scope="col">受付日付</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- no data
+            <tr>
+                <td colspan="4">受付リストはありません。</td> 
+            </tr>
+             -->
+             <tr>
+                <td>1</td>
+                <td>返品要請</td>
+                <td>NEMOSOFTテスト</td>
+                <td>2020-03-05 16:00:00</td>
+             </tr>
+             <tr>
+                <td>2</td>
+                <td>キャンセル要請</td>
+                <td>NEMOSOFTテスト</td>
+                <td>2020-03-05 16:00:00</td>
+             </tr>
+             <tr>
+                <td>3</td>
+                <td>A/S関連</td>
+                <td>NEMOSOFTテスト</td>
+                <td>2020-03-05 16:00:00</td>
+             </tr>
+        </tbody>
+    </table>
+</div>
+<h3 class="page-title-sub">クレーム受付詳細 <small>返品要請</small></h3>
+<table class="t-center">        
+    <colgroup>
+        <col style="width:25%" />
+        <col style="width:auto" />
+    </colgroup>
+    <tbody>
+         <tr>
+            <th scope="row">受付処理</th>
+            <td>
+                <select class="col-w-10">
+                    <option value="001">処理待ち</option>
+                    <option value="002">処理中</option>
+                    <option value="003">処理済</option>
+                    <option value="004">保留</option>
+                </select>
+            </td>
+         </tr>
+         <tr>
+            <th scope="row">クレーム理由</th>
+            <td>
+                <select class="col-w-10">
+                    <option value="001">単純変心</option>
+                    <option value="002">品切</option>
+                    <option value="003">サイズ不満</option>
+                    <option value="004">サイズ交換</option>
+                    <option value="005">商品不良</option>
+                    <option value="006">配送遅延</option>
+                    <option value="007">配送ミス</option>
+                    <option value="008">画像相違</option>
+                    <option value="009">重複注文</option>
+                    <option value="010">色不満</option>
+                    <option value="011">品質不満</option>
+                    <option value="012">顧客ミス</option>
+                    <option value="013">素材不満</option>
+                    <option value="014">デザイン不満</option>
+                    <option value="015">色交換</option>
+                    <option value="016">商品説明ミス</option>
+                    <option value="017">宅配者紛失</option>
+                    <option value="018">未入金</option>
+                    <option value="019">その他</option>
+                </select>
+            </td>
+         </tr>
+         <tr>
+            <th scope="row">受付メモ</th>
+            <td>
+                <textarea cols="10" rows="10"></textarea>
+            </td>
+         </tr>
+    </tbody>
+</table>
+
+<div id="dialog" title="新規受付作成">
+    <table>
+        <colgroup>
+            <col style="width:25%" />
+            <col style="width:auto" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">受付日付</th>
+                <td><input type="text" readonly="readonly" value="2020-03-05 16:17:11" /></td>
+            </tr>
+            <tr>
+                <th scope="row">受付担当</th>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <th scope="row">受付区分</th>
+                <td>
+                    <select class="col-w-10">
+                        <option value="001">キャンセル要請</option>
+                        <option value="002">返品要請</option>
+                        <option value="003">交換要請</option>
+                        <option value="005">商品関連</option>
+                        <option value="007">入金関連</option>
+                        <option value="008">A/S関連</option>
+                        <option value="011">その他</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">クレーム理由</th>
+                <td>
+                    <select class="col-w-10">
+                        <option value="001">単純変心</option>
+                        <option value="002">品切</option>
+                        <option value="003">サイズ不満</option>
+                        <option value="004">サイズ交換</option>
+                        <option value="005">商品不良</option>
+                        <option value="006">配送遅延</option>
+                        <option value="007">配送ミス</option>
+                        <option value="008">画像相違</option>
+                        <option value="009">重複注文</option>
+                        <option value="010">色不満</option>
+                        <option value="011">品質不満</option>
+                        <option value="012">顧客ミス</option>
+                        <option value="013">素材不満</option>
+                        <option value="014">デザイン不満</option>
+                        <option value="015">色交換</option>
+                        <option value="016">商品説明ミス</option>
+                        <option value="017">宅配者紛失</option>
+                        <option value="018">未入金</option>
+                        <option value="019">その他</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">受付メモ</th>
+                <td><textarea cols="10" rows="3"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var dialog = $( "#dialog" ).dialog({
+			width: 400,
+			buttons : {
+                "追加" : function(){
+                    $(this).dialog("close");
+                },
+                "閉じる" : function(){
+                    $(this).dialog("close");
+                }
+            }
+		});
+    $(".addClaim").on("click",function(){
+        $( "#dialog" ).dialog("open");
+    });
+//]]>
+</script>

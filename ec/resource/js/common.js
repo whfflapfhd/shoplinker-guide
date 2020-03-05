@@ -75,6 +75,10 @@ $(function(){
             $(".tr-selected").removeAttr("class");
         };
         return false;        
+    }).on("click",".pannel-tab a",function(){
+        $(this).parents(".pannel-tab").find("a").removeClass("active");
+        $(this).addClass("active");
+        return false;        
     }).on("change",".search-type input",function(){
         $(this).parents('.search-type').toggleClass('active');
     }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
@@ -103,12 +107,29 @@ $(function(){
     /* function : toggle pannel Wrap*/
     EcUi.openPannel = function(){
         $(".ec-wrap").addClass("wrap-expend wrap-pannel");        
-        EcUi.tblResize();        
+        EcUi.tblResize();
+        //EcUi.loadContent(".pannel-wrap","/ec/page/order/pannel/pannel_order.html","load");
     };
      /* function : toggle pannel Wrap*/
     EcUi.closePannel = function(){
         $(".ec-wrap").removeClass("wrap-expend wrap-pannel");        
+        $(".pannel-wrap").html("");
         EcUi.tblResize();        
+    };
+    /*
+        #ajax load content
+    */
+    EcUi.loadContent = function(tg,uri,loadType){
+        $.ajax({
+            url:uri,
+            success:function(data){
+                if(loadType == "append"){
+                    $(tg).append(data);
+                }else{
+                    $(tg).html(data);
+                }                
+            }
+        })  
     };
 
     /* Dialog - create element*/
