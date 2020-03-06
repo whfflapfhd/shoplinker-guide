@@ -74,7 +74,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .col-edit-list {width:150px} /* 변경항목 */
     .col-edit-status {width:200px} /* 변경 전/후 */
     .error-message {display:none;margin-top:10px;color:#fd4e4e}
-    .pannel-wrap table tbody td {background:#fff}
+    .pannel-wrap table td {background:#fff}
 
 /* ico background */
     .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.ui-btn-toggle,.ui-scroll-table-header ul li > span:after,.search-wrap:after,.ui-dialog .ui-dialog-titlebar-close,.ec-lnb-wrap .show-menu:before,.close-pannel:after

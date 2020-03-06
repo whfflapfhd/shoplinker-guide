@@ -5,6 +5,7 @@
             var defaults = {
                 scrollY : null,
                 minWidth : null,
+                fixedCell : null,
                 scrollBody : ">.ui-scroll-table-body>.ui-scroll-content",
                 fixHead : ">.ui-scroll-table-header"
 			},options = $.extend(defaults, options);
@@ -16,8 +17,7 @@
                 b = _this.find(options.fixHead),
                 c = b.find("ul"),
                 d = a.find("> table"),
-                e = c.find("li:eq(0)"),
-                f =  d.find("> tbody > tr:not(.toggle-content) > td:first-child"),
+                e = null,
                 preScroll = 0;
                 if(options.scrollY){
                     if(a.parent().height() >= options.scrollY) {
@@ -34,11 +34,15 @@
                     d.css("min-width",options.minWidth);
                     c.css("min-width",options.minWidth);
                 };
+                if(options.fixedCell){
+                     $(">tbody>tr:not(.toggle-content) > td:nth-child(-n+"+options.fixedCell+")",d).addClass("fixed-cell");
+                     $("li:nth-child(-n+"+options.fixedCell+")",c).addClass("fixed-cell");
+                     e = _this.find(".fixed-cell");
+                };
                 a.on("scroll",function(){
                     if(this.scrollLeft != preScroll){
-                         b.scrollLeft(this.scrollLeft);
-                         e.css({"transform":"translateX("+ this.scrollLeft + "px)"});
-                         f.css({"transform":"translateX("+ this.scrollLeft + "px)"});
+                         b.scrollLeft(this.scrollLeft);                         
+                         if(e) e.css({"transform":"translateX("+ this.scrollLeft + "px)"});                         
                          preScroll = this.scrollLeft;
                     }else{
                         return false

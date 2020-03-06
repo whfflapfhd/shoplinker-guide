@@ -20,7 +20,7 @@
     .ui-scroll-content tbody tr:first-child td {border-top:0 none}
     .ui-scroll-table-header ul li,.ui-scroll-content td {border-right:1px solid #dedede;}
     .ui-scroll-table-header ul li:last-child,.ui-scroll-content tbody tr td:last-child {border-right:0 none}
-    .ui-scroll-table-header ul li:first-child,.ui-scroll-content > table > tbody > tr > td:first-child {position:relative;z-index:20}
+    .fixed-cell {position:relative;z-index:20}
 
 /* loader */
     .loader {display:none;position:relative;z-index:1;height:180px}
