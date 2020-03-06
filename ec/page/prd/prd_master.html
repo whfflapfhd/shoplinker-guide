@@ -2,11 +2,11 @@
 <div class="search-wrap">
     <h3 class="ir">検索</h3>
     <table>
-        <caption>検索</caption>
         <colgroup>
             <col style="width:15%" />
             <col style="width:auto" />
         </colgroup>
+        <caption>検索</caption>
         <tbody>
             <tr>
                 <th scope="row"><div>日付</div></th>
@@ -124,13 +124,11 @@
             <li class="col-name"><span>[Ra]楽天店長2</span></li>
             <li class="col-name"><span>[Ys]Yahoo!店長</span></li>
             <li class="col-name"><span>[Qo]Brangista Qoo10</span></li>
-
         </ul>
     </div>
     <div class="ui-scroll-table-body">
         <div class="ui-scroll-content">
             <table class="data-table t-center">
-                <caption>マスター商品リスト</caption>
                 <colgroup>
                     <col class="col-check"/>
                     <col class="col-add"/>
@@ -151,9 +149,12 @@
                     <col class="col-name" />
                     <col class="col-name" />
                 </colgroup>
+                <caption>マスター商品リスト</caption> <!-- 사파리 브라우저 colgroup 버그로 인해 colgrou 다음으로 선언 -->
                 <thead>
                     <tr>
                         <th scope="col">選択</th>
+                        <th scope="col">コピー</th>
+                        <th scope="col">編集</th>
                         <th scope="col">顧客社商品コード</th>
                         <th scope="col">マスタ商品コード</th>
                         <th scope="col">商品名</th>
