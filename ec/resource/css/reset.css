@@ -2,7 +2,7 @@
 html,body {height:100%}
 body {font-family:Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック" , "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;color:#555}
 ul {overflow:hidden;list-style:none;}
-caption,legend,.ir {
+legend,.ir {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);

@@ -7,451 +7,283 @@
                 <div role="tabpanel">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#tab1" aria-controls="table" role="tab" data-toggle="tab">Table</a></li>
-                        <li role="presentation"><a href="#tab2" aria-controls="form" role="tab" data-toggle="tab">Form</a></li>
-                        <li role="presentation"><a href="#tab3" aria-controls="tabs" role="tab" data-toggle="tab">jQuery UI</a></li>
-                        <li role="presentation"><a href="#tab4" aria-controls="box" role="tab" data-toggle="tab">Box</a></li>
+                        <li role="presentation" class="active"><a href="#tab1" aria-controls="box" role="tab" data-toggle="tab">Box</a></li>
+                        <li role="presentation"><a href="#tab2" aria-controls="button" role="tab" data-toggle="tab">Button</a></li>
+                        <li role="presentation"><a href="#tab3" aria-controls="form" role="tab" data-toggle="tab">Form</a></li>
+                        <li role="presentation"><a href="#tab4" aria-controls="tabs" role="tab" data-toggle="tab">Tabs</a></li>
                         <li role="presentation"><a href="#tab5" aria-controls="pagination" role="tab" data-toggle="tab">Pagination</a></li>
-                        <li role="presentation"><a href="#tab6" aria-controls="modal" role="tab" data-toggle="tab">Modal</a></li>
-                        <li role="presentation"><a href="#tab7" aria-controls="window popup" role="tab" data-toggle="tab">Window Popup</a></li>
-                        <li role="presentation"><a href="#tab8" aria-controls="etc" role="tab" data-toggle="tab">Etc.</a></li>
+                        <li role="presentation"><a href="#tab6" aria-controls="col" role="tab" data-toggle="tab">Colgroup List</a></li>
+                        <li role="presentation"><a href="#tab7" aria-controls="icon" role="tab" data-toggle="tab">Icon & Label</a></li>
+                        <li role="presentation"><a href="#tab8" aria-controls="logo" role="tab" data-toggle="tab">Mall Logo</a></li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="tab1">
                             <div class="guide-box">
                                 <div class="guide-row">
-                                    <h2 class="sub-header">테이블 상단 그룹</h2>
-                                    <p>테이블 상단 버튼그룹 및 전체 데이터 건 수 노출 영역입니다.</p>
-                                    <div class="table-info-group">
-                                        <strong>[全体 : 33 件]</strong>
-                                        <select>
-                                            <option>페이지 노출 개 수</option>
-                                            <option>20 件</option>
-                                            <option>50 件</option>
-                                        </select>
-                                        <div class="btn-group">
-                                            <a href="#" class="ui-btn">일반버튼</a>
-                                            <a href="#" class="ui-btn">일반버튼</a>
-                                            <a href="#" class="ui-btn btn-gray">수정버튼</a>
-                                            <a href="#" class="ui-btn btn-blue">추가버튼</a>
-                                            <a href="#" class="ui-btn btn-red">삭제버튼</a>
+                                    <h2 class="sub-header">검색 박스</h2>
+                                    <p class="sub-des">리스트 페이지에서 사용되는 검색영역입니다.</p>
+                                    <div class="search-wrap">
+                                        <h3 class="ir">検索</h3>
+                                        <table>
+                                            <caption><i class="ir">検索</i></caption>
+                                            <colgroup>
+                                                <col style="width:15%">
+                                                <col style="width:auto">
+                                                <col style="width:15%">
+                                                <col style="width:35%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row"><div>日付</div></th>
+                                                    <td colspan="3">
+                                                        <div class="grid">
+                                                            <div class="col-w-2">
+                                                                <select>
+                                                                    <option value="pd_0002.sale_start_dt">販売開始日時</option>
+                                                                    <option value="pd_0002.sale_end_dt">販売終了日時</option>
+                                                                    <option value="pd_0002.rg_dt">登録日</option>
+                                                                    <option value="pd_0002.up_dt">更新日</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-w-8">
+                                                                <span class="ui-date"><input type="text" class="startDate datepicker" title="calendar" /></span>
+                                                                ~
+                                                                <span class="ui-date"><input type="text" class="endDate datepicker" title="calendar" /></span>
+                                                                <div class="btn-group-inline">
+                                                                    <button type="button" class="ui-btn" onclick="setDatePicker(0,this)">今日</button>
+                                                                    <button type="button" class="ui-btn" onclick="setDatePicker(1,this)">昨日</button>
+                                                                    <button type="button" class="ui-btn" onclick="setDatePicker(7,this)">一週間</button>
+                                                                    <button type="button" class="ui-btn" onclick="setDatePicker(30,this)">今月</button>
+                                                                    <button type="button" class="ui-btn" onclick="setDatePicker(90,this)">3ヶ月</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><div>検索条件</div></th>
+                                                    <td>
+                                                        <div class="check-group">
+                                                            <label class="ui-radio"><input type="radio" name="radio_1" checked="checked"><i></i> ユーザーID</label>
+                                                            <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザー名</label>
+                                                            <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザーIP</label>
+                                                        </div>
+                                                    </td>
+                                                    <th scope="row"><div>検索</div></th>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><div>検索条件</div></th>
+                                                    <td>
+                                                        <div class="check-group">
+                                                            <label class="ui-check"><input type="checkbox" checked="checked"><i></i> ユーザーID</label>
+                                                            <label class="ui-check"><input type="checkbox"><i></i> ユーザー名</label>
+                                                            <label class="ui-check"><input type="checkbox"><i></i> ユーザーIP</label>
+                                                        </div>
+                                                    </td>
+                                                    <th scope="row"><div>検索</div></th>
+                                                    <td>
+                                                        <div class="grid">
+                                                            <div class="col-w-3">
+                                                                <select>
+                                                                    <option value="">test1</option>
+                                                                    <option value="">test2</option>
+                                                                    <option value="">test3</option>
+                                                                    <option value="">test4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-w-7">
+                                                                <input type="text">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="btn-wrap">
+                                            <button type="button" class="ui-btn btn-l btn-blue">検索</button>
+                                            <button type="button" class="ui-btn btn-l btn-black">初期化</button>
                                         </div>
                                     </div>
-                                    <table>
-                                        <caption>테이블</caption>
-                                        <colgroup>
-                                            <col span="4" style="width:25%"/>
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">항목 1</th>
-                                                <th scope="col">항목 2</th>
-                                                <th scope="col">항목 3</th>
-                                                <th scope="col">항목 4</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>데이터 1</td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        <div class="table-info-group">
-                                            <strong>[전체 : 33 건]</strong>
-                                            <select>
-                                                <option>페이지 노출 개 수</option>
-                                                <option>20</option>
-                                                <option>50</option>
-                                            </select>
-                                            <div class="btn-group">
-                                                <a href="#" class="ui-btn">일반버튼</a>
-                                                <a href="#" class="ui-btn">일반버튼</a>
-                                                <a href="#" class="ui-btn btn-gray">수정버튼</a>
-                                                <a href="#" class="ui-btn btn-blue">추가버튼</a>
-                                                <a href="#" class="ui-btn btn-red">삭제버튼</a>
-                                            </div>
+                                        <div class="search-wrap">
+                                            <h3 class="ir">検索</h3>
+                                            <table>
+                                                <caption>検索</caption>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col style="width:auto">
+                                                    <col style="width:15%">
+                                                    <col style="width:35%">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row"><div>検索条件</div></th>
+                                                        <td>
+                                                            ...
+                                                        </td>
+                                                        <th scope="row"><div>検索</div></th>
+                                                        <td>...</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="btn-wrap"><button type="button" class="ui-btn btn-l btn-green">検索</button></div>
                                         </div>
                                     </code></pre>
                                 </div>
                                 <div class="guide-row">
-                                    <h2 class="sub-header">숨겨진 행 펼쳐보기</h2>
-                                    <p>
-                                        테이블 내에서 추가정보가 담긴 행을 숨기거나 보이게 하는 기능입니다.<br>
-                                        숨겨놓을 행의 td 요소는 반드시 항목 개 수 만큼 colspan 적용해주세요.
-                                    </p>
-                                    <table>
-                                        <caption>테이블</caption>
-                                        <colgroup>
-                                            <col class="col-toggle"/>
-                                            <col style="width:auto"/>
-                                            <col span="2" style="width:25%"/>
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">항목 2</th>
-                                                <th scope="col">항목 3</th>
-                                                <th scope="col">항목 4</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr class="toggle-content">
-                                                <td colspan="4">숨겨진 추가정보</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr class="toggle-content">
-                                                <td colspan="4">숨겨진 추가정보</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <h2 class="sub-header">도움말 박스</h2>
+                                    <p class="sub-des">페이지 타이틀안에 버튼 삽입 후 사용. 각 페이지에 한번만 사용합니다.</p>
+                                    <div class="page-title">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></div>
+                                    <div class="ec-help-content">
+                                        도움말
+                                        <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                    </div>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        &lt;table&gt;
-                                            &lt;thead&gt;
-                                                &lt;tr&gt;
-                                                    &lt;th scope="col"&gt;#&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 2&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 3&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 4&lt;/th&gt;
-                                                &lt;/tr&gt;
-                                            &lt;/thead&gt;
-                                            &lt;tbody&gt;
-                                                &lt;tr&gt;
-                                                    &lt;td&gt;&lt;a href="#" class="ui-btn-toggle"&gt;&lt;i class="ir"&gt;view&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-                                                    &lt;td&gt;데이터 2&lt;/td&gt;
-                                                    &lt;td&gt;데이터 3&lt;/td&gt;
-                                                    &lt;td&gt;데이터 4&lt;/td&gt;
-                                                &lt;/tr&gt;
-                                                &lt;tr class="toggle-content"&gt;
-                                                    &lt;td colspan="4"&gt;숨겨진 추가정보&lt;/td&gt;
-                                                &lt;/tr&gt;
-                                            &lt;/tbody&gt;
-                                        &lt;/table&gt;
+                                        <h2 class="page-title">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+                                        <div class="ec-help-content">
+                                            도움말
+                                            <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                        </div>
                                     </code></pre>
                                 </div>
                                 <div class="guide-row">
-                                    <h2 class="sub-header">체크박스 사용 시 전체 행 선택하기</h2>
-                                    <p>전체 체크박스 선택기능입니다. 항목에 &lt;a href="#" class="ui-btn btn-s btn-black check-all"&gt;選択&lt;/a&gt;를 추가해주세요</p>
-                                    <table class="data-table t-center">
-                                        <caption>테이블</caption>
-                                        <colgroup>
-                                            <col style="width:50px"/>
-                                            <col style="width:auto"/>
-                                            <col span="2" style="width:25%"/>
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="chk01">選択</a></th>
-                                                <th scope="col">항목 2</th>
-                                                <th scope="col">항목 3</th>
-                                                <th scope="col">항목 4</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
-                                                <td><a href="http://www.daum.net" target="_blank">데이터 2</a></td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <h2 class="sub-header">페이지 안내 박스</h2>
+                                    <p class="sub-des">페이지 서브 타이틀 다음에 노출할 안내 컨텐츠 박스입니다. 범례, 주의사항 등에 사용합니다.</p>
+                                    <div class="page-title-sub">페이지 서브 타이틀</div>
+                                    <div class="ui-info">
+                                        <strong>범례</strong>
+                                        <ul class="list non-style">
+                                            <li><span class="ico-status done"><i class="ir">接続チェック必要</i></span> : 범례1</li>
+                                            <li><span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 범례2</li>
+                                            <li><span class="ico-status error"><i class="ir">有効期間切れ</i></span> : 범례3</li>
+                                        </ul>
+                                        <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                    </div>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        &lt;table class="data-table "&gt;
-                                            &lt;caption&gt;테이블&lt;/caption&gt;
-                                            &lt;thead&gt;
-                                                &lt;tr&gt;
-                                                    &lt;th scope="col"&gt;&lt;a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="chk01"&gt;選択&lt;/a&gt;&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 2&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 3&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 4&lt;/th&gt;
-                                                &lt;/tr&gt;
-                                            &lt;/thead&gt;
-                                            &lt;tbody&gt;
-                                                &lt;tr&gt;
-                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox" data-check-name="chk01"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
-                                                    &lt;td&gt;&lt;a href="http://www.daum.net" target="_blank"&gt;데이터 2&lt;/a&gt;&lt;/td&gt;
-                                                    &lt;td&gt;데이터 3&lt;/td&gt;
-                                                    &lt;td&gt;데이터 4&lt;/td&gt;
-                                                &lt;/tr&gt;
-                                                &lt;tr&gt;
-                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox" data-check-name="chk01"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
-                                                    &lt;td&gt;데이터 2&lt;/td&gt;
-                                                    &lt;td&gt;데이터 3&lt;/td&gt;
-                                                    &lt;td&gt;데이터 4&lt;/td&gt;
-                                                &lt;/tr&gt;
-                                            &lt;/tbody&gt;
-                                        &lt;/table&gt;
-                                    </code></pre>
-                                </div>
-                                <div class="guide-row">
-                                    <h2 class="sub-header">체크박스 사용 시 하나의 행만 선택하기</h2>
-                                    <p>테이블 데이터 중 수정/삭제를 위해 체크박스를 사용하여 행을 선택할 때 다중선택이 아닌 하나의 행만 선택하는 기능입니다.<br>table에 select-only-one 클래스를 추가해주세요.</p>
-                                    <table class="data-table select-only-one t-center">
-                                        <caption>테이블</caption>
-                                        <colgroup>
-                                            <col style="width:50px"/>
-                                            <col style="width:auto"/>
-                                            <col span="2" style="width:25%"/>
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">체크</th>
-                                                <th scope="col">항목 2</th>
-                                                <th scope="col">항목 3</th>
-                                                <th scope="col">항목 4</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
-                                                <td><a href="http://www.daum.net" target="_blank">데이터 2</a></td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
-                                                <td>데이터 2</td>
-                                                <td>데이터 3</td>
-                                                <td>데이터 4</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        &lt;table class="data-table select-only-one"&gt;
-                                            &lt;caption&gt;테이블&lt;/caption&gt;
-                                            &lt;thead&gt;
-                                                &lt;tr&gt;
-                                                    &lt;th scope="col"&gt;체크&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 2&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 3&lt;/th&gt;
-                                                    &lt;th scope="col"&gt;항목 4&lt;/th&gt;
-                                                &lt;/tr&gt;
-                                            &lt;/thead&gt;
-                                            &lt;tbody&gt;
-                                                &lt;tr&gt;
-                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
-                                                    &lt;td&gt;&lt;a href="http://www.daum.net" target="_blank"&gt;데이터 2&lt;/a&gt;&lt;/td&gt;
-                                                    &lt;td&gt;데이터 3&lt;/td&gt;
-                                                    &lt;td&gt;데이터 4&lt;/td&gt;
-                                                &lt;/tr&gt;
-                                                &lt;tr&gt;
-                                                    &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
-                                                    &lt;td&gt;데이터 2&lt;/td&gt;
-                                                    &lt;td&gt;데이터 3&lt;/td&gt;
-                                                    &lt;td&gt;데이터 4&lt;/td&gt;
-                                                &lt;/tr&gt;
-                                            &lt;/tbody&gt;
-                                        &lt;/table&gt;
+                                        <h3 class="page-title-sub">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h3>
+                                        <div class="ui-info">
+                                            <strong>범례</strong>
+                                            <ul class="list non-style">
+                                                <li><span class="ico-status done"><i class="ir">接続チェック必要</i></span> : 범례1</li>
+                                                <li><span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 범례2</li>
+                                                <li><span class="ico-status error"><i class="ir">有効期間切れ</i></span> : 범례3</li>
+                                            </ul>
+                                            <a href="#" class="btn-close"><span class="ir">close</span></a>
+                                        </div>
                                     </code></pre>
                                 </div>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab2">
-                            <div class="guide-box">
+                            <div class="guide-box">     
                                 <div class="guide-row">
-                                    <h2 class="sub-header">라디오/체크박스 그룹 (블럭)</h2>
-                                    <div class="check-group">
-                                        <label class="ui-radio"><input type="radio" name="radio_1" checked="checked"><i></i> radio</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_1"><i></i> radio</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_1"><i></i> radio</label>
-                                    </div>
-                                    <div class="check-group">
-                                        <label class="ui-radio"><input type="radio" name="radio_2" checked="checked"><i></i> radio2</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_2"><i></i> radio2</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_2"><i></i> radio2</label>
-                                    </div>
-                                    <div class="check-group">
-                                        <label class="ui-check"><input type="checkbox" checked="checked"><i></i> checkbox</label>
-                                        <label class="ui-check"><input type="checkbox"><i></i> checkbox</label>
-                                        <label class="ui-check"><input type="checkbox"><i></i> checkbox</label>
+                                    <h2 class="sub-header">switch button (checkbox)</h2>
+                                    <div class="toggle-switch">
+                                        <label><input type="checkbox" checked="checked"><span><i class="on">ON</i><i class="off">OFF</i></span></label>
                                     </div>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        <div class="check-group">
-                                            radio or checkbox
-                                        </div>
-                                        <div class="check-group">
-                                            ...
+                                        <div class="toggle-switch">
+                                            <label><input type="checkbox" checked="checked"><span><i class="on">ON</i><i class="off">OFF</i></span></label>
                                         </div>
                                     </code></pre>
                                 </div>
-                                <div class="guide-row">
-                                    <h2 class="sub-header">라디오/체크박스 그룹 (인라인)</h2>
-                                    <div class="check-group-inline">
-                                        <label class="ui-radio"><input type="radio" name="radio_1" checked="checked"><i></i> radio</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_1"><i></i> radio</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_1"><i></i> radio</label>
-                                    </div>
-                                    <div class="check-group-inline">
-                                        <label class="ui-radio"><input type="radio" name="radio_2" checked="checked"><i></i> radio2</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_2"><i></i> radio2</label>
-                                        <label class="ui-radio"><input type="radio" name="radio_2"><i></i> radio2</label>
-                                    </div>
-                                    <div class="check-group-inline">
-                                        <label class="ui-check"><input type="checkbox" checked="checked"><i></i> checkbox</label>
-                                        <label class="ui-check"><input type="checkbox"><i></i> checkbox</label>
-                                        <label class="ui-check"><input type="checkbox"><i></i> checkbox</label>
-                                    </div>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        <div class="check-group-inline">
-                                            radio or checkbox
-                                        </div>
-                                        <div class="check-group-inline">
-                                            ...
-                                        </div>
-                                    </code></pre>
-                                </div>
-                            </div>
+                            </div>                            
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab3">
                             <div class="guide-box">
                                 <div class="guide-row">
-                                    <h2 class="sub-header">Dialog - Default</h2>
-                                    <p>해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/dialog" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
-                                    <div class="dialog-wrap">
-                                        <div id="dialog" title="Basic dialog">
-                                          <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+                                    <h2 class="sub-header">Address</h2>
+                                    <div class="col-w-5 form-address">
+                                        <div class="addr-num clear">
+                                            <div>
+                                                <span><input type="text" value="160" disabled="disabled"></span>
+                                                <span><input type="text" value="0023" disabled="disabled"></span>
+                                            </div>
+                                            <div><button type="button" class="ui-btn btn-green">郵便番号の適用</button></div>
+                                            <div><a href="http://www.post.japanpost.jp/zipcode/index.html" class="ui-btn" target="_blank">郵便番号検索</a></div>
                                         </div>
-                                    </div>                                    
+                                        <div class="auto-addr clear">
+                                            <span><input type="text" value="東京都" disabled="disabled"></span>
+                                            <span><input type="text" value="新宿区" disabled="disabled"></span>
+                                            <span><input type="text" value="西新宿（次のビルを除く）" disabled="disabled"></span>
+                                        </div>
+                                        <div><input type="text" value="7-18-12-50１" disabled="disabled"></div>
+                                    </div>                               
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        &lt;div id="dialog" title="Basic dialog"&gt;
-                                          &lt;p&gt;Some Text...&lt;/p&gt;
+                                        &lt;div class="form-address"&gt;
+                                            &lt;div class="addr-num clear"&gt;
+                                                &lt;div&gt;
+                                                    &lt;span&gt;&lt;input type="text" value="160" disabled="disabled"&gt;&lt;/span&gt;
+                                                    &lt;span&gt;&lt;input type="text" value="0023" disabled="disabled"&gt;&lt;/span&gt;
+                                                &lt;/div&gt;
+                                                &lt;div&gt;&lt;button type="button" class="ui-btn btn-green"&gt;郵便番号の適用&lt;/button&gt;&lt;/div&gt;
+                                                &lt;div&gt;&lt;a href="http://www.post.japanpost.jp/zipcode/index.html" class="ui-btn" target="_blank"&gt;郵便番号検索&lt;/a&gt;&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="auto-addr clear"&gt;
+                                                &lt;span&gt;&lt;input type="text" value="東京都" disabled="disabled"&gt;&lt;/span&gt;
+                                                &lt;span&gt;&lt;input type="text" value="新宿区" disabled="disabled"&gt;&lt;/span&gt;
+                                                &lt;span&gt;&lt;input type="text" value="西新宿（次のビルを除く）" disabled="disabled"&gt;&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;div&gt;&lt;input type="text" value="7-18-12-50１" disabled="disabled"&gt;&lt;/div&gt;
                                         &lt;/div&gt;
-                                        &lt;script&gt;
-                                            $( "#dialog" ).dialog();
-                                        &lt;/script&gt;
                                     </code></pre>
                                 </div>
                                 <div class="guide-row">
-                                    <h2 class="sub-header">Dialog - with Buttons</h2>
-                                    <div class="dialog-wrap1">
-                                        <div id="dialog2" title="Dialog with Buttons">
-                                          <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-                                        </div>
-                                    </div>                                    
+                                    <h2 class="sub-header">Phone Number</h2>
+                                    <div class="col-w-5 form-tel clear">
+                                        <span><input type="text" value="03" disabled="disabled"></span>
+                                        <span><input type="text" value="5937" disabled="disabled"></span>
+                                        <span><input type="text" value="5636" disabled="disabled"></span>
+                                    </div>                              
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        &lt;div id="dialog" title="Basic dialog"&gt;
-                                          &lt;p&gt;Some Text...&lt;/p&gt;
+                                        &lt;div class="form-tel clear"&gt;
+                                            &lt;span&gt;&lt;input type="text" value="03" disabled="disabled"&gt;&lt;/span&gt;
+                                            &lt;span&gt;&lt;input type="text" value="5937" disabled="disabled"&gt;&lt;/span&gt;
+                                            &lt;span&gt;&lt;input type="text" value="5636" disabled="disabled"&gt;&lt;/span&gt;
                                         &lt;/div&gt;
-                                        &lt;script&gt;
-                                            $( "#dialog" ).dialog({
-                                                buttons : {
-                                                    "Delete" : function(){
-                                                        $(this).dialog("close");
-                                                    },
-                                                    Cancel : function(){
-                                                        $(this).dialog("close");
-                                                    }
-                                                }
-                                            });
-                                        &lt;/script&gt;
                                     </code></pre>
                                 </div>
                                 <div class="guide-row">
-                                    <h2 class="sub-header">Datepicker - Default</h2>
-                                    <p>해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/datepicker" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
-                                    <p>
-                                        Date : <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
-                                    </p>
+                                    <h2 class="sub-header">Name</h2>
+                                    <div class="form-with-btn clear">
+                                        <span><input type="text" value="代表者（哲吉）" disabled="disabled"></span>
+                                        <span><em>(漢字)</em></span>
+                                    </div>
+                                    <div class="form-with-btn clear">
+                                        <span><input type="text" value="代表者（哲吉）" disabled="disabled"></span>
+                                        <span><em>(漢字)</em></span>
+                                    </div>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        &lt;span class="ui-date"&gt;&lt;input type="text" class="datepicker" title="calendar" /&gt;&lt;/span&gt;
-                                        &lt;script&gt;
-                                            $(function(){
-                                                // jQuery UI Datepicker 설정변경(공통 JS파일에 정의)
-                                                var dateOptions = $.extend({},$.datepicker.regional["ja"],{
-                                                    clearText: 'クリア', clearStatus: '日付をクリアします',
-                                                    closeText: '閉じる', closeStatus: '変更せずに閉じます',
-                                                    prevText: '前月', prevStatus: '前月を表示します',
-                                                    prevBigText: '&#x3c;&#x3c;', prevBigStatus: '前年を表示します',
-                                                    nextText: '次月', nextStatus: '翌月を表示します',
-                                                    nextBigText: '&#x3e;&#x3e;', nextBigStatus: '翌年を表示します',
-                                                    currentText: '今月', currentStatus: '今月を表示します',
-                                                    monthNames: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-                                                    monthNamesShort: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-                                                    monthStatus: '表示する月を変更します', yearStatus: '表示する年を変更します',
-                                                    weekHeader: '週', weekStatus: '暦週で第何週目かを表します',
-                                                    dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
-                                                    dayNamesShort: ['日','月','火','水','木','金','土'],
-                                                    dayNamesMin: ['日','月','火','水','木','金','土'],
-                                                    dayStatus: '週の始まりをDDにします', dateStatus: 'Md日(D)',
-                                                    dateFormat: 'yy-mm-dd', firstDay: 0,
-                                                    initStatus: '日付を選択します', isRTL: false,showButtonPanel :true,showOn:'button',buttonImageOnly:true,changeMonth: true,changeYear: true,
-                                                    buttonImage:'/ec/resource/images/calendar.png',buttonText:'calendar',showMonthAfterYear: true, yearSuffix: ' 年 '
-                                                });
-                                                $.datepicker.setDefaults(dateOptions);
-
-                                                // datepicker를 사용할 페이지에서 선언
-                                                $(".datepicker").datepicker();
-                                            });
-                                        &lt;/script&gt;
+                                        &lt;div class="form-tel clear"&gt;
+                                            &lt;span&gt;&lt;input type="text" value="03" disabled="disabled"&gt;&lt;/span&gt;
+                                            &lt;span&gt;&lt;input type="text" value="5937" disabled="disabled"&gt;&lt;/span&gt;
+                                            &lt;span&gt;&lt;input type="text" value="5636" disabled="disabled"&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
                                     </code></pre>
                                 </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab4">
+                            <div class="guide-box">
                                 <div class="guide-row">
                                     <h2 class="sub-header">Tabs - Default</h2>
-                                    <p>해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/tabs" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
+                                    <p class="sub-des">해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/tabs" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
                                     <div id="tabs" class="ui-tab-wrap">
                                       <ul>
                                         <li><a href="#tabs-1">tab 01</a></li>
@@ -548,145 +380,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="tab4">
-                            <div class="guide-box">
-                                <div class="guide-row">
-                                    <h2 class="sub-header">검색 박스</h2>
-                                    <p>리스트 페이지에서 사용되는 검색영역입니다.</p>
-                                    <div class="search-wrap">
-                                        <h3 class="ir">検索</h3>
-                                        <table>
-                                            <caption>検索</caption>
-                                            <colgroup>
-                                                <col style="width:15%">
-                                                <col style="width:auto">
-                                                <col style="width:15%">
-                                                <col style="width:35%">
-                                            </colgroup>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row"><div>検索条件</div></th>
-                                                    <td>
-                                                        <div class="check-group">
-                                                            <label class="ui-radio"><input type="radio" name="radio_1" checked="checked"><i></i> ユーザーID</label>
-                                                            <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザー名</label>
-                                                            <label class="ui-radio"><input type="radio" name="radio_1"><i></i> ユーザーIP</label>
-                                                        </div>
-                                                    </td>
-                                                    <th scope="row"><div>検索</div></th>
-                                                    <td><input type="text"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><div>検索条件</div></th>
-                                                    <td>
-                                                        <div class="check-group">
-                                                            <label class="ui-check"><input type="checkbox" checked="checked"><i></i> ユーザーID</label>
-                                                            <label class="ui-check"><input type="checkbox"><i></i> ユーザー名</label>
-                                                            <label class="ui-check"><input type="checkbox"><i></i> ユーザーIP</label>
-                                                        </div>
-                                                    </td>
-                                                    <th scope="row"><div>検索</div></th>
-                                                    <td>
-                                                        <div class="grid">
-                                                            <div class="col-w-3">
-                                                                <select>
-                                                                    <option value="">test1</option>
-                                                                    <option value="">test2</option>
-                                                                    <option value="">test3</option>
-                                                                    <option value="">test4</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-w-7">
-                                                                <input type="text">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="btn-wrap"><button type="button" class="ui-btn btn-l btn-blue">検索</button></div>
-                                    </div>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        <div class="search-wrap">
-                                            <h3 class="ir">検索</h3>
-                                            <table>
-                                                <caption>検索</caption>
-                                                <colgroup>
-                                                    <col style="width:15%">
-                                                    <col style="width:auto">
-                                                    <col style="width:15%">
-                                                    <col style="width:35%">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row"><div>検索条件</div></th>
-                                                        <td>
-                                                            ...
-                                                        </td>
-                                                        <th scope="row"><div>検索</div></th>
-                                                        <td>...</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="btn-wrap"><button type="button" class="ui-btn btn-l btn-green">検索</button></div>
-                                        </div>
-                                    </code></pre>
-                                </div>
-                                <div class="guide-row">
-                                    <h2 class="sub-header">도움말 박스</h2>
-                                    <p>페이지 타이틀안에 버튼 삽입 후 사용. 각 페이지에 한번만 사용합니다.</p>
-                                    <div class="page-title">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></div>
-                                    <div class="ec-help-content">
-                                        도움말
-                                        <a href="#" class="btn-close"><span class="ir">close</span></a>
-                                    </div>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        <h2 class="page-title">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
-                                        <div class="ec-help-content">
-                                            도움말
-                                            <a href="#" class="btn-close"><span class="ir">close</span></a>
-                                        </div>
-                                    </code></pre>
-                                </div>
-                                <div class="guide-row">
-                                    <h2 class="sub-header">페이지 안내 박스</h2>
-                                    <p>페이지 서브 타이틀 다음에 노출할 안내 컨텐츠 박스입니다. 범례, 주의사항 등에 사용합니다.</p>
-                                    <div class="page-title-sub">페이지 서브 타이틀</div>
-                                    <div class="ui-info">
-                                        <strong>범례</strong>
-                                        <ul class="list non-style">
-                                            <li><span class="ico-status done"><i class="ir">接続チェック必要</i></span> : 범례1</li>
-                                            <li><span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 범례2</li>
-                                            <li><span class="ico-status error"><i class="ir">有効期間切れ</i></span> : 범례3</li>
-                                        </ul>
-                                        <a href="#" class="btn-close"><span class="ir">close</span></a>
-                                    </div>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        <h3 class="page-title-sub">페이지 타이틀 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h3>
-                                        <div class="ui-info">
-                                            <strong>범례</strong>
-                                            <ul class="list non-style">
-                                                <li><span class="ico-status done"><i class="ir">接続チェック必要</i></span> : 범례1</li>
-                                                <li><span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 범례2</li>
-                                                <li><span class="ico-status error"><i class="ir">有効期間切れ</i></span> : 범례3</li>
-                                            </ul>
-                                            <a href="#" class="btn-close"><span class="ir">close</span></a>
-                                        </div>
-                                    </code></pre>
-                                </div>
-                            </div>
-                        </div>
                         <div role="tabpanel" class="tab-pane" id="tab5">
                             <div class="guide-box">
                                 <div class="guide-row">
                                     <h2 class="sub-header">페이지네이션 - 기본</h2>
-                                    <p>기본 페이지네이션 입니다.</p>
+                                    <p class="sub-des">기본 페이지네이션 입니다.</p>
                                     <ul class="pagination">
                                         <li><a href="#"><span>«</span></a></li>
                                         <li><a href="#">1</a></li>
@@ -747,13 +445,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="tab6">...</div>
-                        <div role="tabpanel" class="tab-pane" id="tab7">...</div>
-                        <div role="tabpanel" class="tab-pane" id="tab8">
+                        <div role="tabpanel" class="tab-pane" id="tab6">
                             <div class="guide-box">
                                 <div class="guide-row">
                                     <h2 class="sub-header">테이블 Colgroup List</h2>
-                                    <p>스크롤 테이블 등을 사용 시 정의된 colgroup 리스트입니다.</p>
+                                    <p class="sub-des">스크롤 테이블 등 사용 시 정의된 colgroup 리스트입니다.</p>
                                     <table>
                                         <colgroup>
                                             <col span="4"/>
@@ -869,9 +565,113 @@
                                         &lt;/colgroup&gt;
                                     </code></pre>
                                 </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab7">
+                            <div class="guide-box">     
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Badge</h2>
+                                    <span class="badge">208</span>
+                                    <span class="t-danger"><span class="badge">Error</span></span>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="badge">208</span>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Label</h2>
+                                    <p class="sub-des">매장관리 화면 리스트에서 쇼핑몰에서 제공하는 기능에대한 레이블 값</p>
+                                    <span class="ui-label label-ftp">FTP</span>
+                                    <span class="ui-label label-api">API</span>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="ui-label label-ftp">FTP</span>
+                                        <span class="ui-label label-api">API</span>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">상태 값</h2>
+                                    <p class="sub-des">FTP, API 등 연결상태에 대한 상태값</p>
+                                    <span class="ico-status done" title="正常"><i class="ir">正常</i></span>
+                                    <span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
+                                    <span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="ico-status done" title="正常"><i class="ir">正常</i></span>
+                                        <span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
+                                        <span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">프라임 주문 Icon</h2>
+                                    <p class="sub-des">주문관리 화면 리스트의 프라임주문 여부 아이콘</p>
+                                    <ul class="list-inline">
+                                        <li>아마존 프라임 : <img src="/ec/resource/images/amazon_prime.png" class="mall-icon" alt="amazon prime" /></li>
+                                        <li>라쿠텐페이 : <img src="/ec/resource/images/r_pay.png" class="mall-icon" alt="Rpay" /></li>
+                                    </ul>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <img src="/ec/resource/images/amazon_prime.png" class="mall-icon" alt="amazon prime" />
+                                        <img src="/ec/resource/images/r_pay.png" class="mall-icon" alt="Rpay" />
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">배송정보 Icon</h2>
+                                    <p class="sub-des">주문관리 리스트 배송정보 항목 아이콘</p>
+                                    <ul class="list-inline">
+                                        <li>배송메세지 : <span class="i-msg" title="明日配送あり"><i class="ir">明日配送あり</i></span></li>
+                                        <li>내일배송 : <span class="i-delivery" title="配送メッセージあり"><i class="ir">配送メッセージあり</i></span></li>
+                                        <li>사은품여부 : <span class="i-gift" title="ギフト商品可能性あり"><i class="ir">ギフト商品可能性あり</i></span></li>
+                                    </ul>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="i-msg" title="明日配送あり"><i class="ir">明日配送あり</i></span>
+                                        <span class="i-delivery" title="配送メッセージあり"><i class="ir">配送メッセージあり</i></span>
+                                        <span class="i-gift" title="ギフト商品可能性あり"><i class="ir">ギフト商品可能性あり</i></span>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">장표 출력 Icon</h2>
+                                    <p class="sub-des">주문관리 리스트 장표 출력 항목 아이콘</p>
+                                    <ul class="list-inline">
+                                        <li>주문 정보 표 발행 : <span class="i-print-order" title="受注明細表発行"><i class="ir">受注明細表発行</i></span></li>
+                                        <li>구입 명세서 발행 : <span class="i-print-buy" title="お買い上げ明細書発行"><i class="ir">お買い上げ明細書発行</i></span></li>
+                                    </ul>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="i-print-order" title="受注明細表発行"><i class="ir">受注明細表発行</i></span>
+                                        <span class="i-print-buy" title="お買い上げ明細書発行"><i class="ir">お買い上げ明細書発行</i></span>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">이메일구분 Icon</h2>
+                                    <p class="sub-des">주문관리 리스트 배송정보 항목 아이콘</p>
+                                    <ul class="list-inline">
+                                        <li>PC 메일 : <span class="i-mail-pc" title="PCメール"><i class="ir">PCメール</i></span></li>
+                                        <li>모바일 메일 : <span class="i-mail-mobile" title="モバイルメール"><i class="ir">モバイルメール</i></span></li>
+                                        <li>안심 모바일 메일 : <span class="i-mail-mobile2" title="安心モバイルメール"><i class="ir">安心モバイルメール</i></span></li>
+                                    </ul>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <span class="i-mail-pc" title="PCメール"><i class="ir">PCメール</i></span>
+                                        <span class="i-mail-mobile" title="モバイルメール"><i class="ir">モバイルメール</i></span>
+                                        <span class="i-mail-mobile2" title="安心モバイルメール"><i class="ir">安心モバイルメール</i></span>
+                                    </code></pre>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab8">
+                            <div class="guide-box">
                                 <div class="guide-row">
                                     <h2 class="sub-header">쇼핑몰 로고 List</h2>
-                                    <p>쇼핑몰 로고 리스트입니다. 사이즈는 100 x 30 입니다.</p>
+                                    <p class="sub-des">쇼핑몰 로고 리스트입니다. 사이즈는 100 x 30 입니다.</p>
                                     <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_01.png" alt="" /></div>
                                     <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_02.png" alt="" /></div>
                                     <div class="col-md-2 col-sm-2"><img src="/ec/resource/images/mall/mall_logo_03.png" alt="" /></div>
@@ -899,30 +699,6 @@
                                         <img src="/ec/resource/images/mall/mall_logo_11.png" alt="海外販売" />
                                     </code></pre>
                                 </div>
-                                <div class="guide-row">
-                                    <h2 class="sub-header">Label</h2>
-                                    <span class="ui-label label-ftp">FTP</span>
-                                    <span class="ui-label label-api">API</span>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        <span class="ui-label label-ftp">FTP</span>
-                                        <span class="ui-label label-api">API</span>
-                                    </code></pre>
-                                </div>
-                                <div class="guide-row">
-                                    <h2 class="sub-header">상태 값</h2>
-                                    <span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
-                                    <span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
-                                    <span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span>
-                                </div>
-                                <div class="guide-code">
-                                    <pre><code class="html">
-                                        <span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
-                                        <span class="ico-status update" title="接続チェック必要"><i class="ir">接続チェック必要</i></span>
-                                        <span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span>
-                                    </code></pre>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -937,29 +713,9 @@
             var showTab = sessionStorage.component || null;
             $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 if(e.target.hash != "#tab3"){
-                     $( "#dialog" ).dialog( "close" );
-                     $( "#dialog2" ).dialog( "close" );
+                    
                 }else{
-                    $( "#dialog" ).dialog({
-                        appendTo : ".dialog-wrap",
-                        classes: {
-                            "ui-dialog": "pos-re"
-                        }
-                    });
-                    $( "#dialog2" ).dialog({
-                        appendTo : ".dialog-wrap1",
-                        classes: {
-                            "ui-dialog": "pos-re"
-                        },
-                        buttons : {
-                            "Delete" : function(){
-                                $(this).dialog("close");
-                            },
-                            Cancel : function(){
-                                $(this).dialog("close");
-                            }
-                        }
-                    });
+                    
                 }
                 sessionStorage.setItem('component',e.target.hash)
             });

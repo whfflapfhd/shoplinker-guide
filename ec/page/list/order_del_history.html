@@ -1,0 +1,112 @@
+<?php require_once '../inc_header.html'; ?>
+	<!-- Content -->
+    <h2 class="page-title">注文管理画面 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h2>
+    <div class="ec-help-content">
+        <div class="paragraph">
+            <p>EC店長内で注文削除を行った履歴です。</p>
+        </div>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    <div class="ec-section">
+        <h3 class="page-title-sub">注文削除履歴</h3>
+        <div class="ui-scroll-table">
+            <div class="ui-scroll-table-header">
+                <ul>
+                    <li class="col-divsion"><div><span>ステータス</span></div></li>
+                    <li class="col-logo"><div><span>モール</span></div></li>
+                    <li class="col-name"><div><span>店舗</span></div></li>
+                    <li class="col-code"><div><span>EC店長注文番号</span></div></li>
+                    <li class="col-order"><div><span>モール注文番号</span></div></li>
+                    <li class="col-etc"><div><span>注文日</span></div></li>
+                    <li class="col-etc"><div><span>EC店長取得日</span></div></li>
+                    <li class="col-id"><div><span>削除者</span></div></li>
+                    <li class="col-etc"><div><span>削除日</span></div></li>
+                </ul>
+            </div>
+            <div class="ui-scroll-table-body">
+                <div class="ui-scroll-content">
+                    <table class="data-table t-center">
+                        <caption><i class="ir">マスター商品リスト</i></caption>
+                        <colgroup>
+                            <col class="col-divsion"/>
+                            <col class="col-logo"/>
+                            <col class="col-name"/>
+                            <col class="col-code"/>
+                            <col class="col-order"/>
+                            <col class="col-etc"/>
+                            <col class="col-etc"/>
+                            <col class="col-id"/>
+                            <col class="col-etc"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">ステータス</th>
+                                <th scope="col">モール</th>
+                                <th scope="col">店舗</th>
+                                <th scope="col">EC店長注文番号</th>
+                                <th scope="col">モール注文番号</th>
+                                <th scope="col">注文日</th>
+                                <th scope="col">EC店長取得日</th>
+                                <th scope="col">削除者</th>
+                                <th scope="col">削除日</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                               <td>受注処理中</td>
+                               <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
+                               <td>dev-ec-tencho</td>
+                               <td>22205486</td>
+                               <td>dev-ec-tencho-10000214</td>
+                               <td>2019-09-29 20:28:05</td>
+                               <td>2019-10-02 15:50:49</td>
+                               <td>test00</td>
+                               <td>2019-10-02 16:14:56</td>
+                            </tr>
+                            <tr>
+                               <td>受注処理中</td>
+                               <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt=""></td>
+                               <td>dev-ec-tencho</td>
+                               <td>22205486</td>
+                               <td>dev-ec-tencho-10000214</td>
+                               <td>2019-09-29 20:28:05</td>
+                               <td>2019-10-02 15:50:49</td>
+                               <td>test00</td>
+                               <td>2019-10-02 16:14:56</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-wrap">
+            <div class="page-total">
+                <strong>[全体 : 12,704 件]</strong>
+            </div>
+            <div class="ui-pagenation">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#"><span>«</span></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#"><span>»</span></a></li>
+                </ul>
+                <select>
+                    <option value="value1">20 件</option>
+                    <option value="value2">50 件</option>
+                    <option value="value3">100 件</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){
+            $(".ui-scroll-table").fixedTable({scrollY : 460});
+        });
+    //]]>
+    </script>
+    <!-- //Content -->
+<?php require_once '../inc_footer.html'; ?>

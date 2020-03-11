@@ -19,13 +19,13 @@
             <strong>ステータスアイコンについて</strong>
             <ul class="list non-style">
                 <li>
-                    <span class="ico-status done"><i class="ir">接続チェック必要</i></span> : FTP、APIの接続が正常です
+                    <span class="ico-status done"><i class="ir">正常</i></span> : FTP、APIの接続が正常です
                 </li>
                 <li>
                     <span class="ico-status update"><i class="ir">接続チェック必要</i></span> : 店舗情報を編集すると、必ずこのアイコンになります。接続不備ではありませんので、接続チェックをしてください。
                 </li>
                 <li>
-                    <span class="ico-status error"><i class="ir">有効期間切れ</i></span> : FTP、APIの有効期限切れです。パスワードを更新してください。
+                    <span class="ico-status error"><i class="ir">有効期間切れ</i></span> : FTP、APIの有効期限切れです。パスワードを更新してください。<a href="https://www.ec-tencho.jp/images/qa/ftp_api_update.pdf" class="ui-btn btn-s" target="_blank">FTP API 更新方法</a>
                 </li>
             </ul>
             <a href="#" class="btn-close"><span class="ir">close</span></a>
@@ -39,25 +39,26 @@
         <div class="ui-scroll-table">
             <div class="ui-scroll-table-header">
                 <ul>
-                    <li class="col-check">選択</li>
-                    <li class="col-toggle">&nbsp;</li>
-                    <li class="col-status"><span>状態</span></li>
-                    <li class="col-edit">編集</li>
-                    <li class="col-logo">モール</li>
-                    <li class="col-name"><span>店舗名</span></li>
-                    <li class="col-id"><span>店舗ID</span></li>
-                    <li class="col-id"><span>ビジネスID</span></span></li>
-                    <li class="col-id"><span>会員ID</span></li>
-                    <li class="col-fnc"><span>モール連携</span></li>
-                    <li class="col-join"><span>接続チェック</span></li>
-                    <li class="col-login"><span>管理画面</span></li>
-                    <li class="col-etc"><span>認証有効期間</span></li>
+                    <li class="col-check"><div>選択</div></li>
+                    <li class="col-toggle"><div>&nbsp;</div></li>
+                    <li class="col-status"><div><span>状態</span></div></li>
+                    <li class="col-edit"><div>編集</div></li>
+                    <li class="col-logo"><div>モール</div></li>
+                    <li class="col-name"><div><span>店舗名</span></div></li>
+                    <li class="col-id"><div><span>店舗ID</span></div></li>
+                    <li class="col-id"><div><span>ビジネスID</span></span></div></li>
+                    <li class="col-id"><div><span>会員ID</span></div></li>
+                    <li class="col-fnc"><div><span>モール連携</span></div></li>
+                    <li class="col-join"><div><span>接続チェック</span></div></li>
+                    <li class="col-login"><div><span>管理画面</span></div></li>
+                    <li class="col-etc"><div><span>認証有効期間</span></div></li>
                 </ul>
             </div>
             <div class="ui-scroll-table-body">
                 <div class="ui-scroll-content">
                     <table class="data-table select-only-one t-center">
-                         <colgroup>
+                        <caption><i class="ir">店舗 リスト</i></caption>
+                        <colgroup>
                              <col class="col-check" />
                              <col class="col-toggle" />
                              <col class="col-status" />
@@ -72,29 +73,11 @@
                              <col class="col-login" />
                              <col class="col-etc" />
                         </colgroup>
-                        <caption>店舗 リスト</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">選択</th>
-                                <th scope="col">&nbsp;</th>
-                                <th scope="col">編集</th>
-                                <th scope="col">モール</th>
-                                <th scope="col">店舗名</th>
-                                <th scope="col">店舗ID</th>
-                                <th scope="col">ビジネスID</th>
-                                <th scope="col">会員ID</th>
-                                <th scope="col">ステータス</th>
-                                <th scope="col">モール連携</th>
-                                <th scope="col">接続チェック</th>
-                                <th scope="col">管理画面</th>
-                                <th scope="col">認証有効期間</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">接続チェック必要</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -106,7 +89,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -141,7 +124,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">正常</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_02.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -153,7 +136,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -173,7 +156,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">有効期間切れ</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_03.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -185,7 +168,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -217,7 +200,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -237,7 +220,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">正常</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_05.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -249,7 +232,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -281,7 +264,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -301,7 +284,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status error" title="有効期間切れ"><i class="ir">接続チェック必要</i></span></td>
+                                <td><span class="ico-status error" title="有効期間切れ"><i class="ir">有効期間切れ</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_07.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -313,7 +296,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -333,7 +316,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">正常</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_08.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -345,7 +328,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -365,7 +348,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">有効期間切れ</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_09.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -377,7 +360,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -409,7 +392,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -429,7 +412,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">正常</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_11.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -441,7 +424,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>
@@ -461,7 +444,7 @@
                             <tr>
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
-                                <td><span class="ico-status done" title="接続チェック必要"><i class="ir">有効期間切れ</i></span></td>
+                                <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
                                 <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
                                 <td><img src="http://210.121.151.96:1212/images/jp/bt_shop_mall0012.jpg" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
@@ -473,7 +456,7 @@
                                     <span class="ui-label label-api">API</span>
                                 </td>
                                 <td><a href="#" class="ui-btn btn-s btn-black">チェック</a></td>
-                                <td><a href="#" class="ui-btn btn-s">ログイン</a></td>
+                                <td><a href="#" class="ui-btn btn-s" target="_blank">ログイン</a></td>
                                 <td class="t-left">
                                     <ul class="list">
                                         <li>FTP : 2020-11-13</li>

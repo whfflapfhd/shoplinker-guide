@@ -29,6 +29,7 @@
                     </div>
                     <div class="guide-row">
                         <h2 class="sub-header">Textarea</h2>
+                        <div class="sub-des">textarea의 resize를 비활성화 시키려면 <span class="code">style="resize:none"</span>을 추가해주세요.</div>
                         <textarea cols="10" rows="5">텍스트</textarea>
                     </div>
                      <div class="guide-code">
@@ -38,18 +39,8 @@
                     </div>
                     <div class="guide-row">
                         <h2 class="sub-header">Check Box</h2>
-                        <div class="check-group">
-                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
-                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
-                        </div>
-                        <div class="check-group-inline">
-                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
-                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
-                        </div>
-                        <div class="check-group-inline">
-                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
-                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
-                        </div>
+                        <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                        <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
                     </div>
                     <div class="guide-code">
                         <pre><code class="html">
@@ -58,28 +49,67 @@
                     </div>
                     <div class="guide-row">
                         <h2 class="sub-header">Radio Box</h2>
-                        <div class="check-group">
-                            <label class="ui-radio"><input type="radio" name="radio_1" checked="checked" /><i></i> radio 01</label>
-                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
-                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
-                            <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
-                        </div>
-                        <div class="check-group-inline">
-                            <label class="ui-radio"><input type="radio" name="radio_2" /><i></i> radio 01</label>
-                            <label class="ui-radio"><input type="radio" name="radio_2" /><i></i> radio 02</label>
-                            <label class="ui-radio"><input type="radio" name="radio_2" /><i></i> radio 03</label>
-                        </div>
-                        <div class="check-group-inline">
-                            <label class="ui-radio"><input type="radio" name="radio_3" /><i></i> radio 01</label>
-                            <label class="ui-radio"><input type="radio" name="radio_3" /><i></i> radio 02</label>
-                            <label class="ui-radio"><input type="radio" name="radio_3" /><i></i> radio 03</label>
-                        </div>
+                        <label class="ui-radio"><input type="radio" name="radio_1" checked="checked" /><i></i> radio 00</label>
+                        <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 01</label>
+                        <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
+                        <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 03</label>              
                     </div>
                     <div class="guide-code">
                         <pre><code class="html">
                             <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 01</label>
                             <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 02</label>
                             <label class="ui-radio"><input type="radio" name="radio_1" /><i></i> radio 03</label>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Check & Radio Box Group</h2>
+                        <div class="sub-des">
+                            <p>checkbox 또는 radiobox를 그룹화 할 때 사용합니다.</p>
+                            <p>Block 레벨로 그룹화 시 <span class="code">check-group</span>클래스로 묶고, Inline 레벨로 그룹화 시 <span class="code">check-group-inline</span>로 묶습니다.</p>
+                        </div>
+                        <h3>Block Group</h3>
+                        <div class="check-group">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                        </div>
+                        <div class="check-group">
+                            <label class="ui-radio"><input type="radio" name="radio_group" checked="checked" /><i></i> radio 01</label>
+                            <label class="ui-radio"><input type="radio" name="radio_group" /><i></i> radio 02</label>
+                        </div>
+                        <h3>Inline Group</h3>
+                        <div class="check-group-inline">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                        </div>
+                        <div class="check-group-inline">
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                        </div>
+                        <div class="check-group-inline">
+                            <label class="ui-radio"><input type="radio" name="radio_group1" checked="checked" /><i></i> radio 01</label>
+                            <label class="ui-radio"><input type="radio" name="radio_group1" /><i></i> radio 02</label>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <!-- Block Group -->
+                            <div class="check-group">
+                                <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                                <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                            </div>
+                            <div class="check-group">
+                                <label class="ui-radio"><input type="radio" name="radio_group" checked="checked" /><i></i> radio 01</label>
+                                <label class="ui-radio"><input type="radio" name="radio_group" /><i></i> radio 02</label>
+                            </div>
+                            <!-- Inline Group -->
+                            <div class="check-group-inline">
+                                <label class="ui-check"><input type="checkbox" /><i></i> check 01</label>
+                                <label class="ui-check"><input type="checkbox" /><i></i> check 02</label>
+                            </div>
+                            <div class="check-group-inline">
+                                <label class="ui-radio"><input type="radio" name="radio_group1" checked="checked" /><i></i> radio 01</label>
+                                <label class="ui-radio"><input type="radio" name="radio_group1" /><i></i> radio 02</label>
+                            </div>
                         </code></pre>
                     </div>
                     <div class="guide-row">
@@ -97,6 +127,61 @@
                                 <option value="value2">value2</option>
                                 <option value="value3">value3</option>
                             </select>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">File</h2>
+                        <span class="ui-file">
+                            <label><input type="file" /><span>Add File</span></label>
+                            <input type="text" readonly="readonly" title="Selected file name" />
+                        </span>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <select>
+                                <option value="value1">value1</option>
+                                <option value="value2">value2</option>
+                                <option value="value3">value3</option>
+                            </select>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Datepicker - Default</h2>
+                        <p class="sub-des">해당 기능의 상세한 option은 <a href="https://api.jqueryui.com/datepicker" target="_blank">jQuery UI API Documents</a>를 참고해 주세요.</p>
+                        <p>
+                            Date : <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                        </p>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            &lt;span class="ui-date"&gt;&lt;input type="text" class="datepicker" title="calendar" /&gt;&lt;/span&gt;                            
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Datepicker - SetDate</h2>
+                        <div>
+                            <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>~
+                            <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                            <div class="btn-group-inline">
+                                <button type="button" class="ui-btn" onclick="setDatePicker(0,this)">今日</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(1,this)">昨日</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(7,this)">一週間</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(30,this)">今月</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(90,this)">3ヶ月</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            &lt;span class="ui-date"&gt;&lt;input type="text" class="datepicker" title="calendar" /&gt;&lt;/span&gt;~
+                            &lt;span class="ui-date"&gt;&lt;input type="text" class="datepicker" title="calendar" /&gt;&lt;/span&gt;
+                            &lt;div class="btn-group-inline"&gt;
+                                &lt;button type="button" class="ui-btn" onclick="setDatePicker(0,this)"&gt;今日&lt;/button&gt;
+                                &lt;button type="button" class="ui-btn" onclick="setDatePicker(1,this)"&gt;昨日&lt;/button&gt;
+                                &lt;button type="button" class="ui-btn" onclick="setDatePicker(7,this)"&gt;一週間&lt;/button&gt;
+                                &lt;button type="button" class="ui-btn" onclick="setDatePicker(30,this)"&gt;今月&lt;/button&gt;
+                                &lt;button type="button" class="ui-btn" onclick="setDatePicker(90,this)"&gt;3ヶ月&lt;/button&gt;
+                            &lt;/div&gt;
                         </code></pre>
                     </div>
                 </div>

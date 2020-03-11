@@ -6,9 +6,144 @@
                 <h1 class="page-header" data-page="table">Table</h1>
                 <div class="guide-box">
                     <div class="guide-row">
-                        <h2 class="sub-header">기본 테이블 - col</h2>
+                        <h2 class="sub-header">테이블 상단 버튼그룹</h2>
+                        <div class="sub-des">
+                            <p>테이블 상단에 위치하는  버튼 그룹 Box입니다.</p>
+                            <p><span class="code">btn-group-l</span>요소는 좌측 정렬 버튼그룹으로 기능버튼을 나열합니다.</p>
+                            <p><span class="code">btn-group-r</span>요소는 우측 정렬 버튼그룹으로 중요 실행버튼을 나열합니다.</p>
+                        </div>
+                        <div class="table-info-group">                            
+                            <div class="btn-group-l">
+                                <a href="#" class="ui-btn">기능버튼</a>
+                                <a href="#" class="ui-btn">기능버튼</a>
+                            </div>
+                            <div class="btn-group-r">
+                                <a href="#" class="ui-btn btn-gray">수정버튼</a>
+                                <a href="#" class="ui-btn btn-blue">추가버튼</a>
+                                <a href="#" class="ui-btn btn-red">삭제버튼</a>
+                            </div>
+                        </div>
                         <table>
-                            <caption>기본 테이블</caption>
+                            <caption><i class="ir">테이블</i></caption>
+                            <colgroup>
+                                <col span="4" style="width:25%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">항목 1</th>
+                                    <th scope="col">항목 2</th>
+                                    <th scope="col">항목 3</th>
+                                    <th scope="col">항목 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>데이터 1</td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="table-info-group">                            
+                                <div class="btn-group-l">
+                                    <a href="#" class="ui-btn">기능버튼</a>
+                                    <a href="#" class="ui-btn">기능버튼</a>
+                                </div>
+                                <div class="btn-group-r">
+                                    <a href="#" class="ui-btn btn-gray">수정버튼</a>
+                                    <a href="#" class="ui-btn btn-blue">추가버튼</a>
+                                    <a href="#" class="ui-btn btn-red">삭제버튼</a>
+                                </div>
+                            </div>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">테이블 하단 페이징</h2>
+                        <div class="sub-des">
+                            <p>테이블 하단에 위치하는 페이징 영역입니다.</p>
+                            <p><span class="code">page-total</span>요소는 전체 리스트 개수입니다.</p>
+                        </div>
+                        <table>
+                            <caption><i class="ir">테이블</i></caption>
+                            <colgroup>
+                                <col span="4" style="width:25%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">항목 1</th>
+                                    <th scope="col">항목 2</th>
+                                    <th scope="col">항목 3</th>
+                                    <th scope="col">항목 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>데이터 1</td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination-wrap">
+                            <div class="page-total">
+                                <strong>[全体 : 12,704 件]</strong>
+                            </div>
+                            <div class="ui-pagenation">
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="#"><span>«</span></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#"><span>»</span></a></li>
+                                </ul>
+                                <select>
+                                    <option value="value1">20 件</option>
+                                    <option value="value2">50 件</option>
+                                    <option value="value3">100 件</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="pagination-wrap">
+                                <div class="page-total">
+                                    <strong>[全体 : 12,704 件]</strong>
+                                </div>
+                                <div class="ui-pagenation">
+                                    <ul class="pagination">
+                                        <li class="disabled"><a href="#"><span>«</span></a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#"><span>»</span></a></li>
+                                    </ul>
+                                    <select>
+                                        <option value="value1">20 件</option>
+                                        <option value="value2">50 件</option>
+                                        <option value="value3">100 件</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">기본 테이블 - col</h2>                        
+                        <div class="sub-des">
+                            <p>Mac OS의 Safari브라우저는 caption태그 다음에 colgruop의 col요소에 width값을 %로 지정하면 너비값이 제대로 처리되지 않습니다.</p>
+                            <p>이를 해결하기 위해 caption안의 텍스트를 <span class="code">&lt;i class="ir"&gt;텍스트&lt;/i&gt;</span>로 감싸줍니다.</p>
+                        </div>
+                        <table>
+                            <caption><i class="ir">기본 테이블</i></caption>
                             <colgroup>
                                 <col style="width:7%" />
                                 <col style="width:auto" />
@@ -59,7 +194,7 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table>
-                                <caption>기본 테이블</caption>
+                                <caption><i class="ir">기본 테이블</i></caption>
                                 <colgroup>
                                     <col style="width:7%" />
                                     <col style="width:auto" />
@@ -83,7 +218,7 @@
                     <div class="guide-row">
                         <h2 class="sub-header">기본 테이블 - row</h2>
                         <table>
-                            <caption>기본 테이블 row</caption>
+                            <caption><i class="ir">기본 테이블 row</i></caption>
                             <colgroup>
                                 <col style="width:7%" />
                                 <col style="width:auto" />
@@ -120,7 +255,7 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table>
-                                <caption>기본 테이블</caption>
+                                <caption><i class="ir">기본 테이블 row</i></caption>
                                 <colgroup>
                                     <col style="width:7%" />
                                     <col style="width:auto" />
@@ -138,7 +273,7 @@
                     <div class="guide-row">
                         <h2 class="sub-header">기본 테이블 - col+row</h2>
                         <table>
-                            <caption>기본 테이블 col+row</caption>
+                            <caption><i class="ir">기본 테이블 col+row</i></caption>
                             <colgroup>
                                 <col style="width:7%" />
                                 <col style="width:auto" />
@@ -189,7 +324,7 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table>
-                                <caption>기본 테이블 - col+row</caption>
+                                <caption><i class="ir">기본 테이블 col+row</i></caption>
                                 <colgroup>
                                     <col style="width:7%" />
                                     <col style="width:auto" />
@@ -212,8 +347,9 @@
                     </div>
                     <div class="guide-row">
                         <h2 class="sub-header">tr hover</h2>
+                        <p class="sub-des">행 hover 효과를 위해서 table에  <span class="code">data-table</span> class를 추가합니다.</p>
                         <table class="data-table">
-                            <caption>tr hover</caption>
+                            <caption><i class="ir">tr hover</i></caption>
                             <colgroup>
                                 <col style="width:7%" />
                                 <col style="width:auto" />
@@ -264,7 +400,7 @@
                     <div class="guide-code">
                         <pre><code class="html">
                             <table class="data-table">
-                                <caption>tr hover</caption>
+                                <caption><i class="ir">tr hover</i></caption>
                                 <colgroup>
                                     <col style="width:7%" />
                                     <col style="width:auto" />
@@ -287,8 +423,12 @@
                     </div>
                     <div class="guide-row">
                         <h2 class="sub-header">중첩 테이블</h2>
-                        <table class="data-table">
-                            <caption>중첩 테이블</caption>
+                        <div class="sub-des">
+                            <p>기본적으로 table안의 table은 특별한 class없이 선언하되, 상위 테이블의 항목수 만큼 td에 colspan 적용해줍니다.</p>
+                            <p>만약 table 안의 table의 항목이 많은 경우 <span class="code">in-table</span> class를 추가해줍니다.</p>
+                        </div>
+                        <table>
+                            <caption><i class="ir">중첩 테이블</i></caption>
                             <colgroup>
                                 <col style="width:7%" />
                                 <col style="width:9%" />
@@ -341,58 +481,293 @@
                     </div>
                     <div class="guide-code">
                         <pre><code class="html">
-                            <table class="data-table">
-                                <caption>tr hover</caption>
+                            <table>
+                                <caption><i class="ir">중첩 테이블</i></caption>
                                 <colgroup>
                                     <col style="width:7%" />
+                                    <col style="width:9%" />
                                     <col style="width:auto" />
-                                    <col span="8" style="width:9%" />
                                 </colgroup>
                                 <thead>
                                     <tr>
                                         <th scope="col">title_1</th>
                                         <th scope="col">...생략</th>
+                                        <th scope="col">...생략</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">content_1</th>
-                                        <td>...생략</td>
+                                    <tr>                                        
+                                        <td colspan="3">
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>...</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>                        
                         </code></pre>
                     </div>
                     <div class="guide-row">
+                        <h2 class="sub-header">숨겨진 행 펼쳐보기</h2>
+                        <div class="sub-des">
+                            <p>테이블 내에서 추가정보가 담긴 행을 숨기거나 보이게 하는 기능입니다.</p>
+                            <p>테이블 내 toggle버튼이 위치할 td에 <span class="code">&lt;a href="#" class="ui-btn-toggle"&gt;&lt;i class="ir"&gt;view&lt;/i&gt;&lt;/a&gt;</span>를 추가합니다.</p>
+                            <p>숨김 컨텐츠는 toggle버튼이 있는 행 다음에 위치 시키고, tr요소에 <span class="code">toggle-content</span> class를 추가합니다.</p>
+                        </div>
+                        <table>
+                            <caption><i class="ir">테이블</i></caption>
+                            <colgroup>
+                                <col class="col-toggle"/>
+                                <col style="width:auto"/>
+                                <col span="2" style="width:25%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">항목 2</th>
+                                    <th scope="col">항목 3</th>
+                                    <th scope="col">항목 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr class="toggle-content">
+                                    <td colspan="4">숨겨진 추가정보</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr class="toggle-content">
+                                    <td colspan="4">숨겨진 추가정보</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            &lt;table&gt;
+                                &lt;caption&gt;&lt;i class="ir"&gt;숨겨진 행 펼쳐보기&lt;/i&gt;&lt;/caption&gt;
+                                &lt;thead&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="col"&gt;#&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 2&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 3&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 4&lt;/th&gt;
+                                    &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                &lt;tbody&gt;
+                                    &lt;tr&gt;
+                                        &lt;td&gt;&lt;a href="#" class="ui-btn-toggle"&gt;&lt;i class="ir"&gt;view&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                                        &lt;td&gt;데이터 2&lt;/td&gt;
+                                        &lt;td&gt;데이터 3&lt;/td&gt;
+                                        &lt;td&gt;데이터 4&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr class="toggle-content"&gt;
+                                        &lt;td colspan="4"&gt;숨겨진 추가정보&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                &lt;/tbody&gt;
+                            &lt;/table&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">체크박스 사용 시 전체 행 선택하기</h2>
+                        <div class="sub-des">전체 행 선택기능입니다. 항목에 <span class="code">&lt;a href="#" class="ui-btn btn-s btn-black check-all"&gt;選択&lt;/a&gt;</span>를 추가해주세요</div>
+                        <table class="data-table t-center">
+                            <caption><i class="ir">테이블</i></caption>
+                            <colgroup>
+                                <col style="width:50px"/>
+                                <col style="width:auto"/>
+                                <col span="2" style="width:25%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="chk01">選択</a></th>
+                                    <th scope="col">항목 2</th>
+                                    <th scope="col">항목 3</th>
+                                    <th scope="col">항목 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox" data-check-name="chk01"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            &lt;table class="data-table "&gt;
+                                &lt;caption&gt;&lt;i class="ir"&gt;체크박스 사용 시 전체 행 선택하기&lt;/i&gt;&lt;/caption&gt;
+                                &lt;thead&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="col"&gt;&lt;a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="chk01"&gt;選択&lt;/a&gt;&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 2&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 3&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 4&lt;/th&gt;
+                                    &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                &lt;tbody&gt;
+                                    &lt;tr&gt;
+                                        &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox" data-check-name="chk01"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                        &lt;td&gt;데이터 2&lt;/td&gt;
+                                        &lt;td&gt;데이터 3&lt;/td&gt;
+                                        &lt;td&gt;데이터 4&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox" data-check-name="chk01"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                        &lt;td&gt;데이터 2&lt;/td&gt;
+                                        &lt;td&gt;데이터 3&lt;/td&gt;
+                                        &lt;td&gt;데이터 4&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                &lt;/tbody&gt;
+                            &lt;/table&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">체크박스 사용 시 하나의 행만 선택하기</h2>
+                        <div class="sub-des">
+                            <p>테이블 데이터 중 수정/삭제를 위해 체크박스를 사용하여 행을 선택할 때 다중선택이 아닌 하나의 행만 선택하는 기능입니다.</p>
+                            <p>table에 <span class="code">select-only-one</span> class를 추가해주세요.</p>
+                        </div>
+                        <table class="data-table select-only-one t-center">
+                            <caption><i class="ir">테이블</i></caption>
+                            <colgroup>
+                                <col style="width:50px"/>
+                                <col style="width:auto"/>
+                                <col span="2" style="width:25%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">체크</th>
+                                    <th scope="col">항목 2</th>
+                                    <th scope="col">항목 3</th>
+                                    <th scope="col">항목 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
+                                    <td>데이터 2</td>
+                                    <td>데이터 3</td>
+                                    <td>데이터 4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            &lt;table class="data-table select-only-one"&gt;
+                                &lt;caption&gt;&lt;i class="ir"&gt;테이블&lt;/i&gt;&lt;/caption&gt;
+                                &lt;thead&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="col"&gt;체크&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 2&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 3&lt;/th&gt;
+                                        &lt;th scope="col"&gt;항목 4&lt;/th&gt;
+                                    &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                &lt;tbody&gt;
+                                    &lt;tr&gt;
+                                        &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                        &lt;td&gt;&lt;a href="http://www.daum.net" target="_blank"&gt;데이터 2&lt;/a&gt;&lt;/td&gt;
+                                        &lt;td&gt;데이터 3&lt;/td&gt;
+                                        &lt;td&gt;데이터 4&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;td&gt;&lt;label class="ui-check"&gt;&lt;input type="checkbox"&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;&lt;/td&gt;
+                                        &lt;td&gt;데이터 2&lt;/td&gt;
+                                        &lt;td&gt;데이터 3&lt;/td&gt;
+                                        &lt;td&gt;데이터 4&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                &lt;/tbody&gt;
+                            &lt;/table&gt;
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
                         <h2 class="sub-header">스크롤 테이블</h2>
-                        <p>
-                            스크롤 테이블 사용 시 셀의 resize가 가능합니다.<br>
-                            항목에 sort 기능을 나타내는 UI를 추가하려면 항목명을 'span'태그로 감싸주세요.
-                        </p>
+                        <div class="sub-des">
+                            <ul class="list">
+                                <li>스크롤 테이블의 thead는 접근성을 위해 필요하지만 생략해도 UI에 문제가 되지는 않습니다.</li>
+                                <li>스크롤 테이블의 항목셀은 resize가 가능합니다. 항목의 오른쪽 라인에 마우스를 올려보세요.</li>
+                                <li>스크롤 테이블의 항목셀에 sort기능의 UI를 추가하시려면 항목의 텍스트를 <span class="code">&lt;span&gt;</span>태그로 감싸주세요</li>
+                                <li>스크롤 테이블의 자세한 내용은 <a href="/ec/module/ui_javascript.html">Javascript</a> 페이지의 Table탭을 참고해주세요.</li>
+                            </ul>
+                        </div>
                         <div class="ui-scroll-table">
                             <div class="ui-scroll-table-header">
                                 <ul>
-                                    <li class="col-code"><span>1</span></li>
-                                    <li class="col-code"><span>2</span></li>
-                                    <li class="col-code"><span>3</span></li>
-                                    <li class="col-code"><span>4</span></li>
-                                    <li class="col-code"><span>5</span></li>
-                                    <li class="col-code"><span>6</span></li>
-                                    <li class="col-code"><span>7</span></li>
-                                    <li class="col-code"><span>8</span></li>
-                                    <li class="col-code"><span>9</span></li>
-                                    <li class="col-code"><span>10</span></li>
-                                    <li class="col-code"><span>11</span></li>
-                                    <li class="col-code"><span>12</span></li>
-                                    <li class="col-code"><span>13</span></li>
-                                    <li class="col-code"><span>14</span></li>
-                                    <li class="col-code"><span>15</span></li>
+                                    <li class="col-code"><div><span>1</span></div></li>
+                                    <li class="col-code"><div><span>2</span></div></li>
+                                    <li class="col-code"><div><span>3</span></div></li>
+                                    <li class="col-code"><div><span>4</span></div></li>
+                                    <li class="col-code"><div><span>5</span></div></li>
+                                    <li class="col-code"><div><span>6</span></div></li>
+                                    <li class="col-code"><div><span>7</span></div></li>
+                                    <li class="col-code"><div><span>8</span></div></li>
+                                    <li class="col-code"><div><span>9</span></div></li>
+                                    <li class="col-code"><div><span>10</span></div></li>
+                                    <li class="col-code"><div><span>11</span></div></li>
+                                    <li class="col-code"><div><span>12</span></div></li>
+                                    <li class="col-code"><div><span>13</span></div></li>
+                                    <li class="col-code"><div><span>14</span></div></li>
+                                    <li class="col-code"><div><span>15</span></div></li>
                                 </ul>
                             </div>
                             <div class="ui-scroll-table-body">
                                 <div class="ui-scroll-content">
                                     <table>
-                                        <caption>test table layout</caption>
+                                        <caption><i class="ir">test table layout</i></caption>
                                         <colgroup>
                                              <col class="col-code" />
                                              <col class="col-code" />
@@ -410,6 +785,7 @@
                                              <col class="col-code" />
                                              <col class="col-code" />
                                         </colgroup>
+                                        <!-- thead 생략가능 -->
                                         <thead>
                                             <tr>
                                                 <th>1</th>
@@ -645,17 +1021,18 @@
                             <div class="ui-scroll-table">
                                 <div class="ui-scroll-table-header">
                                     <ul>
-                                        <li class="col-항목">요소의 개수는 테이블의 th항목 개수와 동일하게..</li>
-                                        <li class="col-항목"><span>sort UI 추가 시</span></li>
+                                        <li class="col-항목"><div>요소의 개수는 테이블의 th항목 개수와 동일하게..</div></li>
+                                        <li class="col-항목"><div><span>sort UI 추가 시</span></div></li>
                                     </ul>
                                 </div>
                                 <div class="ui-scroll-table-body">
                                     <div class="ui-scroll-content">
                                         <table>
-                                            <caption>스크롤 테이블</caption>
+                                            <caption><i class="ir">스크롤 테이블</i></caption>
                                             <colgroup>
                                                  <col class="col-항목" />
                                             </colgroup>
+                                            <!-- thead 생략가능 -->
                                             <thead>
                                                 <tr>
                                                     <th>.....</th>

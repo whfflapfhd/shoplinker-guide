@@ -96,11 +96,11 @@
         </tbody>
     </table>
 </div>
-<div id="dialog" title="新規受付作成"></div>
 <script type="text/javascript">
 //<![CDATA[
-    var dialog = $( "#dialog" ).dialog({
+    var opt = {
 			width: 400,
+            title : "新規受付作成",
 			buttons : {
                 "追加" : function(){
                     $(this).dialog("close");
@@ -109,11 +109,9 @@
                     $(this).empty().dialog("close");
                 }
             }
-		});
+		};
     $(".addClaim").on("click",function(){
-        $( "#dialog" ).load(this.href,function(a,b,c){
-            $(this).dialog("open");
-        })
+        EcUi.msgPop(opt.title,this.href,opt)
         return false;
     });
 //]]>

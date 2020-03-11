@@ -41,11 +41,11 @@
             <div class="search-wrap">
                 <h3 class="ir">検索</h3>
                 <table>
+                    <caption><i class="ir">検索</i></caption>
                     <colgroup>
                         <col style="width:15%" />
                         <col style="width:auto" />
                     </colgroup>
-                    <caption>検索</caption>
                     <tbody>
                         <tr>
                             <th scope="row"><div>日付</div></th>
@@ -66,11 +66,11 @@
                                         ~
                                         <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
                                         <div class="btn-group-inline">
-                                            <button type="button" class="ui-btn">今日</button>
-                                            <button type="button" class="ui-btn">昨日</button>
-                                            <button type="button" class="ui-btn">一週間</button>
-                                            <button type="button" class="ui-btn">今月</button>
-                                            <button type="button" class="ui-btn">3ヶ月</button>
+                                            <button type="button" class="ui-btn" onclick="setDatePicker(0,this)">今日</button>
+                                            <button type="button" class="ui-btn" onclick="setDatePicker(1,this)">昨日</button>
+                                            <button type="button" class="ui-btn" onclick="setDatePicker(7,this)">一週間</button>
+                                            <button type="button" class="ui-btn" onclick="setDatePicker(30,this)">今月</button>
+                                            <button type="button" class="ui-btn" onclick="setDatePicker(90,this)">3ヶ月</button>
                                         </div>
                                     </div>
                                 </div>
@@ -220,23 +220,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="order-edit-pannel">
-        <ul class="pannel-tab">
-            <li><a href="/ec/page/order/pannel/pannel_order.html" class="active" onclick='EcUi.loadContent(".pannel-wrap",this.href,"load");return false'>注文情報</a></li>
-            <li><a href="/ec/page/order/pannel/pannel_claim.html" onclick='EcUi.loadContent(".pannel-wrap",this.href,"load");return false'>クレーム受付</a></li>
-            <li><a href="/ec/page/order/pannel/pannel_log.html" onclick='EcUi.loadContent(".pannel-wrap",this.href,"load");return false'>履歴情報</a></li>
-            <li><a href="/ec/page/order/pannel/pannel_mail.html" onclick='EcUi.loadContent(".pannel-wrap",this.href,"load");return false'>注文メール確認</a></li>
-            <li><a href="/ec/page/order/pannel/pannel_order.html" onclick='EcUi.loadContent(".pannel-wrap",this.href,"load");return false'>在庫送信履歴</a></li>
-        </ul>
-        <div class="pannel-wrap"></div>
-        <ul class="pannel-btn">
-            <li><a href="#" class="ui-btn">前へ</a></li>
-            <li><a href="#" class="ui-btn">次の</a></li>
-            <li><a href="#" class="ui-btn btn-black">詳細編集</a></li>
-            <li><a href="#" class="ui-btn btn-green">保存</a></li>
-        </ul>
-        <a href="#" class="close-pannel"><span class="ir">close</span></a>
     </div>
     <script type="text/javascript">
     //<![CDATA[

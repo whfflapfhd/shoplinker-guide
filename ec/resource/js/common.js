@@ -1,6 +1,6 @@
 var EcUi = EcUi || {};
-$(function(){
-    var pannelIdx = null; // pannel index check
+var pannelIdx = null; // pannel index check
+$(function(){    
     // Menu Event
     $(".ec-menu").leftMenu();
     // Tool Tip
@@ -22,23 +22,6 @@ $(function(){
         var parentObj = $(this).parents("table");
         parentObj.find(".ui-check input").not(this).prop("checked",false);
         event.stopPropagation();
-    }).on("click",".view-pannel > tbody > tr",function(event){
-        if(!$(this).hasClass("toggle-content")){
-            var
-                p = $(this).closest('tbody'),
-                idx = p.find("> tr:not('.toggle-content')").index(this);
-            $(".tr-selected").removeAttr("class");
-            if(pannelIdx != idx){
-                $(this).toggleClass("tr-selected");
-                pannelIdx = idx;
-                EcUi.openPannel();
-            }else{
-                pannelIdx = null;
-                EcUi.closePannel();
-                $(".tr-selected").removeAttr("class");
-            };
-        };
-        event.stopPropagation();
     }).on("click",".ui-check input",function(event){
         event.stopPropagation();
     }).on("click","table td a",function(event){
@@ -53,7 +36,7 @@ $(function(){
     }).on("click",".ui-scroll-table-header span",function(e){
         EcUi.sortTable(e.target);
     }).on("click",".delete-mall",function(){ //삭제버튼 액션
-        EcUi.msgPop("test","tsetstsetset");
+        EcUi.msgPop("test","msg",null,"tsetstsetset");
         return false;
     }).on("click",".close-pannel",function(){ //주문정보 패널 컨트롤
         EcUi.toggleWrap();
@@ -62,17 +45,15 @@ $(function(){
         /* event : toggle Menu Wrap */
         EcUi.toggleWrap();
         return false
-    }).on("click",".view-pannel",function(){
-        var idx = $(".view-pannel").index(this);
+    }).on("click",".btn-pannel",function(){
+        var idx = $(".btn-pannel").index(this);
         $(".tr-selected").removeAttr("class");
         if(pannelIdx != idx){
             $(this).parents("tr").toggleClass("tr-selected");
             pannelIdx = idx;
             EcUi.openPannel();
         }else{
-            pannelIdx = null;
             EcUi.closePannel();
-            $(".tr-selected").removeAttr("class");
         };
         return false;        
     }).on("click",".pannel-tab a",function(){
@@ -81,6 +62,15 @@ $(function(){
         return false;        
     }).on("change",".search-type input",function(){
         $(this).parents('.search-type').toggleClass('active');
+    }).on("change",".ui-file input[type='file']",function(){
+        var fileVal = this.files,
+        valInput = $(this).parent().next();
+        if(fileVal.length > 0){
+            valInput.val(fileVal[0].name)
+        }else{
+            valInput.val("")
+        };
+        return false;        
     }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
 
     // 테이블 th sort 버튼 액션
@@ -108,17 +98,20 @@ $(function(){
     EcUi.openPannel = function(){
         $(".ec-wrap").addClass("wrap-expend wrap-pannel");        
         EcUi.tblResize();
+        $(".pannel-wrap").html("");
         //EcUi.loadContent(".pannel-wrap","/ec/page/order/pannel/pannel_order.html","load");
     };
+
      /* function : toggle pannel Wrap*/
     EcUi.closePannel = function(){
+        pannelIdx = null;
         $(".ec-wrap").removeClass("wrap-expend wrap-pannel");        
+        $(".tr-selected").removeAttr("class");
         $(".pannel-wrap").html("");
         EcUi.tblResize();        
     };
-    /*
-        #ajax load content
-    */
+
+    /* #ajax load content */
     EcUi.loadContent = function(tg,uri,loadType){
         $.ajax({
             url:uri,
@@ -132,27 +125,60 @@ $(function(){
         })  
     };
 
-    /* Dialog - create element*/
-    var dialogElement = "<div id='ecDialogPop'></div>";
-    EcUi.msgPop = function(title,msg){
-        var attrId = "#ecDialogPop";
-        dialogElement = $(dialogElement).attr('title',title).html(msg);
-        $("body").append(dialogElement);
-        $(attrId).dialog({
+    /* Dialog - create element*/    
+    EcUi.msgPop = function(title,dialogType,opt,msg){        
+        var dialogElement = "<div id='ecDialogPop'></div>",
+        attrId = "#ecDialogPop",
+        diaOpt= {
+            title : title,
             buttons : {
                 "close" : function(){
                     $(this).dialog("close");
                 }
             }
-        })
+        };
+        console.log(diaOpt.title);
+        if(opt) diaOpt = $.extend({},diaOpt, opt);
+        dialogElement = $(dialogElement);
+        if(dialogType === "msg"){
+            dialogElement.html(msg)
+            $("body").append(dialogElement);
+            $("#ecDialogPop").dialog(diaOpt);
+        }else{
+            dialogElement.load(dialogType,function(){
+                $("body").append(dialogElement);
+                $("#ecDialogPop").dialog(diaOpt);
+            });
+        }
     };
 
     /*datepicker*/
     if($(".datepicker").size()) $(".datepicker").datepicker();
+   
     
 });
+function setDatePicker(num,obj){
+    var inputDate = $(obj).parent().prevAll();
+    $(inputDate[0]).find(".datepicker").datepicker("setDate",auto_date_select());
+    $(inputDate[1]).find(".datepicker").datepicker("setDate",auto_date_select(num));
+};
+function auto_date_select(day){
+    var now = new Date();
+    if(day){
+        now.setDate(now.getDate()-day);
+    }
+    var
+    yy = now.getFullYear(),
+    mm = now.getMonth()+1,
+    dd = now.getDate();    
+    mm = (mm < 10) ? '0' + mm : mm;
+    dd = (dd < 10) ? '0' + dd : dd;
+    return yy+'-'+mm+'-'+dd
+}
 
-/* window popup set*/
+/* ##################
+    Window Popup Set
+################## */
     var popArr = [];
     Array.prototype.check_exist = function(obj){
         for(var i=0; i<this.length;i++){
@@ -169,9 +195,9 @@ $(function(){
         if(h =="full") var h = height-200;
         var left = (((width / 2) - (w / 2)) + dualScreenLeft);
         var top = (((height / 2) - (h / 2)) + dualScreenTop);
-        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        var newWindow = window.open(url, title, 'scrollbars=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
         if(!popArr.check_exist(newWindow)) popArr.push(newWindow);
-        // Puts focus on the newWindow
+        // Puts focus on the newWindow        
         if (window.focus) {
             newWindow.focus();
         };
@@ -185,7 +211,9 @@ $(function(){
         }
     }
 
-// jQuery UI Datepicker 설정변경
+/* ##################
+    jQuery UI Datepicker 설정변경
+################## */
     var dateOptions = $.extend({},$.datepicker.regional["ja"],{
         clearText: 'クリア', clearStatus: '日付をクリアします',
         closeText: '閉じる', closeStatus: '変更せずに閉じます',
@@ -208,11 +236,14 @@ $(function(){
     });
     $.datepicker.setDefaults(dateOptions);
 
-// jQuery UI Tabs 설정변경
+/* ##################
+    jQuery UI Tabs 설정변경
+################## */
     var tabsOption = {
         beforeLoad: function( event, ui ) {
             var $panel = $(ui.panel);
             var loader = $(this).find(".loader");
+            EcUi.closePannel();
             ui.ajaxSettings.async = false; // 동기/비동기 설정
             loader.show(); //로딩이미지 노출            
             if (!$panel.is(":empty")) { //탭 패널에 내용이 있으면 로딩이미지 숨김
@@ -221,8 +252,7 @@ $(function(){
             ui.jqXHR.fail(function() { // 로드 실패 시 노출할 텍스트 설정
                 loader.hide();
                 ui.panel.html("Load error...");
-            });
-            return 'tasdfasddf'
+            });            
         },
         load : function( event, ui ) {            
             var loader = $(this).find(".loader");

@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 body,h2.sub-header { font-family: Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック" , "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;}
+caption {padding:0}
+pre {padding:0;margin:0;line-height:normal;border:0 none;background:transparent}
+.pagination {margin:0}
 .len-jp {font-family:'MS PGothic','HiraKakuProN-W3',sans-serif}
 .len-jp h1,.len-jp h2,.len-jp h3,.len-jp h4,.len-jp h5,.len-jp h6 {font-weight:700}
 .page-header {font-size:32px;border-width:4px;font-size:32px;border-color:#f8b36e}
@@ -7,7 +10,7 @@ body,h2.sub-header { font-family: Meiryo, "ＭＳ Ｐゴシック", "MS PGothic"
 .sub-header {position:relative;padding-left:14px;padding-bottom:5px;margin-top:40px;margin-bottom:20px;font-size:22px;font-weight:100 !important;line-height:1.6;border-bottom:3px double #999}
 .sub-header:first-letter {font-weight:500}
 .sub-header:before {content:'';position:absolute;left:0;top:0;bottom:0;width:4px;height:75%;margin:auto;background-color:#f68b20}
-.sub-header + p,.sub-header + .sub-des {padding:0 0 10px 20px;margin-bottom:20px;border-bottom:2px dotted #ccc}
+.sub-des {padding:0 0 10px 20px;margin-bottom:20px;border-bottom:2px dotted #ccc}
 .toggle-source {float:right}
 .navbar-brand {width:260px;padding:0 15px;line-height:50px;background:transparent url('../images/logo_manual.png') no-repeat 15px 50%;background-size:90% auto}
 .main {padding: 40px 20px}
@@ -21,13 +24,32 @@ body,h2.sub-header { font-family: Meiryo, "ＭＳ Ｐゴシック", "MS PGothic"
 .guide-box {margin-top:30px;padding-bottom:30px}
 .guide-row {margin:25px 0}
 .guide-row:after {content:'';display:table;clear:both}
-.guide-row .ui-btn {margin:2px 0}
 .guide-code {display:none}
 .guide-code pre {background-color:#e9e9e9;box-shadow:inset 3px 3px 10px 0px rgba(0,0,0,.12)}
 .guide-code code {margin-top:-15px;white-space:pre-line}
 .guide-box .ec-header,.guide-box .ec-lnb-wrap {position:relative}
 .guide-box .ec-header .ec-logo {margin:0}
 .guide-box [class^=col-md],.guide-box [class^=col-sm] {padding:10px 0}
+.guide-list {border:1px solid #ccc;border-top:0 none;border-radius:5px;background:#f8f8f8}
+.guide-list > li {padding:5px 15px;border-top:1px solid #ccc}
+
+.code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25)
+}
 @media (min-width: 768px) {
   .main {padding-right: 40px;padding-left: 40px}
   .guide-code code {margin-left:-180px;white-space:inherit}

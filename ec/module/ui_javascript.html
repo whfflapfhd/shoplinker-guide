@@ -1,0 +1,211 @@
+<?php require_once '../inc_header.html'; ?>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main">
+                <h1 class="page-header" data-page="component">Component</h1>
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab1" aria-controls="modal" role="tab" data-toggle="tab">Modal</a></li>
+                        <li role="presentation"><a href="#tab2" aria-controls="popup" role="tab" data-toggle="tab">Window Popup</a></li>
+                        <li role="presentation"><a href="#tab3" aria-controls="table" role="tab" data-toggle="tab">Scroll Table</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="tab1">
+                            <div class="guide-box">
+                                <div class="guide-row">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:10%"/>
+                                            <col style="width:15%"/>
+                                            <col style="width:auto"/>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" colspan="2">호출 함수</th>
+                                                <td>EcUi.msgPop(title,dialogType,options,message);</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" rowspan="4">전달인자(argument)</th>
+                                                <td>Title</td>
+                                                <td>
+                                                    <dl class="list-inline">
+                                                        <dt>Index</dt>
+                                                        <dd>0</dd>
+                                                        <dt>설명</dt>
+                                                        <dd>dialog에서 보여질 title 값으로 String Type</dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dialog Type</td>
+                                                <td>
+                                                    <dl class="list-inline">
+                                                        <dt>Index</dt>
+                                                        <dd>1</dd>
+                                                        <dt>설명</dt>
+                                                        <dd>
+                                                            <p>dialog의 컨텐츠를 구성할 방식을 정합니다.</p>
+                                                            <p>단순 텍스트를 보여줄 alert 혹은 confirm 형식은 값으로 'msg'를 전달해주면 됩니다.</p>
+                                                            <p>입력폼 등의 서식등을 보여주기 위해서는 Ajax로 호출할 페이지의 URL을 String형식으로 입력합니다.</p>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Options</td>
+                                                <td>
+                                                    <dl class="list-inline">
+                                                        <dt>Index</dt>
+                                                        <dd>2</dd>
+                                                        <dt>설명</dt>
+                                                        <dd>
+                                                            <p>Dialog의 버튼등 옵션을 전달합니다. Type은 Object입니다.</p>
+                                                            <p>반영할 option을 변수에 지정하고 해당 변수를 값으로 전달합니다.</p>
+                                                            <p>전달할 옵션이 없으면 null 입렵 후 전달</p>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Message</td>
+                                                <td>
+                                                    <dl class="list-inline">
+                                                        <dt>Index</dt>
+                                                        <dd>3</dd>
+                                                        <dt>설명</dt>
+                                                        <dd>
+                                                            <p>Dialog에 보여줄 텍스트를 입력합니다. Type은 String</p>
+                                                            <p>입력서식 등 Ajax 호출방식에서는 생략 합니다.</p>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Dialog - Alert</h2>
+                                    <div class="sub-des">
+                                        <p>알림 메세지 형식의 Dialog 호출 방식입니다.</p>
+                                        <p><span class="code">EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");</span></p>
+                                    </div>
+                                    <a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");return false'>View Dialog</a>                           
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");'>View Dialog</a> 
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Dialog - Confirm</h2>
+                                    <div class="sub-des">
+                                        <p>Confirm 형식의 Dialog 호출 방식입니다.</p>
+                                        <p><span class="code">EcUi.msgPop("Alert Message","msg",confirmOpt,"적용하시겠습니까?");</span></p>
+                                    </div>
+                                    <a href="#" class="ui-btn" onclick='EcUi.msgPop("Confirm Message","msg",confirmOpt,"적용하시겠습니까?");return false'>View Dialog</a>                           
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",confirmOpt,"적용하시겠습니까?");return false'&gt;View Dialog&lt;/a&gt;
+                                        &lt;script&gt;
+                                            var confirmOpt = {
+                                                buttons : {
+                                                    "confirm" : function(){
+                                                        alert("OK");
+                                                    },
+                                                    "close" : function(){
+                                                        $(this).dialog("close");
+                                                    }
+                                                }
+                                            }
+                                        &lt;/script&gt; 
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Dialog - Ajax</h2>
+                                    <div class="sub-des">
+                                        <p>입력서식 페이지 Load 호출 방식입니다.</p>
+                                        <p><span class="code">EcUi.msgPop("Alert Message","page URL",loadOpt);</span></p>
+                                    </div>
+                                    <a href="/ec/page/dialog/add_pannel_claim.html" class="ui-btn" onclick='EcUi.msgPop("Form Page",this.href,loadOpt);return false'>View Dialog</a>                           
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;a href="/ec/page/dialog/add_pannel_claim.html" class="ui-btn" onclick='EcUi.msgPop("Form Page",this.href,loadOpt);return false'&gt;View Dialog&lt;/a&gt;
+                                        &lt;script&gt;
+                                            var loadOpt = {
+                                                buttons : {
+                                                    "Save" : function(){
+                                                        alert("Success");
+                                                    },
+                                                    "cancel" : function(){
+                                                        $(this).dialog("close");
+                                                    }
+                                                }
+                                            }
+                                        &lt;/script&gt; 
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tab2">
+                            <div class="guide-box">                                
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Window Popup</h2>
+                                    <div class="sub-des">
+                                        <p>윈도우 팝업 호출.</p>
+                                        <p><span class="code">PopupCenter(URL, title, width, height);</span></p>
+                                    </div>
+                                    <a href="/ec/page/popup/add_claim.html" class="ui-btn" onclick="PopupCenter(this.href, &quot;add pop&quot;, 700, 500);return false">Open Popup</a>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        <a href="/ec/page/popup/add_claim.html" class="ui-btn" onclick="PopupCenter(this.href, &quot;add pop&quot;, 700, 500);return false">Open Popup</a>
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        $(function(){
+            var showTab = sessionStorage.component || null;
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                sessionStorage.setItem('component',e.target.hash)
+            });
+            if(showTab){
+                var obj = sessionStorage.component;
+                $('a[href="'+obj+'"]').tab('show')
+            };            
+        });
+        var confirmOpt = {
+            buttons : {
+                "confirm" : function(){
+                    alert("OK");
+                },
+                "cancel" : function(){
+                    $(this).dialog("close");
+                }
+            }
+        }
+        var loadOpt = {
+            buttons : {
+                "Save" : function(){
+                    alert("Success");
+                },
+                "cancel" : function(){
+                    $(this).dialog("close");
+                }
+            }
+        }
+    //]]>
+    </script>
+<?php require_once '../inc_footer.html'; ?>

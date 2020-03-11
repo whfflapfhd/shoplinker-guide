@@ -2,11 +2,11 @@
 <div class="search-wrap">
     <h3 class="ir">検索</h3>
     <table>
+        <caption><i class="ir">検索</i></caption>
         <colgroup>
             <col style="width:15%" />
             <col style="width:auto" />
         </colgroup>
-        <caption>検索</caption>
         <tbody>
             <tr>
                 <th scope="row"><div>日付</div></th>
@@ -25,11 +25,11 @@
                             ~
                             <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
                             <div class="btn-group-inline">
-                                <button type="button" class="ui-btn">今日</button>
-                                <button type="button" class="ui-btn">昨日</button>
-                                <button type="button" class="ui-btn">一週間</button>
-                                <button type="button" class="ui-btn">今月</button>
-                                <button type="button" class="ui-btn">3ヶ月</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(0,this)">今日</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(1,this)">昨日</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(7,this)">一週間</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(30,this)">今月</button>
+                                <button type="button" class="ui-btn" onclick="setDatePicker(90,this)">3ヶ月</button>
                             </div>
                         </div>
                     </div>
@@ -109,27 +109,28 @@
 <div class="ui-scroll-table">
     <div class="ui-scroll-table-header">
         <ul>
-            <li class="col-check"><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></li>
-            <li class="col-status"><span>状態</span></li>
-            <li class="col-edit">編集</li>
-            <li class="col-logo">モール</li>
-            <li class="col-name"><span>店舗</span></li>
-            <li class="col-code"><span>マスタ商品コード</span></li>
-            <li class="col-code"><span>顧客社商品コード</span></li>
-            <li class="col-prd"><span>商品名</span></li>
-            <li class="col-stock"><span>在庫タイプ</span></li>
-            <li class="col-send"><span>出品状態</span></li>
-            <li class="col-sale"><span>販売状態</span></li>
-            <li class="col-price"><span>モール 販売価格</span></li>
-            <li class="col-cate1"><span>表示先カテゴリ1</span></li>
-            <li class="col-tax"><span>消費税</span></li>
-            <li class="col-per"><span>消費税率</span></li>
-            <li class="col-delivery"><span>送料選択</span></li>
+            <li class="col-check"><div><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></div></li>
+            <li class="col-status"><div><span>状態</span></div></li>
+            <li class="col-edit"><div>編集</div></li>
+            <li class="col-logo"><div>モール</div></li>
+            <li class="col-name"><div><span>店舗</span></div></li>
+            <li class="col-code"><div><span>マスタ商品コード</span></div></li>
+            <li class="col-code"><div><span>顧客社商品コード</span></div></li>
+            <li class="col-prd"><div><span>商品名</span></div></li>
+            <li class="col-stock"><div><span>在庫タイプ</span></div></li>
+            <li class="col-send"><div><span>出品状態</span></div></li>
+            <li class="col-sale"><div><span>販売状態</span></div></li>
+            <li class="col-price"><div><span>モール 販売価格</span></div></li>
+            <li class="col-cate1"><div><span>表示先カテゴリ1</span></div></li>
+            <li class="col-tax"><div><span>消費税</span></div></li>
+            <li class="col-per"><div><span>消費税率</span></div></li>
+            <li class="col-delivery"><div><span>送料選択</span></div></li>
         </ul>
     </div>
     <div class="ui-scroll-table-body">
         <div class="ui-scroll-content">
             <table class="data-table t-center">
+                <caption><i class="ir">マスター商品リスト</i></caption>
                 <colgroup>
                     <col class="col-check"/>
                     <col class="col-status"/>
@@ -148,7 +149,6 @@
                     <col class="col-per"/>
                     <col class="col-delivery"/>
                 </colgroup>
-                <caption>マスター商品リスト</caption>
                 <thead>
                     <tr>
                         <th scope="col">選択</th>
