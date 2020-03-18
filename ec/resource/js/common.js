@@ -1,12 +1,10 @@
 var EcUi = EcUi || {};
 var pannelIdx = null; // pannel index check
-$(function(){    
+$(function(){
     // Menu Event
     $(".ec-menu").leftMenu();
     // Tool Tip
-    $('.tooltip').find("a").tooltip({track:true});
-    // close btn event
-    if($(".btn-close").length) $(".btn-close").closeBox();
+    $('.tooltip').tooltip({track:true});
     
     $(document.body).on("click",".ec-toggle-help",function(){
         $(".ec-help-content").toggle();
@@ -18,6 +16,9 @@ $(function(){
         $(".toggle-content").eq(idx).toggleClass("active");
         $('.ui-scroll-table').tableResize();
         return false;
+    }).on("click",".btn-close",function(){
+        $(this).closeBox();
+        return false;
     }).on("click",".select-only-one .ui-check input",function(event){
         var parentObj = $(this).parents("table");
         parentObj.find(".ui-check input").not(this).prop("checked",false);
@@ -28,10 +29,9 @@ $(function(){
         event.stopPropagation();
     }).on("click",".check-all",function(){
         var group  = $(this).data('checkGroup');
-        var el = $('input:checkbox[data-check-name='+group+']');            
+        var el = $('input:checkbox[data-check-name='+group+']');
         ($(this).hasClass('all')) ? el.prop('checked',false) : el.prop('checked',true);
         $(this).toggleClass('all');
-        return false
         return false
     }).on("click",".ui-scroll-table-header span",function(e){
         EcUi.sortTable(e.target);
@@ -55,11 +55,27 @@ $(function(){
         }else{
             EcUi.closePannel();
         };
-        return false;        
+        return false;
     }).on("click",".pannel-tab a",function(){
         $(this).parents(".pannel-tab").find("a").removeClass("active");
         $(this).addClass("active");
-        return false;        
+        return false;
+    }).on("click",".layer-close",function(){
+        prevLayerPath = [],
+        prevLayerDepth = 0;
+        $(".layer-wrap").remove();        
+        return false;
+    }).on("click",".prev-layer",function(){
+        EcUi.layerOpenSub(prevLayerPath[prevLayerDepth-1],true);
+        return false;
+    }).on("click",".change-thumb",function(){
+        var
+        idx = $(".change-thumb").index(this),
+        imgSrc = $(this).prev().val();
+        $(".prd-thumb").eq(idx).find("img").attr("src",imgSrc);
+        return false;
+    }).on("click",".prd-thumb img",function(){
+        fnImgPop(this)
     }).on("change",".search-type input",function(){
         $(this).parents('.search-type').toggleClass('active');
     }).on("change",".ui-file input[type='file']",function(){
@@ -70,7 +86,7 @@ $(function(){
         }else{
             valInput.val("")
         };
-        return false;        
+        return false;
     }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
 
     // 테이블 th sort 버튼 액션
@@ -88,7 +104,7 @@ $(function(){
     };
     EcUi.toggleWrap = function(){
         $(".ec-wrap").toggleClass("wrap-expend");
-        if($(".ec-wrap").hasClass("wrap-pannel")) $(".ec-wrap").removeClass("wrap-pannel");        
+        if($(".ec-wrap").hasClass("wrap-pannel")) $(".ec-wrap").removeClass("wrap-pannel");
         $(".tr-selected").removeAttr("class");
         pannelIdx = null;
         EcUi.tblResize();
@@ -96,7 +112,7 @@ $(function(){
 
     /* function : toggle pannel Wrap*/
     EcUi.openPannel = function(){
-        $(".ec-wrap").addClass("wrap-expend wrap-pannel");        
+        $(".ec-wrap").addClass("wrap-expend wrap-pannel");
         EcUi.tblResize();
         $(".pannel-wrap").html("");
         //EcUi.loadContent(".pannel-wrap","/ec/page/order/pannel/pannel_order.html","load");
@@ -105,10 +121,10 @@ $(function(){
      /* function : toggle pannel Wrap*/
     EcUi.closePannel = function(){
         pannelIdx = null;
-        $(".ec-wrap").removeClass("wrap-expend wrap-pannel");        
+        $(".ec-wrap").removeClass("wrap-expend wrap-pannel");
         $(".tr-selected").removeAttr("class");
         $(".pannel-wrap").html("");
-        EcUi.tblResize();        
+        EcUi.tblResize();
     };
 
     /* #ajax load content */
@@ -120,13 +136,13 @@ $(function(){
                     $(tg).append(data);
                 }else{
                     $(tg).html(data);
-                }                
+                }
             }
-        })  
+        })
     };
 
-    /* Dialog - create element*/    
-    EcUi.msgPop = function(title,dialogType,opt,msg){        
+    /* Dialog - create element*/
+    EcUi.msgPop = function(title,dialogType,opt,msg){
         var dialogElement = "<div id='ecDialogPop'></div>",
         attrId = "#ecDialogPop",
         diaOpt= {
@@ -137,7 +153,6 @@ $(function(){
                 }
             }
         };
-        console.log(diaOpt.title);
         if(opt) diaOpt = $.extend({},diaOpt, opt);
         dialogElement = $(dialogElement);
         if(dialogType === "msg"){
@@ -152,10 +167,71 @@ $(function(){
         }
     };
 
+    /* Layer Popup */
+    var prevLayerPath = [],
+          prevLayerDepth = -1;
+    EcUi.layerOpen = function(title,url,width,height){
+        prevLayerPath.push(event.target.href);
+        prevLayerDepth ++;
+        var layerElement = "<div class='layer-wrap'><div class='layer-container'><div class='layer-header'><span></span><button type='button' class='layer-close'><i class='ir'>close</i></button></div><div class='layer-content'></div></div></div>";
+        layerElement = $(layerElement);
+        var
+        layerContainer = layerElement.find('.layer-container'),
+        layerHeader = layerElement.find('.layer-header'),
+        layerContent = layerElement.find('.layer-content');
+        layerContainer.css({
+            width:width,
+            height:height,
+            left : window.innerWidth / 2 - (width/2),
+            top : window.innerHeight / 2 - (height/2)
+        });
+        layerHeader.find('span').text(title);
+        layerContent.load(url,function(){
+            $("body").append(layerElement);
+            layerContainer.draggable({
+                drag : function(event,ui){
+                    $(this).css({bottom:'auto',right:'auto'})
+                },
+                handle: layerHeader,
+            }).resizable({
+                minWidth : width,
+                minHeight : height
+            });
+        });
+    };
+    EcUi.layerOpenSub = function(url,goBack){
+        if(!goBack){
+            prevLayerPath.push(event.target.href);
+            prevLayerDepth ++;
+        }else{
+            prevLayerPath.splice(prevLayerPath.length-1);
+            prevLayerDepth --;
+        };
+        var container = $('.layer-content');
+        container.empty().addClass('loading').load(url,function(){
+            container.removeClass('loading');
+        })
+    };
+
+    /* 썸네일 팝업*/
+    function fnImgPop(obj){
+        var
+        img= obj,
+        win_width=img.naturalWidth+25,
+        img_height=img.naturalHeight+20,
+        dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left,
+        dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top,
+        width = window.outerWidth ? window.outerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
+        height = window.outerHeight ? window.outerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
+        left = (((width / 2) - (win_width / 2)) + dualScreenLeft),
+        top = (((height / 2) - (img_height / 2)) + dualScreenTop);
+        if(img_height >  700) img_height = 700;
+        OpenWindow=window.open('','_blank', 'width='+win_width+', height='+img_height+', top=' + top + ', left=' + left +', menubars=no, scrollbars=yes');
+        OpenWindow.document.write("<style>body{text-align:center;margin:0px;padding:0}</style><img src='"+img.src+"' width='"+img.naturalWidth+"' style='border:0;vertical-align:top' onclick='self.close()' />");
+    }
+
     /*datepicker*/
     if($(".datepicker").size()) $(".datepicker").datepicker();
-   
-    
 });
 function setDatePicker(num,obj){
     var inputDate = $(obj).parent().prevAll();
@@ -170,7 +246,7 @@ function auto_date_select(day){
     var
     yy = now.getFullYear(),
     mm = now.getMonth()+1,
-    dd = now.getDate();    
+    dd = now.getDate();
     mm = (mm < 10) ? '0' + mm : mm;
     dd = (dd < 10) ? '0' + dd : dd;
     return yy+'-'+mm+'-'+dd
@@ -197,7 +273,7 @@ function auto_date_select(day){
         var top = (((height / 2) - (h / 2)) + dualScreenTop);
         var newWindow = window.open(url, title, 'scrollbars=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
         if(!popArr.check_exist(newWindow)) popArr.push(newWindow);
-        // Puts focus on the newWindow        
+        // Puts focus on the newWindow
         if (window.focus) {
             newWindow.focus();
         };
@@ -243,20 +319,21 @@ function auto_date_select(day){
         beforeLoad: function( event, ui ) {
             var $panel = $(ui.panel);
             var loader = $(this).find(".loader");
-            EcUi.closePannel();
+            if($(".wrap-pannel").size())EcUi.closePannel();
             ui.ajaxSettings.async = false; // 동기/비동기 설정
-            loader.show(); //로딩이미지 노출            
+            loader.show(); //로딩이미지 노출
             if (!$panel.is(":empty")) { //탭 패널에 내용이 있으면 로딩이미지 숨김
                 loader.hide();
             }
             ui.jqXHR.fail(function() { // 로드 실패 시 노출할 텍스트 설정
                 loader.hide();
                 ui.panel.html("Load error...");
-            });            
+            });
         },
-        load : function( event, ui ) {            
+        load : function( event, ui ) {
             var loader = $(this).find(".loader");
             loader.hide();
             if($(".datepicker").size()) $(".datepicker").datepicker();
+            if($(".tooltip").size()) $('.tooltip').tooltip({track:true});
         }
     }

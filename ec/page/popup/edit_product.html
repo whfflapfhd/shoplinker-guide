@@ -1,0 +1,64 @@
+<?php require_once '../inc_pop_header.html'; ?>
+<div class="ec-pop-wrap edit-prd-pop">
+    <h1 class="ir">商品編集</h1>
+    <div class="edit-row">
+        <div class="edit-row-scroll">
+            <form action="#" method="post">
+                <div class="ec-section">
+                    <div class="edit-prd-info">
+                        <span class="edit-prd-logo"><img src="http://210.121.151.96:1212/images/jp/mall_logo_rakuten.jpg" alt="" /></span>
+                        <ul class="list grid">
+                            <li class="col-w-5">店舗名：楽天店長</li>
+                            <li class="col-w-5">マスタカテゴリ：</li>
+                            <li class="col-w-5">マスタ商品番号：P000017327 </li>
+                            <li class="col-w-5">顧客社商品番号：um0216</li>
+                            <li class="col-w-5">登録日：2020/01/17 16:20:33</li>
+                            <li class="col-w-5">更新日：</li>
+                        </ul>
+                    </div>
+                    <div id="search-tabs" class="ui-tab-wrap edit-tabs">
+                        <ul>
+                            <li><a href="/ec/page/popup/product/prd_basic.html">基本情報</a></li>
+                            <li><a href="/ec/page/popup/product/prd_info.html" class="active">ページ情報</a></li>
+                            <li><a href="/ec/page/popup/product/prd_thumbnail.html">画像</a></li>
+                            <li><a href="/ec/page/popup/product/prd_reg.html">登録情報</a></li>
+                            <li><a href="/ec/page/popup/product/prd_set_list.html">項目選択肢</a></li>
+                            <li><a href="/ec/page/popup/product/prd_stock.html">在庫情報</a></li>
+                        </ul>
+                        <div class="loader">
+                            <div class="load">
+                                <div class="gear one">
+                                    <svg id="blue" viewBox="0 0 100 100" fill="#8ec9ef">
+                                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                                    </svg>
+                                </div>
+                                <div class="gear two">
+                                    <svg id="pink" viewBox="0 0 100 100" fill="#ecbd85">
+                                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                                    </svg>
+                                </div>
+                                <div class="gear three">
+                                    <svg id="yellow" viewBox="0 0 100 100" fill="#b5b5b5">
+                                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text">loading</div>
+                            </div>
+                        </div>
+                        <div class="save-edit-content">
+                            <a href="#" class="ui-btn btn-blue">商品編集反映</a>
+                            <a href="#" class="ui-btn btn-orange">他店舗へ反映</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    tabsOption.active = 5;
+    $(".ui-tab-wrap" ).tabs(tabsOption);
+//]]>
+</script>
+<?php require_once '../inc_footer.html'; ?>

@@ -24,14 +24,19 @@ pre {padding:0;margin:0;line-height:normal;border:0 none;background:transparent}
 .guide-box {margin-top:30px;padding-bottom:30px}
 .guide-row {margin:25px 0}
 .guide-row:after {content:'';display:table;clear:both}
-.guide-code {display:none}
-.guide-code pre {background-color:#e9e9e9;box-shadow:inset 3px 3px 10px 0px rgba(0,0,0,.12)}
+.guide-row + .guide-code {display:none}
+.guide-code pre {background:#282c34}
 .guide-code code {margin-top:-15px;white-space:pre-line}
 .guide-box .ec-header,.guide-box .ec-lnb-wrap {position:relative}
 .guide-box .ec-header .ec-logo {margin:0}
 .guide-box [class^=col-md],.guide-box [class^=col-sm] {padding:10px 0}
 .guide-list {border:1px solid #ccc;border-top:0 none;border-radius:5px;background:#f8f8f8}
 .guide-list > li {padding:5px 15px;border-top:1px solid #ccc}
+.guide-tbl {font-size:12px}
+.guide-tbl td .list-inline {margin:0}
+.guide-tbl .guide-code pre {display:flex}
+.guide-tbl .guide-code code {margin-top:0;}
+.tooltip {opacity:1;position:static}
 
 .code {
     padding: 2px 4px;

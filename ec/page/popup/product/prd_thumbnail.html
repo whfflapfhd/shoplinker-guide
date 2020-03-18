@@ -1,0 +1,103 @@
+<div class="ec-row">
+    <div class="edit-form">
+        <ul class="edit-form-thumb">
+            <li>
+                <div class="prd-thumb"><img src="https://image.rakuten.co.jp/akishino/cabinet/img02/um021601.jpg" alt="" /></div>
+                <div class="prd-thumb-edit">
+                    <strong>画像 1 <em class="t-danger"><i class="badge">必須</i></em></strong>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>URL</span>
+                            <input type="text" value="https://image.rakuten.co.jp/akishino/cabinet/img02/um021601.jpg" />
+                        </div>
+                        <a href="#" class="ui-btn btn-black change-thumb">適用</a>
+                    </div>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>ALT</span>
+                            <input type="text" placeholder="(例)とってもおいしいミカン">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="prd-thumb"><img src="https://image.rakuten.co.jp/akishino/cabinet/img02/um021602.jpg" alt="" /></div>
+                <div class="prd-thumb-edit">
+                    <strong>画像 2</strong>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>URL</span>
+                            <input type="text" value="https://image.rakuten.co.jp/akishino/cabinet/img02/um021602.jpg" />
+                        </div>
+                        <a href="#" class="ui-btn btn-black change-thumb">適用</a>
+                    </div>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>ALT</span>
+                            <input type="text" placeholder="(例)とってもおいしいミカン">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="prd-thumb"><img src="https://image.rakuten.co.jp/akishino/cabinet/img02/um0216-13000.jpg" alt="" /></div>
+                <div class="prd-thumb-edit">
+                    <strong>画像 3</strong>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>URL</span>
+                            <input type="text" value="https://image.rakuten.co.jp/akishino/cabinet/img02/um0216-13000.jpg" />
+                        </div>
+                        <a href="#" class="ui-btn btn-black change-thumb">適用</a>
+                    </div>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>ALT</span>
+                            <input type="text" placeholder="(例)とってもおいしいミカン">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="prd-thumb"><img src="https://image.rakuten.co.jp/akishino/cabinet/img02/um021603.gif" alt="" /></div>
+                <div class="prd-thumb-edit">
+                    <strong>画像 4</strong>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>URL</span>
+                            <input type="text" value="https://image.rakuten.co.jp/akishino/cabinet/img02/um021603.gif" />
+                        </div>
+                        <a href="#" class="ui-btn btn-black change-thumb">適用</a>
+                    </div>
+                    <div class="edit-form-unit">
+                        <div class="input-addon">
+                            <span>ALT</span>
+                            <input type="text" placeholder="(例)とってもおいしいミカン">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <a href="#" class="ui-btn btn-green btn-xl btn-full add-thumb">画像を追加</a>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var thumbCnt = $(".prd-thumb").size();
+    function makeThumb(cnt){
+        var thumb = '<li><div class="prd-thumb">'
+          + '<img src="/ec/resource/images/bg_noimg.png" alt="画像がありません" /></div>'
+          + '<div class="prd-thumb-edit"><strong>画像 '+cnt+'</strong>'
+          + '<div class="edit-form-unit"><div class="input-addon"><span>URL</span><input type="text" value="" /></div><a href="#" class="ui-btn btn-black change-thumb">適用</a></div>'
+          + '<div class="edit-form-unit"><div class="input-addon"><span>ALT</span><input type="text" placeholder="(例)とってもおいしいミカン" /></div></div></li>';
+        return thumb
+    }
+    
+    $(".add-thumb").on("click",function(){
+        thumbCnt ++;
+        $(".edit-form-thumb").append(makeThumb(thumbCnt));
+        if(thumbCnt == 10) $(this).hide();
+        return false
+    });
+//]]>
+</script>

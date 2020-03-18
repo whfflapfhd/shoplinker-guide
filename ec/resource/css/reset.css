@@ -2,6 +2,7 @@
 html,body {height:100%}
 body {font-family:Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック" , "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;color:#555}
 ul {overflow:hidden;list-style:none;}
+i,em {font-style:normal}
 legend,.ir {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -17,4 +18,14 @@ button,input,select,textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit
+}
+select {height:30px}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ccc;opacity: 1; /* Firefox */font-size:11px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ccc;font-size:11px;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ccc;font-size:11px;
 }

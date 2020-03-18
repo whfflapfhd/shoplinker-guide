@@ -1,0 +1,110 @@
+<form action="#" method="post">
+    <div class="layer-sch-wrap">
+        <ul>
+            <li>
+                <strong>編集範囲</strong>
+                <div>
+                    <select class="col-w-5">
+                        <option value="002">現在ページのみ</option>
+                        <option value="003">検索条件全体</option>
+                        <option value="004">全体</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <strong>テンプレート</strong>
+                <div>
+                    <select class="col-w-5">
+                        <option value="">テンプレート選択</option>
+                        <option value="44">dsfaf</option>
+                    </select>
+                    <a href="#" class="ui-btn btn-black">更新</a>
+                    <a href="#" class="ui-btn btn-black">削除</a>
+                    <a href="/ec/page/layer/add_temp.html" class="ui-btn btn-black" onclick="EcUi.layerOpenSub(this.href);return false">追加</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="table-info-group">                            
+        <div class="btn-group-r">
+            <a href="#" class="ui-btn btn-blue">追加</a>
+            <a href="#" class="ui-btn btn-red delete-mall">選択削除</a>
+        </div>
+    </div>
+    <div class="ui-scroll-table" id="edit-tbl">
+        <div class="ui-scroll-table-header">
+            <ul>
+                <li class="col-check"><div><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd01">選択</a></div></li>
+                <li class="col-divsion"><div><span><span>編集項目 </span></div></li>
+                    <li class="col-divsion"><div><span>編集タイプ</span></div></li>
+                <li class="col-divsion"><div><span>編集値</span></div></li>
+            </ul>
+        </div>
+        <div class="ui-scroll-table-body">
+            <div class="ui-scroll-content">
+                <table class="data-table t-center">
+                    <caption><i class="ir">一括商品編集</i></caption>
+                    <colgroup>
+                         <col class="col-check" />
+                         <col class="col-divsion" />
+                         <col class="col-divsion" />
+                         <col class="col-divsion" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd01"><i></i></label></td>
+                            <td class="t-left">モバイル用商品説明文(前)</td>
+                            <td class="t-left">改行削除</td>
+                            <td>-</td>                      
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>
+    <div class="layer-footer">
+        <a href="#" class="ui-btn btn-blue">保存</a>
+        <a href="#" class="ui-btn layer-close">キャンセル</a>                
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    $("#edit-tbl").fixedTable({scrollY : 200});
+//]]>
+</script>

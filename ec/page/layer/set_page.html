@@ -1,0 +1,104 @@
+<form action="#" method="post">
+    <h3 class="page-title-sub">ページ設定 <a href="#" class="ec-toggle-help"><i class="ir">ヘルプ</i></a></h3>
+    <div class="ec-help-content">
+        <ul class="list">
+            <li>この画面は他モールから商品一括複製時に自動編集の設定ができます。</li>
+            <li>編集可能な項目は下記”自動編集項目”となります。</li>
+            <li>この設定を行うことで商品複製時に設定した内容通り自動編集されます。</li>
+            <li>設定された店舗のみ編集内容が反映されます。</li>
+        </ul>
+        <a href="#" class="btn-close"><span class="ir">close</span></a>
+    </div>
+    <div class="layer-sch-wrap">
+        <ul>
+            <li>
+                <strong>編集対象：店舗毎</strong>
+                <div>
+                    <select class="col-w-10">
+                        <option>[楽天]楽天店長店</option>
+                        <option>[楽天]test店</option>
+                        <option>[楽天]rakuten_test店</option>
+                        <option>[楽天]rakuten_test2店</option>
+                        <option>[楽天]楽天店長2店</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <table class="t-center">
+        <caption><i class="ir">ページ設定 list</i></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:auto">
+            <col style="width:15%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">自動編集項目</th>
+                <th scope="col">編集</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="t-left">商品名</td>
+                <td><a href="/ec/page/layer/set_page_prd.html" class="ui-btn btn-s" onclick="EcUi.layerOpenSub(this.href);return false">設定</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="t-left">キャッチコピー(PC)</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="t-left">キャッチコピー(モバイル)</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="t-left">消費税</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="t-left">販売価格</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="t-left">商品名</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="t-left">キャッチコピー(PC)</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="t-left">キャッチコピー(モバイル)</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td class="t-left">消費税</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="t-left">販売価格</td>
+                <td><a href="#" class="ui-btn btn-s">設定</a></td>
+            </tr>
+        </tbody>
+    </table>     
+    <div class="layer-footer">
+        <a href="#" class="ui-btn btn-blue">保存</a>
+        <a href="#" class="ui-btn layer-close">キャンセル</a>                
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    $("#edit-tbl").fixedTable({scrollY : 200});
+//]]>
+</script>

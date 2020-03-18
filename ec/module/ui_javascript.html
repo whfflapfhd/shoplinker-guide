@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="main">
-                <h1 class="page-header" data-page="component">Component</h1>
+                <h1 class="page-header" data-page="javascript">Javascript</h1>
                 <div role="tabpanel">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
@@ -92,11 +92,11 @@
                                         <p>알림 메세지 형식의 Dialog 호출 방식입니다.</p>
                                         <p><span class="code">EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");</span></p>
                                     </div>
-                                    <a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");return false'>View Dialog</a>                           
+                                    <a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");return false'>View Dialog</a>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
-                                        <a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");'>View Dialog</a> 
+                                        <a href="#" class="ui-btn" onclick='EcUi.msgPop("Alert Message","msg",null,"테스트 메세지");'>View Dialog</a>
                                     </code></pre>
                                 </div>
                                 <div class="guide-row">
@@ -105,7 +105,7 @@
                                         <p>Confirm 형식의 Dialog 호출 방식입니다.</p>
                                         <p><span class="code">EcUi.msgPop("Alert Message","msg",confirmOpt,"적용하시겠습니까?");</span></p>
                                     </div>
-                                    <a href="#" class="ui-btn" onclick='EcUi.msgPop("Confirm Message","msg",confirmOpt,"적용하시겠습니까?");return false'>View Dialog</a>                           
+                                    <a href="#" class="ui-btn" onclick='EcUi.msgPop("Confirm Message","msg",confirmOpt,"적용하시겠습니까?");return false'>View Dialog</a>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
@@ -121,7 +121,7 @@
                                                     }
                                                 }
                                             }
-                                        &lt;/script&gt; 
+                                        &lt;/script&gt;
                                     </code></pre>
                                 </div>
                                 <div class="guide-row">
@@ -130,7 +130,7 @@
                                         <p>입력서식 페이지 Load 호출 방식입니다.</p>
                                         <p><span class="code">EcUi.msgPop("Alert Message","page URL",loadOpt);</span></p>
                                     </div>
-                                    <a href="/ec/page/dialog/add_pannel_claim.html" class="ui-btn" onclick='EcUi.msgPop("Form Page",this.href,loadOpt);return false'>View Dialog</a>                           
+                                    <a href="/ec/page/dialog/add_pannel_claim.html" class="ui-btn" onclick='EcUi.msgPop("Form Page",this.href,loadOpt);return false'>View Dialog</a>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
@@ -146,13 +146,20 @@
                                                     }
                                                 }
                                             }
-                                        &lt;/script&gt; 
+                                        &lt;/script&gt;
                                     </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Layer Popup</h2>
+                                    <div class="sub-des">
+                                        <p>입력서식 페이지 Load 호출 방식입니다.</p>
+                                    </div>
+                                    <a href="/ec/page/layer/edit_prd.html" class="ui-btn" onclick='EcUi.layerOpen("一括商品編集",this.href,600,480);return false'>View Dialog</a>
                                 </div>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab2">
-                            <div class="guide-box">                                
+                            <div class="guide-box">
                                 <div class="guide-row">
                                     <h2 class="sub-header">Window Popup</h2>
                                     <div class="sub-des">
@@ -160,6 +167,7 @@
                                         <p><span class="code">PopupCenter(URL, title, width, height);</span></p>
                                     </div>
                                     <a href="/ec/page/popup/add_claim.html" class="ui-btn" onclick="PopupCenter(this.href, &quot;add pop&quot;, 700, 500);return false">Open Popup</a>
+                                    <a href="/ec/page/popup/test.html" class="ui-btn" onclick="PopupCenter(this.href, &quot;add pop&quot;, 1000, 700);return false">Open Popup</a>
                                 </div>
                                 <div class="guide-code">
                                     <pre><code class="html">
@@ -168,12 +176,96 @@
                                 </div>
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="tab3">
+                            <div class="guide-box">
+                                <div class="guide-row">
+                                    <h2 class="sub-header no-code">Scroll Table</h2>
+                                    <div class="sub-des">
+                                        <p><strong>스크롤 테이블 Options</strong></p>
+                                        <table class="guide-tbl">
+                                            <colgroup><col style="width:15%" /><col style="width:auto" /></colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">scrollY</th>
+                                                    <td>
+                                                        <p>테이블 Max Height 설정 (Default : null)</p>
+                                                        <div class="guide-code">
+                                                            <pre><code class="html">
+                                                                &lt;script&gt;
+                                                                    (".ui-scroll-table").fixedTable({scrollY : Number})
+                                                                &lt;/script&gt;
+                                                            </code>
+                                                            </pre>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">minWidth</th>
+                                                    <td>
+                                                        <p>테이블 Min Width 설정 (Default : null)</p>
+                                                        <div class="guide-code">
+                                                            <pre><code class="html">
+                                                                &lt;script&gt;
+                                                                    (".ui-scroll-table").fixedTable({minWidth : Number})
+                                                                &lt;/script&gt;
+                                                            </code>
+                                                            </pre>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">fixedCell</th>
+                                                    <td>
+                                                        <p>가로 스크롤 시 고정할 column 설정 (Default : null)</p>
+                                                        <div class="guide-code">
+                                                            <pre><code class="html">
+                                                                &lt;script&gt;
+                                                                    (".ui-scroll-table").fixedTable({fixedCell : Number})
+                                                                &lt;/script&gt;
+                                                            </code>
+                                                            </pre>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Option 적용 예시</th>
+                                                    <td>
+                                                        <p>최소 가로 사이즈 1200px, 최대 세로 사이즈 500px, 1번, 2번 column 고정이 필요한 테이블 만들기</p>
+                                                        <div class="guide-code">
+                                                            <pre><code class="html">
+                                                                &lt;script&gt;
+                                                                    (".ui-scroll-table").fixedTable({minWidth : 1200, scrollY : 500, fixedCell : 2});
+                                                                    
+                                                                    /* or */
+
+                                                                    var opt = {minWidth : 1200, scrollY : 500, fixedCell : 2};
+                                                                    (".ui-scroll-table").fixedTable(opt);
+                                                                &lt;/script&gt;
+                                                            </code>
+                                                            </pre>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p style="margin-top:15px;"><strong>스크롤 테이블 Resize</strong></p>
+                                        <div class="guide-code">
+                                            <pre><code class="html">
+                                                &lt;script&gt;
+                                                    $(Selector).tableResize()
+                                                &lt;/script&gt;
+                                            </code>
+                                            </pre>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script type="text/javascript">
     //<![CDATA[
         $(function(){
@@ -184,7 +276,7 @@
             if(showTab){
                 var obj = sessionStorage.component;
                 $('a[href="'+obj+'"]').tab('show')
-            };            
+            };
         });
         var confirmOpt = {
             buttons : {

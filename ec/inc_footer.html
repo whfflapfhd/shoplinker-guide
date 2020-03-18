@@ -27,10 +27,11 @@
         };
         guide.setNav();        
         if($(".guide-code").length) guide.loopChange();
-        $(".sub-header").append('<a href="#" class="ui-btn btn-sky toggle-source">view source</a>');
+        $(".sub-header").not(".no-code").append('<a href="#" class="ui-btn btn-sky toggle-source">view source</a>');
         $(".toggle-source").on("click",function(){
             var idx = $(".toggle-source").index(this);
-            $(".guide-code").eq(idx).toggle();
+            var codeElement = $(".guide-row + .guide-code");
+            codeElement.eq(idx).toggle();
             return false;
         });
     </script>

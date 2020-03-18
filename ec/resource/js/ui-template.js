@@ -26,13 +26,15 @@
                         c.addClass("over");
                         _this.tableResize();
                     }
+                    /*
                     $(document).on("ready",function(){
                         _this.tableResize();
                     });
+                    */
                 }
                 if(options.minWidth){
                     d.css("min-width",options.minWidth);
-                    c.css("min-width",options.minWidth);
+                    _this.tableResize();
                 };
                 if(options.fixedCell){
                      $(">tbody>tr:not(.toggle-content) > td:nth-child(-n+"+options.fixedCell+")",d).addClass("fixed-cell");
@@ -107,11 +109,8 @@
         },
         closeBox : function(){
             var parentObj = this.parent();
-            this.click(function(){
-                parentObj.hide();
-                $('.ui-scroll-table').tableResize();
-                return false
-            });
+            parentObj.hide();
+            if($('.ui-scroll-table').size()) $('.ui-scroll-table').tableResize();            
         }
     });
 

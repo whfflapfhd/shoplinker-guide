@@ -1,0 +1,330 @@
+<div class="ec-row">
+    <div class="edit-form">
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>商品管理番号(商品URL) <em class="t-danger"><i class="badge">必須</i></em></strong>
+                <div>[16文字(半角32文字)以内] <span class="calc-byte"><i>6</i>/32 Byte</span></div>
+            </div>
+            <div class="edit-form-unit">
+                <input type="text" value="um0216" />
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>商品名 <em class="t-danger"><i class="badge">必須</i></em></strong>
+                <div>[127文字(半角255文字)以内] <span class="calc-byte"><i>6</i>/32 Byte</span></div>
+            </div>
+            <div class="edit-form-unit">
+                <input type="text" value="um0216" />
+            </div>
+            <div class="edit-form-unit">
+                <div class="input-addon">
+                    <span>前キーワー</span>
+                    <input type="text" placeholder="キーワードなどを入力してください。" />
+                </div>
+            </div>
+            <div class="edit-form-unit">
+                <div class="input-addon">
+                    <span>後キーワー</span>
+                    <input type="text" placeholder="キーワードなどを入力してください。" />
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>PC用キャッチコピー</strong>
+                <div>[87文字(半角174文字)以内] <span class="calc-byte"><i>26</i>/174 Byte</span></div>
+            </div>
+            <div class="edit-form-unit">
+                <textarea cols="10" rows="1">現品限り！超目玉品</textarea>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>モバイル用キャッチコピー</strong>
+                <div>[30文字(半角60文字)以内] <span class="calc-byte"><i>0</i>/60 Byte</span></div>
+            </div>
+            <div class="edit-form-unit">
+                <textarea cols="10" rows="1"></textarea>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>販売価格 <em class="t-danger"><i class="badge">必須</i></em></strong>
+                <div>[半角数字9文字以内]</div>
+            </div>
+            <div class="edit-form-unit">
+                <input type="text" value="15444" />
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>表示価格</strong>
+                <div>[解除するときは0と入力]</div>
+            </div>
+            <div class="edit-form-unit">
+                <select>
+                    <option>二重価格文言を選択してください。</option>
+                    <option>当店通常価格</option>
+                    <option>メーカー希望小売価格</option>
+                    <option>商品価格ナビのデータ参照</option>
+                    <option>自動価格</option>
+                </select>
+                <div class="check-group-inline">
+                    <span class="input-group"><label class="ui-radio"><input type="radio" name="regular_price_type" checked="checked"><i></i></label><input type="text" value="30240" /></span>
+                    <label class="ui-radio"><input type="radio" name="regular_price_type"><i></i> メーカー希望小売価格オープン価格</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>消費税</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="tax"><i></i> 消費税別</label>
+                    <label class="ui-radio"><input type="radio" name="tax" checked="checked"><i></i> 消費税込</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>配送方法セット</strong>
+                <div>[0は自動選択または削除]</div>
+            </div>
+            <div class="edit-form-unit">
+                <select>
+                    <option>選択</option>
+                    <option>自動選択または設定削除</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>送料</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <span class="input-group"><label class="ui-radio"><input type="radio" name="postage" checked="checked"><i></i> 送料別:個別送料</label><input type="text" value="" /></span>
+                    <label class="ui-radio"><input type="radio" name="postage"><i></i> 送料無料</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>送料区分</strong>
+                <div>[解除するときは0と入力]</div>
+            </div>
+            <div class="edit-form-unit grid">
+                <div class="input-addon col-w-5">
+                    <span class="col-w-3">送料区分1</span>
+                    <input class="col-w-7" type="text" />
+                </div>
+                <div class="input-addon col-w-5">
+                    <span class="col-w-3">送料区分2</span>
+                    <input class="col-w-7" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>代引料</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="panf_flag" checked="checked"><i></i> 代引料別</label>
+                    <label class="ui-radio"><input type="radio" name="panf_flag"><i></i> 代引料込</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>のし対応</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="noshi_flag"><i></i> 対応する</label>
+                    <label class="ui-radio"><input type="radio" name="noshi_flag" checked="checked"><i></i> 対応しない</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>注文ボタン</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="sell_flag" checked="checked"><i></i> 注文ボタンをつける</label>
+                    <span class="input-group">
+                        <label class="ui-radio"><input type="radio" name="sell_flag"><i></i> 予約ボタンをつける:予約商品発売日</label>
+                        <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                    </span>
+                    <label class="ui-radio"><input type="radio" name="sell_flag"><i></i> ボタンをつけない</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>資料請求ボタン</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="panf_flag"><i></i> ボタンをつける</label>
+                    <label class="ui-radio"><input type="radio" name="panf_flag" checked="checked"><i></i> ボタンをつけない</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>問い合わせボタン</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="ask_flag" checked="checked"><i></i> ボタンをつける</label>
+                    <label class="ui-radio"><input type="radio" name="ask_flag"><i></i> ボタンをつけない</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>再入荷お知らせボタン</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="stock_notify_flag"><i></i> ボタンをつける</label>
+                    <label class="ui-radio"><input type="radio" name="stock_notify_flag" checked="checked"><i></i> ボタンをつけない</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>販売期間指定</strong>
+                <div>[予約商品の場合は、予約受付期間となります。 /  解除するときは0と入力]</div>
+            </div>
+            <div class="edit-form-unit grid">
+                <div class="input-addon col-w-5">
+                    <span class="col-w-3">開始</span>
+                    <span class="ui-date col-w-7"><input type="text" class="datepicker" title="calendar" /></span>
+                </div>
+                <div class="input-addon col-w-5">
+                    <span class="col-w-3">終了</span>
+                    <span class="ui-date col-w-7"><input type="text" class="datepicker" title="calendar" /></span>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>注文受付数</strong>
+                <div>[最大購入数を設定 : (半角数字)1~400の数字で入力]</div>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="units_type" checked="checked"><i></i> 自由入力</label>
+                    <label class="ui-radio"><input type="radio" name="units_type"><i></i> 非表示</label>
+                    <span class="input-group">
+                        <label class="ui-radio"><input type="radio" name="units_type"><i></i> 最大購入数を設定</label>
+                        <input type="text" value="">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>在庫タイプ</strong>
+                <div>[在庫数量変更はマスタ画面にて編集できます。]</div>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <span class="input-group">
+                        <label class="ui-radio"><input type="radio" name="stock_flag"><i></i> 普通在庫設定(在庫数)</label>
+                        <input type="text" value="0" disabled='disabled' />
+                    </span>
+                    <label class="ui-radio"><input type="radio" name="stock_flag" checked="checked"><i></i> 在庫設定しない</label>
+                    <label class="ui-radio"><input type="radio" name="stock_flag"><i></i> 項目選択肢別</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>在庫表示</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="stock_view"><i></i> 残り在庫数表示する</label>
+                    <label class="ui-radio"><input type="radio" name="stock_view"><i></i> 残り在庫数表示しない</label>
+                    <label class="ui-radio"><input type="radio" name="stock_view" checked="checked"><i></i> 在庫設定しない</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>納期設定(１~１００)</strong>
+                <div>[削除する場合は0を入力。]</div>
+            </div>
+            <div class="edit-form-unit grid">
+                <div class="input-addon col-w-5">
+                    <span class="col-w-3">在庫あり時の納期</span>
+                    <input class="col-w-7" type="text">
+                </div>
+                <div class="col-w-5">
+                    <div class="input-addon">
+                        <span class="col-w-3">在庫切れ時の納期</span>
+                        <input class="col-w-7" type="text">
+                    </div>
+                    <p class="txt-guide">1000 : 1-2日以内に発送予定（店舗休業日を除く）</p>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>あす楽設定(１~１００)</strong>
+                <div>[削除する場合は0を入力。]</div>
+            </div>
+            <div class="edit-form-unit">
+                <div class="input-addon">
+                    <span>あす楽設定</span>
+                    <input type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>商品ページテンプレート情報</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag" checked="checked"><i></i> テンプレートA</label>
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag"><i></i> テンプレートB</label>
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag"><i></i> テンプレートC</label>
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag"><i></i> テンプレートD</label>
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag"><i></i> テンプレートE</label>
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag"><i></i> テンプレートF</label>
+                    <label class="ui-radio"><input type="radio" name="prd_layout_flag"><i></i> テンプレートG</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>在庫戻し設定</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-check"><input type="checkbox" name="stock_restore_flag"><i></i> 注文キャンセル時に在庫を戻す(増やす)</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-row">
+            <div class="edit-label">
+                <strong>在庫切れ時の注文受付</strong>
+            </div>
+            <div class="edit-form-unit">
+                <div class="check-group-inline">
+                    <label class="ui-check"><input type="checkbox" name="backorder_flag"><i></i> 在庫切れになっても注文を受け付ける</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

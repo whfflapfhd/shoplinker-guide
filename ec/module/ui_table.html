@@ -1053,10 +1053,230 @@
                                     옵션
                                     scrollY : 테이블 높이(Number)
                                     minWidth : 테이블 최소 사이즈(Number)
-                                    scrollBody : 스크롤 body 클래스(class selector)
-                                    fixHead : 상단 고정 영역 클래스(class selector)                               
+                                    fixedCell : 가로 스크롤 시 고정할 셀의 개 수(Number)                                    
                                 */
                             </script>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">테이블 Colgroup List</h2>
+                        <p class="sub-des">스크롤 테이블 등 사용 시 정의된 colgroup 리스트입니다.</p>
+                        <div class="ui-scroll-table">
+                            <div class="ui-scroll-table-header">
+                                <ul>
+                                    <li class="col-w-2"><div>Class Name</div></li>
+                                    <li class="col-w-4"><div>Width</div></li>
+                                    <li class="col-w-4"><div>Use Case</div></li>
+                                </ul>
+                            </div>
+                            <div class="ui-scroll-table-body">
+                                <div class="ui-scroll-content">
+                                    <table>                                        
+                                        <colgroup>
+                                             <col class="col-w-2" />
+                                             <col class="col-w-4" />
+                                             <col class="col-w-4" />
+                                        </colgroup>                                        
+                                        <tbody>
+                                            <tr>
+                                                <th>col-toggle</th>
+                                                <td>40px</td>
+                                                <td>토글버튼</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-num</th>
+                                                <td>50px</td>
+                                                <td>리스트 순번</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-del</th>
+                                                <td>56px</td>
+                                                <td>삭제버튼</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-edit</th>
+                                                <td>56px</td>
+                                                <td>편집버튼</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-check</th>
+                                                <td>50px</td>
+                                                <td>체크박스</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-status</th>
+                                                <td>60px</td>
+                                                <td>FTP,API 등 상태</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-type</th>
+                                                <td>70px</td>
+                                                <td>입출고상태</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-add</th>
+                                                <td>70px</td>
+                                                <td>복사</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-tax</th>
+                                                <td>80px</td>
+                                                <td>소비세</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-stockcount</th>
+                                                <td>80px</td>
+                                                <td>재고수량</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-login</th>
+                                                <td>90px</td>
+                                                <td>관리화면 로그인버튼</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-delivery</th>
+                                                <td>90px</td>
+                                                <td>배송선택</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-mapping</th>
+                                                <td>90px</td>
+                                                <td>매핑</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-fnc</th>
+                                                <td>92px</td>
+                                                <td>쇼핑몰 제휴</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-send</th>
+                                                <td>100px</td>
+                                                <td>자세히보기 버튼, 출품상태, 보호,</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-sale</th>
+                                                <td>100px</td>
+                                                <td>판매 상태</td>
+                                            </tr>        
+                                            <tr>
+                                                <th>col-join</th>
+                                                <td>110px</td>
+                                                <td>연결확인</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-price</th>
+                                                <td>120px</td>
+                                                <td>가격 관련</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-id</th>
+                                                <td>120px</td>
+                                                <td>ID, 계정 관련</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-logo</th>
+                                                <td>126px</td>
+                                                <td>몰 로고이미지</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-wholesalers</th>
+                                                <td>130px</td>
+                                                <td>공급업체 순이익률</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-divsion</th>
+                                                <td>130px</td>
+                                                <td>중간 너비의 모든 컨텐츠(10글자 내)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-code</th>
+                                                <td>140px</td>
+                                                <td>짧은 코드 관련</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-option</th>
+                                                <td>140px</td>
+                                                <td>옵션 이름</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-stock</th>
+                                                <td>150px</td>
+                                                <td>재고유형</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-per</th>
+                                                <td>150px</td>
+                                                <td>소비세율</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-edit-list</th>
+                                                <td>150px</td>
+                                                <td>변경 내역</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-etc</th>
+                                                <td>160px</td>
+                                                <td>일자, 시간관련</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-code1</th>
+                                                <td>170px</td>
+                                                <td>개별상품코드,</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-sku</th>
+                                                <td>180px</td>
+                                                <td>판매자 SKU</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-name</th>
+                                                <td>180px</td>
+                                                <td>상점 이름</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-edit-status</th>
+                                                <td>200px</td>
+                                                <td>변경 전, 변경 후</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-code2</th>
+                                                <td>210px</td>
+                                                <td>송장번호, 쇼핑몰상품코드</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-order</th>
+                                                <td>210px</td>
+                                                <td>쇼핑몰 주문번호, 주문번호, 배송방법, 결제방법, 카드상태</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-cate1</th>
+                                                <td>250px</td>
+                                                <td>표시할 대상 카테고리</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-prd</th>
+                                                <td>360px</td>
+                                                <td>상품명, 카테고리, 배송주소</td>
+                                            </tr>
+                                            <tr>
+                                                <th>col-prd-w</th>
+                                                <td>500px</td>
+                                                <td>가장 넓은 항목</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            &lt;colgroup&gt;
+                                &lt;col class="col-className"/&gt;
+                                .
+                                .
+                            &lt;/colgroup&gt;
                         </code></pre>
                     </div>
                 </div>
@@ -1065,7 +1285,7 @@
     </div>
     <script type="text/javascript">
     //<![CDATA[
-            var opt = [{minWidth:2000,scrollY:400}];
+            var opt = [{minWidth:2000,scrollY:400},{scrollY:300}];
             $(".ui-scroll-table").not(".guide-code .ui-scroll-table").each(function(idx){
                 $(this).fixedTable(opt[idx])
             });

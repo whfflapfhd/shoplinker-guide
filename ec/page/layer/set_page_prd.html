@@ -1,0 +1,115 @@
+<form action="#" method="post">    
+    <div class="table-info-group">                            
+        <div class="btn-group-r">
+            <a href="/ec/page/layer/set_page_prd_add.html" class="ui-btn btn-blue" onclick="EcUi.layerOpenSub(this.href);return false">追加</a>            
+            <a href="#" class="ui-btn btn-red delete-mall">選択削除</a>
+        </div>
+    </div>
+    <div class="ui-scroll-table" id="edit-prd">
+        <div class="ui-scroll-table-header">
+            <ul>
+                <li class="col-check"><div><a href="#" class="ui-btn btn-s btn-black check-all" data-check-group="prd02">選択</a></div></li>
+                <li class="col-divsion"><div><span><span>編集項目</span></div></li>
+                <li class="col-divsion"><div><span>編集タイプ</span></div></li>
+                <li class="col-code2"><div><span>編集値</span></div></li>
+                <li class="col-divsion"><div><span>設定タイプ</span></div></li>
+            </ul>
+        </div>
+        <div class="ui-scroll-table-body">
+            <div class="ui-scroll-content">
+                <table class="data-table t-center">
+                    <caption><i class="ir">一括商品編集</i></caption>
+                    <colgroup>
+                         <col class="col-check" />
+                         <col class="col-divsion" />
+                         <col class="col-divsion" />
+                         <col class="col-code2" />
+                         <col class="col-divsion" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">文字列切取り(BYTE)</td>
+                            <td class="t-left">$$$ から ショート -> ^^^TEST^^^</td>                      
+                            <td>システム固定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">置換</td>
+                            <td class="t-left">レビューを書いて送料無料 -></td>                      
+                            <td>店舗別設定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">文字列切取り(BYTE)</td>
+                            <td class="t-left">$$$ から ショート -> ^^^TEST^^^</td>                      
+                            <td>システム固定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">置換</td>
+                            <td class="t-left">レビューを書いて送料無料 -></td>                      
+                            <td>店舗別設定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">文字列切取り(BYTE)</td>
+                            <td class="t-left">$$$ から ショート -> ^^^TEST^^^</td>                      
+                            <td>システム固定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">置換</td>
+                            <td class="t-left">レビューを書いて送料無料 -></td>                      
+                            <td>店舗別設定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">文字列切取り(BYTE)</td>
+                            <td class="t-left">$$$ から ショート -> ^^^TEST^^^</td>                      
+                            <td>システム固定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">置換</td>
+                            <td class="t-left">レビューを書いて送料無料 -></td>                      
+                            <td>店舗別設定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">文字列切取り(BYTE)</td>
+                            <td class="t-left">$$$ から ショート -> ^^^TEST^^^</td>                      
+                            <td>システム固定</td>
+                        </tr>
+                        <tr>
+                            <td><label class="ui-check"><input type="checkbox" data-check-name="prd02"><i></i></label></td>
+                            <td>商品名</td>
+                            <td class="t-left">置換</td>
+                            <td class="t-left">レビューを書いて送料無料 -></td>                      
+                            <td>店舗別設定</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>
+    <div class="layer-footer">
+        <div class="layer-footer-l"><a href="#" class="ui-btn btn-black prev-layer">バック</a></div>
+        <a href="#" class="ui-btn btn-blue">保存</a>
+        <a href="#" class="ui-btn layer-close">キャンセル</a>                
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    $("#edit-prd").fixedTable({scrollY : 300});
+//]]>
+</script>

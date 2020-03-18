@@ -46,7 +46,7 @@
     .ui-resizable-helper {border-right:1px dashed #888}
 
 /* tooltips */
-    .tooltip {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+    .tooltip {display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
     .ui-tooltip {font-size:12px;white-space:nowrap;background:#fff}
 
 
