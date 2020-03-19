@@ -17,7 +17,7 @@
     /* .ui-scroll-content > table {min-width:1200px} */
     .ui-scroll-content td {border-bottom:0 none;border-top:1px solid #dedede;background:#fff}
     .ui-scroll-content td table tbody th {border-bottom:0 none}
-    .ui-scroll-content tbody tr:first-child td {border-top:0 none}
+    .ui-scroll-content > table > tbody > tr:first-child td {border-top:0 none}
     .ui-scroll-table-header ul li,.ui-scroll-content td {border-right:1px solid #dedede;}
     .ui-scroll-table-header ul li:last-child,.ui-scroll-content tbody tr td:last-child {border-right:0 none}
     .fixed-cell {position:relative;z-index:20}

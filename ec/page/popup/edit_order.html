@@ -1,0 +1,538 @@
+<?php require_once '../inc_pop_header.html'; ?>
+<div class="ec-pop-wrap edit-prd-pop">
+    <h1 class="ir">商品編集</h1>
+    <div class="edit-row">
+        <div class="edit-row-scroll">
+            <form action="#" method="post">
+                <div class="ec-section">
+                    <div class="edit-prd-info">
+                        <span class="edit-prd-logo"><img src="http://210.121.151.96:1212/images/jp/mall_logo_rakuten.jpg" alt="" /></span>
+                        <ul class="list">
+                            <li>店舗ID：_partner_1934</li>
+                            <li>EC店長注文番号：100170000041</li>
+                        </ul>
+                    </div>
+                    <div class="fix-btn-group">
+                        <div class="fix-btn-group-l">
+                            <div class="edit-order-control">
+                                <a href="#" class="ui-btn btn-gray prev">前へ</a>
+                                <span><i>1</i> / 10</span>
+                                <a href="#" class="ui-btn btn-gray next">次の</a>
+                            </div>
+                        </div>
+                        <div class="fix-btn-group-r">
+                            <a href="#" class="ui-btn btn-blue">反映</a>
+                            <a href="#" class="ui-btn">閉じる</a>
+                            <a href="#" class="ui-btn">リスト再表示</a>
+                        </div>
+                    </div>
+                    <h2 class="page-title-sub">注文情報</h2>
+                    <table>
+                        <colgroup>
+                            <col style="width:200px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">受注ステータス</th>
+                                <td>
+                                    <select class="col-w-5">
+                                        <option value="001">新規注文</option>
+                                        <option value="002" selected="">受注処理中</option>
+                                        <option value="030">楽天ペイ処理中</option>
+                                        <option value="031">楽天ペイ審査NG</option>
+                                        <option value="017">入金待ち</option>
+                                        <option value="019">発送待ち</option>
+                                        <option value="75895">羽田甚予約商品</option>
+                                        <option value="015">送状番号登録済</option>
+                                        <option value="003">配送処理中</option>
+                                        <option value="75893">フォローメール</option>
+                                        <option value="999">完了</option>
+                                        <option value="011">キャンセル</option>
+                                        <option value="020">保留</option>
+                                        <option value="">未設定</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> モール注文番号</th>
+                                <td>
+                                    <input type="text" value="278988-20200305-00241734" disabled="disabled" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 注文日</th>
+                                <td>
+                                    <input type="text" value="2020-03-05 22:11:50" disabled="disabled" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 決済方法</th>
+                                <td>
+                                    <select class="col-w-5">
+                                        <option>ソフトバンクまとめて支払い・ワイモバイルまとめて支払い </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">カード状態</th>
+                                <td>
+                                    <select class="col-w-5">
+                                        <option>[Ra]売上請求取消時システムエラー</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 配送方法</th>
+                                <td>
+                                    <select class="col-w-5">
+                                        <option>エクスプレス(DHL,EMS,Fedexその他)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">配送指定日	</th>
+                                <td>
+                                     <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">配送希望時間帯</th>
+                                <td>
+                                     <select class="col-w-5">
+                                        <option>マケプレお急ぎ便(翌々日)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">保管方法</th>
+                                <td>
+                                     <select class="col-w-5">
+                                        <option>保管方法</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">配送オプション</th>
+                                <td>
+                                     <label class="ui-check"><input type="checkbox"><i></i> のし指定</label>
+                                     <label class="ui-check"><input type="checkbox"><i></i> ギフト商品</label>
+                                     <label class="ui-check"><input type="checkbox"><i></i> 明日配送</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">配送会社</th>
+                                <td>
+                                     <select class="col-w-5">
+                                        <option>トールエクスプレスジャパン</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">送り状番号</th>
+                                <td>
+                                     <input type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">配送キャンセル日</th>
+                                <td>
+                                     <span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">キャンセル理由</th>
+                                <td>
+                                     <textarea cols="10" rows="4"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">お客様へのメッセージ</th>
+                                <td>
+                                     <textarea cols="10" rows="4"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">社内備考</th>
+                                <td>
+                                     <textarea cols="10" rows="4"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="page-title-sub">注文者情報</h2>
+                    <table>
+                        <colgroup>
+                            <col style="width:200px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 氏名(漢字/カナ)</th>
+                                <td>
+                                    <div class="grid">
+                                        <span class="col-w-5"><input type="text" value="田中 里奈" /></span>
+                                        <span class="col-w-5"><input type="text" value="タナカ リナ" /></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 電話番号/FAX</th>
+                                <td>
+                                    <div class="grid">
+                                        <span class="col-w-5"><input type="text" value="080-6049-0081" /></span>
+                                        <span class="col-w-5"><input type="text" value="" /></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> E-MAILアドレス</th>
+                                <td>
+                                    <input type="text" value="cd53d021475a1d76d1c03289b52a8ca5s1@pc.fw.rakuten.ne.jp" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 郵便番号</th>
+                                <td>
+                                    <div class="form-address">
+                                        <div class="addr-num clear">
+                                            <div>
+                                                <span><input type="text" value="026" /></span>
+                                                <span><input type="text" value="0302" /></span>
+                                            </div>
+                                            <div><button type="button" class="ui-btn btn-green">郵便番号の適用</button></div>
+                                            <div><a href="http://www.post.japanpost.jp/zipcode/index.html" class="ui-btn" target="_blank">郵便番号検索</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="error-message" style="display:block">郵便番号と住所が不一致(注文者住所)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 住所</th>
+                                <td>
+                                    <div class="form-address">
+                                        <div class="auto-addr clear">
+                                            <span><input type="text" value="岩手県" /></span>
+                                            <span><input type="text" value="釜石市" /></span>
+                                            <span><input type="text" value="片岸町" /></span>
+                                        </div>
+                                        <div><input type="text" value="岩手県釜石市鵜住居町29-18-78日向復興506" /></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="page-title-sub">お届け先情報</h2>                    
+                    <table>
+                        <colgroup>
+                            <col style="width:200px">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="t-right"><label class="ui-check"><input type="checkbox"><i></i> 注文者と同一</label></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 氏名(漢字/カナ)</th>
+                                <td>
+                                    <div class="grid">
+                                        <span class="col-w-5"><input type="text" value="田中 里奈" /></span>
+                                        <span class="col-w-5"><input type="text" value="タナカ リナ" /></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 電話番号/FAX</th>
+                                <td>
+                                    <div class="grid">
+                                        <span class="col-w-5"><input type="text" value="080-6049-0081" /></span>
+                                        <span class="col-w-5"><input type="text" value="" /></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> E-MAILアドレス</th>
+                                <td>
+                                    <input type="text" value="cd53d021475a1d76d1c03289b52a8ca5s1@pc.fw.rakuten.ne.jp" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 郵便番号</th>
+                                <td>
+                                    <div class="form-address">
+                                        <div class="addr-num clear">
+                                            <div>
+                                                <span><input type="text" value="026" /></span>
+                                                <span><input type="text" value="0302" /></span>
+                                            </div>
+                                            <div><button type="button" class="ui-btn btn-green">郵便番号の適用</button></div>
+                                            <div><a href="http://www.post.japanpost.jp/zipcode/index.html" class="ui-btn" target="_blank">郵便番号検索</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="error-message" style="display:block">郵便番号と住所が不一致(注文者住所)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 住所</th>
+                                <td>
+                                    <div class="form-address">
+                                        <div class="auto-addr clear">
+                                            <span><input type="text" value="岩手県" /></span>
+                                            <span><input type="text" value="釜石市" /></span>
+                                            <span><input type="text" value="片岸町" /></span>
+                                        </div>
+                                        <div><input type="text" value="岩手県釜石市鵜住居町29-18-78日向復興506" /></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">配送MSG</th>
+                                <td>
+                                    <textarea cols="10" rows="4">[-----------備考欄-----------:]</textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="page-title-sub">注文商品情報</h2>                    
+                    <div class="table-info-group">
+                        <div class="btn-group-l">
+                            <div class="check-group-inline">
+                                <label class="ui-check"><input type="checkbox" onchange="$('.add-row-tbl').toggleClass('show-delivery');return false" /><i></i> 明日配送</label>
+                            </div>
+                        </div>
+                        <div class="btn-group-r">
+                            <a href="#" class="ui-btn btn-green" onclick="addRow();return false">注文情報を追加</a>
+                        </div>
+                    </div>
+                    <table class="t-center add-row-tbl">
+                        <colgroup>
+                            <col style="width: auto">
+                            <col style="width: 115px">
+                            <col style="width: 180px">
+                            <col style="width: 60px">
+                            <col style="width: 60px">
+                            <col style="width: 90px">
+                            <col style="width: 90px">
+                            <col style="width: 100px">
+                            <col style="width: 60px">
+                            <col style="width: 50px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2"><div>商品名</div><div>仕入先</div></th>
+                                <th scope="col" rowspan="2"><div>商品番号</div><div>送付先ID</div></th>
+                                <th scope="col" rowspan="2">注文オプション</th>
+                                <th scope="col" rowspan="2">数量</th>
+                                <th scope="col" rowspan="2">ポイント</th>
+                                <th scope="col">モール</th>
+                                <th scope="col">仕入先</th>
+                                <th scope="col" rowspan="2">
+                                    <div>注文総金額</div>
+                                    <div>税率</div>
+                                    <div>税区分</div>
+                                </th>
+                                <th scope="col" rowspan="2">コード</th>
+                                <th scope="col" rowspan="2">削除</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <div>販売価</div>
+                                    <div>供給価</div>
+                                    <div>市場価格</div>
+                                </th>
+                                <th scope="col">
+                                    <div>販売価</div>
+                                    <div>供給価</div>
+                                    <div>市場価格</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div><input type="text" name="product_name" value="キッズ レッスンバッグ マチ付き POM&MIMIE スウェット 手提げかばん お稽古バッグ ファスナー マグネットボタン 入園入学 習い事 絵本 バッグ 保育園 幼稚園 小学校 小学生 男の子 女の子 子供 耳付き うさぎ くま かわいい 大きい 大きめ 大容量 A4 B4 メール便送料無料" /></div>
+                                    <div>
+                                        <select class="col-w-10" name="partner_id">
+                                            <option value="" selected="">選択</option>
+                                            <option value="p0000001">仕入先１</option>
+                                            <option value="p0000002">仕入先２</option>
+                                            <option value="p0000003">仕入先３</option>
+                                            <option value="p0000004">仕入先４</option>
+                                            <option value="p0000005">仕入先５</option>
+                                            <option value="p0000006">仕入先６</option>
+                                            <option value="p0000007">仕入先７</option>
+                                            <option value="p0000008">仕入先８</option>
+                                            <option value="p0000009">仕入先９</option>
+                                            <option value="p0000010">仕入先１０</option>
+                                            <option value="p0000011">仕入先１１</option>
+                                            <option value="p0000012">仕入先１２</option>
+                                            <option value="p0000013">仕入先１３</option>
+                                            <option value="p0000014">仕入先テスト</option>
+                                            <option value="p0000015">仕入先</option>
+                                            <option value="p0000020">名称</option>
+                                            <option value="p0000021">仕入先名称</option>
+                                            <option value="p0000023">123144</option>
+                                            <option value="p0000024">1213</option>
+                                            <option value="p0000025">22</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div><input type="text" name="mall_product_id" value="b00290-mimie" /></div>
+                                    <div><input type="text" name="order_prd_id" value="928257082" /></div>
+                                </td>
+                                <td>
+                                    <div><input type="text" name="sku" value="デザイン:MIMIE（ライトグレー×ピンク）お急ぎの方は、以下で必ず【宅配便】をお選び下さい。:メール便（日時指定・代引き不可）" /><div>
+                                </td>
+                                <td><div><input type="text" name="quantity" class="t-right" value="1" /></div></td>
+                                <td><div><input type="text" name="point" class="t-right" value="0" /></div></td>
+                                <td>
+                                    <div class="form-price"><input type="text" name="sale_price" value="2120"> 円</div>
+                                    <div class="form-price"><input type="text" name="supply_price" value="0"> 円</div>
+                                    <div class="form-price"><input type="text" name="market_price" value="0"> 円</div>
+                                </td>
+                                <td>
+                                    <div class="form-price"><input type="text" name="sale_price_p" value="0"> 円</div>
+                                    <div class="form-price"><input type="text" name="supply_price_p" value="0"> 円</div>
+                                    <div class="form-price"><input type="text" name="market_price_p" value="0"> 円</div>
+                                </td>
+                                <td>
+                                    <div class="form-price"><input type="text" name="total_price" value="2120"> 円</div>                                    
+                                    <div><input type="text" name="tax_rate" class="t-right" value="0.1" /></div>
+                                    <div>
+                                        <select class="col-w-10" name="tax_type">
+                                            <option>ゼロ税率</option>
+                                            <option selected="selected">ゼロ税率1</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td><a href="#" class="ui-btn btn-black btn-s">マッチ</a></td>
+                                <td><a href="#" class="ui-btn btn-red btn-s" onclick="delRow();return false">削除</a></td>
+                            </tr>
+                            <tr class="tr-delivery">
+                                <td colspan="10">
+                                    <div class="grid">
+                                        <span class="col-w-2"><a href="#" class="ui-btn btn-gray btn-full">配送情報</a></span>
+                                        <span class="col-w-8"><input type="text" value="田中 里奈、タナカ リナ、080-6049-0081、(026-0302)岩手県釜石市片岸町岩手県釜石市鵜住居町29-18-78日向復興506、" readonly="readonly" /></span>
+                                    </div>                                    
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                    <div class="table-info-group">
+                        <div class="btn-group-r">
+                            <a href="#" class="ui-btn btn-green" onclick="addRow();return false">注文情報を追加</a>
+                        </div>
+                    </div>
+                    <div class="total-price-wrap grid">
+                        <div class="col-w-5">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 30%">
+                                    <col style="width: auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">注文合計</th>
+                                        <td><span class="form-price"><input type="text" value="2120" readonly="readonly" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">消費税(+)</th>
+                                        <td><span class="form-price"><input type="text" value="212" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">手数料(+)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">配送料(+)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">代引き(+)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">ギフト包装料(+)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-w-5">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 30%">
+                                    <col style="width: auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">ポイント(-)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">クーポン(-)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">割引金額(-)</th>
+                                        <td><span class="form-price"><input type="text" value="0" /> 円</span></td>
+                                    </tr>                                    
+                                </tbody>
+                                
+                            </table>
+                            <table class="price-total">
+                                <colgroup>
+                                    <col style="width: 30%">
+                                    <col style="width: auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">請求合計(=)</th>
+                                        <td><span class="form-price"><input type="text" value="2332" readonly="readonly" /> 円</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">請求金額</th>
+                                        <td><span class="form-price"><input type="text" value="2332" /> 円</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var
+    deliveryEle = '<tr class="tr-delivery"><td colspan="10"><div class="grid"><span class="col-w-2"><a href="#" class="ui-btn btn-gray btn-full">配送情報</a></span><span class="col-w-8"><input type="text" value="" /></span></div></td></tr>'
+    parentBody = $(".add-row-tbl tbody"),
+    firstRow = parentBody.find('tr').eq(0).clone(),
+    rowCnt = parentBody.find('.tr-delivery').size();
+    
+    var addRow = function(){
+        var
+        copyEle = $(firstRow[0].outerHTML),
+        rowInput = copyEle.find('input'),
+        rowSelect = copyEle.find('select');
+        $.each(rowInput,function(a,b){
+            var t = $(b).attr('name');
+            var t1 = copyEle.find('select').eq(a).attr('name');            
+            $(b).val('').attr('name',t + '_' + rowCnt);
+            rowSelect.eq(a).find('option').removeAttr('selected');
+            rowSelect.eq(a).attr('name',t1 + '_' + rowCnt);
+        });
+        rowCnt++;
+        parentBody.append(copyEle).append(deliveryEle);
+    };
+    var delRow = function(){
+        var lastTr = parentBody.find("tr:last-child");
+        lastTr.prev().remove();
+        lastTr.remove();        
+        rowCnt--;        
+    };
+//]]>
+</script>
+<?php require_once '../inc_footer.html'; ?>

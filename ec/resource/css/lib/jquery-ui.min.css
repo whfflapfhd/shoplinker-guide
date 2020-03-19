@@ -966,7 +966,6 @@ body .ui-tooltip {
 
 .ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button {
     font-family: Meiryo,"ＭＳ Ｐゴシック","MS PGothic","ＭＳ ゴシック","MS Gothic","Noto Sans CJK JP",TakaoPGothic,sans-serif;
-    font-size: 1em
 }
 
 .ui-widget-header:after {

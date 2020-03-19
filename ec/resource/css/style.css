@@ -7,6 +7,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
 /* table */
     .table-wrap {overflow:auto}
     .table-info-group {display:table;width:100%;margin:10px 0 5px;font-size:12px}
+    .page-title-sub + .table-info-group {margin-top:-10px}
     .table-info-group > div {display:table-cell;vertical-align:bottom}
     .table-info-group .btn-group-l {width:60%}
     .table-info-group .btn-group-r {text-align:right}
@@ -18,6 +19,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     th {text-align:inherit;background-color:#f5f5f5}
     th label {font-weight:inherit}
     table thead th {height:40px;border-bottom:0 none}
+    table tbody th {text-align:right}
     table tbody th,table tbody td {height:38px}
     table thead tr th:last-child,table tbody tr td:last-child,table tbody tr th:last-child {border-right:0 none}
     td img[src *='mall_logo_'] {width:87px}
@@ -29,6 +31,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
 	.data-table td table th {font-weight:normal;color:#fff;background: #555}
     .data-table td table th,.data-table td table td {height:32px}
 	.data-table td table tbody th {border-left:0 none;border-color:#fff}
+    .data-table td table tbody > tr:first-child th {border-top-color:#555}
 	.data-table td table tbody th + td {border-left-color:#fff !important}
     .colspan > td,.toggle-content > td {padding:15px}
 	/* .data-table td table tbody tr:hover {background-color:#e9e9e9} */
@@ -76,7 +79,8 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .pannel-wrap table td {background:#fff}
 
 /* ico background */
-    .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.ui-btn-toggle,.ui-scroll-table-header ul li > div > span:after,.search-wrap:after,.ui-dialog .ui-dialog-titlebar-close,.ec-lnb-wrap .show-menu:before,.close-pannel:after,.layer-header button,.add-thumb:before
+    .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.ui-btn-toggle,.ui-scroll-table-header ul li > div > span:after,.search-wrap:after,.ui-dialog .ui-dialog-titlebar-close,.ec-lnb-wrap .show-menu:before,.close-pannel:after,.layer-header button,.add-thumb:before,
+    .edit-order-control a:before,.edit-order-control a:after
     {background-color:transparent;background-image:url('/ec/resource/images/sp_ico.png');background-repeat:no-repeat}
 
 /* Header */
@@ -137,7 +141,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .ec-section,.ec-help-content {margin:0 25px}
     .ec-row {margin:15px 0}
 
-    .grid {margin:0 -3px}
+    .grid {margin-left:-3px;margin-right:-3px}
     .grid:after {content:'';display:block;clear:both}
     .grid > .col-w-1,.grid > .col-w-2,.grid > .col-w-3,.grid > .col-w-4,.grid > .col-w-5,.grid > .col-w-6,.grid > .col-w-7,.grid > .col-w-8,.grid > .col-w-9,.grid > .col-w-10 {float:left;padding:0 3px}
     div[class*='col-w'] > select,div[class*='col-w'] > .ui-btn {width:100%}
@@ -161,7 +165,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     h1 small,h2 small,h3 small{margin-left:10px;font-size:75%;font-weight:100}
     .page-title {padding-left:25px;line-height:2;font-weight:300;border-bottom:1px solid #ccc;background-color:#fff}
     .paragraph p {font-size:12px;line-height:1.5;margin-bottom:10px}
-    .page-title-sub {padding-left:10px;margin:25px 0;font-weight:300;border-left:4px solid #6e96e2}
+    .page-title-sub {padding-left:10px;margin:25px 0;font-weight:300;border-left:4px solid #6e96e2}    
     .t-danger {color:#fd4e4e !important}
 
 /* Buttons */
@@ -224,7 +228,8 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     input[type=text],input[type=password] {padding:5px;vertical-align:top}
     input[type=text]:focus,input[type=password]:focus,textarea:focus {outline:1px solid #1f89ed;border-color:#1f89ed}
     input[type=checkbox], input[type=radio],label {margin:0}
-    textarea {padding:10px}
+    table input[type=text],table input[type=password],table textarea,table select {padding:6px 5px;font-size:11px}
+    textarea {padding:10px;font-size:12px}
     label {font-weight:normal}
     select {
         position:relative;padding:6px 25px 6px 5px;border-radius:0;vertical-align:middle;
@@ -240,7 +245,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .check-group-inline + .check-group-inline {margin-left:15px}
     .check-group > .ui-check,.check-group-inline > .ui-check,.check-group > .ui-radio,.check-group-inline > .ui-radio,.check-group-inline > .input-group {float:left;margin-right:3px;margin-bottom:3px;padding:5px;/* border-radius:4px; */border:1px solid #dbdbdb;background:#fff}
     .check-group .ui-check:last-child,.check-group-inline .ui-check:last-child,.check-group .ui-radio:last-child,.check-group-inline .ui-radio:last-child {margin-right:0}
-    .ui-check,.ui-radio {position:relative;display:inline-block;min-width:16px;min-height:16px;vertical-align:middle}
+    .ui-check,.ui-radio {position:relative;display:inline-block;min-width:16px;min-height:16px;margin-right:10px;vertical-align:middle}
     .ui-check input,.ui-radio input {position:absolute;left:0;top:0;z-index:5;width:16px;height:16px;opacity:0}
     .ui-check input + i,.ui-radio input + i {position:relative;display:inline-block;width:16px;height:16px;margin-right:5px;padding:3px;vertical-align:middle;border:1px solid #ccc;background:#fff}    
     .ui-check input:checked + i,.ui-radio input:checked + i {border-color:#5ca8f1}
@@ -284,12 +289,15 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     /* .form-tel > span:first-child {width:33.33334%} */
     .form-tel > span:first-child ~ span {position:relative;padding-left:20px}
     .form-tel > span:first-child ~ span:before {content:'';position:absolute;left:7px;top:0;bottom:0;margin:auto;width:6px;height:1px;background:#999}
-    .form-price input {width:calc(100% - 15px);text-align:right}
+    .form-price input {width:calc(100% - 20px);text-align:right;vertical-align:middle}
 
     .input-group {position:relative;overflow:hidden;padding:4px 5px !important}
     .input-group .ui-datepicker-trigger {width:20px}
     .input-group-date {float:left;margin-right:3px}
-    .input-group input[type='text'] {width:150px;margin-left:5px;padding:0 5px}
+    .input-group > input[type='text'] {width:150px;margin-left:5px}
+    .input-group input[type='text'] {padding:0 5px}
+    .input-group .form-price {display:inline-block;margin-left:5px}
+    .input-group .ui-radio,.input-group .ui-check {margin-right:0}
 
 
     /* toggle switch */
@@ -377,7 +385,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .ui-label.danger {background:#fd4e4e;color:#fff}
 
 /* badge */
-    .badge {display: inline-block;min-width: 10px;padding: 3px 7px;margin-left:10px;font-size: 11px;line-height: 1;color: #fff;text-align: center;white-space: nowrap;vertical-align: baseline;background: #8697b7;border-radius: 10px;}
+    .badge {display: inline-block;min-width: 10px;padding: 3px 7px;margin-left:10px;font-size: 11px;font-weight:normal;line-height: 1;color: #fff;text-align: center;white-space: nowrap;vertical-align: baseline;background: #8697b7;border-radius: 10px;}
     .t-danger .badge {background:#f72865}
 
 /* status */
@@ -519,11 +527,11 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .edit-prd-info > span {overflow:hidden;position:absolute;left:20px;top:0;bottom:0;width:130px;height:80px;padding-top:4px;margin:auto;border-radius:10px;background:#fff}    
     .edit-prd-info .list li {line-height:1.5}
     .edit-prd-info ~ .ui-tab-wrap{margin-top:10px}
-    .edit-tabs .ui-tabs-nav {position:fixed;left:0;top:100px;z-index:10;width:100%;padding-top:20px;background:#fff;box-shadow:0 2px 5px 0px rgba(0, 0, 0, 0.1)}
+    .edit-tabs .ui-tabs-nav,.fix-btn-group {position:fixed;left:0;top:100px;z-index:10;width:100%;padding-top:20px;background:#fff;box-shadow:0 2px 5px 0px rgba(0, 0, 0, 0.1)}    
     .save-edit-content {position:fixed;right:15px;top:95px;z-index:10;padding-top:20px}
     .edit-tabs .ui-tabs-nav li:first-child {margin-left:15px !important}
     .edit-row {height:100%;padding-top:150px}
-    .edit-row-scroll {overflow:auto;height:100%;padding:0 15px}
+    .edit-row-scroll {overflow:auto;height:100%;padding:0 15px 15px}
     .edit-form {font-size:12px}
     .edit-form .edit-form-row:first-child {margin-top:0}
     .edit-form-row {padding:15px 0;}
@@ -563,3 +571,30 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .ui-form-time {padding-left:3px;text-align:center}
     .ui-form-time input {width:43%;text-align:center}
     .ui-form-time i {display:inline-block;line-height:30px;width:14%}
+
+    /* 주문수정 */
+    .fix-btn-group {overflow:hidden;padding:15px 30px 5px 15px}
+    .fix-btn-group-l {float:left}
+    .fix-btn-group-r {float:right;text-align:right}
+    .edit-order-control > span {
+        display:inline-block;height:30px;padding:5px 10px;font-size:12px;font-weight:400;line-height:1.5;color:#333 !important;
+        vertical-align:middle;border:1px solid #ccc;
+        background:#fff none;
+    }
+    .edit-order-control .prev:before,.edit-order-control .next:after {content:'';display:inline-block;width:6px;height:10px;vertical-align:middle;opacity:.5}
+    .edit-order-control .prev:before {margin-right:10px;background-position:-68px -79px}
+    .edit-order-control .next:after {margin-left:10px;background-position:-74px -79px}
+    .edit-order-control > span i {color:#f21542}
+
+    .add-row-tbl th div,.add-row-tbl td div {margin:5px 0}
+    .add-row-tbl tbody tr:nth-child(4n+3) td,.add-row-tbl tbody tr:nth-child(4n+3) + tr td {background:#f3f6fc}
+    .add-row-tbl td {vertical-align:top}
+    .add-row-tbl tbody tr td:nth-child(9),.add-row-tbl tbody tr td:nth-child(10) {vertical-align:middle}
+    .tr-delivery {display:none}    
+    .show-delivery .tr-delivery {display:table-row}
+    .total-price-wrap {margin-top:25px;}
+    .price-total {margin-top:22px;}
+    .price-total th,.price-total td {height:45px;border-color: #ffffff;border-top-width: 5px}
+    .price-total th {text-align: center;background: #e5effa}
+    .price-total td {padding: 0 7px}
+    .price-total td input {height: 100%;font-size:12px;font-weight:700;color:#f72865}

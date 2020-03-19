@@ -115,7 +115,7 @@ $(function(){
         $(".ec-wrap").addClass("wrap-expend wrap-pannel");
         EcUi.tblResize();
         $(".pannel-wrap").html("");
-        //EcUi.loadContent(".pannel-wrap","/ec/page/order/pannel/pannel_order.html","load");
+        EcUi.loadContent(".pannel-wrap","/ec/page/order/pannel/pannel_order.html","load");
     };
 
      /* function : toggle pannel Wrap*/
