@@ -1,6 +1,6 @@
 /* Datepicker */
-    .ui-date {width:120px}
-    .ui-date input {width:100px;margin-right:3px;text-align:center;vertical-align:middle}
+    .ui-date {width:133px;display:inline-block}
+    .ui-date input {width:calc(100% - 33px);margin-right:3px;text-align:center;vertical-align:middle}
 
     /* jquery UI overwrite */
     .ui-datepicker {width:250px;margin-top:5px;padding:0;font-size:12px;border:1px solid #cacaca;background:#fff}

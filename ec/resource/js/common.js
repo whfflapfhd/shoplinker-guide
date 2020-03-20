@@ -1,14 +1,40 @@
 var EcUi = EcUi || {};
 var pannelIdx = null; // pannel index check
+
+/* END jQuery*/
 $(function(){
-    // Menu Event
+    /* Left Menu*/
     $(".ec-menu").leftMenu();
-    // Tool Tip
+
+    /*Tool Tip*/
     $('.tooltip').tooltip({track:true});
-    
+
+    /*datepicker*/
+    if($(".datepicker").size()) $(".datepicker").datepicker();
+
     $(document.body).on("click",".ec-toggle-help",function(){
         $(".ec-help-content").toggle();
         $('.ui-scroll-table').tableResize();
+        return false;
+    }).on("click",".add-thumb",function(){
+        thumbCnt ++;
+        $(".edit-form-thumb").append(EcUi.makeThumb(thumbCnt));
+        if(thumbCnt == 10) $(this).hide();
+        return false;
+    }).on("click",".addClaim",function(){
+        var opt = {
+			width: 400,
+            title : "新規受付作成",
+			buttons : {
+                "追加" : function(){
+                    $(this).dialog("close");
+                },
+                "閉じる" : function(){
+                    $(this).empty().dialog("close");
+                }
+            }
+		};
+        EcUi.msgPop(opt.title,this.href,opt)
         return false;
     }).on("click",".ui-btn-toggle",function(){
         var idx = $(".ui-btn-toggle").index(this);
@@ -35,10 +61,10 @@ $(function(){
         return false
     }).on("click",".ui-scroll-table-header span",function(e){
         EcUi.sortTable(e.target);
-    }).on("click",".delete-mall",function(){ //삭제버튼 액션
+    }).on("click",".delete-mall",function(){
         EcUi.msgPop("test","msg",null,"tsetstsetset");
         return false;
-    }).on("click",".close-pannel",function(){ //주문정보 패널 컨트롤
+    }).on("click",".close-pannel",function(){
         EcUi.toggleWrap();
         return false;
     }).on("click",".toggle-lnb,.show-menu",function(){
@@ -66,7 +92,7 @@ $(function(){
         $(".layer-wrap").remove();        
         return false;
     }).on("click",".prev-layer",function(){
-        EcUi.layerOpenSub(prevLayerPath[prevLayerDepth-1],true);
+        EcUi.layerOpenSub(true);
         return false;
     }).on("click",".change-thumb",function(){
         var
@@ -75,9 +101,11 @@ $(function(){
         $(".prd-thumb").eq(idx).find("img").attr("src",imgSrc);
         return false;
     }).on("click",".prd-thumb img",function(){
-        fnImgPop(this)
+        EcUi.fnImgPop(this)
     }).on("change",".search-type input",function(){
         $(this).parents('.search-type').toggleClass('active');
+    }).on("change",".viewPw",function(){
+        EcUi.changeType("password","text")
     }).on("change",".ui-file input[type='file']",function(){
         var fileVal = this.files,
         valInput = $(this).parent().next();
@@ -87,9 +115,9 @@ $(function(){
             valInput.val("")
         };
         return false;
-    }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();/* Add Hot Key*/
+    }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();
 
-    // 테이블 th sort 버튼 액션
+    /*테이블 th sort 버튼 액션*/
     EcUi.sortTable =function(e){
         $(e).closest('ul').find('span').not(e).removeAttr('class');
         $(e).addClass('srot-on').toggleClass('sort-type1');
@@ -168,11 +196,11 @@ $(function(){
     };
 
     /* Layer Popup */
-    var prevLayerPath = [],
-          prevLayerDepth = -1;
+    //var
+    prevLayerPath = [],
+    prevLayerDepth = 0;
     EcUi.layerOpen = function(title,url,width,height){
         prevLayerPath.push(event.target.href);
-        prevLayerDepth ++;
         var layerElement = "<div class='layer-wrap'><div class='layer-container'><div class='layer-header'><span></span><button type='button' class='layer-close'><i class='ir'>close</i></button></div><div class='layer-content'></div></div></div>";
         layerElement = $(layerElement);
         var
@@ -199,22 +227,35 @@ $(function(){
             });
         });
     };
-    EcUi.layerOpenSub = function(url,goBack){
+    EcUi.layerOpenSub = function(goBack,url){        
+        var uri = url;
         if(!goBack){
             prevLayerPath.push(event.target.href);
             prevLayerDepth ++;
         }else{
             prevLayerPath.splice(prevLayerPath.length-1);
             prevLayerDepth --;
+            uri = prevLayerPath[prevLayerDepth];
         };
         var container = $('.layer-content');
-        container.empty().addClass('loading').load(url,function(){
+        container.empty().addClass('loading').load(uri,function(){
             container.removeClass('loading');
         })
     };
 
+    /* 상품 이미지 추가 및 수정 */
+    var thumbCnt = $(".prd-thumb").size();
+    EcUi.makeThumb = function(cnt){
+        var thumb = '<li><div class="prd-thumb">'
+          + '<img src="/ec/resource/images/bg_noimg.png" alt="画像がありません" /></div>'
+          + '<div class="prd-thumb-edit"><strong>画像 '+cnt+'</strong>'
+          + '<div class="edit-form-unit"><div class="input-addon"><span>URL</span><input type="text" value="" /></div><a href="#" class="ui-btn btn-black change-thumb">適用</a></div>'
+          + '<div class="edit-form-unit"><div class="input-addon"><span>ALT</span><input type="text" placeholder="(例)とってもおいしいミカン" /></div></div></li>';
+        return thumb
+    }
+
     /* 썸네일 팝업*/
-    function fnImgPop(obj){
+    EcUi.fnImgPop = function(obj){
         var
         img= obj,
         win_width=img.naturalWidth+25,
@@ -228,11 +269,20 @@ $(function(){
         if(img_height >  700) img_height = 700;
         OpenWindow=window.open('','_blank', 'width='+win_width+', height='+img_height+', top=' + top + ', left=' + left +', menubars=no, scrollbars=yes');
         OpenWindow.document.write("<style>body{text-align:center;margin:0px;padding:0}</style><img src='"+img.src+"' width='"+img.naturalWidth+"' style='border:0;vertical-align:top' onclick='self.close()' />");
-    }
+    };
 
-    /*datepicker*/
-    if($(".datepicker").size()) $(".datepicker").datepicker();
+     /* form input Type change FNC */
+    EcUi.changeType = function(pr,re){
+        var CurrentType = $(event.target).parent().prev().attr("type");
+        (CurrentType == re) ? $(event.target).parent().prev().attr("type",pr) : $(event.target).parent().prev().attr("type",re);
+    };
+
+
+
 });
+/* END jQuery*/
+
+
 function setDatePicker(num,obj){
     var inputDate = $(obj).parent().prevAll();
     $(inputDate[0]).find(".datepicker").datepicker("setDate",auto_date_select());
@@ -252,9 +302,9 @@ function auto_date_select(day){
     return yy+'-'+mm+'-'+dd
 }
 
-/* ##################
-    Window Popup Set
-################## */
+
+
+/* Window Popup Set */
     var popArr = [];
     Array.prototype.check_exist = function(obj){
         for(var i=0; i<this.length;i++){
@@ -287,9 +337,7 @@ function auto_date_select(day){
         }
     }
 
-/* ##################
-    jQuery UI Datepicker 설정변경
-################## */
+/* jQuery UI Datepicker 설정변경 */
     var dateOptions = $.extend({},$.datepicker.regional["ja"],{
         clearText: 'クリア', clearStatus: '日付をクリアします',
         closeText: '閉じる', closeStatus: '変更せずに閉じます',
@@ -312,9 +360,7 @@ function auto_date_select(day){
     });
     $.datepicker.setDefaults(dateOptions);
 
-/* ##################
-    jQuery UI Tabs 설정변경
-################## */
+/* jQuery UI Tabs 설정변경 */
     var tabsOption = {
         beforeLoad: function( event, ui ) {
             var $panel = $(ui.panel);

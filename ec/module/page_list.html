@@ -1,0 +1,319 @@
+<?php require_once '../inc_header.html'; ?>
+    <style type="text/css">
+        table tbody tr th {padding-left:20px;text-align:left}
+        table tbody tr td:nth-child(3) {text-align:center}
+        table td a:not(.ui-btn):after {content:attr(href)}
+        .guide-row .ui-btn {margin-left:20px}
+    </style>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main">
+                <h1 class="page-header" data-page="buttons">Page List</h1>
+                <div class="guide-box">
+                    <div class="guide-row">
+                        <h2 class="sub-header no-code">신청관리</h2>
+                        <table>
+                            <caption><i class="ir">신청관리</i></caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:auto">
+                                <col style="width:10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">PAGE</th>
+                                    <th scope="col">URL</th>
+                                    <th scope="col">TYPE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">기본정보</th>
+                                    <td><a href="/ec/page/list/customer_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">계약정보</th>
+                                    <td><a href="/ec/page/list/contract_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">매장관리</th>
+                                    <td><a href="/ec/page/list/account_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">매장관리 편집 / 추가</th>
+                                    <td>
+                                        <a href="/ec/page/popup/edit_mall.html" target="_blank"></a>
+                                        <a href="/ec/page/popup/edit_mall.html" class="ui-btn btn-gray btn-s" onclick="PopupCenter(this.href, 'EC店長商品編集ページ', 860, 700);return false">팝업 보기</a>
+                                    </td>
+                                    <td>팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사용자관리</th>
+                                    <td><a href="/ec/page/list/user_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">로그인 기록보기</th>
+                                    <td><a href="/ec/page/list/user_login_list.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">카테고리 관리</th>
+                                    <td><a href="/ec/page/list/category_tab.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">카테고리 관리 - 매장 카테고리</th>
+                                    <td><a href="/ec/page/category/cate_mall.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">카테고리 관리 - 그룹 분류</th>
+                                    <td><a href="/ec/page/category/cate_group.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                            </tbody>
+                        </table>          
+                        <h2 class="sub-header no-code">상품관리</h2>
+                        <table>
+                            <caption><i class="ir">상품관리</i></caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:auto">
+                                <col style="width:10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">PAGE</th>
+                                    <th scope="col">URL</th>
+                                    <th scope="col">TYPE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">상품관리</th>
+                                    <td><a href="/ec/page/list/account_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 마스터</th>
+                                    <td><a href="/ec/page/prd/prd_master.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 라쿠텐</th>
+                                    <td><a href="/ec/page/prd/prd_ra.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 야후</th>
+                                    <td><a href="/ec/page/prd/prd_yahoo.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 아마존</th>
+                                    <td><a href="/ec/page/prd/prd_amazon.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 일괄 상품 편집</th>
+                                    <td>
+                                        <a href="/ec/page/layer/edit_prd.html" target="_blank"></a>
+                                        <a href="/ec/page/layer/edit_prd.html" class="ui-btn btn-gray btn-s" onclick='EcUi.layerOpen("ページ設定",this.href,600,480);return false'>레이어 팝업 보기</a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 일괄 상품 편집 &gt; 템플릿 추가</th>
+                                    <td>
+                                        <a href="/ec/page/layer/add_temp.html" target="_blank"></a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 페이지 설정</th>
+                                    <td>
+                                        <a href="/ec/page/layer/set_page.html" target="_blank"></a>
+                                        <a href="/ec/page/layer/set_page.html" class="ui-btn btn-gray btn-s" onclick='EcUi.layerOpen("ページ設定",this.href,800,480);return false'>레이어 팝업 보기</a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 페이지 설정 &gt; 설정</th>
+                                    <td>
+                                        <a href="/ec/page/layer/set_page_prd.html" target="_blank"></a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품관리 - 페이지 설정 &gt; 설정 &gt; 추가</th>
+                                    <td>
+                                        <a href="/ec/page/layer/set_page_prd_add.html" target="_blank"></a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정</th>
+                                    <td>
+                                        <a href="/ec/page/popup/edit_product.html" target="_blank"></a>
+                                        <a href="/ec/page/popup/edit_product.html" class="ui-btn btn-gray btn-s" onclick="PopupCenter(this.href, 'EC店長商品編集ページ', 1000, 700);return false">팝업 보기</a>
+                                    </td>
+                                    <td>팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정 - 기본정보</th>
+                                    <td><a href="/ec/page/popup/product/prd_basic.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정 - 페이지 정보</th>
+                                    <td><a href="/ec/page/popup/product/prd_info.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정 - 이미지</th>
+                                    <td><a href="/ec/page/popup/product/prd_thumbnail.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정 - 등록정보</th>
+                                    <td><a href="/ec/page/popup/product/prd_reg.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정 - 항목선택</th>
+                                    <td><a href="/ec/page/popup/product/prd_set_list.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품수정 - 재고정보</th>
+                                    <td><a href="/ec/page/popup/product/prd_stock.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">재고관리</th>
+                                    <td><a href="/ec/page/list/stock_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품 편집 이력</th>
+                                    <td><a href="/ec/page/list/product_edit.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품 삭제 이력</th>
+                                    <td><a href="/ec/page/list/product_del_history.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">재고 전송 기록</th>
+                                    <td><a href="/ec/page/list/submit_history.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">재고 업데이트 내역</th>
+                                    <td><a href="/ec/page/list/stock_history.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="sub-header no-code">주문관리</h2>
+                        <table>
+                            <caption><i class="ir">주문관리</i></caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:auto">
+                                <col style="width:10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">PAGE</th>
+                                    <th scope="col">URL</th>
+                                    <th scope="col">TYPE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">주문관리</th>
+                                    <td><a href="/ec/page/list/order_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 주문 확인/처리</th>
+                                    <td><a href="/ec/page/order/order_list.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 묶음 주문 목록</th>
+                                    <td><a href="/ec/page/order/order_bundle.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 패널 &gt; 주문정보</th>
+                                    <td><a href="/ec/page/order/pannel/pannel_order.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 패널 &gt; 클레임 접수</th>
+                                    <td><a href="/ec/page/order/pannel/pannel_claim.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                 <tr>
+                                    <th scope="row">주문관리 -패널 &gt; 클레임 접수 &gt; 클레임 추가</th>
+                                    <td>
+                                        <a href="/ec/page/dialog/add_pannel_claim.html" target="_blank"></a>
+                                        <a href="/ec/page/dialog/add_pannel_claim.html" class="ui-btn btn-gray btn-s addClaim">레이어 팝업 보기</a>
+                                    </td>
+                                    <td>레이어 팝업(다이얼로그)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 패널 &gt; 기록 정보</th>
+                                    <td><a href="/ec/page/order/pannel/pannel_log.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 패널 &gt; 주문 메일 확인</th>
+                                    <td><a href="/ec/page/order/pannel/pannel_mail.html" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문관리 - 패널 &gt; 재고 전송 기록</th>                                    
+                                    <td><a href="#" target="_blank"></a></td>
+                                    <td>탭 컨텐츠</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문 수정</th>
+                                    <td>
+                                        <a href="/ec/page/popup/edit_order.html" target="_blank"></a>
+                                        <a href="/ec/page/popup/edit_order.html" class="ui-btn btn-gray btn-s" onclick="PopupCenter(this.href, 'EC店長商品編集ページ', 1200, 700);return false">팝업 보기</a>
+                                    </td>
+                                    <td>팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주문 삭제 기록</th>
+                                    <td><a href="/ec/page/list/order_del_history.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">과거 주문 검색</th>
+                                    <td><a href="/ec/page/list/old_order_info.html" target="_blank"></a></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 class="sub-header no-code">설정관리</h2>
+                        <h2 class="sub-header no-code">부가서비스</h2>
+                        <h2 class="sub-header no-code">매출</h2>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    //]]>
+    </script>
+<?php require_once '../inc_footer.html'; ?>

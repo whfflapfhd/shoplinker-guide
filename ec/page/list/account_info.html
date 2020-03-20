@@ -78,7 +78,7 @@
                                 <td><label class="ui-check"><input type="checkbox"><i></i></label></td>
                                 <td><a href="#" class="ui-btn-toggle"><i class="ir">view</i></a></td>
                                 <td><span class="ico-status done" title="正常"><i class="ir">正常</i></span></td>
-                                <td><a href="#" class="ui-btn btn-s btn-gray">編集</a></td>
+                                <td><a href="/ec/page/popup/edit_mall.html" class="ui-btn btn-s btn-gray" onclick="PopupCenter(this.href, '店舗情報編集', 1000, 700);return false">編集</a></td>
                                 <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt="" /></td>
                                 <td class="t-left"><a href="#" target="_blank">楽天店長</a></td>
                                 <td>_partner_1934</td>
@@ -478,11 +478,7 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-        //<![CDATA[
-            $(".ui-scroll-table").fixedTable({scrollY : 460});
-        //]]>
-        </script>
+        
         <div class="pagination-wrap">
             <div class="page-total">
                 <strong>[全体 : 33 件]</strong>
@@ -508,9 +504,17 @@
     <!-- //Content -->
     <script type="text/javascript">
     //<![CDATA[
-        $(function(){
-            
-        })
+        
+        /*스크롤 테이블 실행*/
+        $(".ui-scroll-table").fixedTable({scrollY : 460});
+
+        /* 상점 정보 편집/추가  FNC.. */
+        
+
+
+        /* FTP,API 연결확인  FNC.. */
+        
+
     //]]>
     </script>
 <?php require_once '../inc_footer.html'; ?>

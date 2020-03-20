@@ -1,0 +1,280 @@
+<?php require_once '../inc_pop_header.html'; ?>
+<div class="ec-pop-wrap edit-prd-pop">
+    <h1 class="ir">店舗情報編集</h1>
+    <div class="edit-row-normal">
+        <div class="edit-row-scroll">
+            <form action="#" method="post">
+                <div class="fix-btn-group">
+                    <div class="fix-btn-group-l">
+                        <h1 class="pop-title">店舗情報編集</h1>
+                    </div>
+                    <div class="fix-btn-group-r">
+                        <a href="#" class="ui-btn btn-blue">実行</a>
+                        <a href="#" class="ui-btn">閉じる</a>
+                    </div>
+                </div>
+                <h2 class="page-title-sub">注文情報</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">モール名</th>
+                            <td><img src="/ec/resource/images/mall/mall_logo_01.png" alt=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">代表カテゴリ</th>
+                            <td>
+                                <select>
+                                    <option value="" selected="">代表カテゴリ</option>
+                                    <option value="001">CD・DVD・楽器</option>
+                                    <option value="002">おもちゃ・ホビー・ゲーム</option>
+                                    <option value="003">インテリア・寝具・収納</option>
+                                    <option value="004">インナー・下着・ナイトウエア</option>
+                                    <option value="005">キッズ・ベビー・マタニティ</option>
+                                    <option value="006">キッチン・日用品雑貨・文具</option>
+                                    <option value="007">ジュエリー・腕時計</option>
+                                    <option value="008">スイーツ</option>
+                                    <option value="009">スポーツ・アウトドア</option>
+                                    <option value="010">ダイエット・健康</option>
+                                    <option value="011">デジタルコンテンツ</option>
+                                    <option value="012">バッグ・小物・ブランド雑貨</option>
+                                    <option value="013">パソコン・周辺機器</option>
+                                    <option value="014">ビール・洋酒</option>
+                                    <option value="015">ペット・ペットグッズ</option>
+                                    <option value="016">メンズファッション・靴</option>
+                                    <option value="017">レディースファッション・靴</option>
+                                    <option value="018">医薬品・コンタクト・介護</option>
+                                    <option value="019">学び・サービス・保険</option>
+                                    <option value="020">家電・AV・カメラ</option>
+                                    <option value="021">旅行・出張・チケット</option>
+                                    <option value="022">日本酒・焼酎</option>
+                                    <option value="023">本・雑誌・コミック</option>
+                                    <option value="024">水・ソフトドリンク</option>
+                                    <option value="025">美容・コスメ・香水</option>
+                                    <option value="026">花・ガーデン・DIY</option>
+                                    <option value="027">車・バイク</option>
+                                    <option value="028">車用品・バイク用品</option>
+                                    <option value="029">食品</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 店舗ID</th>
+                            <td><input type="text" value="rakuten_test2" disabled="disabled" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 店舗名</th>
+                            <td><input type="text" value="test" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 店舗 URL</th>
+                            <td><input type="text" value="test" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> 店舗 EMAIL</th>
+                            <td><input type="text" value="ec-tencho@brangista.com" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ご利用方法</th>
+                            <td>
+                                <label class="ui-check"><input type="checkbox" /><i></i> 楽天ペイ利用中</label>
+                                <label class="ui-check"><input type="checkbox" checked="checked" /><i></i> カテゴリセット利用中</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">ログイン情報</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">R-Login ID</th>
+                            <td><input type="text" value="test00" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">パスワード</th>
+                            <td>
+                                <input type="password" value="nemobratest00" class="col-w-5" />
+                                <label class="ui-check viewPw"><input type="checkbox" /><i></i> パスワード表示</label>
+                                <!-- common.js에 정의됨. EcUi.changeType("password","text") -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">会員ID</th>
+                            <td><input type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">パスワード</th>
+                            <td>
+                                <input type="password" class="col-w-5" />
+                                <label class="ui-check viewPw"><input type="checkbox" class="changeType" /><i></i> パスワード表示</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">FTP接続情報 <small>(商品・在庫情報 モール連携用)</small></h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> FTP ID</th>
+                            <td><input type="text" value="_partner_1934" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> パスワード</th>
+                            <td>
+                                <input type="password" value="Nemo1934" class="col-w-5" />
+                                <label class="ui-check viewPw"><input type="checkbox" /><i></i> パスワード表示</label>
+                                <!-- common.js에 정의됨. EcUi.changeType("password","text") -->
+                                <a href="#" class="ui-btn btn-green">楽天から変更</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">パスワード有効期間 (90日)</th>
+                            <td><span class="ui-date col-w-5"><input type="text" class="datepicker" title="calendar" /></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">API認証情報 <small>(注文・在庫情報 モール連携用)</small></h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">ライセンスキー</th>
+                            <td>
+                                <input type="text" value="" class="col-w-7" />
+                                <a href="#" class="ui-btn btn-green">楽天から変更</a>
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <th scope="row">ライセンスキー有効期間 (90日)</th>
+                            <td><span class="ui-date col-w-5"><input type="text" class="datepicker" title="calendar" /></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">メール認証情報 <small>(あんしんメルアドサービスの発送用)</small></h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> メール AUTH ID</th>
+                            <td><input type="text" value="test" /></td>
+                        </tr>                        
+                        <tr>
+                            <th scope="row"><em class="t-danger"><i class="badge">必須</i></em> パスワード</th>
+                            <td>
+                                <input type="password" value="test" class="col-w-5" />
+                                <label class="ui-check viewPw"><input type="checkbox" /><i></i> パスワード表示</label>
+                            </td>                            
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">注文自動処理</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">備考欄の設定</th>
+                            <td>
+                                <textarea cols="10" rows="4"></textarea>
+                                <p class="txt-guide">注意：タイトルは必ず備考欄にしてください。</p>
+                                <p class="txt-guide">店舗設定 &gt; 4 基本情報設定 &gt; 会社概要ページ &gt; 注文フォームカスタマイズの内容をコピーして貼り付けて下さい。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">後払いダウンロード設定</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">後払い.com サイトID</th>
+                            <td><input type="text" value="mall0001-siteId00101" /></td>
+                        </tr>                        
+                        <tr>
+                            <th scope="row">NP後払い</th>
+                            <td>
+                                <label class="ui-radio"><input type="radio" name="pay_np_type" /><i></i> 後払い</label>
+                                <label class="ui-radio"><input type="radio" name="pay_np_type" checked="checked" /><i></i> 後払いwiz</label>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <th scope="row">アトディーネ	</th>
+                            <td>
+                                <label class="ui-radio"><input type="radio" name="pay_atodene_type" /><i></i> 請求書別送 (ジャックス発送)</label>
+                                <label class="ui-radio"><input type="radio" name="pay_atodene_type" checked="checked" /><i></i> 請求書同梱 (店舗発送)</label>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <th scope="row">アトディーネ	</th>
+                            <td>
+                                <label class="ui-radio"><input type="radio" name="pay_nissen_type" /><i></i> 請求書別送 (ニッセンから発送)</label>
+                                <label class="ui-radio"><input type="radio" name="pay_nissen_type" checked="checked" /><i></i> 請求書同梱サービス (店舗で同梱)</label>
+                            </td>                            
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="page-title-sub">その他</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:200px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">氏名(漢字)	</th>
+                            <td><input type="text" value="氏名(漢字)" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">氏名(カナ)</th>
+                            <td><input type="text" value="氏名(カナ)" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">連絡先</th>
+                            <td><input type="text" value="0123456789" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">携帯番号</th>
+                            <td><input type="text" value="080000022222" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PC用サイン</th>
+                            <td><textarea cols="10" rows="4"></textarea></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">モバイル用サイン	</th>
+                            <td><textarea cols="10" rows="4"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>    
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+     
+//]]>
+</script>
+<?php require_once '../inc_footer.html'; ?>

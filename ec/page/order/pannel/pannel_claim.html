@@ -96,23 +96,3 @@
         </tbody>
     </table>
 </div>
-<script type="text/javascript">
-//<![CDATA[
-    var opt = {
-			width: 400,
-            title : "新規受付作成",
-			buttons : {
-                "追加" : function(){
-                    $(this).dialog("close");
-                },
-                "閉じる" : function(){
-                    $(this).empty().dialog("close");
-                }
-            }
-		};
-    $(".addClaim").on("click",function(){
-        EcUi.msgPop(opt.title,this.href,opt)
-        return false;
-    });
-//]]>
-</script>
