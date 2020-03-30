@@ -17,9 +17,10 @@ $(function(){
         $('.ui-scroll-table').tableResize();
         return false;
     }).on("click",".add-thumb",function(){
+        var thumbCnt = $(".prd-thumb").size();
         thumbCnt ++;
         $(".edit-form-thumb").append(EcUi.makeThumb(thumbCnt));
-        if(thumbCnt == 10) $(this).hide();
+        if(thumbCnt == 20) $(this).hide();
         return false;
     }).on("click",".addClaim",function(){
         var opt = {
@@ -243,8 +244,7 @@ $(function(){
         })
     };
 
-    /* 상품 이미지 추가 및 수정 */
-    var thumbCnt = $(".prd-thumb").size();
+    /* 상품 이미지 추가 및 수정 */    
     EcUi.makeThumb = function(cnt){
         var thumb = '<li><div class="prd-thumb">'
           + '<img src="/ec/resource/images/bg_noimg.png" alt="画像がありません" /></div>'
