@@ -68,7 +68,7 @@
                                 <option value="pd_0001.catalog_id">カダログID</option>
                             </select>
                         </div>
-                        <div class="col-w-6">
+                        <div class="col-w-4">
                             <input type="text" />
                         </div>
                         <div class="col-w-2">
@@ -85,7 +85,49 @@
                                 <option value="en">で終わらない</option>
                             </select>
                         </div>
+                        <div class="col-w-2">
+                            <button type="button" class="ui-btn btn-green btn-dropdown toggle-search">詳細検索</button>
+                        </div>
                     </div>
+                </td>
+            </tr>
+            <tr class="detail-search">
+                <th scope="row"><div>店舗</div></th>
+                <td>
+                     <div class="check-group">
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 全て</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test2</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長2</label>
+                     </div>
+                </td>
+            </tr>
+            <tr class="detail-search">
+                <th scope="row"><div>店舗</div></th>
+                <td>
+                     <div class="check-group">
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 全て</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test2</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長2</label>
+                     </div>
+                </td>
+            </tr>
+            <tr class="detail-search">
+                <th scope="row"><div>店舗</div></th>
+                <td>
+                     <div class="check-group">
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 全て</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test2</label>
+                         <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長2</label>
+                     </div>
                 </td>
             </tr>
         </tbody>
@@ -97,21 +139,37 @@
 </div>
 <div class="table-info-group">
     <div class="btn-group-l">
-        <a href="#" class="ui-btn">楽天API商品取込</a>
-        <a href="#" class="ui-btn">楽天https一括置換</a>
-        <a href="#" class="ui-btn">楽天CSVダウンロード</a>
-        <a href="/ec/page/layer/edit_prd.html" class="ui-btn" onclick='EcUi.layerOpen("一括商品編集",this.href,600,480);return false'>楽天一括商品編集</a>
-        <a href="#" class="ui-btn">楽天一括商品複製</a>
-        <a href="#" class="ui-btn">楽天CSVアップロード</a>
-        <a href="#" class="ui-btn">楽天テンプレート一括編集</a>
-        <a href="#" class="ui-btn">楽天転送状態編集</a>
-        <a href="#" class="ui-btn">一括項目反映</a>
+        <a href="#" class="ui-btn btn-orange btn-dropdown toggle-dropdown">モール転送</a>
+        <a href="#" class="ui-btn">モール商品取込</a>
+        <a href="#" class="ui-btn btn-dropdown toggle-dropdown">CSV作業</a>
+        <a href="#" class="ui-btn btn-dropdown toggle-dropdown">編集する</a>
+        <a href="#" class="ui-btn btn-dropdown toggle-dropdown">複製する</a>
+        <a href="/ec/page/layer/edit_prd.html" class="ui-btn" onclick='EcUi.layerOpen("一括商品編集",this.href,600,480);return false'>楽天一括商品編集</a>        
         <a href="/ec/page/layer/set_page.html" class="ui-btn" onclick='EcUi.layerOpen("ページ設定",this.href,800,480);return false'>ページ設定</a>
     </div>
     <div class="btn-group-r">
-        <a href="#" class="ui-btn btn-red">選択削除</a>
-        <a href="#" class="ui-btn btn-orange">モール転送</a>
-    </div>
+        <a href="#" class="ui-btn btn-red">選択削除</a>        
+    </div>    
+</div>
+<div class="dropdown-box">
+    <a href="#" class="ui-btn btn-gray">dorpdown1</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown2</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown3</a>
+</div>
+<div class="dropdown-box">
+    <a href="#" class="ui-btn btn-gray">dorpdown4</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown5</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown5</a>
+</div>
+<div class="dropdown-box">
+    <a href="#" class="ui-btn btn-gray">dorpdown7</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown8</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown9</a>
+</div>
+<div class="dropdown-box">
+    <a href="#" class="ui-btn btn-gray">dorpdown10</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown11</a>
+    <a href="#" class="ui-btn btn-gray">dorpdown12</a>
 </div>
 <div class="ui-scroll-table">
     <div class="ui-scroll-table-header">

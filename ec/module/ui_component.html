@@ -22,7 +22,7 @@
                             <div class="guide-box">
                                 <div class="guide-row">
                                     <h2 class="sub-header">검색 박스</h2>
-                                    <p class="sub-des">리스트 페이지에서 사용되는 검색영역입니다.</p>
+                                    <p class="sub-des">리스트 페이지에서 사용되는 검색영역입니다.</p>                                    
                                     <div class="search-wrap">
                                         <h3 class="ir">検索</h3>
                                         <table>
@@ -97,6 +97,60 @@
                                                                 <input type="text">
                                                             </div>
                                                         </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row"><div>検索項目</div></th>
+                                                    <td colspan="3">
+                                                         <div class="grid">
+                                                            <div class="col-w-2">
+                                                                <select>
+                                                                    <option value="pd_0001.product_id">マスタ商品コード</option>
+                                                                    <option value="pd_0001.shop_id">店舗ID</option>
+                                                                    <option value="pd_0001.mng_product_id">商品管理番号(商品URL)</option>
+                                                                    <option value="pd_0001.out_product_id">商品番号</option>
+                                                                    <option value="pd_0001.product_name">商品名</option>
+                                                                    <option value="pd_0001.product_name_head">商品名(前)</option>
+                                                                    <option value="pd_0001.product_name_tail">商品名(後)</option>
+                                                                    <option value="pd_0001.catch_copy">キャッチコピー(PC)</option>
+                                                                    <option value="pd_0001.m_catch_copy">キャッチコピー(モバイル)</option>
+                                                                    <option value="pd_0001.catalog_id">カダログID</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-w-4">
+                                                                <input type="text" />
+                                                            </div>
+                                                            <div class="col-w-2">
+                                                                <select>
+                                                                    <option value="cn">含む(部分一致)</option>
+                                                                    <option value="nc">含まない(部分一致)</option>
+                                                                    <option value="eq">含む(完全一致)</option>
+                                                                    <option value="ne">含まない(完全一致)</option>
+                                                                    <option value="in">含む（複数検索）</option>
+                                                                    <option value="ni">含まない（複数検索）</option>
+                                                                    <option value="bw">で始まる</option>
+                                                                    <option value="bn">で始まらない</option>
+                                                                    <option value="ew">で終わる</option>
+                                                                    <option value="en">で終わらない</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-w-2">
+                                                                <button type="button" class="ui-btn btn-green btn-dropdown toggle-search">詳細検索</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="detail-search">
+                                                    <th scope="row"><div>店舗</div></th>
+                                                    <td colspan="3">
+                                                         <div class="check-group">
+                                                             <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 全て</label>
+                                                             <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長</label>
+                                                             <label class="ui-check"><input type="checkbox" checked="checked"><i></i> test</label>
+                                                             <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test</label>
+                                                             <label class="ui-check"><input type="checkbox" checked="checked"><i></i> rakuten_test2</label>
+                                                             <label class="ui-check"><input type="checkbox" checked="checked"><i></i> 楽天店長2</label>
+                                                         </div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -195,6 +249,71 @@
                                         <div class="toggle-switch">
                                             <label><input type="checkbox" checked="checked"><span><i class="on">ON</i><i class="off">OFF</i></span></label>
                                         </div>
+                                    </code></pre>
+                                </div>
+                                <div class="guide-row">
+                                    <h2 class="sub-header">Dropdown toggle-box</h2>
+                                    <p class="sub-des">테이블 상단 드롭다운 버튼 유형으로, 해당 버튼의 하위 버튼 그룹을 show/hide 시키기 위해서는 <span class="code">.toggle-dropdown</span>클래스를 추가해야 합니다.</p>
+                                    <p class="sub-des">같은 쌍의 <span class="code">.dropdown-box</span>가 필요합니다.</p>
+                                    <div class="table-info-group">
+                                        <div class="btn-group-l">
+                                            <a href="#" class="ui-btn btn-orange btn-dropdown toggle-dropdown">モール転送</a>
+                                            <a href="#" class="ui-btn btn-dropdown toggle-dropdown">CSV作業</a>
+                                            <a href="#" class="ui-btn btn-dropdown toggle-dropdown">編集する</a>
+                                            <a href="#" class="ui-btn btn-dropdown toggle-dropdown">複製する</a>
+                                        </div>   
+                                    </div>
+                                    <div class="dropdown-box">
+                                        <a href="#" class="ui-btn btn-gray">dorpdown1</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown2</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown3</a>
+                                    </div>
+                                    <div class="dropdown-box">
+                                        <a href="#" class="ui-btn btn-gray">dorpdown4</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown5</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown5</a>
+                                    </div>
+                                    <div class="dropdown-box">
+                                        <a href="#" class="ui-btn btn-gray">dorpdown7</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown8</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown9</a>
+                                    </div>
+                                    <div class="dropdown-box">
+                                        <a href="#" class="ui-btn btn-gray">dorpdown10</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown11</a>
+                                        <a href="#" class="ui-btn btn-gray">dorpdown12</a>
+                                    </div>
+                                </div>
+                                <div class="guide-code">
+                                    <pre><code class="html">
+                                        &lt;div class="table-info-group"&gt;
+                                            &lt;div class="btn-group-l"&gt;
+                                                &lt;a href="#" class="ui-btn btn-orange btn-dropdown toggle-dropdown"&gt;モール転送&lt;/a&gt;
+                                                &lt;a href="#" class="ui-btn btn-dropdown toggle-dropdown"&gt;CSV作業&lt;/a&gt;
+                                                &lt;a href="#" class="ui-btn btn-dropdown toggle-dropdown"&gt;編集する&lt;/a&gt;
+                                                &lt;a href="#" class="ui-btn btn-dropdown toggle-dropdown"&gt;複製する&lt;/a&gt;
+                                            &lt;/div&gt;   
+                                        &lt;/div&gt;
+                                        &lt;div class="dropdown-box"&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown1&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown2&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown3&lt;/a&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="dropdown-box"&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown4&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown5&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown5&lt;/a&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="dropdown-box"&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown7&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown8&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown9&lt;/a&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="dropdown-box"&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown10&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown11&lt;/a&gt;
+                                            &lt;a href="#" class="ui-btn btn-gray"&gt;dorpdown12&lt;/a&gt;
+                                        &lt;/div&gt;
                                     </code></pre>
                                 </div>
                             </div>                            

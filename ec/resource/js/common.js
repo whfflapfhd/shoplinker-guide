@@ -103,6 +103,23 @@ $(function(){
         return false;
     }).on("click",".prd-thumb img",function(){
         EcUi.fnImgPop(this)
+    }).on("click",".toggle-dropdown",function(){
+        var idx = $(".toggle-dropdown").index(this);
+        console.log(idx);
+        if($(this).hasClass("on")){
+            $(this).removeClass("on");
+            $(".dropdown-box").eq(idx).hide();
+        }else{
+            $(".dropdown-box").hide();
+            $(".dropdown-box").eq(idx).show();
+            $(".toggle-dropdown").removeClass("on");            
+            $(this).addClass("on");
+        };
+        return false;
+    }).on("click",".toggle-search",function(){
+        $(this).toggleClass("on");
+        $(".detail-search").toggle();
+        return false
     }).on("change",".search-type input",function(){
         $(this).parents('.search-type').toggleClass('active');
     }).on("change",".viewPw",function(){
