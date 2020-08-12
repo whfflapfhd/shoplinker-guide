@@ -525,7 +525,8 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .layer-sch-wrap ul {display:table;width:100%;margin:0;font-size:12px}
     .layer-sch-wrap ul li {display:table-row}
     .layer-sch-wrap ul li > strong,.layer-sch-wrap ul li > div {display:table-cell;padding:3px 0}
-    .loading {background:transparent url('/ec/resource/images/ajax_loader.gif') no-repeat  50% 50%}
+    .loading {position:relative;min-height:130px}
+    .loading:after {content:'';position:absolute;left:0;top:0;right:0;bottom:0;z-index:100;margin:auto;background:rgba(255,255,255,.5) url('/ec/resource/images/ajax_loader.gif') no-repeat  50% 50%}
     .layer-content .page-title-sub {margin:0 0 10px}
     .layer-content .ec-help-content {margin-left:0;margin-right:0;margin-bottom:10px}
 
