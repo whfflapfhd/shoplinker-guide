@@ -38,16 +38,16 @@
     }
 
 /* progress bar */
-    .ui-progress-wrap {margin:auto;padding:0 30px 30px;color:#555}
-    .ui-progress-rail {height:8px;border-radius:4px;background:#d9d9d9}
+    .ui-progress-wrap {padding:25px 30px 30px;color:#555}
+    .ui-progress-rail {position:relative;height:8px;border-radius:4px;background:#d9d9d9}
     .ui-progress-bar {position:relative;width:20%;height:100%;border-radius:4px;background-color:#0070e4;background-image:repeating-linear-gradient(-45deg, #1c88f9, #1c88f9 10px, #0070e4 0, #0070e4 20px);transition:width .3s}
-    .ui-progress-label {margin-bottom:5px}
+    .ui-progress-label {position:absolute;left:0;top:-25px;width:100%}
     .ui-progress-count {float:right}
-    .ui-progress-status {position:absolute;right:-25px;bottom:-30px;width:52px;padding:0 5px;text-align:center;line-height:1.857;color:#fff;border-radius:5px;background:#489ff9}
+    .ui-progress-status {position:absolute;right:-25px;bottom:-30px;z-index:1;width:52px;padding:0 5px;text-align:center;line-height:1.857;color:#fff;border-radius:5px;background:#489ff9}
     .ui-progress-status:after {content:'';position:absolute;left:0;right:0;top:-9px;width:0;height:0;margin:0 auto;border:5px solid #489ff9;border-top-color:transparent;border-left-color:transparent;border-right-color:transparent}
-    .ui-progress-wrap.floating {position:relative;margin:0 30px;padding:0 0 46px}
-    .ui-progress-wrap.floating .ui-progress-rail {position:absolute;left:0;right:0;top:-8px;bottom:0;width:100%;margin:auto}
-    .ui-progress-wrap.floating .ui-progress-label {margin-bottom:0}
+    .ui-progress-wrap.floating {position:absolute;left:0;top:0;right:0;bottom:0;z-index:1;margin:auto;padding:0}
+    .ui-progress-wrap.floating:after {content:'';position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;margin:auto;background:rgba(217,217,217,.7)}
+    .ui-progress-wrap.floating .ui-progress-rail {position:absolute;left:0;right:0;top:0;bottom:0;z-index:1;margin:auto 35px;background:#fefefe}
 
 /* shadow */
     .shadow,.ui-datepicker,.ui-dialog,.show-menu:after {
