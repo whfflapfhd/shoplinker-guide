@@ -90,7 +90,7 @@ $(function(){
     }).on("click",".layer-close",function(){
         prevLayerPath = [],
         prevLayerDepth = 0;
-        $(".layer-wrap").remove();        
+        $(".layer-wrap").remove();
         return false;
     }).on("click",".prev-layer",function(){
         EcUi.layerOpenSub(true);
@@ -112,7 +112,7 @@ $(function(){
         }else{
             $(".dropdown-box").hide();
             $(".dropdown-box").eq(idx).show();
-            $(".toggle-dropdown").removeClass("on");            
+            $(".toggle-dropdown").removeClass("on");
             $(this).addClass("on");
         };
         return false;
@@ -133,7 +133,18 @@ $(function(){
             valInput.val("")
         };
         return false;
+    }).on("click",".ui-select-toggle",function(){
+        EcUi.select.toggle(this);
+        return false;
+    }).on("click",".ui-select .btn-close-icon",function(){
+        var wrap = $(this).closest('.ui-select');
+        EcUi.select.close(wrap);
+        return false;
     }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();
+
+    /* ##################################################
+        EcUi Method
+    ###################################################*/
 
     /*테이블 th sort 버튼 액션*/
     EcUi.sortTable =function(e){
@@ -164,7 +175,7 @@ $(function(){
         EcUi.loadContent(".pannel-wrap","/ec/page/order/pannel/pannel_order.html","load");
     };
 
-     /* function : toggle pannel Wrap*/
+    /* function : toggle pannel Wrap*/
     EcUi.closePannel = function(){
         pannelIdx = null;
         $(".ec-wrap").removeClass("wrap-expend wrap-pannel");
@@ -245,7 +256,7 @@ $(function(){
             });
         });
     };
-    EcUi.layerOpenSub = function(goBack,url){        
+    EcUi.layerOpenSub = function(goBack,url){
         var uri = url;
         if(!goBack){
             prevLayerPath.push(event.target.href);
@@ -261,7 +272,7 @@ $(function(){
         })
     };
 
-    /* 상품 이미지 추가 및 수정 */    
+    /* 상품 이미지 추가 및 수정 */
     EcUi.makeThumb = function(cnt){
         var thumb = '<li><div class="prd-thumb">'
           + '<img src="/ec/resource/images/bg_noimg.png" alt="画像がありません" /></div>'
@@ -288,13 +299,61 @@ $(function(){
         OpenWindow.document.write("<style>body{text-align:center;margin:0px;padding:0}</style><img src='"+img.src+"' width='"+img.naturalWidth+"' style='border:0;vertical-align:top' onclick='self.close()' />");
     };
 
-     /* form input Type change FNC */
+    /* form input Type change FNC */
     EcUi.changeType = function(pr,re){
         var CurrentType = $(event.target).parent().prev().attr("type");
         (CurrentType == re) ? $(event.target).parent().prev().attr("type",pr) : $(event.target).parent().prev().attr("type",re);
     };
 
-
+    /* ui-select FNC */
+    EcUi.select = {
+        win : $(window).height(),
+        toggle : function(obj){
+            var
+            _this = $(obj),
+            wrap = _this.closest('.ui-select');
+            if(wrap.hasClass('active')){
+                this.close(wrap);
+                return
+            }
+            var scrPos = $(window).scrollTop(),
+            listPos = wrap.offset().top,
+            nowPos = scrPos + this.win - (_this.outerHeight() + _this.next().outerHeight());
+            if(nowPos <= listPos){
+                _this.next().addClass('pos-top');
+            }else{
+                _this.next().removeClass('pos-top');
+            };
+            wrap.toggleClass('active');
+        },
+        printCheckList: function(arr, target){
+            if(!arr.length){
+                target.html('').hide();
+                return
+            };
+            var list = [],
+                  checkBtn = target.parent().find('.check-all');
+            $.each(arr,function(idx,con){
+                var t = $(con).attr('title'),
+                      el = $('<span>'+t+'</span>');
+                el.on("click",function(){
+                    con.checked = false;
+                    $(this).off().remove();
+                    checkBtn.removeClass('all');
+                    if(!target.children().length) target.hide();
+                });
+                list.push(el)
+            });
+            target.html(list).show();
+        },
+        close : function(obj){
+            var checkList = obj.find($('input:checked')),
+                  resultArea = obj.find('.ui-select-result');
+            this.printCheckList(checkList, resultArea);
+            obj.removeClass('active');
+            return false;
+        }
+    };
 
 });
 /* END jQuery*/

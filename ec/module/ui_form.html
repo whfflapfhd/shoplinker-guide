@@ -113,6 +113,113 @@
                         </code></pre>
                     </div>
                     <div class="guide-row">
+                        <h2 class="sub-header">Check Box check/uncheck all</h2>
+                        <div class="sub-des">
+                            <p>checkbox 전체 선택/해제 시 UI입니다.</p>                            
+                        </div>
+                        <div class="table-info-group">
+                            <div class="btn-group-l">
+                                <button type="button" class="ui-btn btn-black check-all" data-check-group="checkAllTest">Toggle Check</button>
+                            </div>
+                        </div>
+                        <div class="check-group">
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 02</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 03</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 04</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 05</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 02</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 03</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 04</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 05</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 02</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 03</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 04</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 05</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 02</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 03</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 04</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 05</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 01</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 02</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 03</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 04</label>
+                            <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 05</label>
+                        </div>                        
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="table-info-group">
+                                <div class="btn-group-l">
+                                    <button type="button" class="ui-btn btn-black check-all" data-check-group="checkAllTest">Toggle Check</button>
+                                </div>
+                                <div class="check-group">
+                                    <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 01</label>
+                                    <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 02</label>
+                                    <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 03</label>
+                                    <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 04</label>
+                                    <label class="ui-check"><input type="checkbox" data-check-name="checkAllTest" /><i></i> check 05</label>
+                                </div>
+                            </div>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
+                        <h2 class="sub-header">Checkbox(looks like select UI)</h2>
+                        <div class="ui-select" style="width:250px"> <!-- UI의 너비는 style="width:..." 속성을 선택적으로 사용가능합니다. -->
+                            <button type="button" class="ui-btn ui-select-toggle">Multiple Select</button>
+                            <div class="ui-select-list">
+                                <div class="ui-select-btn">
+                                    <button type="button" class="ui-btn btn-black btn-s check-all" data-check-group="multiple_01">選択</button>
+                                    <button type="button" class="btn-close-icon"><span class="ir">close</span></button>
+                                </div>
+                                <ul>
+                                    <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 01checkcheckcheck" /><i></i> check 01checkcheckcheck</label></li>
+                                    <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 01"/><i></i> check 01</label></li>
+                                    <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 02"/><i></i> check 02</label></li>
+                                    <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 03"/><i></i> check 03</label></li>
+                                </ul>                                
+                            </div>
+                            <div class="ui-select-result"></div>
+                        </div>
+                        <div class="ui-select" style="width:250px"> <!-- UI의 너비는 style="width:..." 속성을 선택적으로 사용가능합니다. -->
+                            <button type="button" class="ui-btn ui-select-toggle">Multiple Select2</button>
+                            <div class="ui-select-list">
+                                <div class="ui-select-btn">
+                                    <button type="button" class="ui-btn btn-black btn-s check-all" data-check-group="multiple_02">選択</button>
+                                    <button type="button" class="btn-close-icon"><span class="ir">close</span></button>
+                                </div>
+                                <ul>
+                                    <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_02" title="check 01"/><i></i> check 01</label></li>
+                                    <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_02" title="check 02"/><i></i> check 02</label></li>
+                                </ul>                                
+                            </div>
+                            <div class="ui-select-result"></div>
+                        </div>
+                    </div>
+                    <div class="guide-code">
+                        <pre><code class="html">
+                            <div class="ui-select" style="width:250px"> <!-- style 속성은 선택적으로 사용합니다. -->
+                                <button type="button" class="ui-btn ui-select-toggle">Multiple Select</button>
+                                <div class="ui-select-list">
+                                    <div class="ui-select-btn">
+                                        <button type="button" class="ui-btn btn-black btn-s check-all" data-check-group="multiple_01">選択</button>
+                                        <button type="button" class="btn-close-icon"><span class="ir">close</span></button>
+                                    </div>
+                                    <ul>
+                                        <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 01checkcheckcheck" /><i></i> check 01checkcheckcheck</label></li>
+                                        <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 01"/><i></i> check 01</label></li>
+                                        <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 02"/><i></i> check 02</label></li>
+                                        <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 03"/><i></i> check 03</label></li>
+                                    </ul>                                
+                                </div>
+                                <div class="ui-select-result"></div>
+                            </div>
+                        </code></pre>
+                    </div>
+                    <div class="guide-row">
                         <h2 class="sub-header">Select Box</h2>
                         <select style="width:100px">
                             <option value="value1">value1</option>

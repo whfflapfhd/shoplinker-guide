@@ -3,6 +3,7 @@ a:hover {color:#23527c;text-decoration:underline}
 ul,ol {list-style:none}
 img {max-width:100%;vertical-align:middle;border:0 none}
 .clear:after {content:'';display:block;clear:both}
+a:focus,button:focus,input:focus,select:focus,textarea:focus {outline:0 none}
 
 /* table */
     .table-wrap {overflow:auto}
@@ -79,7 +80,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .pannel-wrap table td {background:#fff}
 
 /* ico background */
-    .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.ui-btn-toggle,.ui-scroll-table-header ul li > div > span:after,.search-wrap:after,.ui-dialog .ui-dialog-titlebar-close,.ec-lnb-wrap .show-menu:before,.close-pannel:after,.layer-header button,.add-thumb:before,
+    .ec-menu > li:not(.single) > a:after,.ec-toggle-help,.btn-close:before,.btn-close-icon:before,.ui-btn-toggle,.ui-scroll-table-header ul li > div > span:after,.search-wrap:after,.ui-dialog .ui-dialog-titlebar-close,.ec-lnb-wrap .show-menu:before,.close-pannel:after,.layer-header button,.add-thumb:before,
     .edit-order-control a:before,.edit-order-control a:after,.btn-dropdown:after
     {background-color:transparent;background-image:url('/ec/resource/images/sp_ico.png');background-repeat:no-repeat}
 
@@ -144,7 +145,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .grid {margin-left:-3px;margin-right:-3px}
     .grid:after {content:'';display:block;clear:both}
     .grid > .col-w-1,.grid > .col-w-2,.grid > .col-w-3,.grid > .col-w-4,.grid > .col-w-5,.grid > .col-w-6,.grid > .col-w-7,.grid > .col-w-8,.grid > .col-w-9,.grid > .col-w-10 {float:left;padding:0 3px}
-    div[class*='col-w'] > select,div[class*='col-w'] > .ui-btn {width:100%}
+    div[class*='col-w'] > select,div[class*='col-w'] > .ui-btn,div[class*='col-w'] > .ui-select {width:100%}
     .col-w-1 {width:10% !important}
     .col-w-2 {width:20% !important}
     .col-w-3 {width:30% !important}
@@ -165,7 +166,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     h1 small,h2 small,h3 small{margin-left:10px;font-size:75%;font-weight:100}
     .page-title {padding-left:25px;line-height:2;font-weight:300;border-bottom:1px solid #ccc;background-color:#fff}
     .paragraph p {font-size:12px;line-height:1.5;margin-bottom:10px}
-    .page-title-sub {padding-left:10px;margin:25px 0;font-weight:300;border-left:4px solid #6e96e2}    
+    .page-title-sub {padding-left:10px;margin:25px 0;font-weight:300;border-left:4px solid #6e96e2}
     .t-danger {color:#fd4e4e !important}
 
 /* Buttons */
@@ -216,14 +217,14 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .btn-red.disabled,.btn-red.disabled:hover,
     .btn-red[disabled],.btn-red[disabled]:hover {border-color:#d43f3a;background-color:#d9534f}
 
-    .btn-wrap {margin-top:30px;text-align:center}    
+    .btn-wrap {margin-top:30px;text-align:center}
     .btn-group-inline {overflow:hidden;display:inline-block;margin-left:3px;vertical-align:middle}
     .btn-group-inline > .ui-btn {float:left;margin:0 2px}
 
     /* dorpdown btn : input버튼 타입은 지원하지 않음 */
     .btn-dropdown:after {content:'';display:inline-block;width:10px;height:10px;margin-left:10px;margin-top:-1px;vertical-align:middle;background-position:-10px -135px}
     .btn-black.btn-dropdown:after,.btn-blue.btn-dropdown:after,.btn-green.btn-dropdown:after,.btn-sky.btn-dropdown:after,.btn-red.btn-dropdown:after,.btn-orange.btn-dropdown:after {background-position:-10px -145px}
-    .btn-dropdown.on:after {background-position-x:0}    
+    .btn-dropdown.on:after {background-position-x:0}
 
 /* forms */
     input[type=password] {font-family:"Tahoma",sans-serif}
@@ -251,7 +252,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .check-group .ui-check:last-child,.check-group-inline .ui-check:last-child,.check-group .ui-radio:last-child,.check-group-inline .ui-radio:last-child {margin-right:0}
     .ui-check,.ui-radio {position:relative;display:inline-block;min-width:16px;min-height:16px;margin-right:10px;vertical-align:middle}
     .ui-check input,.ui-radio input {position:absolute;left:0;top:0;z-index:5;width:16px;height:16px;opacity:0}
-    .ui-check input + i,.ui-radio input + i {position:relative;display:inline-block;width:16px;height:16px;margin-right:5px;padding:3px;vertical-align:middle;border:1px solid #ccc;background:#fff}    
+    .ui-check input + i,.ui-radio input + i {position:relative;display:inline-block;width:16px;height:16px;margin-right:5px;padding:3px;vertical-align:middle;border:1px solid #ccc;background:#fff}
     .ui-check input:checked + i,.ui-radio input:checked + i {border-color:#5ca8f1}
     .ui-check input:focus + i,.ui-radio input:focus + i {border-style:dashed}
     .ui-radio input + i:after,.ui-check input + i:after {content:'';display:block;width:8px;height:8px;background:#dddddd}
@@ -324,7 +325,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .toggle-switch input:checked + span:after {left:2px;background:#2bc45e}
     .toggle-switch input:checked + span .off {color:#666}
     .toggle-switch input:checked + span .on {color:#fff}
-    .toggle-switch *::selection {color:inherit;background:none repeat scroll 0 0 transparent}    
+    .toggle-switch *::selection {color:inherit;background:none repeat scroll 0 0 transparent}
 
 /* Align */
     .t-left {text-align:left !important}
@@ -409,8 +410,8 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     tr.toggle-content.active {display:table-row;background:#dfdfdf}
 
 /* box */
-    .btn-close {position:absolute;right:15px;top:10px;width:21px;height:21px}
-    .btn-close:before {content:'';position:absolute;right:3px;top:3px;width:15px;height:15px;background-position:-42px 0}
+    .btn-close,.btn-close-icon {position:absolute;right:15px;top:10px;width:21px;height:21px;border:0}
+    .btn-close:before,.btn-close-icon:before {content:'';position:absolute;right:3px;top:3px;width:15px;height:15px;background-position:-42px 0}
 
     /* Help Content */
     .ec-toggle-help {display:inline-block;width:18px;height:18px;margin-left:10px;vertical-align:middle;background-position:0 -10px;background-size:24px auto}
@@ -421,7 +422,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .ec-help-content > strong:after {content:' ]'}
     .ec-help-content .list > li:before {background-color:#fff}
     /* Info Box */
-    .ui-info .btn-close:before {background-position:-27px 0}
+    .ui-info .btn-close:before,.btn-close-icon:before {background-position:-27px 0}
     .ui-info,.dropdown-box {position:relative;padding:10px 15px;margin:20px 0;border:1px solid #d9d9d9;line-height:2;background:#f5f7f8}
     .ui-info  strong {display:block;margin-bottom:15px;font-size:12px}
     .ui-info  strong:before {content:'- '}
@@ -438,7 +439,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .search-wrap .btn-wrap {margin-top:20px}
     .search-wrap table {width:60%;min-width:978px;margin:0 auto;border-collapse:separate;border-spacing:0 2px}
     .search-wrap table th,.search-wrap table td {border:0 none}
-    .search-wrap table th {padding:3px 0;background:transparent}
+    .search-wrap table th {padding:3px 0;vertical-align:top;background:transparent}
     .search-wrap table th > div {position:relative;display:inline-block;padding:0 10px;width:100%}
     .search-wrap table th > div:before {display:none;content:'';position:absolute;top:0;bottom:0;margin:auto;width:1px;height:20px;background:#ccc}
     .search-wrap table th > div:before  {left:0}
@@ -473,14 +474,14 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .search-type {float:right;width:200px;margin-right:10px;margin-bottom:5px;} /* 주문 검색/스탭형 선택 */
     .search-type label > span:after {left:97px}
     .search-type.active ~ .order-step-wrap {display:none}
-    .search-type.active ~ .search-wrap {display:block;overflow:auto}    
+    .search-type.active ~ .search-wrap {display:block;overflow:auto}
     .order-step-wrap {overflow:auto;width:100%}
     .order-step-wrap ul {display:table;width:100%;border-spacing:5px}
     .wrap-pannel .order-step-wrap ul {min-width:1200px}
     .order-step-wrap ul > li {display:table-cell;padding:7px;vertical-align:middle;border-radius:10px;background:#f3f3f3}
     .order-step-wrap ul > li:first-child {border-left:0 none}
     .order-step-wrap ul > li > div {height:100%}
-    .order-step-wrap ul > li > a {display:block;font-size:12px;line-height:2;text-decoration:none;color:#444}    
+    .order-step-wrap ul > li > a {display:block;font-size:12px;line-height:2;text-decoration:none;color:#444}
     .order-wrap,.order-edit-pannel {transition:all .2s}
     .order-edit-pannel {
         position: fixed;right:-500px;top: 0;z-index: 9;width: 500px;height: 100%;padding:80px 0 40px;background: #f1f1f1;
@@ -532,14 +533,14 @@ img {max-width:100%;vertical-align:middle;border:0 none}
 
 /* window popup */
     .ec-pop-wrap .ec-section,.ec-pop-wrap .ec-help-content {margin:0}
-    
+
     /* 상품편집 */
     .edit-prd-pop {padding:0}
     .edit-prd-info {position:fixed;left:0;top:0;z-index:10;width:100%;height:100px;padding:15px 15px 15px 180px;background:#d9d9d9}
-    .edit-prd-info > span {overflow:hidden;position:absolute;left:20px;top:0;bottom:0;width:130px;height:80px;padding-top:4px;margin:auto;border-radius:10px;background:#fff}    
+    .edit-prd-info > span {overflow:hidden;position:absolute;left:20px;top:0;bottom:0;width:130px;height:80px;padding-top:4px;margin:auto;border-radius:10px;background:#fff}
     .edit-prd-info .list li {line-height:1.5}
     .edit-prd-info ~ .ui-tab-wrap{margin-top:10px}
-    .edit-tabs .ui-tabs-nav,.fix-btn-group {position:fixed;left:0;top:100px;z-index:10;width:100%;padding-top:20px;background:#fff;box-shadow:0 2px 5px 0px rgba(0, 0, 0, 0.1)}    
+    .edit-tabs .ui-tabs-nav,.fix-btn-group {position:fixed;left:0;top:100px;z-index:10;width:100%;padding-top:20px;background:#fff;box-shadow:0 2px 5px 0px rgba(0, 0, 0, 0.1)}
     .save-edit-content {position:fixed;right:15px;top:95px;z-index:10;padding-top:20px}
     .edit-tabs .ui-tabs-nav li:first-child {margin-left:15px !important}
     .edit-row {height:100%;padding-top:150px}
@@ -605,7 +606,7 @@ img {max-width:100%;vertical-align:middle;border:0 none}
     .add-row-tbl tbody tr:nth-child(4n+3) td,.add-row-tbl tbody tr:nth-child(4n+3) + tr td {background:#f3f6fc}
     .add-row-tbl td {vertical-align:top}
     .add-row-tbl tbody tr td:nth-child(9),.add-row-tbl tbody tr td:nth-child(10) {vertical-align:middle}
-    .tr-delivery {display:none}    
+    .tr-delivery {display:none}
     .show-delivery .tr-delivery {display:table-row}
     .total-price-wrap {margin-top:25px;}
     .price-total {margin-top:22px;}

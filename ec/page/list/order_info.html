@@ -87,14 +87,43 @@
                                         </select>
                                     </div>
                                     <div class="col-w-4">
-                                        <select>
-                                            <option>店舗選択</option>
-                                        </select>
+                                        <div class="ui-select">
+                                            <button type="button" class="ui-btn ui-select-toggle">店舗選択</button>
+                                            <div class="ui-select-list">
+                                                <div class="ui-select-btn">
+                                                    <button type="button" class="ui-btn btn-black btn-s check-all" data-check-group="mall_select_01">選択</button>
+                                                    <button type="button" class="btn-close-icon"><span class="ir">close</span></button>
+                                                </div>
+                                                <ul>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_01" title="[Ca]ブランジスタのテストショップ1" /><i></i> [Ca]ブランジスタのテストショップ1</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_01" title="[Wo]test"/><i></i> [Wo]test</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_01" title="[Sl]サンプルキギョウサキメイ"/><i></i> [Sl]サンプルキギョウサキメイ</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_01" title="[Ra]楽天ペイテスト店舗"/><i></i> [Ra]楽天ペイテスト店舗</label></li>
+                                                </ul>                                
+                                            </div>
+                                            <div class="ui-select-result"></div>
+                                        </div>
                                     </div>
                                     <div class="col-w-4">
-                                        <select>
-                                            <option>受注ステータス選択</option>
-                                        </select>
+                                        <div class="ui-select">
+                                            <button type="button" class="ui-btn ui-select-toggle">受注ステータス選択</button>
+                                            <div class="ui-select-list">
+                                                <div class="ui-select-btn">
+                                                    <button type="button" class="ui-btn btn-black btn-s check-all" data-check-group="mall_select_02">選択</button>
+                                                    <button type="button" class="btn-close-icon"><span class="ir">close</span></button>
+                                                </div>
+                                                <ul>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 受注処理中</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 楽天ペイ処理中</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 楽天ペイ審査NG</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 入金待ち</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 発送待ち</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 羽田甚予約商品</label></li>
+                                                    <li><label class="ui-check"><input type="checkbox" data-check-name="mall_select_02" title="受注処理中" /><i></i> 送状番号登録済</label></li>
+                                                </ul>                                
+                                            </div>
+                                            <div class="ui-select-result"></div>
+                                        </div>
                                     </div>
                                  </div>
                             </td>
