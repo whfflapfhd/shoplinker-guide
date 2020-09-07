@@ -59,23 +59,38 @@
     }
 
 /* scroll bar */
-    .ui-scroll-content::-webkit-scrollbar,.pannel-wrap::-webkit-scrollbar {width: 17px;height: 17px;}
+    .ui-scroll-content::-webkit-scrollbar,
+    .pannel-wrap::-webkit-scrollbar{
+        width: 17px;height: 17px;
+    }
+    .ui-select-result::-webkit-scrollbar {height:10px}
     /* Track */
-    .ui-scroll-content::-webkit-scrollbar-track,.pannel-wrap::-webkit-scrollbar-track {
+    .ui-scroll-content::-webkit-scrollbar-track,
+    .pannel-wrap::-webkit-scrollbar-track,
+    .ui-select-result::-webkit-scrollbar-track{
       /* background-color: rgba(0, 0, 0, 0.2); */
       background:#e5e5e5;
     }
 
     /* Handle */
-    .ui-scroll-content::-webkit-scrollbar-thumb,.pannel-wrap::-webkit-scrollbar-thumb {
+    .ui-scroll-content::-webkit-scrollbar-thumb,
+    .pannel-wrap::-webkit-scrollbar-thumb,
+    .ui-select-result::-webkit-scrollbar-thumb{
       background: rgba(48, 67, 104, 0.7);
       border:5px solid #e5e5e5;
       border-radius: 10px;
     }
-    .ui-scroll-content::-webkit-scrollbar-thumb:hover,.pannel-wrap::-webkit-scrollbar-thumb:hover {
+    .ui-select-result::-webkit-scrollbar-thumb {
+      border-width:2px;
+    }
+    .ui-scroll-content::-webkit-scrollbar-thumb:hover,
+    .pannel-wrap::-webkit-scrollbar-thumb:hover,
+    .ui-select-result::-webkit-scrollbar-thumb:hover{
       background-color: rgba(48, 67, 104, 1);
     }
-    .ui-scroll-content::-webkit-scrollbar-thumb:active,.pannel-wrap::-webkit-scrollbar-thumb:active {
+    .ui-scroll-content::-webkit-scrollbar-thumb:active,
+    .pannel-wrap::-webkit-scrollbar-thumb:active,
+    .ui-select-result::-webkit-scrollbar-thumb:active,{
       background: linear-gradient(left, #22ADD4, #1E98BA);
     }
 
@@ -90,8 +105,8 @@
     .ui-select-btn {padding:5px 10px;background:#efefef}
     .ui-select-list .ui-check {display:block;margin:0;padding:5px 8px 5px 5px}
     .btn-close-icon {top:5px;right:10px}
-    .ui-select-result {display:none;overflow:hidden;margin:5px 0}
-    .ui-select-result > span {float:left;margin:3px;padding:1px 5px 1px 5px;font-size:12px;color:#777;border-radius:10px;background:#ced7e8;cursor:pointer;opacity:.5}
+    .ui-select-result {display:none;overflow:hidden;overflow-x:auto;padding:5px 0;white-space:nowrap;background:#fff}
+    .ui-select-result > span {margin:3px;padding:0 5px;font-size:11px;color:#fff;border-radius:10px;background:#43a5ff;cursor:pointer;opacity:.7}
     .ui-select-result > span:after {content:'x';padding-left:10px}
     .ui-select-result > span:hover {opacity:1}
     .ui-select.active .ui-select-list {display:block}
