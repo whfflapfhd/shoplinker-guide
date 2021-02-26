@@ -75,8 +75,66 @@
                                     <td><a href="/ec/page/category/cate_group.html" target="_blank"></a></td>
                                     <td>탭 컨텐츠</td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">카테고리 선택 - 레이어팝업</th>
+                                    <td>
+                                        <a href="/ec/page/layer/select_category.html" target="_blank"></a>
+                                        <a href="/ec/page/layer/select_category.html" class="ui-btn btn-gray btn-s" onclick='EcUi.layerOpen("카테고리선택",this.href,600,600);return false'>레이어 팝업 보기</a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">카테고리 태그 선택 - 레이어팝업</th>
+                                    <td>
+                                        <a href="/ec/page/layer/select_tag.html" target="_blank"></a>
+                                        <a href="/ec/page/layer/select_tag.html" class="ui-btn btn-gray btn-s" onclick='EcUi.layerOpen("태그선택",this.href,600,600);return false'>레이어 팝업 보기</a>
+                                    </td>
+                                    <td>레이어 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">카테고리 선택 - dialog팝업</th>
+                                    <td>
+                                        <a href="/ec/page/layer/select_category_1.html" target="_blank"></a>
+                                        <a href="/ec/page/layer/select_category_1.html" class="ui-btn btn-gray btn-s" onclick='EcUi.msgPop("카테고리 선택",this.href,cateSelectOpt);return false'>다이얼로그 팝업 보기</a>                                        
+                                    </td>
+                                    <td>다이얼로그 팝업</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">카테고리 태그 선택 - dialog팝업</th>
+                                    <td>
+                                        <a href="/ec/page/layer/select_tag_1.html" target="_blank"></a>
+                                        <a href="/ec/page/layer/select_tag_1.html" class="ui-btn btn-gray btn-s" onclick='EcUi.msgPop("카테고리 태그 선택",this.href,tagSelectOpt);return false'>다이얼로그 팝업 보기</a>                                        
+                                    </td>
+                                    <td>다이얼로그 팝업</td>
+                                </tr>
                             </tbody>
-                        </table>          
+                        </table>
+                        <script>
+                            var tagSelectOpt = {
+                                width: 500,
+                                height: 600,                                
+                                buttons : {
+                                    "save" : function(){
+                                        $(this).dialog("close");
+                                    },
+                                    "close" : function(){
+                                        $(this).empty().dialog("close");
+                                    }
+                                }
+                            };
+                            var cateSelectOpt = {
+                                width:600,
+                                height:600,
+                                buttons : {
+                                    "save" : function(){
+                                        $(this).dialog("close");
+                                    },
+                                    "close" : function(){
+                                        $(this).empty().dialog("close");
+                                    }
+                                }
+                            }
+                        </script>
                         <h2 class="sub-header no-code">상품관리</h2>
                         <table>
                             <caption><i class="ir">상품관리</i></caption>

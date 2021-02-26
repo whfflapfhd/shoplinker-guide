@@ -856,21 +856,7 @@
             }
             /*jquery.UI Tabs*/
             $("#tabs" ).tabs();
-            $( "#tabs2" ).tabs({
-                beforeLoad: function( event, ui ) {
-                    var $panel = $(ui.panel);
-                    ui.ajaxSettings.async = false; // 동기/비동기 설정
-                    $(".loader").show();
-                    if (!$panel.is(":empty")) $(".loader").hide();
-                    ui.jqXHR.fail(function() {
-                        $(".loader").hide();
-                        ui.panel.html("Load error...");
-                    });
-                },
-                load : function( event, ui ) {
-                    $(".loader").hide();
-                }
-            });
+            $( "#tabs2" ).tabs(tabsOption);
             // jQuery UI Datepicker 설정변경
             var dateOptions = $.extend({},$.datepicker.regional["ja"],{
                 clearText: 'クリア', clearStatus: '日付をクリアします',

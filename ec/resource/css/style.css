@@ -431,7 +431,18 @@ a:focus,button:focus,input:focus,select:focus,textarea:focus {outline:0 none}
     .ui-info .error {background-position-x:-40px}
 
     /* dropdown box */
-    .dropdown-box {display:none;margin:5px 0}
+    .ui-dropdown .btn-dropdown {position:relative;display:block;margin:4px 0;padding:10px;text-decoration:none;color:#222;background:#eee}
+    .ui-dropdown .btn-dropdown:after {position:absolute;right:15px;top:50%;margin-top:-5px}
+    .ui-dropdown .btn-dropdown.on {color:#fff;border:1px solid #000;background:#444}
+    .ui-dropdown .btn-dropdown.on:after {background-position: 0 -145px;}
+
+    .ui-dropdown .btn-dropdown.on + .dropdown-box {display:block}    
+    .dropdown-box {display:none;overflow:auto;max-height:240px;margin:5px 0}
+    .ui-dropdown .dropdown-box > div {display:flex;flex-wrap:wrap;margin:10px 0}
+    .ui-dropdown .dropdown-box .check-group {margin-left:-2px;margin-right:-2px}
+    .ui-dropdown .dropdown-box .check-group .ui-check,.ui-dropdown .dropdown-box .check-group .ui-radio {flex:1 30%;margin:2px;padding:0 5px}
+    .ui-dropdown .dropdown-box .check-text-group * {flex:none}
+    .ui-dropdown .dropdown-box .check-text-group label {flex:1 auto;margin-right: 5px;}
 
 /* search wrap */
     .search-wrap {position:relative;margin:25px 0;padding:20px;background:#f5f5f5}
@@ -448,13 +459,13 @@ a:focus,button:focus,input:focus,select:focus,textarea:focus {outline:0 none}
     .detail-search {display:none}
 
 /* UI Category */
-    .ui-category {margin-top:25px}
-    .cate-sch {overflow:hidden;width:40%}
+    .ui-category {margin-top:25px}    
+    .cate-sch {overflow:hidden;width:40%}    
     .cate-sch input,.cate-sch .ui-btn {float:left;margin-right:5px}
     .cate-sch input {width:calc(100% - 105px)}
     .cate-sch .ui-btn {width:95px}
-    .cate-depth {overflow:hidden;margin:10px -3px 0}
-    .cate-depth > li {float:left;width:20%;padding:0 3px}
+    .cate-depth {overflow:hidden;display:flex;justify-content:space-between;margin:10px -3px 0}
+    .cate-depth > li {flex:1 0;margin:0 3px}
     .cate-depth > li > strong,.cate-depth > li > div {border:1px solid #ccc}
     .cate-depth > li > strong {display:block;text-align:center;font-size:12px;line-height:2.5;border-bottom:0 none;background:#ddd}
     .cate-depth > li > div {overflow:auto;height:150px}
@@ -466,6 +477,12 @@ a:focus,button:focus,input:focus,select:focus,textarea:focus {outline:0 none}
     .cate-depth > li > div a:hover,.cate-depth > li > div a.active {background:#efefef}
     .cate-depth > li > div a.active {color:#2aa1ff}
     .cate-depth > li > div a.active:before {border-left-color:#2aa1ff}
+
+    .layer-inner .cate-sch {width:80%;margin-bottom:5px}
+    .layer-inner .cate-sch input:focus {outline:0 none}
+    .layer-inner .cate-depth {flex-direction: column;justify-content: flex-start;margin:0}
+    .layer-inner .cate-depth > li {margin:5px 0;flex:1 auto}
+    .layer-inner .cate-depth > li > div {height:86px}
 
 /* Order Step */
     .search-type-wrap {margin-top:15px}
@@ -518,6 +535,19 @@ a:focus,button:focus,input:focus,select:focus,textarea:focus {outline:0 none}
     .layer-header > span {font-size:14px;line-height:2.428571428;color:#fff}
     .layer-header button {position: absolute;right:5px;top:0;bottom:0;margin:auto 0;width:15px;height:15px;border:0;outline:none;background-position: -42px 0}
     .layer-content {overflow:auto;height:100%;padding:15px}
+    .layer-inner {display:flex;flex-direction: column;height:100%;margin:0 -15px}
+    .layer-inner-content {overflow:auto;margin-top:10px;padding:0 15px}
+    .layer-fixed-area {flex:none;margin:0 15px}
+    .layer-fixed-text {padding:10px;background:#e5edfb}
+    .layer-fixed-text span {font-size:12px}
+    .layer-fixed-text span:before {
+        content: "";display: inline-block;margin: 0 5px;width: 12px;height: 6px;vertical-align: middle;font-weight: bold;background: transparent url(/ec/resource/images/bg_select_arr.png) no-repeat 0 0;
+        transform: rotate(-90deg);        
+    }
+    .layer-fixed-text.type-tag {display:flex;flex-wrap:wrap;padding:6px 10px}
+    .layer-fixed-text.type-tag span {margin:2px;padding:3px 5px;font-size:11px;border:1px solid #d7d7d7;border-radius:15px;background:#fff}
+    .layer-fixed-text.type-tag span:before {display:none}
+    .layer-fixed-text span:first-child:before {display:none}
     .layer-footer {position:absolute;left:0;right:0;bottom:0;margin:0 2px;padding:10px 5px;text-align:right;border-top:1px solid #d9d9d9}
     .layer-footer-l {float:left}
     .ui-draggable-handle {cursor:move}

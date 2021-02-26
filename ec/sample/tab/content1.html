@@ -1,1 +1,21 @@
 Ajax contents 01
+<div style="margin: 20px 0;">
+    <div class="ui-select" style="width:250px"> <!-- UI의 너비는 style="width:..." 속성을 선택적으로 사용가능합니다. -->
+        <button type="button" class="ui-btn ui-select-toggle">Multiple Select</button>
+        <div class="ui-select-list">
+            <div class="ui-select-btn">
+                <button type="button" class="ui-btn btn-black btn-s check-all" data-check-group="multiple_01">選択</button>
+                <button type="button" class="btn-close-icon"><span class="ir">close</span></button>
+            </div>
+            <ul>
+                <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" checked title="check 01checkcheckcheck" /><i></i> check 01checkcheckcheck</label></li>
+                <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 01"/><i></i> check 01</label></li>
+                <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 02"/><i></i> check 02</label></li>
+                <li><label class="ui-check"><input type="checkbox" data-check-name="multiple_01" title="check 03"/><i></i> check 03</label></li>
+            </ul>                                
+        </div>
+        <div class="ui-select-result"></div>
+    </div>
+</div>
+
+<span class="ui-date"><input type="text" class="datepicker" title="calendar" /></span>
