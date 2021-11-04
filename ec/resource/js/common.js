@@ -3,7 +3,7 @@ var pannelIdx = null; // pannel index check
 
 /* END jQuery*/
 $(function(){
-    
+
     /* Left Menu*/
     $(".ec-menu").leftMenu();
 
@@ -12,6 +12,7 @@ $(function(){
 
     /*datepicker*/
     if($(".datepicker").size()) $(".datepicker").datepicker();
+    if($(".datetimepicker").size()) $(".datetimepicker").datetimepicker();
 
     $(document.body).on("click",".ec-toggle-help",function(){
         $(".ec-help-content").toggle();
@@ -137,11 +138,11 @@ $(function(){
     }).on("click",".ui-select-toggle",function(){
         EcUi.select.toggle(this);
         return false;
-    }).on("click",".ui-select .btn-close-icon",function(){        
+    }).on("click",".ui-select .btn-close-icon",function(){
         var wrap = $(this).closest('.ui-select');
-        EcUi.select.close(wrap);        
+        EcUi.select.close(wrap);
         return false;
-    }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();    
+    }).addKey("186",function(){EcUi.toggleWrap()},{ctrl:true}).hotkeyOn();
 
     /* ##################################################
         EcUi Method
@@ -354,7 +355,7 @@ $(function(){
             obj.removeClass('active');
             return false;
         }
-    };    
+    };
 });
 /* END jQuery*/
 
@@ -435,6 +436,18 @@ function auto_date_select(day){
         buttonImage:'/ec/resource/images/calendar.png',buttonText:'calendar',showMonthAfterYear: true, yearSuffix: '年'
     });
     $.datepicker.setDefaults(dateOptions);
+        $.timepicker.regional['ja'] = {
+        timeOnlyTitle: '時間設定',
+        timeText: '時間設定',
+        hourText: '時間',
+        minuteText: '分',
+        secondText: '秒',
+        timeFormat: 'HH:mm',
+        amNames: ['AM', 'A'],
+        pmNames: ['PM', 'P'],
+        oneLine: true
+    };
+    $.timepicker.setDefaults($.timepicker.regional['ja']);
 
 /* jQuery UI Tabs 설정변경 */
     var tabsOption = {
@@ -450,14 +463,15 @@ function auto_date_select(day){
             ui.jqXHR.fail(function() { // 로드 실패 시 노출할 텍스트 설정
                 loader.hide();
                 ui.panel.html("Load error...");
-            });            
+            });
         },
-        load : function( event, ui ) {            
+        load : function( event, ui ) {
             var loader = $(this).find(".loader");
             loader.hide();
             if($(".datepicker").size()) $(".datepicker").datepicker();
+            if($(".datetimepicker").size()) $(".datetimepicker").datetimepicker();
             if($(".tooltip").size()) $('.tooltip').tooltip({track:true});
-            // UI-select 초기 값 확인    
+            // UI-select 초기 값 확인
             if($(".ui-select").length) $(".ui-select .btn-close-icon").trigger('click')
         }
     }
